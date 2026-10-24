@@ -1,0 +1,18 @@
+---
+interface Props {
+  review: { name: string; source: string; text: string };
+}
+
+const { review } = Astro.props;
+---
+<figure class="card review">
+  <blockquote>«{review.text}»</blockquote>
+  <figcaption>{review.name} · <span>{review.source}</span></figcaption>
+</figure>
+
+<style>
+  .review { margin: 0; }
+  .review blockquote { margin: 0 0 1rem; font-family: var(--font-serif); font-size: 1.3rem; line-height: 1.4; }
+  .review figcaption { font-weight: 600; }
+  .review figcaption span { color: var(--c-muted); font-weight: 400; }
+</style>

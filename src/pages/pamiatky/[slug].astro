@@ -1,0 +1,24 @@
+---
+import Base from '../../layouts/Base.astro';
+import site from '../../data/site.yaml';
+import aftercare from '../../data/aftercare.yaml';
+import { url } from '../../lib/url';
+
+export function getStaticPaths() {
+  return aftercare.map((a: { slug: string }) => ({ params: { slug: a.slug }, props: { memo: a } }));
+}
+
+const { memo } = Astro.props;
+---
+<Base title={`Пам'ятка: ${memo.title.toLowerCase()}`}>
+  <section class="section">
+    <div class="container" style="max-width: 820px">
+      <div class="eyebrow"><a href={url('pamiatky/')}>Пам'ятки</a></div>
+      <h1>{memo.title}</h1>
+      <ul class="list-check">
+        {memo.rules.map((r: string) => <li>{r}</li>)}
+      </ul>
+      <p class="notice">{memo.warning} <a href={`https://t.me/${site.contacts.telegram}`}>Telegram</a> · <a href={`tel:${site.contacts.phone}`}>{site.contacts.phoneDisplay}</a></p>
+    </div>
+  </section>
+</Base>

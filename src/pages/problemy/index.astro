@@ -1,0 +1,26 @@
+---
+import Base from '../../layouts/Base.astro';
+import BookingCta from '../../components/BookingCta.astro';
+import problems from '../../data/problems.yaml';
+import { url } from '../../lib/url';
+---
+<Base title="Проблеми шкіри" description="Лікування акне, розацеа, пігментації в Дніпрі. Лікар-дерматолог.">
+  <section class="page-hero">
+    <div class="container">
+      <h1>Проблеми шкіри</h1>
+      <p>Які стани лікує дерматолог і з чого починається лікування.</p>
+    </div>
+  </section>
+  <section class="section" style="padding-top: 24px">
+    <div class="container grid grid--3">
+      {problems.map((p: { slug: string; title: string; summary: string }) => (
+        <a class="card" href={url(`problemy/${p.slug}/`)}>
+          <h3>{p.title}</h3>
+          <p>{p.summary}</p>
+          <span class="card__more">Детальніше →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+  <BookingCta />
+</Base>

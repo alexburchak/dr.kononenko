@@ -1,0 +1,17 @@
+---
+import site from '../data/site.yaml';
+
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+const c = site.contacts;
+const phoneDigits = c.phone.replace(/[^\d]/g, '');
+---
+<div class="btn-row">
+  <a class="btn btn--primary" href={`https://t.me/${c.telegram}`} target="_blank" rel="noopener">Telegram</a>
+  <a class="btn btn--primary" href={`viber://chat?number=%2B${phoneDigits}`}>Viber</a>
+  <a class="btn btn--ghost" href={`tel:${c.phone}`}>{compact ? 'Зателефонувати' : c.phoneDisplay}</a>
+  {!compact && <a class="btn btn--ghost" href={`https://instagram.com/${c.instagram}`} target="_blank" rel="noopener">Instagram</a>}
+</div>

@@ -1,0 +1,63 @@
+---
+import Base from '../layouts/Base.astro';
+import BookingCta from '../components/BookingCta.astro';
+import site from '../data/site.yaml';
+import { url } from '../lib/url';
+---
+<Base title="Про лікаря" description={`${site.doctorName} — лікар-дерматолог, косметолог у Дніпрі. Освіта, досвід, сертифікати.`}>
+  <section class="section">
+    <div class="container split">
+      <div>
+        <div class="eyebrow">Про лікаря</div>
+        <h1>{site.doctorName}</h1>
+        <p class="lead">{site.about.intro}</p>
+        <ul class="list-check">
+          <li>Лікар-дерматолог з вищою медичною освітою</li>
+          <li>{site.about.experienceYears}+ років практики</li>
+          <li>Доказовий підхід: спочатку діагноз, потім процедура</li>
+          <li>Лише сертифіковані препарати та стерильні інструменти</li>
+        </ul>
+      </div>
+      <img class="photo" src={url(site.images.portrait)} alt={site.doctorName} width="900" height="1100" />
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <h2>Освіта та досвід</h2>
+      <ol class="timeline">
+        {site.about.education.map((e: { year: string; text: string }) => (
+          <li><span class="timeline__year">{e.year}</span><span>{e.text}</span></li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Дипломи та сертифікати</h2>
+      <div class="grid grid--3">
+        {site.certificates.map((c: { image: string; caption: string }) => (
+          <figure class="cert">
+            <img class="photo" src={url(c.image)} alt={c.caption} width="900" height="650" loading="lazy" />
+            <figcaption>{c.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+      <p class="license">{site.license}</p>
+    </div>
+  </section>
+
+  <BookingCta />
+</Base>
+
+<style>
+  .lead { font-size: 1.15rem; }
+  .timeline { list-style: none; padding: 0; margin: 0; }
+  .timeline li { display: grid; grid-template-columns: 160px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--c-border); }
+  .timeline__year { font-weight: 700; color: var(--c-primary); }
+  @media (max-width: 600px) { .timeline li { grid-template-columns: 1fr; gap: 4px; } }
+  .cert { margin: 0; }
+  .cert figcaption { margin-top: .6rem; color: var(--c-muted); }
+  .license { margin-top: 2rem; color: var(--c-muted); font-size: .9rem; }
+</style>

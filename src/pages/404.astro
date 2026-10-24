@@ -1,0 +1,13 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../lib/url';
+---
+<Base title="Сторінку не знайдено">
+  <section class="section">
+    <div class="container" style="text-align: center">
+      <h1>Сторінку не знайдено</h1>
+      <p>Можливо, її перенесли. Почніть з головної.</p>
+      <a class="btn btn--primary" href={url('/')}>На головну</a>
+    </div>
+  </section>
+</Base>

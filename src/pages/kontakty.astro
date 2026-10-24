@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import BookingButtons from '../components/BookingButtons.astro';
+import site from '../data/site.yaml';
+
+const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(site.address.mapQuery)}&output=embed`;
+---
+<Base title="Контакти та запис" description={`Запис до лікаря-дерматолога в Дніпрі: ${site.address.street}. Telegram, Viber, телефон.`}>
+  <section class="section">
+    <div class="container split">
+      <div>
+        <h1 id="zapys">Контакти та запис</h1>
+        <p>{site.hoursNote} Напишіть у зручний месенджер — підберемо час.</p>
+        <BookingButtons />
+        <h2 class="small-h">Адреса</h2>
+        <p><strong>{site.address.city}, {site.address.street}</strong><br />{site.address.landmark}</p>
+        <h2 class="small-h">Графік роботи</h2>
+        <p>{site.hours.map((h: { days: string; time: string }) => <>{h.days}: {h.time}<br /></>)}</p>
+      </div>
+      <iframe class="map" src={mapSrc} title="Мапа: як дістатися" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .small-h { font-size: 1.6rem; margin-top: 2rem; }
+  .map { width: 100%; height: 460px; border: 0; border-radius: var(--radius); box-shadow: var(--shadow); }
+</style>

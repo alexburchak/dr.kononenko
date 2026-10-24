@@ -1,0 +1,60 @@
+---
+import site from '../data/site.yaml';
+import { url } from '../lib/url';
+import BookingButtons from './BookingButtons.astro';
+
+const nav = [
+  { href: 'poslugy/', label: 'Послуги та ціни' },
+  { href: 'pro-likarya/', label: 'Про лікаря' },
+  { href: 'problemy/', label: 'Проблеми шкіри' },
+  { href: 'vidguky/', label: 'Відгуки' },
+  { href: 'pytannia/', label: 'Питання' },
+  { href: 'kontakty/', label: 'Контакти' },
+];
+---
+<header class="header">
+  <div class="container header__inner">
+    <a class="logo" href={url('/')}>
+      <img src={url('images/logo.svg')} alt="" width="44" height="44" />
+      <span>
+        <span class="logo__name">{site.brand}</span>
+        <span class="logo__sub">дерматолог · косметолог</span>
+      </span>
+    </a>
+    <details class="menu">
+      <summary aria-label="Меню"><span></span><span></span><span></span></summary>
+      <nav class="menu__panel">
+        {nav.map((item) => <a href={url(item.href)}>{item.label}</a>)}
+        <div class="menu__book"><BookingButtons compact /></div>
+      </nav>
+    </details>
+    <nav class="nav">
+      {nav.map((item) => <a href={url(item.href)}>{item.label}</a>)}
+    </nav>
+    <a class="btn btn--primary header__cta" href={url('kontakty/#zapys')}>Записатися</a>
+  </div>
+</header>
+
+<style>
+  .header { position: sticky; top: 0; z-index: 10; background: rgba(251, 250, 247, .94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--c-border); }
+  .header__inner { display: flex; align-items: center; gap: 24px; min-height: 72px; }
+  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-right: auto; }
+  .logo__name { display: block; font-family: var(--font-serif); font-size: 1.45rem; font-weight: 600; color: var(--c-primary-dark); line-height: 1; }
+  .logo__sub { display: block; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--c-muted); }
+  .nav { display: none; gap: 20px; }
+  .nav a { text-decoration: none; color: var(--c-text); font-size: .95rem; }
+  .nav a:hover { color: var(--c-primary); }
+  .header__cta { display: none; padding: .6em 1.2em; }
+  .menu summary { list-style: none; cursor: pointer; display: flex; flex-direction: column; gap: 5px; padding: 10px; }
+  .menu summary::-webkit-details-marker { display: none; }
+  .menu summary span { width: 24px; height: 2px; background: var(--c-primary-dark); }
+  .menu__panel { position: absolute; left: 0; right: 0; top: 72px; background: var(--c-bg); border-bottom: 1px solid var(--c-border); padding: 12px 16px 20px; display: flex; flex-direction: column; }
+  .menu__panel a { padding: 10px 0; text-decoration: none; color: var(--c-text); border-bottom: 1px solid var(--c-border); }
+  .menu__book { padding-top: 16px; }
+  .menu__book :global(a) { border-bottom: 2px solid var(--c-primary); }
+  @media (min-width: 1080px) {
+    .menu { display: none; }
+    .nav { display: flex; }
+    .header__cta { display: inline-flex; }
+  }
+</style>

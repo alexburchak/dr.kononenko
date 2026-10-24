@@ -1,0 +1,98 @@
+---
+import Base from '../layouts/Base.astro';
+import BookingButtons from '../components/BookingButtons.astro';
+import BookingCta from '../components/BookingCta.astro';
+import ReviewCard from '../components/ReviewCard.astro';
+import site from '../data/site.yaml';
+import prices from '../data/prices.yaml';
+import reviews from '../data/reviews.yaml';
+import { url } from '../lib/url';
+---
+<Base>
+  <section class="hero">
+    <div class="container split">
+      <div>
+        <div class="eyebrow">{site.address.city}</div>
+        <h1>{site.title}</h1>
+        <p class="hero__lead">{site.tagline}</p>
+        <BookingButtons />
+      </div>
+      <img class="photo hero__photo" src={url(site.images.portrait)} alt={`${site.doctorName}, лікар-дерматолог`} width="900" height="1100" />
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container">
+      <div class="grid grid--3">
+        {site.highlights.map((h: { title: string; text: string }) => (
+          <div class="card">
+            <h3>{h.title}</h3>
+            <p>{h.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="eyebrow">Напрями</div>
+      <h2>Чим я можу допомогти</h2>
+      <p class="section__lead">Кожне лікування починається з консультації: спочатку з'ясовуємо причину, потім підбираємо процедури.</p>
+      <div class="grid grid--3">
+        {prices.map((g: { group: string; id: string; description: string }) => (
+          <a class="card" href={url(`poslugy/#${g.id}`)}>
+            <h3>{g.group}</h3>
+            <p>{g.description}</p>
+            <span class="card__more">Ціни →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--sand">
+    <div class="container split">
+      <img class="photo" src={url(site.images.atWork)} alt={`${site.doctorName} під час прийому`} width="1200" height="900" loading="lazy" />
+      <div>
+        <div class="eyebrow">Про лікаря</div>
+        <h2>{site.doctorName}</h2>
+        <p>{site.about.intro}</p>
+        <a class="btn btn--ghost" href={url('pro-likarya/')}>Освіта та сертифікати</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="eyebrow">Відгуки</div>
+      <h2>Що кажуть пацієнти</h2>
+      <div class="grid grid--3">
+        {reviews.slice(0, 3).map((r: { name: string; source: string; text: string }) => <ReviewCard review={r} />)}
+      </div>
+      <p style="margin-top: 1.5rem"><a href={url('vidguky/')}>Усі відгуки →</a></p>
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="container split">
+      <div>
+        <div class="eyebrow">Як знайти</div>
+        <h2>Кабінет у центрі Дніпра</h2>
+        <p><strong>{site.address.city}, {site.address.street}</strong><br />{site.address.landmark}</p>
+        <p>{site.hours.map((h: { days: string; time: string }) => <>{h.days}: {h.time}<br /></>)}</p>
+        <p>{site.hoursNote}</p>
+        <a class="btn btn--ghost" href={url('kontakty/')}>Контакти та мапа</a>
+      </div>
+      <img class="photo" src={url(site.images.cabinet)} alt="Кабінет лікаря" width="1200" height="900" loading="lazy" />
+    </div>
+  </section>
+
+  <BookingCta />
+</Base>
+
+<style>
+  .hero { padding: 56px 0 72px; }
+  .hero__lead { font-size: 1.2rem; color: var(--c-muted); margin-bottom: 2rem; max-width: 560px; }
+  .hero__photo { aspect-ratio: 9 / 11; max-height: 620px; }
+</style>

@@ -1,0 +1,45 @@
+---
+interface Service {
+  name: string;
+  description: string;
+  duration: string;
+  price: string;
+}
+
+interface Props {
+  group: { group: string; id: string; description: string; services: Service[] };
+}
+
+const { group } = Astro.props;
+---
+<section class="price-group" id={group.id}>
+  <h2>{group.group}</h2>
+  <p class="price-group__desc">{group.description}</p>
+  <ul class="price-list">
+    {group.services.map((s) => (
+      <li>
+        <div>
+          <div class="price-list__name">{s.name}</div>
+          <div class="price-list__desc">{s.description}</div>
+        </div>
+        <div class="price-list__meta">
+          <div class="price-list__price">{s.price}</div>
+          <div class="price-list__duration">{s.duration}</div>
+        </div>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .price-group { margin-bottom: 56px; scroll-margin-top: 96px; }
+  .price-group__desc { color: var(--c-muted); }
+  .price-list { list-style: none; padding: 0; margin: 0; background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--radius); }
+  .price-list li { display: flex; justify-content: space-between; gap: 24px; padding: 20px 24px; border-bottom: 1px solid var(--c-border); }
+  .price-list li:last-child { border-bottom: 0; }
+  .price-list__name { font-weight: 600; }
+  .price-list__desc { color: var(--c-muted); font-size: .95rem; }
+  .price-list__meta { text-align: right; white-space: nowrap; }
+  .price-list__price { font-weight: 700; color: var(--c-primary); font-size: 1.1rem; }
+  .price-list__duration { color: var(--c-muted); font-size: .85rem; }
+</style>

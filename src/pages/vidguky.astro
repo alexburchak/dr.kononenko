@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+import BookingCta from '../components/BookingCta.astro';
+import ReviewCard from '../components/ReviewCard.astro';
+import site from '../data/site.yaml';
+import reviews from '../data/reviews.yaml';
+import gallery from '../data/gallery.yaml';
+import { url } from '../lib/url';
+---
+<Base title="Відгуки та результати" description="Відгуки пацієнтів і результати лікування до та після у лікаря-дерматолога в Дніпрі.">
+  <section class="page-hero">
+    <div class="container">
+      <h1>Відгуки та результати</h1>
+      <p>Більше відгуків — в <a href={`https://instagram.com/${site.contacts.instagram}`} target="_blank" rel="noopener">Instagram</a>.</p>
+    </div>
+  </section>
+  <section class="section" style="padding-top: 24px">
+    <div class="container grid grid--2">
+      {reviews.map((r: any) => <ReviewCard review={r} />)}
+    </div>
+  </section>
+  <section class="section section--soft">
+    <div class="container">
+      <h2>До і після</h2>
+      <p class="section__lead">Фото опубліковані з письмової згоди пацієнтів. Результат індивідуальний і залежить від стану шкіри.</p>
+      <div class="grid grid--2">
+        {gallery.map((g: { before: string; after: string; caption: string }) => (
+          <figure class="card ba">
+            <div class="ba__pair">
+              <div><img src={url(g.before)} alt={`До: ${g.caption}`} width="800" height="800" loading="lazy" /><span>До</span></div>
+              <div><img src={url(g.after)} alt={`Після: ${g.caption}`} width="800" height="800" loading="lazy" /><span>Після</span></div>
+            </div>
+            <figcaption>{g.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+  <BookingCta />
+</Base>
+
+<style>
+  .ba { margin: 0; padding: 16px; }
+  .ba__pair { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .ba__pair div { position: relative; }
+  .ba__pair img { border-radius: 8px; aspect-ratio: 1; object-fit: cover; }
+  .ba__pair span { position: absolute; left: 8px; bottom: 8px; background: rgba(255, 255, 255, .9); padding: 2px 10px; border-radius: 999px; font-size: .8rem; font-weight: 600; }
+  .ba figcaption { margin-top: .8rem; font-weight: 600; }
+</style>

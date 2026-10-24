@@ -1,0 +1,17 @@
+---
+import site from '../data/site.yaml';
+import BookingButtons from './BookingButtons.astro';
+---
+<section class="section section--soft">
+  <div class="container cta">
+    <h2>Запишіться на консультацію</h2>
+    <p class="section__lead">Напишіть у зручний месенджер або зателефонуйте. {site.hoursNote}</p>
+    <BookingButtons />
+  </div>
+</section>
+
+<style>
+  .cta { text-align: center; }
+  .cta .section__lead { margin: 0 auto 1.5rem; }
+  .cta :global(.btn-row) { justify-content: center; }
+</style>
