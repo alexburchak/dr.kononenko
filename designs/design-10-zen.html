@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lumière Skin Clinic — Dr. Elena Marin, MD</title>
+<meta name="description" content="Lumière Skin Clinic, Copenhagen. Calm, evidence-based dermatology and aesthetic medicine by Dr. Elena Marin, MD.">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f5f1e8;
+  --paper-2:#ece6d9;
+  --paper-3:#e3dccb;
+  --sumi:#1d1c1a;
+  --ink:#2f2d29;
+  --ink-soft:#6b675e;
+  --ink-faint:#a29d91;
+  --rule:rgba(29,28,26,.14);
+  --rule-strong:rgba(29,28,26,.32);
+  --matcha:#7f9165;
+  --matcha-deep:#5d6d48;
+  --matcha-wash:#d7dcc4;
+  --vermilion:#c4442c;
+  --font-serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho","Noto Serif JP","Georgia","Times New Roman",serif;
+  --font-sans:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic","Helvetica Neue","Segoe UI",Arial,sans-serif;
+  --radius:0;
+  --maxw:1240px;
+  --gutter:clamp(22px,5vw,72px);
+  --slow:cubic-bezier(.25,.6,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-sans);font-weight:300;font-size:16px;line-height:1.9;letter-spacing:.02em;overflow-x:hidden}
+/* faint paper fibre */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+  background-image:radial-gradient(rgba(29,28,26,.035) 1px,transparent 1px),radial-gradient(rgba(29,28,26,.025) 1px,transparent 1px);
+  background-size:7px 7px,13px 13px;background-position:0 0,3px 5px}
+main,header,footer{position:relative;z-index:1}
+svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit;letter-spacing:inherit}
+h1,h2,h3,h4{margin:0;font-family:var(--font-serif);font-weight:400;color:var(--sumi)}
+p{margin:0 0 1.2em}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+
+/* atoms */
+.label{font-family:var(--font-sans);font-size:.7rem;font-weight:400;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-soft)}
+.vlabel{writing-mode:vertical-rl;text-orientation:mixed;font-family:var(--font-sans);font-size:.7rem;letter-spacing:.42em;text-transform:uppercase;color:var(--ink-soft);display:flex;align-items:center;gap:18px;white-space:nowrap}
+.vlabel::after{content:"";width:1px;height:70px;background:var(--rule-strong)}
+.vlabel .jp{text-orientation:upright;font-family:var(--font-serif);font-size:1rem;letter-spacing:.3em;color:var(--sumi);text-transform:none}
+.seal{display:inline-grid;place-items:center;width:26px;height:26px;background:var(--vermilion);color:var(--paper);font-family:var(--font-serif);font-size:.95rem;line-height:1;border-radius:3px;box-shadow:inset 0 0 0 1.5px rgba(245,241,232,.35)}
+.rule{height:1px;background:var(--rule);border:0;margin:0}
+
+section{position:relative;padding:clamp(100px,14vw,190px) 0}
+.sec-grid{display:grid;grid-template-columns:70px minmax(0,1fr);gap:clamp(20px,4vw,60px)}
+.sec-title{font-size:clamp(1.9rem,3.6vw,2.9rem);line-height:1.35;letter-spacing:.04em;max-width:16em}
+.sec-intro{max-width:34em;color:var(--ink-soft);margin-top:26px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:16px;padding:15px 30px;font-family:var(--font-sans);font-size:.78rem;font-weight:400;letter-spacing:.24em;text-transform:uppercase;border:1px solid var(--sumi);cursor:pointer;transition:background .6s var(--slow),color .6s var(--slow),gap .6s var(--slow),border-color .6s;background:transparent}
+.btn-ink{background:var(--sumi);color:var(--paper)}
+.btn-ink:hover{background:var(--matcha-deep);border-color:var(--matcha-deep);gap:24px}
+.btn-line{border-color:transparent;padding-left:0;padding-right:0;position:relative}
+.btn-line::after{content:"";position:absolute;left:0;right:0;bottom:8px;height:1px;background:var(--sumi);transform-origin:left;transition:transform .7s var(--slow)}
+.btn-line:hover::after{transform:scaleX(.35)}
+.btn .arrow{width:26px;height:1px;background:currentColor;position:relative}
+.btn .arrow::after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+
+/* header */
+.site-header{position:fixed;inset:0 0 auto;z-index:50;transition:background .8s,box-shadow .8s}
+.site-header.scrolled{background:rgba(245,241,232,.94);box-shadow:0 1px 0 var(--rule)}
+.hbar{display:flex;align-items:center;justify-content:space-between;gap:30px;max-width:1440px;margin:0 auto;padding:26px var(--gutter);transition:padding .8s var(--slow)}
+.scrolled .hbar{padding-top:16px;padding-bottom:16px}
+.logo{display:flex;align-items:center;gap:14px}
+.logo-text{font-family:var(--font-serif);font-size:1.3rem;letter-spacing:.18em;color:var(--sumi);line-height:1.1}
+.logo-text small{display:block;font-family:var(--font-sans);font-size:.56rem;letter-spacing:.42em;color:var(--ink-soft);margin-top:3px;text-transform:uppercase}
+.nav{display:flex;align-items:center;gap:clamp(18px,2.4vw,36px)}
+.nav a{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);position:relative;padding:4px 0;transition:color .5s}
+.nav a:not(.btn)::before{content:"";position:absolute;left:50%;top:-6px;width:4px;height:4px;border-radius:50%;background:var(--vermilion);transform:translateX(-50%) scale(0);transition:transform .5s var(--slow)}
+.nav a:not(.btn):hover{color:var(--sumi)}
+.nav a:not(.btn):hover::before{transform:translateX(-50%) scale(1)}
+.nav .btn{padding:11px 20px;font-size:.7rem;color:var(--paper)}
+.nav .btn:hover{color:var(--paper)}
+.burger{display:none;width:44px;height:44px;background:none;border:0;cursor:pointer;position:relative}
+.burger span{position:absolute;right:8px;height:1px;background:var(--sumi);transition:transform .5s,width .5s,opacity .5s}
+.burger span:nth-child(1){top:17px;width:28px}
+.burger span:nth-child(2){top:26px;width:18px}
+.menu-open .burger span:nth-child(1){transform:translateY(4.5px) rotate(30deg);width:24px}
+.menu-open .burger span:nth-child(2){transform:translateY(-4.5px) rotate(-30deg);width:24px}
+
+/* hero */
+.hero{min-height:min(100vh,960px);padding:clamp(130px,14vw,170px) 0 clamp(60px,8vw,100px);display:flex;align-items:center;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:60px minmax(0,5fr) minmax(0,6fr);gap:clamp(20px,4vw,60px);align-items:center;width:100%}
+.hero .vlabel{align-self:start;margin-top:10px}
+.hero h1{font-size:clamp(2.2rem,3.9vw,3.8rem);line-height:1.32;letter-spacing:.03em;font-weight:400}
+.hero h1 .soft{color:var(--matcha-deep)}
+.hero-lede{max-width:30em;margin:34px 0 44px;color:var(--ink-soft);font-size:1.02rem}
+.hero-ctas{display:flex;flex-wrap:wrap;align-items:center;gap:20px 36px}
+.hero-stats{display:flex;gap:clamp(24px,4vw,56px);margin-top:clamp(50px,7vw,84px);padding-top:26px;border-top:1px solid var(--rule);flex-wrap:wrap}
+.hero-stats div{min-width:0}
+.hero-stats strong{display:block;font-family:var(--font-serif);font-weight:400;font-size:clamp(1.7rem,2.6vw,2.2rem);color:var(--sumi);line-height:1.1}
+.hero-stats span{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
+.enso-wrap{position:relative;justify-self:end;width:min(100%,620px)}
+.enso{width:100%;height:auto;overflow:visible}
+.enso .brush{stroke-dasharray:1;stroke-dashoffset:1}
+.enso.drawn .brush{animation:draw 3.2s var(--slow) forwards}
+.enso.drawn .brush.b2{animation-delay:.25s;animation-duration:3s}
+.enso.drawn .brush.b3{animation-delay:.6s;animation-duration:2.8s}
+.enso .face{stroke-dasharray:1;stroke-dashoffset:1}
+.enso.drawn .face{animation:draw 4s var(--slow) 1.6s forwards}
+.enso .hanko{opacity:0;transform-origin:center;transform-box:fill-box}
+.enso.drawn .hanko{animation:stamp .9s var(--slow) 4.6s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes stamp{0%{opacity:0;transform:scale(1.4)}60%{opacity:1;transform:scale(.96)}100%{opacity:1;transform:scale(1)}}
+.enso-caption{position:absolute;right:0;bottom:-6px;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-faint)}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(40px,8vw,120px);align-items:start;margin-top:clamp(50px,7vw,90px)}
+.portrait{position:relative;margin:0}
+.portrait svg{width:100%;height:auto;background:var(--paper-2)}
+.portrait figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:16px;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
+.about-body{padding-top:clamp(0px,4vw,60px)}
+.about-body .lead{font-family:var(--font-serif);font-size:clamp(1.25rem,2vw,1.55rem);line-height:1.75;color:var(--sumi);margin-bottom:30px}
+.about-body p{color:var(--ink-soft)}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px;margin:40px 0 0;padding:0;list-style:none}
+.facts li{padding:18px 0;border-top:1px solid var(--rule);font-size:.92rem;line-height:1.7;color:var(--ink)}
+.facts li b{display:block;font-weight:400;font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;color:var(--matcha-deep);margin-bottom:6px}
+.quote-line{display:flex;gap:22px;align-items:flex-start;margin-top:46px}
+.quote-line p{font-family:var(--font-serif);font-size:1.15rem;line-height:1.8;color:var(--sumi);margin:0}
+.quote-line .seal{flex:none;margin-top:6px}
+
+/* services */
+.services{background:var(--paper-2)}
+.svc-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,7vw,110px);margin-top:clamp(60px,8vw,100px)}
+.svc-col-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding-bottom:20px;border-bottom:1px solid var(--rule-strong)}
+.svc-col-head h3{font-size:1.45rem;letter-spacing:.06em}
+.svc-col-head span{font-family:var(--font-serif);font-size:1.1rem;color:var(--ink-faint)}
+.svc-list{list-style:none;margin:0;padding:0}
+.svc-item{display:grid;grid-template-columns:44px minmax(0,1fr);gap:22px;padding:28px 0;border-bottom:1px solid var(--rule);transition:padding .7s var(--slow)}
+.svc-item svg{width:44px;height:44px;color:var(--sumi);transition:color .7s}
+.svc-item h4{font-size:1.12rem;letter-spacing:.04em;margin-bottom:6px}
+.svc-item p{margin:0;font-size:.92rem;line-height:1.8;color:var(--ink-soft)}
+.svc-item:hover{padding-left:12px}
+.svc-item:hover svg{color:var(--matcha-deep)}
+.svc-col.aesthetic{margin-top:clamp(0px,9vw,140px)}
+
+/* journey */
+.journey-track{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:clamp(60px,8vw,100px);border-top:1px solid var(--rule-strong)}
+.jstep{position:relative;padding:40px clamp(16px,2.4vw,34px) 10px 0}
+.jstep + .jstep{padding-left:clamp(16px,2.4vw,34px);border-left:1px solid var(--rule)}
+.jstep::before{content:"";position:absolute;top:-4px;left:0;width:7px;height:7px;border-radius:50%;background:var(--sumi)}
+.jstep + .jstep::before{left:-4px}
+.jstep:last-child::before{background:var(--vermilion)}
+.jnum{font-family:var(--font-serif);font-size:3rem;line-height:1;color:var(--matcha);display:block;margin-bottom:22px}
+.jstep h3{font-size:1.18rem;letter-spacing:.04em;margin-bottom:12px;line-height:1.5}
+.jstep p{font-size:.92rem;color:var(--ink-soft);margin:0}
+.jstep:nth-child(2){margin-top:40px}.jstep:nth-child(3){margin-top:80px}.jstep:nth-child(4){margin-top:120px}
+
+/* results */
+.results{background:var(--sumi);color:var(--paper-2)}
+.results h2,.results h3{color:var(--paper)}
+.results .vlabel{color:var(--ink-faint)}
+.results .vlabel .jp{color:var(--paper)}
+.results .vlabel::after{background:rgba(245,241,232,.3)}
+.results .sec-intro{color:var(--ink-faint)}
+.res-panel{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:clamp(40px,7vw,100px);align-items:center;margin-top:clamp(60px,8vw,100px)}
+.res-panel svg{width:100%;height:auto}
+.res-nums{list-style:none;margin:0;padding:0}
+.res-nums li{padding:26px 0;border-top:1px solid rgba(245,241,232,.16)}
+.res-nums li:last-child{border-bottom:1px solid rgba(245,241,232,.16)}
+.res-nums strong{display:block;font-family:var(--font-serif);font-weight:400;font-size:clamp(2.4rem,4vw,3.2rem);line-height:1.1;color:var(--paper)}
+.res-nums span{font-size:.88rem;color:var(--ink-faint)}
+.res-note{margin-top:22px;font-size:.74rem;color:var(--ink-faint);letter-spacing:.04em}
+
+/* prices */
+.price-wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(40px,8vw,120px);margin-top:clamp(50px,7vw,90px);align-items:start}
+.price-aside p{color:var(--ink-soft);font-size:.94rem}
+.price-aside .stone{width:160px;height:auto;margin:30px 0 10px}
+.price-table{width:100%;border-collapse:collapse}
+.price-table tr{border-bottom:1px solid var(--rule);transition:background .6s}
+.price-table tr:first-child{border-top:1px solid var(--rule-strong)}
+.price-table tr:hover{background:rgba(127,145,101,.08)}
+.price-table td{padding:24px 0;vertical-align:baseline}
+.price-table .pname{font-family:var(--font-serif);font-size:1.15rem;color:var(--sumi)}
+.price-table .pname small{display:block;font-family:var(--font-sans);font-size:.78rem;color:var(--ink-faint);letter-spacing:.06em;margin-top:2px}
+.price-table .pfrom{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-faint);text-align:right;padding-right:16px;width:80px}
+.price-table .pval{font-family:var(--font-serif);font-size:1.35rem;color:var(--sumi);text-align:right;width:90px;white-space:nowrap}
+
+/* reviews */
+.reviews{background:var(--paper-2)}
+.rev-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(24px,3vw,40px);margin-top:clamp(60px,8vw,100px)}
+.rev{margin:0;padding-top:34px;border-top:1px solid var(--rule-strong);position:relative}
+.rev::before{content:"";position:absolute;top:-1px;left:0;width:44px;height:1px;background:var(--vermilion)}
+.rev:nth-child(1){grid-column:1/6}
+.rev:nth-child(2){grid-column:7/12;margin-top:120px}
+.rev:nth-child(3){grid-column:3/8;margin-top:20px}
+.rev blockquote{margin:0 0 24px;font-family:var(--font-serif);font-size:clamp(1.1rem,1.6vw,1.3rem);line-height:1.85;color:var(--sumi)}
+.rev figcaption{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
+.rev .dots{display:flex;gap:6px}
+.rev .dots i{width:5px;height:5px;border-radius:50%;background:var(--matcha-deep)}
+.rev-aside{grid-column:9/13;align-self:end;font-family:var(--font-serif);font-size:1rem;color:var(--ink-soft)}
+.rev-aside strong{display:block;font-weight:400;font-size:3.6rem;line-height:1;color:var(--sumi)}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(40px,8vw,120px);margin-top:clamp(50px,7vw,90px)}
+.faq-item{border-bottom:1px solid var(--rule)}
+.faq-item:first-child{border-top:1px solid var(--rule-strong)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px 0;background:none;border:0;cursor:pointer;text-align:left;font-family:var(--font-serif);font-size:1.12rem;color:var(--sumi);transition:color .5s}
+.faq-q:hover{color:var(--matcha-deep)}
+.faq-q .pm{flex:none;position:relative;width:16px;height:16px}
+.faq-q .pm::before,.faq-q .pm::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:currentColor;transition:transform .7s var(--slow)}
+.faq-q .pm::after{transform:rotate(90deg)}
+.faq-item.open .pm::after{transform:rotate(0)}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .8s var(--slow)}
+.faq-a>div{overflow:hidden}
+.faq-a p{margin:0;padding:0 40px 28px 0;color:var(--ink-soft);font-size:.95rem}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(40px,8vw,120px);margin-top:clamp(50px,7vw,90px)}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 40px}
+.field{position:relative;display:flex;flex-direction:column}
+.field.full{grid-column:1/-1}
+.field label{font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;padding:10px 0 12px;border:0;border-bottom:1px solid var(--rule-strong);background:transparent;border-radius:0;font-size:1rem;font-weight:300;transition:border-color .6s}
+.field select{appearance:none;cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,var(--sumi) 50%),linear-gradient(135deg,var(--sumi) 50%,transparent 50%);background-position:calc(100% - 10px) 55%,calc(100% - 5px) 55%;background-size:5px 5px;background-repeat:no-repeat}
+.field textarea{min-height:90px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-bottom-color:var(--matcha-deep)}
+.field::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--vermilion);transform:scaleX(0);transform-origin:left;transition:transform .8s var(--slow)}
+.field:focus-within::after{transform:scaleX(1)}
+.form-foot{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px}
+.form-foot small{font-size:.78rem;color:var(--ink-faint)}
+.form-ok{display:none;margin-top:26px;padding:18px 0;border-top:1px solid var(--matcha);color:var(--matcha-deep);font-family:var(--font-serif)}
+.form-ok.show{display:block}
+.cinfo{display:flex;flex-direction:column;gap:30px}
+.cinfo h4{font-family:var(--font-sans);font-weight:400;font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px}
+.cinfo p,.cinfo a{font-family:var(--font-serif);font-size:1.08rem;color:var(--sumi);margin:0;line-height:1.7}
+.cinfo a{background:linear-gradient(var(--matcha),var(--matcha)) 0 100%/0 1px no-repeat;transition:background-size .7s var(--slow)}
+.cinfo a:hover{background-size:100% 1px}
+.hours{list-style:none;margin:0;padding:0;font-size:.9rem}
+.hours li{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--rule)}
+.hours li span:last-child{color:var(--ink-soft)}
+.map svg{width:100%;height:auto;background:var(--paper-2)}
+
+/* footer */
+.site-footer{padding:clamp(80px,10vw,130px) 0 60px;border-top:1px solid var(--rule)}
+.foot-grid{display:grid;grid-template-columns:minmax(0,5fr) repeat(3,minmax(0,2fr));gap:40px}
+.foot-mark{display:flex;align-items:center;gap:22px}
+.foot-mark svg{width:84px;height:84px}
+.foot-mark p{font-family:var(--font-serif);font-size:1.1rem;line-height:1.6;margin:0;color:var(--sumi)}
+.foot-col h4{font-family:var(--font-sans);font-size:.62rem;font-weight:400;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px}
+.foot-col a,.foot-col p{display:block;font-size:.86rem;color:var(--ink-soft);margin:0 0 6px}
+.foot-col a:hover{color:var(--sumi)}
+.foot-legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:70px;padding-top:24px;border-top:1px solid var(--rule);font-size:.72rem;letter-spacing:.12em;color:var(--ink-faint)}
+
+/* badge */
+.concept-badge{position:fixed;left:14px;bottom:14px;z-index:90;display:flex;align-items:center;gap:8px;padding:6px 12px 6px 6px;background:rgba(245,241,232,.92);border:1px solid var(--rule-strong);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);pointer-events:none}
+.concept-badge i{width:12px;height:12px;background:var(--vermilion);border-radius:2px}
+
+/* reveal: slow fade */
+.js .reveal{opacity:0;transform:translateY(14px);transition:opacity 1.8s var(--slow),transform 1.8s var(--slow)}
+.js .reveal.in{opacity:1;transform:none}
+.js .reveal.d1{transition-delay:.2s}.js .reveal.d2{transition-delay:.4s}.js .reveal.d3{transition-delay:.6s}
+
+/* responsive */
+@media (max-width:1060px){
+  .nav{gap:18px}
+  .nav a{font-size:.66rem;letter-spacing:.14em}
+}
+@media (max-width:920px){
+  .burger{display:block}
+  .nav{position:fixed;inset:0;z-index:-1;flex-direction:column;justify-content:center;align-items:flex-start;gap:22px;padding:0 var(--gutter);background:var(--paper);opacity:0;visibility:hidden;transition:opacity .7s,visibility .7s}
+  .nav a{font-family:var(--font-serif);font-size:1.6rem;letter-spacing:.06em;text-transform:none}
+  .nav a:not(.btn)::before{left:-14px;top:50%;transform:translateY(-50%) scale(0)}
+  .nav a:not(.btn):hover::before{transform:translateY(-50%) scale(1)}
+  .nav .btn{font-family:var(--font-sans);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;margin-top:14px;padding:14px 24px}
+  .menu-open .nav{opacity:1;visibility:visible}
+  .hero{min-height:0}
+  .hero-grid{grid-template-columns:1fr}
+  .hero .vlabel{display:none}
+  .enso-wrap{order:-1;justify-self:center;width:min(86%,440px);margin-bottom:10px}
+  .sec-grid{grid-template-columns:34px minmax(0,1fr);gap:18px}
+  .vlabel::after{height:40px}
+  .about-grid,.svc-cols,.res-panel,.price-wrap,.faq-grid,.contact-grid{grid-template-columns:1fr}
+  .svc-col.aesthetic{margin-top:0}
+  .portrait{max-width:420px}
+  .journey-track{grid-template-columns:1fr 1fr;border-top:0}
+  .jstep,.jstep + .jstep{margin-top:0!important;padding:30px 18px 30px 0;border-left:0;border-top:1px solid var(--rule-strong)}
+  .jstep::before,.jstep + .jstep::before{left:0}
+  .rev-grid{grid-template-columns:1fr;gap:50px}
+  .rev:nth-child(n),.rev-aside{grid-column:auto;margin-top:0}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .foot-mark{grid-column:1/-1}
+}
+@media (max-width:560px){
+  body{font-size:15px}
+  .sec-grid{grid-template-columns:1fr}
+  .sec-grid > .vlabel{writing-mode:horizontal-tb;flex-direction:row}
+  .sec-grid > .vlabel::after{width:40px;height:1px}
+  .journey-track{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .hero-stats{gap:22px 30px}
+  .price-table .pfrom{width:auto;padding-right:8px}
+  .foot-grid{grid-template-columns:1fr}
+  .logo-text{font-size:1.1rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1;transform:none}
+  .enso .brush,.enso .face{stroke-dashoffset:0}
+  .enso .hanko{opacity:1}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="dry" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="soft-edge"><feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves="1" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.6"/></filter>
+  </defs>
+</svg>
+
+<header class="site-header" id="top">
+  <div class="hbar">
+    <a href="#top" class="logo" aria-label="Lumière Skin Clinic, home">
+      <span class="seal" aria-hidden="true">肌</span>
+      <span class="logo-text">Lumière<small>Skin Clinic</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#results">Results</a>
+      <a href="#prices">Prices</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn btn-ink">Book a consultation</a>
+    </nav>
+    <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap" style="max-width:1440px;width:100%">
+    <div class="hero-grid">
+      <div class="vlabel reveal"><span class="jp">調和</span>Skin in balance</div>
+      <div>
+        <p class="label reveal">Dermatology &amp; aesthetic medicine · Copenhagen</p>
+        <h1 id="hero-title" class="reveal d1">Healthy skin is<br>quiet <span class="soft">beauty</span>,<br>grounded in science.</h1>
+        <p class="hero-lede reveal d2">Dr. Elena Marin, MD, brings board-certified dermatology and a restrained aesthetic hand together — so your skin is treated precisely, and your face remains entirely your own.</p>
+        <div class="hero-ctas reveal d3">
+          <a href="#contact" class="btn btn-ink">Book a consultation <span class="arrow"></span></a>
+          <a href="#services" class="btn btn-line">Explore treatments</a>
+        </div>
+        <div class="hero-stats reveal d3">
+          <div><strong>12+</strong><span>Years of practice</span></div>
+          <div><strong>8,000+</strong><span>Patients</span></div>
+          <div><strong>4.9 / 5</strong><span>Patient rating</span></div>
+        </div>
+      </div>
+      <div class="enso-wrap">
+        <svg class="enso" viewBox="0 0 520 520" role="img" aria-label="Ink-brush enso circle framing a single-line face profile">
+          <defs>
+            <radialGradient id="wash" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#d7dcc4" stop-opacity=".8"/><stop offset=".7" stop-color="#d7dcc4" stop-opacity=".25"/><stop offset="1" stop-color="#d7dcc4" stop-opacity="0"/></radialGradient>
+          </defs>
+          <circle cx="300" cy="238" r="150" fill="url(#wash)"/>
+          <!-- enso brush layers -->
+          <g filter="url(#dry)" fill="none" stroke-linecap="round">
+            <path class="brush" pathLength="1" d="M78 328 A196 196 0 1 1 146 422" stroke="#1d1c1a" stroke-width="24" opacity=".92"/>
+            <path class="brush b2" pathLength="1" d="M84 300 A190 190 0 0 1 330 92" stroke="#1d1c1a" stroke-width="12" opacity=".85" transform="translate(-4 6)"/>
+            <path class="brush b3" pathLength="1" d="M70 340 A200 200 0 1 1 150 430" stroke="#1d1c1a" stroke-width="3" opacity=".45" stroke-dasharray="1" />
+            <path class="brush b3" pathLength="1" d="M90 318 A182 182 0 1 1 156 410" stroke="#1d1c1a" stroke-width="2" opacity=".35"/>
+          </g>
+          <!-- face: single continuous line -->
+          <g fill="none" stroke="#1d1c1a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path class="face" pathLength="1" d="M330 120 C290 100 246 112 232 152 C226 170 228 186 226 200 C224 212 216 222 208 236 C204 243 206 248 213 249 L222 251 C220 257 221 261 224 263 C218 266 218 271 224 274 C220 280 221 287 227 290 C225 300 228 309 237 314 C250 321 266 318 276 309 M262 318 C264 342 262 364 254 390"/>
+            <path class="face" pathLength="1" d="M330 120 C360 140 368 190 350 232 C338 260 334 290 342 330 C346 352 356 372 372 388"/>
+            <path class="face" pathLength="1" d="M237 198 C243 203 250 203 256 198"/>
+            <path class="face" pathLength="1" d="M342 330 C330 334 318 330 310 322" opacity=".6"/>
+          </g>
+          <!-- matcha sprig -->
+          <g fill="none" stroke="#5d6d48" stroke-width="1.2" stroke-linecap="round" transform="translate(28 6)">
+            <path class="face" pathLength="1" d="M396 420 C410 388 428 366 452 350"/>
+            <path class="face" pathLength="1" d="M412 392 C404 378 406 364 418 356 C424 370 422 382 412 392 Z"/>
+            <path class="face" pathLength="1" d="M428 372 C432 356 444 348 458 350 C454 364 444 372 428 372 Z"/>
+          </g>
+          <!-- hanko seal -->
+          <g class="hanko" filter="url(#soft-edge)">
+            <rect x="420" y="438" width="44" height="44" rx="4" fill="#c4442c"/>
+            <rect x="424" y="442" width="36" height="36" rx="2" fill="none" stroke="#f5f1e8" stroke-width="1.2" opacity=".8"/>
+            <text x="442" y="468" text-anchor="middle" font-family="Shippori Mincho, 'Hiragino Mincho ProN', 'Yu Mincho', serif" font-size="22" fill="#f5f1e8">肌</text>
+          </g>
+        </svg>
+        <span class="enso-caption">円相 · Ensō — completeness</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" aria-labelledby="about-title">
+  <div class="wrap sec-grid">
+    <div class="vlabel reveal"><span class="jp">一</span>The doctor</div>
+    <div>
+      <h2 id="about-title" class="sec-title reveal">Dr. Elena Marin, MD — dermatologist &amp; cosmetologist</h2>
+      <div class="about-grid">
+        <figure class="portrait reveal">
+          <svg viewBox="0 0 400 500" role="img" aria-label="Minimal ink portrait of Dr. Elena Marin">
+            <circle cx="236" cy="190" r="128" fill="#d7dcc4" opacity=".7"/>
+            <g fill="none" stroke="#1d1c1a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <!-- hair outline -->
+              <path d="M146 190 C138 120 172 80 214 80 C258 80 290 118 284 186 C282 214 290 236 302 250"/>
+              <path d="M146 190 C144 220 136 240 124 254"/>
+              <!-- face -->
+              <path d="M160 168 C160 220 182 258 214 262 C246 258 268 220 268 168"/>
+              <path d="M160 168 C176 150 200 122 236 116 C252 130 262 148 268 168"/>
+              <!-- features -->
+              <path d="M180 186 C186 190 194 190 200 186 M228 186 C234 190 242 190 248 186"/>
+              <path d="M214 196 L210 218 C213 221 217 221 220 219"/>
+              <path d="M202 236 C210 240 218 240 226 236"/>
+              <!-- neck & coat -->
+              <path d="M196 262 L196 290 M232 262 L232 290"/>
+              <path d="M60 500 C70 380 120 320 190 296 L214 360 L238 296 C308 320 358 380 368 500"/>
+              <path d="M190 296 L176 350 L210 400 M238 296 L252 350 L218 400"/>
+              <!-- stethoscope -->
+              <path d="M178 310 C160 370 186 420 214 424 C242 420 268 370 250 310" stroke="#5d6d48"/>
+              <circle cx="214" cy="434" r="9" stroke="#5d6d48"/>
+            </g>
+            <rect x="290" y="372" width="30" height="30" rx="3" fill="#c4442c"/>
+            <text x="305" y="393" text-anchor="middle" font-family="Shippori Mincho, serif" font-size="15" fill="#f5f1e8">医</text>
+          </svg>
+          <figcaption><span>Dr. Elena Marin</span><span>Est. Copenhagen</span></figcaption>
+        </figure>
+        <div class="about-body reveal d1">
+          <p class="lead">For twelve years Dr. Marin has practised a simple discipline: look closely, understand fully, and do only what the skin truly needs.</p>
+          <p>Trained in medical dermatology before specialising in aesthetics, she treats the full spectrum — from chronic acne, rosacea and eczema to the subtle work of softening lines and restoring radiance. Every plan is built on clinical evidence and a careful reading of your skin, your history and your intentions.</p>
+          <ul class="facts">
+            <li><b>Education</b>MD, University of Copenhagen; specialist training in Dermatology &amp; Venereology</li>
+            <li><b>Certification</b>Board-certified dermatologist</li>
+            <li><b>Membership</b>European Academy of Dermatology and Venereology (EADV)</li>
+            <li><b>Further study</b>Aesthetic medicine, lasers and advanced injectables — Paris &amp; Milan</li>
+          </ul>
+          <div class="quote-line">
+            <span class="seal" aria-hidden="true">和</span>
+            <p>“Natural results come from restraint. The best treatment is often the smallest one that works.”</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services" aria-labelledby="svc-title">
+  <div class="wrap sec-grid">
+    <div class="vlabel reveal"><span class="jp">二</span>Treatments</div>
+    <div>
+      <h2 id="svc-title" class="sec-title reveal">Two practices, one principle: care that is precise and unhurried.</h2>
+      <p class="sec-intro reveal d1">Medical dermatology restores the health of the skin. Aesthetic cosmetology refines how it looks and feels. Most patients benefit from a thoughtful blend of both.</p>
+      <div class="svc-cols">
+        <div class="svc-col">
+          <div class="svc-col-head reveal"><h3>Medical Dermatology</h3><span>医療</span></div>
+          <ul class="svc-list">
+            <li class="svc-item reveal">
+              <svg viewBox="0 0 44 44" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="22" cy="22" r="17"/><circle cx="17" cy="18" r="1.6" fill="currentColor" stroke="none"/><circle cx="26" cy="21" r="1.1" fill="currentColor" stroke="none"/><circle cx="20" cy="27" r="1.3" fill="currentColor" stroke="none"/></svg>
+              <div><h4>Acne &amp; rosacea</h4><p>Prescription-led protocols that calm inflammation, clear congestion and prevent scarring.</p></div>
+            </li>
+            <li class="svc-item reveal">
+              <svg viewBox="0 0 44 44" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="19" cy="19" r="12"/><circle cx="19" cy="19" r="3" fill="currentColor" stroke="none"/><path d="M28 28 L39 39"/></svg>
+              <div><h4>Mole check &amp; dermatoscopy</h4><p>Magnified, systematic examination and digital mapping for early, reassuring detection.</p></div>
+            </li>
+            <li class="svc-item reveal">
+              <svg viewBox="0 0 44 44" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M5 16 C12 12 16 20 22 16 S32 12 39 16"/><path d="M5 23 C12 19 16 27 22 23 S32 19 39 23"/><path d="M5 30 C12 26 16 34 22 30 S32 26 39 30"/></svg>
+              <div><h4>Eczema &amp; psoriasis</h4><p>Long-term control with barrier repair, modern topicals and, where needed, systemic therapy.</p></div>
+            </li>
+            <li class="svc-item reveal">
+              <svg viewBox="0 0 44 44" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M12 38 C14 26 16 16 14 6 M20 38 C22 26 24 16 22 6 M28 38 C30 26 32 16 30 6"/><path d="M6 38 H38"/></svg>
+              <div><h4>Hair &amp; scalp conditions</h4><p>Trichoscopy-guided diagnosis of hair loss and scalp disorders, with a clear way forward.</p></div>
+            </li>
+          </ul>
+        </div>
+        <div class="svc-col aesthetic">
+          <div class="svc-col-head reveal"><h3>Aesthetic Cosmetology</h3><span>美容</span></div>
+          <ul class="svc-list">
+            <li class="svc-item reveal">
+              <svg viewBox="0 0 44 44" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M8 36 L24 20"/><path d="M22 14 L30 22 L36 16 L28 8 Z"/><path d="M32 6 L38 12"/></svg>
+              <div><h4>Botulinum toxin</h4><p>Micro-dosed precision that softens expression lines while keeping every expression yours.</p></div>
+            </li>
+            <li class="svc-item reveal">
+              <svg viewBox="0 0 44 44" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M22 5 C29 16 34 22 34 29 A12 12 0 0 1 10 29 C10 22 15 16 22 5 Z"/><path d="M16 30 A6 6 0 0 0 22 36"/></svg>
+              <div><h4>Dermal fillers</h4><p>Hyaluronic acid to restore volume, refine contours and hydrate lips — always in proportion.</p></div>
+            </li>
+            <li class="svc-item reveal">
+              <svg viewBox="0 0 44 44" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M6 14 H38 M8 22 H36 M10 30 H34"/><path d="M38 14 C42 10 40 6 36 6"/></svg>
+              <div><h4>Chemical peels</h4><p>Gentle to medium-depth peels for pigmentation, texture, fine lines and lasting clarity.</p></div>
+            </li>
+            <li class="svc-item reveal">
+              <svg viewBox="0 0 44 44" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="22" cy="22" r="5"/><path d="M22 4 V11 M22 33 V40 M4 22 H11 M33 22 H40"/><path d="M9 9 L13 13 M31 31 L35 35 M35 9 L31 13 M13 31 L9 35" opacity=".5"/></svg>
+              <div><h4>Laser resurfacing &amp; IPL</h4><p>Light-based renewal for sun damage, redness and scars, revealing an even, luminous tone.</p></div>
+            </li>
+            <li class="svc-item reveal">
+              <svg viewBox="0 0 44 44" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.1"><rect x="16" y="6" width="12" height="32" rx="1"/><path d="M16 24 H28"/><path d="M14 6 H30"/></svg>
+              <div><h4>PRP / mesotherapy</h4><p>Your own growth factors and tailored micro-infusions to revitalise skin and support hair.</p></div>
+            </li>
+            <li class="svc-item reveal">
+              <svg viewBox="0 0 44 44" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M18 4 H26 V10 H18 Z"/><path d="M14 14 H30 V36 A2 2 0 0 1 28 38 H16 A2 2 0 0 1 14 36 Z"/><path d="M14 24 H30"/><path d="M20 10 V14 M24 10 V14"/></svg>
+              <div><h4>Facials &amp; skincare plans</h4><p>Medical-grade facials and a considered home ritual, so progress continues between visits.</p></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey" aria-labelledby="journey-title">
+  <div class="wrap sec-grid">
+    <div class="vlabel reveal"><span class="jp">三</span>Your journey</div>
+    <div>
+      <h2 id="journey-title" class="sec-title reveal">Four quiet steps, one doctor throughout.</h2>
+      <ol class="journey-track" style="list-style:none;padding:0">
+        <li class="jstep reveal"><span class="jnum">一</span><h3>Consultation &amp; skin analysis</h3><p>A full medical history, dermatoscopic examination and an honest conversation about your goals.</p></li>
+        <li class="jstep reveal d1"><span class="jnum">二</span><h3>Personal treatment plan</h3><p>Clear options, realistic timelines and transparent pricing — written down, never rushed.</p></li>
+        <li class="jstep reveal d2"><span class="jnum">三</span><h3>Treatment</h3><p>Performed personally by Dr. Marin, with certified products and medical-grade devices.</p></li>
+        <li class="jstep reveal d3"><span class="jnum">四</span><h3>Aftercare &amp; follow-up</h3><p>Guidance for home, a direct line for questions, and a scheduled review of your progress.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section id="results" class="results" aria-labelledby="results-title">
+  <div class="wrap sec-grid">
+    <div class="vlabel reveal"><span class="jp">四</span>Results</div>
+    <div>
+      <h2 id="results-title" class="sec-title reveal">Change you feel before others notice it.</h2>
+      <p class="sec-intro reveal d1">Calmer tone, refined texture, a rested expression. We measure progress carefully and photograph it consistently, so improvement is never a matter of guesswork.</p>
+      <div class="res-panel">
+        <svg class="reveal" viewBox="0 0 640 360" role="img" aria-label="Abstract before and after: an uneven, speckled skin texture beside a smooth, even one">
+          <defs>
+            <clipPath id="c-before"><circle cx="170" cy="170" r="130"/></clipPath>
+            <clipPath id="c-after"><circle cx="470" cy="170" r="130"/></clipPath>
+            <radialGradient id="after-g" cx=".42" cy=".38" r=".7"><stop offset="0" stop-color="#eef0e2"/><stop offset=".6" stop-color="#cdd4b6"/><stop offset="1" stop-color="#97a57c"/></radialGradient>
+            <radialGradient id="before-g" cx=".5" cy=".5" r=".7"><stop offset="0" stop-color="#b9ad97"/><stop offset="1" stop-color="#857a66"/></radialGradient>
+          </defs>
+          <g clip-path="url(#c-before)">
+            <rect x="40" y="40" width="260" height="260" fill="url(#before-g)"/>
+            <g fill="#6e3a2c" opacity=".45">
+              <circle cx="120" cy="120" r="7"/><circle cx="150" cy="150" r="4"/><circle cx="200" cy="110" r="5"/><circle cx="210" cy="190" r="8"/><circle cx="130" cy="210" r="5"/><circle cx="170" cy="240" r="3.5"/><circle cx="240" cy="150" r="4"/><circle cx="100" cy="170" r="3"/><circle cx="180" cy="80" r="3"/><circle cx="230" cy="240" r="5"/>
+            </g>
+            <g fill="none" stroke="#3b3328" stroke-width="1" opacity=".35">
+              <path d="M60 140 C100 132 130 150 170 140 S240 128 290 142"/><path d="M60 200 C110 190 140 210 180 198 S250 186 290 200"/><path d="M70 250 C110 242 150 258 190 248 S260 236 290 250"/>
+            </g>
+          </g>
+          <circle cx="170" cy="170" r="130" fill="none" stroke="#f5f1e8" stroke-width="1" opacity=".5"/>
+          <g clip-path="url(#c-after)">
+            <rect x="340" y="40" width="260" height="260" fill="url(#after-g)"/>
+            <path d="M360 140 C400 136 430 144 470 140 S540 134 590 140" fill="none" stroke="#5d6d48" stroke-width="1" opacity=".25"/>
+            <ellipse cx="430" cy="120" rx="50" ry="26" fill="#ffffff" opacity=".35"/>
+          </g>
+          <circle cx="470" cy="170" r="130" fill="none" stroke="#f5f1e8" stroke-width="1" opacity=".5"/>
+          <path d="M300 170 H340" stroke="#f5f1e8" stroke-width="1" opacity=".5"/>
+          <circle cx="320" cy="170" r="3" fill="#c4442c"/>
+          <g font-family="Zen Kaku Gothic New, Helvetica, sans-serif" font-size="11" letter-spacing="4" fill="#a29d91" text-anchor="middle">
+            <text x="170" y="336">BEFORE</text><text x="470" y="336">AFTER · 12 WEEKS</text>
+          </g>
+        </svg>
+        <ul class="res-nums">
+          <li class="reveal"><strong>94%</strong><span>of patients see visible improvement within three sessions</span></li>
+          <li class="reveal d1"><strong>−63%</strong><span>average reduction in acne lesions after 12 weeks</span></li>
+          <li class="reveal d2"><strong>9 in 10</strong><span>return for maintenance or refer a friend</span></li>
+          <li style="border:0;padding:0"><p class="res-note">Abstract illustration. Figures from internal patient follow-up 2023–2024; individual results vary.</p></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICES -->
+<section id="prices" aria-labelledby="prices-title">
+  <div class="wrap sec-grid">
+    <div class="vlabel reveal"><span class="jp">五</span>Prices</div>
+    <div>
+      <h2 id="prices-title" class="sec-title reveal">Transparent, from the first visit.</h2>
+      <div class="price-wrap">
+        <div class="price-aside reveal">
+          <p>Every treatment begins with a consultation. Its fee is deducted from your first treatment, and you will always receive a written quote before we proceed.</p>
+          <svg class="stone" viewBox="0 0 160 90" aria-hidden="true">
+            <ellipse cx="80" cy="74" rx="70" ry="8" fill="#1d1c1a" opacity=".08"/>
+            <path d="M28 70 C20 52 40 34 70 34 C102 34 132 44 132 62 C132 74 104 76 78 76 C54 76 34 78 28 70 Z" fill="#e3dccb" stroke="#1d1c1a" stroke-width="1"/>
+            <path d="M58 34 C50 22 64 10 82 12 C100 14 108 26 98 36" fill="#ece6d9" stroke="#1d1c1a" stroke-width="1"/>
+            <path d="M120 36 C126 26 136 22 148 22" fill="none" stroke="#5d6d48" stroke-width="1.1"/>
+            <path d="M136 26 C132 18 136 10 144 8 C146 16 142 22 136 26 Z" fill="none" stroke="#5d6d48" stroke-width="1.1"/>
+          </svg>
+          <a href="#contact" class="btn btn-line">Request a quote</a>
+        </div>
+        <table class="price-table reveal d1">
+          <caption class="label" style="text-align:left;caption-side:top;padding-bottom:16px">Price list · EUR</caption>
+          <tbody>
+            <tr><td class="pname">Consultation<small>Skin analysis and personal plan</small></td><td class="pfrom"></td><td class="pval">€80</td></tr>
+            <tr><td class="pname">Dermatoscopy mole check<small>Full-body examination with mapping</small></td><td class="pfrom"></td><td class="pval">€120</td></tr>
+            <tr><td class="pname">Chemical peel<small>Superficial to medium depth</small></td><td class="pfrom">from</td><td class="pval">€150</td></tr>
+            <tr><td class="pname">PRP therapy<small>Skin or scalp</small></td><td class="pfrom">from</td><td class="pval">€220</td></tr>
+            <tr><td class="pname">Botulinum toxin<small>One to three areas</small></td><td class="pfrom">from</td><td class="pval">€250</td></tr>
+            <tr><td class="pname">Hyaluronic filler<small>Lips, cheeks, contours</small></td><td class="pfrom">from</td><td class="pval">€350</td></tr>
+            <tr><td class="pname">Laser resurfacing<small>Fractional laser and IPL</small></td><td class="pfrom">from</td><td class="pval">€400</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="reviews" aria-labelledby="reviews-title">
+  <div class="wrap sec-grid">
+    <div class="vlabel reveal"><span class="jp">六</span>Reviews</div>
+    <div>
+      <h2 id="reviews-title" class="sec-title reveal">In patients’ own words.</h2>
+      <div class="rev-grid">
+        <figure class="rev reveal">
+          <blockquote>“After years of guessing at my rosacea, Dr. Marin explained exactly what was happening. Six months later my skin is calm, and I barely think about it.”</blockquote>
+          <figcaption><span>Sofie L. — Rosacea</span><span class="dots" aria-label="5 out of 5"><i></i><i></i><i></i><i></i><i></i></span></figcaption>
+        </figure>
+        <figure class="rev reveal d1">
+          <blockquote>“I worried Botox would make me look frozen. Instead I look rested — people asked if I had been travelling. Precise, honest, and wonderfully calm.”</blockquote>
+          <figcaption><span>Camille R. — Botulinum toxin</span><span class="dots" aria-label="5 out of 5"><i></i><i></i><i></i><i></i><i></i></span></figcaption>
+        </figure>
+        <figure class="rev reveal d2">
+          <blockquote>“The mole check was meticulous: every spot mapped and explained. I left reassured, with a clear plan. A doctor you keep for life.”</blockquote>
+          <figcaption><span>Mikkel J. — Dermatoscopy</span><span class="dots" aria-label="5 out of 5"><i></i><i></i><i></i><i></i><i></i></span></figcaption>
+        </figure>
+        <div class="rev-aside reveal d3"><strong>4.9</strong>average rating from more than 600 verified patient reviews.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" aria-labelledby="faq-title">
+  <div class="wrap sec-grid">
+    <div class="vlabel reveal"><span class="jp">七</span>Questions</div>
+    <div>
+      <div class="faq-grid">
+        <div class="reveal">
+          <h2 id="faq-title" class="sec-title">Before you visit.</h2>
+          <p class="sec-intro">Can’t find your answer? Write to <a href="mailto:hello@lumiere-clinic.dk" style="border-bottom:1px solid var(--matcha)">hello@lumiere-clinic.dk</a> and we will reply within a day.</p>
+        </div>
+        <div class="faq-list reveal d1">
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Do I need a referral?<span class="pm" aria-hidden="true"></span></button>
+            <div class="faq-a"><div><p>No. You can book directly online or by phone. If you have earlier test results or a referral letter, bring them — they help us see the full picture.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Will aesthetic results look natural?<span class="pm" aria-hidden="true"></span></button>
+            <div class="faq-a"><div><p>That is the guiding principle. Dr. Marin works conservatively and often in stages. A complimentary review two weeks after injectables allows for fine adjustment.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">How much downtime should I expect?<span class="pm" aria-hidden="true"></span></button>
+            <div class="faq-a"><div><p>Most injectables and light peels allow you to return to work the same day. Laser resurfacing and deeper peels may involve three to seven days of redness or flaking. You will know the timeline in advance.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">How often should moles be checked?<span class="pm" aria-hidden="true"></span></button>
+            <div class="faq-a"><div><p>Once a year suits most adults. With many moles, fair skin or a family history of melanoma, we may recommend every six months with digital mapping.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">What is the cancellation policy?<span class="pm" aria-hidden="true"></span></button>
+            <div class="faq-a"><div><p>Please give 24 hours’ notice to reschedule or cancel. Late cancellations may be charged at 50% of the reserved treatment.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="services" aria-labelledby="contact-title">
+  <div class="wrap sec-grid">
+    <div class="vlabel reveal"><span class="jp">八</span>Contact</div>
+    <div>
+      <h2 id="contact-title" class="sec-title reveal">Book a consultation.</h2>
+      <p class="sec-intro reveal d1">Share a few words about your skin. We reply within one working day to confirm a time that suits you.</p>
+      <div class="contact-grid">
+        <form id="booking" class="reveal" novalidate>
+          <div class="form-grid">
+            <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" required autocomplete="name"></div>
+            <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+            <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+            <div class="field"><label for="f-date">Preferred date</label><input id="f-date" name="date" type="date"></div>
+            <div class="field full"><label for="f-service">Service</label>
+              <select id="f-service" name="service">
+                <option>Consultation &amp; skin analysis</option>
+                <option>Acne &amp; rosacea</option>
+                <option>Mole check &amp; dermatoscopy</option>
+                <option>Eczema &amp; psoriasis</option>
+                <option>Hair &amp; scalp conditions</option>
+                <option>Botulinum toxin</option>
+                <option>Dermal fillers</option>
+                <option>Chemical peel</option>
+                <option>Laser resurfacing &amp; IPL</option>
+                <option>PRP / mesotherapy</option>
+                <option>Facials &amp; skincare plan</option>
+              </select>
+            </div>
+            <div class="field full"><label for="f-msg">Message</label><textarea id="f-msg" name="message"></textarea></div>
+            <div class="form-foot">
+              <small>Your details remain confidential.</small>
+              <button class="btn btn-ink" type="submit">Send request <span class="arrow"></span></button>
+            </div>
+          </div>
+          <div class="form-ok" id="form-ok" role="status">Thank you. Your request has been received — we will be in touch within one working day.</div>
+        </form>
+        <aside class="cinfo reveal d1">
+          <div><h4>Address</h4><p>Strandvejen 42<br>2100 Copenhagen</p></div>
+          <div><h4>Phone · Email</h4><p><a href="tel:+4512345678">+45 12 34 56 78</a><br><a href="mailto:hello@lumiere-clinic.dk">hello@lumiere-clinic.dk</a></p></div>
+          <div><h4>Hours</h4>
+            <ul class="hours"><li><span>Mon – Thu</span><span>9:00 – 18:00</span></li><li><span>Friday</span><span>9:00 – 16:00</span></li><li><span>Saturday</span><span>10:00 – 14:00</span></li><li><span>Sunday</span><span>Closed</span></li></ul>
+          </div>
+          <div class="map">
+            <svg viewBox="0 0 400 260" role="img" aria-label="Minimal ink map: Strandvejen running along the Øresund coast, clinic marked with a red seal">
+              <path d="M290 0 C276 60 300 110 286 160 C276 200 292 236 284 260 H400 V0 Z" fill="#e3dccb"/>
+              <g stroke="#1d1c1a" stroke-width=".6" opacity=".18">
+                <path d="M310 30 h70 M302 60 h84 M312 90 h60 M300 120 h90 M296 150 h70 M306 180 h80 M300 210 h64 M296 240 h90"/>
+              </g>
+              <path d="M290 0 C276 60 300 110 286 160 C276 200 292 236 284 260" fill="none" stroke="#1d1c1a" stroke-width="1"/>
+              <g fill="none" stroke="#1d1c1a" stroke-width=".6" opacity=".3">
+                <path d="M0 70 H272 M0 150 H276 M0 210 H280 M70 0 V260 M150 0 V260 M215 0 V260"/>
+                <path d="M0 260 L160 100 L240 20"/>
+              </g>
+              <path d="M262 0 C250 60 272 110 258 160 C248 200 264 236 256 260" fill="none" stroke="#1d1c1a" stroke-width="2.2"/>
+              <circle cx="110" cy="190" r="26" fill="#d7dcc4" opacity=".8"/>
+              <text x="246" y="64" font-family="Zen Kaku Gothic New, sans-serif" font-size="8.5" letter-spacing="3" fill="#6b675e" transform="rotate(-82 246 64)">STRANDVEJEN</text>
+              <text x="330" y="250" font-family="Shippori Mincho, serif" font-size="10" fill="#6b675e" font-style="italic">Øresund</text>
+              <text x="110" y="194" font-family="Zen Kaku Gothic New, sans-serif" font-size="7" letter-spacing="2" fill="#5d6d48" text-anchor="middle">PARK</text>
+              <g transform="translate(258 124)">
+                <circle r="16" fill="none" stroke="#c4442c" stroke-width=".8" opacity=".5"/>
+                <rect x="-7" y="-7" width="14" height="14" rx="2" fill="#c4442c"/>
+              </g>
+              <path d="M240 124 H170" stroke="#1d1c1a" stroke-width=".6"/>
+              <text x="166" y="127" font-family="Shippori Mincho, serif" font-size="11" fill="#1d1c1a" text-anchor="end">Lumière</text>
+            </svg>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-mark">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M22 66 A36 36 0 1 1 34 82" fill="none" stroke="#1d1c1a" stroke-width="5" stroke-linecap="round" filter="url(#dry)"/><rect x="66" y="70" width="16" height="16" rx="2" fill="#c4442c"/></svg>
+        <p>Lumière Skin Clinic<br><span style="font-size:.86rem;color:var(--ink-soft)">Dr. Elena Marin, MD · Board-certified dermatologist · EADV member</span></p>
+      </div>
+      <div class="foot-col"><h4>Clinic</h4><a href="#about">About</a><a href="#services">Services</a><a href="#results">Results</a><a href="#prices">Prices</a></div>
+      <div class="foot-col"><h4>Patients</h4><a href="#reviews">Reviews</a><a href="#faq">FAQ</a><a href="#contact">Book a consultation</a></div>
+      <div class="foot-col"><h4>Visit</h4><p>Strandvejen 42, 2100 Copenhagen</p><a href="tel:+4512345678">+45 12 34 56 78</a><a href="mailto:hello@lumiere-clinic.dk">hello@lumiere-clinic.dk</a></div>
+    </div>
+    <div class="foot-legal"><span>© 2026 Lumière Skin Clinic ApS</span><span>Privacy · Patient information</span></div>
+  </div>
+</footer>
+
+<div class="concept-badge" aria-hidden="true"><i></i>Design 10 · Zen</div>
+
+<script>
+(function(){
+  var header=document.querySelector('.site-header'),burger=document.querySelector('.burger');
+  function onScroll(){header.classList.toggle('scrolled',window.scrollY>30)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  function closeMenu(){header.classList.remove('menu-open');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Open menu');document.body.style.overflow='';}
+  burger.addEventListener('click',function(){
+    var open=header.classList.toggle('menu-open');
+    burger.setAttribute('aria-expanded',open);burger.setAttribute('aria-label',open?'Close menu':'Open menu');
+    document.body.style.overflow=open?'hidden':'';
+  });
+  document.querySelectorAll('.nav a').forEach(function(a){a.addEventListener('click',closeMenu)});
+
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click',function(){
+      var item=q.parentElement,open=item.classList.toggle('open');
+      q.setAttribute('aria-expanded',open);
+    });
+  });
+
+  var form=document.getElementById('booking');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();var ok=true;
+    ['name','email'].forEach(function(n){var f=form.elements[n];var bad=!f.value.trim()||(n==='email'&&!/^\S+@\S+\.\S+$/.test(f.value));f.style.borderBottomColor=bad?'#c4442c':'';if(bad)ok=false;});
+    if(!ok)return;document.getElementById('form-ok').classList.add('show');form.reset();
+  });
+
+  // ink the enso once fonts/paint are ready
+  var enso=document.querySelector('.enso');
+  requestAnimationFrame(function(){setTimeout(function(){enso.classList.add('drawn')},250)});
+
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.15,rootMargin:'0px 0px -60px 0px'});
+    els.forEach(function(el){io.observe(el)});
+  } else els.forEach(function(el){el.classList.add('in')});
+})();
+</script>
+</body>
+</html>

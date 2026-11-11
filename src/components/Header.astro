@@ -11,50 +11,82 @@ const nav = [
   { href: 'pytannia/', label: 'Питання' },
   { href: 'kontakty/', label: 'Контакти' },
 ];
+
+const current = Astro.url.pathname;
+const isActive = (href: string) => current.startsWith(url(href));
 ---
-<header class="header">
-  <div class="container header__inner">
+<header class="site-header">
+  <div class="container nav">
     <a class="logo" href={url('/')}>
-      <img src={url('images/logo.svg')} alt="" width="44" height="44" />
-      <span>
-        <span class="logo__name">{site.brand}</span>
-        <span class="logo__sub">дерматолог · косметолог</span>
+      <img class="logo__mark" src={url('images/logo.svg')} alt="" width="42" height="42" />
+      <span class="logo__text">
+        <b>{site.brand}</b>
+        <small>дерматолог · косметолог</small>
       </span>
     </a>
-    <details class="menu">
-      <summary aria-label="Меню"><span></span><span></span><span></span></summary>
-      <nav class="menu__panel">
-        {nav.map((item) => <a href={url(item.href)}>{item.label}</a>)}
-        <div class="menu__book"><BookingButtons compact /></div>
-      </nav>
-    </details>
-    <nav class="nav">
-      {nav.map((item) => <a href={url(item.href)}>{item.label}</a>)}
+    <nav aria-label="Головне меню">
+      <ul class="nav__links">
+        {nav.map((item) => (
+          <li><a href={url(item.href)} aria-current={isActive(item.href) ? 'page' : undefined}>{item.label}</a></li>
+        ))}
+      </ul>
     </nav>
-    <a class="btn btn--primary header__cta" href={url('kontakty/#zapys')}>Записатися</a>
+    <a class="btn btn--primary nav__cta" href={url('kontakty/#zapys')}>Записатися <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
+    <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="mobile-nav"><span></span></button>
+  </div>
+  <div class="mobile-nav" id="mobile-nav">
+    <ul>
+      {nav.map((item) => <li><a href={url(item.href)}>{item.label}</a></li>)}
+    </ul>
+    <BookingButtons compact />
   </div>
 </header>
 
 <style>
-  .header { position: sticky; top: 0; z-index: 10; background: rgba(251, 250, 247, .94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--c-border); }
-  .header__inner { display: flex; align-items: center; gap: 24px; min-height: 72px; }
-  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-right: auto; }
-  .logo__name { display: block; font-family: var(--font-serif); font-size: 1.45rem; font-weight: 600; color: var(--c-primary-dark); line-height: 1; }
-  .logo__sub { display: block; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--c-muted); }
-  .nav { display: none; gap: 20px; }
-  .nav a { text-decoration: none; color: var(--c-text); font-size: .95rem; }
-  .nav a:hover { color: var(--c-primary); }
-  .header__cta { display: none; padding: .6em 1.2em; }
-  .menu summary { list-style: none; cursor: pointer; display: flex; flex-direction: column; gap: 5px; padding: 10px; }
-  .menu summary::-webkit-details-marker { display: none; }
-  .menu summary span { width: 24px; height: 2px; background: var(--c-primary-dark); }
-  .menu__panel { position: absolute; left: 0; right: 0; top: 72px; background: var(--c-bg); border-bottom: 1px solid var(--c-border); padding: 12px 16px 20px; display: flex; flex-direction: column; }
-  .menu__panel a { padding: 10px 0; text-decoration: none; color: var(--c-text); border-bottom: 1px solid var(--c-border); }
-  .menu__book { padding-top: 16px; }
-  .menu__book :global(a) { border-bottom: 2px solid var(--c-primary); }
-  @media (min-width: 1080px) {
-    .menu { display: none; }
-    .nav { display: flex; }
-    .header__cta { display: inline-flex; }
+  .site-header {
+    position: sticky; top: 0; z-index: 60;
+    background: rgba(247, 242, 232, .84);
+    backdrop-filter: saturate(1.2) blur(14px); -webkit-backdrop-filter: saturate(1.2) blur(14px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; gap: 24px; }
+  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .logo__mark { width: 42px; height: 42px; flex: none; }
+  .logo__text { display: flex; flex-direction: column; line-height: 1; }
+  .logo__text b { font-family: var(--f-display); font-weight: 400; font-size: 22px; color: var(--forest); }
+  .logo__text small { font-size: 10.5px; letter-spacing: .24em; text-transform: uppercase; color: var(--olive); margin-top: 6px; font-weight: 700; }
+
+  .nav__links { display: flex; gap: clamp(14px, 1.6vw, 26px); list-style: none; margin: 0; padding: 0; }
+  .nav__links a { font-size: 15px; font-weight: 600; color: var(--ink); text-decoration: none; position: relative; padding: 6px 0; white-space: nowrap; }
+  .nav__links a::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1.5px; background: var(--honey); transform: scaleX(0); transform-origin: left; transition: transform .35s var(--ease); }
+  .nav__links a:hover::after, .nav__links a[aria-current='page']::after { transform: scaleX(1); }
+  .nav__cta { padding: 11px 20px; font-size: 14px; }
+
+  .burger { display: none; width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid var(--line); background: var(--paper); cursor: pointer; align-items: center; justify-content: center; }
+  .burger span { display: block; width: 18px; height: 1.5px; background: var(--forest); position: relative; transition: background .2s; }
+  .burger span::before, .burger span::after { content: ''; position: absolute; left: 0; width: 18px; height: 1.5px; background: var(--forest); transition: transform .3s var(--ease); }
+  .burger span::before { top: -6px; }
+  .burger span::after { top: 6px; }
+  :global(.nav-open) .burger span { background: transparent; }
+  :global(.nav-open) .burger span::before { transform: translateY(6px) rotate(45deg); }
+  :global(.nav-open) .burger span::after { transform: translateY(-6px) rotate(-45deg); }
+  .mobile-nav { display: none; }
+
+  @media (max-width: 1180px) {
+    .nav__links, .nav__cta { display: none; }
+    .burger { display: inline-flex; }
+    .mobile-nav {
+      display: block; position: absolute; top: 100%; left: 0; right: 0;
+      max-height: calc(100vh - 76px); overflow-y: auto;
+      background: var(--cream); border-bottom: 1px solid var(--line);
+      padding: 16px var(--gutter) 28px; box-shadow: var(--sh-2);
+      transform: translateY(-12px); opacity: 0; visibility: hidden; transition: all .35s var(--ease);
+    }
+    :global(.nav-open) .mobile-nav { transform: none; opacity: 1; visibility: visible; }
+    .mobile-nav ul { list-style: none; margin: 0 0 20px; padding: 0; }
+    .mobile-nav li a { display: block; padding: 13px 0; border-bottom: 1px solid var(--line); font-family: var(--f-display); font-size: 21px; color: var(--forest); text-decoration: none; }
+  }
+  @media (max-width: 420px) {
+    .logo__text small { letter-spacing: .14em; }
   }
 </style>

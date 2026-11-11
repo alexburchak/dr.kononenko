@@ -1,13 +1,19 @@
 ---
 import Base from '../layouts/Base.astro';
+import Eyebrow from '../components/Eyebrow.astro';
 import { url } from '../lib/url';
 ---
 <Base title="Сторінку не знайдено">
-  <section class="section">
-    <div class="container" style="text-align: center">
-      <h1>Сторінку не знайдено</h1>
-      <p>Можливо, її перенесли. Почніть з головної.</p>
-      <a class="btn btn--primary" href={url('/')}>На головну</a>
+  <section class="section nf">
+    <div class="container section-head center">
+      <Eyebrow>404</Eyebrow>
+      <h1>Сторінку <em>не знайдено</em></h1>
+      <p class="lead">Можливо, її перенесли. Почніть з головної.</p>
+      <a class="btn btn--primary" href={url('/')}>На головну <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
     </div>
   </section>
 </Base>
+
+<style>
+  .nf { padding-bottom: clamp(110px, 12vw, 160px); }
+</style>

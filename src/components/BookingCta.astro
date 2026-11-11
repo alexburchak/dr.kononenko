@@ -1,17 +1,23 @@
 ---
 import site from '../data/site.yaml';
 import BookingButtons from './BookingButtons.astro';
+import Eyebrow from './Eyebrow.astro';
+import Wave from './Wave.astro';
 ---
-<section class="section section--soft">
-  <div class="container cta">
-    <h2>Запишіться на консультацію</h2>
-    <p class="section__lead">Напишіть у зручний месенджер або зателефонуйте. {site.hoursNote}</p>
-    <BookingButtons />
+<Wave fill="sage" variant={3} />
+<section class="section bg-sage cta">
+  <div class="container">
+    <div class="section-head center">
+      <Eyebrow class="reveal">Запис</Eyebrow>
+      <h2 class="reveal d1">Запишіться на <em>консультацію</em></h2>
+      <p class="lead reveal d2">Напишіть у зручний месенджер або зателефонуйте. {site.hoursNote}</p>
+    </div>
+    <div class="reveal d3"><BookingButtons /></div>
   </div>
 </section>
 
 <style>
-  .cta { text-align: center; }
-  .cta .section__lead { margin: 0 auto 1.5rem; }
+  .cta { padding-bottom: clamp(110px, 12vw, 160px); }
+  .cta .section-head { margin-bottom: 32px; }
   .cta :global(.btn-row) { justify-content: center; }
 </style>

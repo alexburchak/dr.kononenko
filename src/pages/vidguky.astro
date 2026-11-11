@@ -2,6 +2,8 @@
 import Base from '../layouts/Base.astro';
 import BookingCta from '../components/BookingCta.astro';
 import ReviewCard from '../components/ReviewCard.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import Wave from '../components/Wave.astro';
 import site from '../data/site.yaml';
 import reviews from '../data/reviews.yaml';
 import gallery from '../data/gallery.yaml';
@@ -9,26 +11,36 @@ import { url } from '../lib/url';
 ---
 <Base title="Відгуки та результати" description="Відгуки пацієнтів і результати лікування до та після у лікаря-дерматолога в Дніпрі.">
   <section class="page-hero">
-    <div class="container">
-      <h1>Відгуки та результати</h1>
-      <p>Більше відгуків — в <a href={`https://instagram.com/${site.contacts.instagram}`} target="_blank" rel="noopener">Instagram</a>.</p>
+    <div class="container section-head center">
+      <Eyebrow class="reveal">Відгуки</Eyebrow>
+      <h1 class="reveal d1">Відгуки та <em>результати</em></h1>
+      <p class="lead reveal d2">Більше відгуків — в <a href={`https://www.instagram.com/${site.contacts.instagram}`} target="_blank" rel="noopener">Instagram</a>.</p>
     </div>
   </section>
-  <section class="section" style="padding-top: 24px">
-    <div class="container grid grid--2">
-      {reviews.map((r: any) => <ReviewCard review={r} />)}
+  <section class="section reviews-sec">
+    <div class="container reviews">
+      {reviews.map((r: any, i: number) => <ReviewCard review={r} class={`reveal d${i % 3}`} />)}
     </div>
   </section>
-  <section class="section section--soft">
+
+  <Wave fill="oat" />
+  <section class="section bg-oat">
     <div class="container">
-      <h2>До і після</h2>
-      <p class="section__lead">Фото опубліковані з письмової згоди пацієнтів. Результат індивідуальний і залежить від стану шкіри.</p>
-      <div class="grid grid--2">
-        {gallery.map((g: { before: string; after: string; caption: string }) => (
-          <figure class="card ba">
-            <div class="ba__pair">
-              <div><img src={url(g.before)} alt={`До: ${g.caption}`} width="800" height="800" loading="lazy" /><span>До</span></div>
-              <div><img src={url(g.after)} alt={`Після: ${g.caption}`} width="800" height="800" loading="lazy" /><span>Після</span></div>
+      <div class="section-head center">
+        <Eyebrow class="reveal">Результати</Eyebrow>
+        <h2 class="reveal d1">До і <em>після</em></h2>
+        <p class="lead reveal d2">Фото опубліковані з письмової згоди пацієнтів. Результат індивідуальний і залежить від стану шкіри.</p>
+      </div>
+      <div class="gallery">
+        {gallery.map((g: { before: string; after: string; caption: string }, i: number) => (
+          <figure class:list={['reveal', `d${i % 2}`]}>
+            <div class="ba">
+              <img src={url(g.before)} alt={`До: ${g.caption}`} width="800" height="800" loading="lazy" />
+              <img class="ba__after" src={url(g.after)} alt={`Після: ${g.caption}`} width="800" height="800" loading="lazy" />
+              <span class="ba__tag ba__tag--l">До</span><span class="ba__tag ba__tag--r">Після</span>
+              <div class="ba__line"></div>
+              <div class="ba__knob"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg></div>
+              <input type="range" min="0" max="100" value="50" aria-label={`Порівняти до і після: ${g.caption}`} />
             </div>
             <figcaption>{g.caption}</figcaption>
           </figure>
@@ -36,14 +48,28 @@ import { url } from '../lib/url';
       </div>
     </div>
   </section>
+  <Wave fill="oat" flip variant={3} />
+
   <BookingCta />
 </Base>
 
 <style>
-  .ba { margin: 0; padding: 16px; }
-  .ba__pair { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  .ba__pair div { position: relative; }
-  .ba__pair img { border-radius: 8px; aspect-ratio: 1; object-fit: cover; }
-  .ba__pair span { position: absolute; left: 8px; bottom: 8px; background: rgba(255, 255, 255, .9); padding: 2px 10px; border-radius: 999px; font-size: .8rem; font-weight: 600; }
-  .ba figcaption { margin-top: .8rem; font-weight: 600; }
+  .page-hero .section-head { margin-bottom: 0; }
+  .reviews-sec { padding-top: 24px; }
+  .reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 24px; align-items: start; }
+  .reviews :global(.review:nth-child(3n+2)) { background: var(--sage-50); }
+
+  .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: clamp(32px, 5vw, 64px); max-width: 960px; margin-inline: auto; }
+  .gallery figure { margin: 0; }
+  .ba { position: relative; aspect-ratio: 1; max-width: 440px; width: 100%; margin-inline: auto; border-radius: var(--arch); overflow: hidden; box-shadow: var(--sh-2); --pos: 50%; user-select: none; background: var(--oat-2); }
+  .ba img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .ba__after { clip-path: inset(0 0 0 var(--pos)); }
+  .ba__line { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 2px; background: var(--paper); transform: translateX(-1px); pointer-events: none; }
+  .ba__knob { position: absolute; top: 58%; left: var(--pos); width: 48px; height: 48px; border-radius: 50%; background: var(--paper); transform: translate(-50%, -50%); box-shadow: var(--sh-2); display: grid; place-items: center; pointer-events: none; }
+  .ba__knob svg { width: 22px; height: 22px; color: var(--forest); }
+  .ba input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; }
+  .ba__tag { position: absolute; top: 44%; padding: 6px 12px; border-radius: 999px; background: rgba(251, 248, 241, .9); font-size: 11.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--forest); pointer-events: none; }
+  .ba__tag--l { left: 16px; }
+  .ba__tag--r { right: 16px; }
+  figcaption { text-align: center; font-family: var(--f-serif); font-style: italic; color: var(--muted); font-size: 16px; margin-top: 18px; }
 </style>

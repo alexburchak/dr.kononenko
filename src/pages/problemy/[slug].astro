@@ -2,6 +2,9 @@
 import Base from '../../layouts/Base.astro';
 import BookingCta from '../../components/BookingCta.astro';
 import PriceGroup from '../../components/PriceGroup.astro';
+import Eyebrow from '../../components/Eyebrow.astro';
+import Sprig from '../../components/Sprig.astro';
+import Wave from '../../components/Wave.astro';
 import problems from '../../data/problems.yaml';
 import prices from '../../data/prices.yaml';
 import { url } from '../../lib/url';
@@ -14,30 +17,48 @@ const { problem } = Astro.props;
 const group = prices.find((g: { id: string }) => g.id === problem.priceGroup);
 ---
 <Base title={problem.seoTitle} description={`${problem.title}: ${problem.summary} Причини та лікування у лікаря-дерматолога в Дніпрі.`}>
-  <section class="section">
+  <section class="section detail">
     <div class="container split">
       <div>
-        <div class="eyebrow"><a href={url('problemy/')}>Проблеми шкіри</a></div>
-        <h1>{problem.title}</h1>
-        <p class="lead">{problem.summary}</p>
-        <h2>Причини</h2>
-        <p>{problem.causes}</p>
-        <h2>Як лікуємо</h2>
-        <p>{problem.treatment}</p>
-        <p class="notice">Самолікування може погіршити стан шкіри. Лікування призначає лікар після огляду.</p>
+        <Eyebrow class="reveal"><a href={url('problemy/')}>Проблеми шкіри</a></Eyebrow>
+        <h1 class="reveal d1">{problem.title}</h1>
+        <p class="lead reveal d2">{problem.summary}</p>
+        <div class="block reveal">
+          <h2>Причини</h2>
+          <p>{problem.causes}</p>
+        </div>
+        <div class="block reveal">
+          <h2>Як лікуємо</h2>
+          <p>{problem.treatment}</p>
+        </div>
+        <p class="notice reveal">Самолікування може погіршити стан шкіри. Лікування призначає лікар після огляду.</p>
       </div>
-      <img class="photo" src={url(problem.image)} alt={problem.title} width="1200" height="800" />
+      <div class="split__art reveal d1">
+        <Sprig />
+        <div class="arch photo"><img src={url(problem.image)} alt={problem.title} width="1200" height="800" /></div>
+      </div>
     </div>
   </section>
   {group && (
-    <section class="section section--soft">
-      <div class="container"><PriceGroup group={group} /></div>
-    </section>
+    <>
+      <Wave fill="oat" />
+      <section class="section bg-oat">
+        <div class="container narrow"><PriceGroup group={group} /></div>
+      </section>
+      <Wave fill="oat" flip variant={3} />
+    </>
   )}
   <BookingCta />
 </Base>
 
 <style>
-  .lead { font-size: 1.15rem; color: var(--c-muted); }
-  h2 { font-size: 1.8rem; margin-top: 1.5rem; }
+  .detail { padding-top: clamp(48px, 7vw, 88px); }
+  .detail .split { align-items: start; }
+  .split__art { position: sticky; top: 110px; }
+  .photo { aspect-ratio: 4 / 5; }
+  .block { margin-top: 30px; }
+  .block h2 { font-size: clamp(24px, 2.4vw, 30px); margin-bottom: 10px; }
+  .block p { color: var(--muted); }
+  .narrow { max-width: 900px; }
+  @media (max-width: 899px) { .split__art { position: relative; top: 0; order: -1; max-width: 360px; } }
 </style>

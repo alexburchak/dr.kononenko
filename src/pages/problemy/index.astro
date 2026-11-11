@@ -1,26 +1,35 @@
 ---
 import Base from '../../layouts/Base.astro';
 import BookingCta from '../../components/BookingCta.astro';
+import CardIcon from '../../components/CardIcon.astro';
+import Eyebrow from '../../components/Eyebrow.astro';
 import problems from '../../data/problems.yaml';
 import { url } from '../../lib/url';
 ---
 <Base title="Проблеми шкіри" description="Лікування акне, розацеа, пігментації в Дніпрі. Лікар-дерматолог.">
   <section class="page-hero">
-    <div class="container">
-      <h1>Проблеми шкіри</h1>
-      <p>Які стани лікує дерматолог і з чого починається лікування.</p>
+    <div class="container section-head center">
+      <Eyebrow class="reveal">Діагностика та лікування</Eyebrow>
+      <h1 class="reveal d1">Проблеми <em>шкіри</em></h1>
+      <p class="lead reveal d2">Які стани лікує дерматолог і з чого починається лікування.</p>
     </div>
   </section>
-  <section class="section" style="padding-top: 24px">
+  <section class="section list">
     <div class="container grid grid--3">
-      {problems.map((p: { slug: string; title: string; summary: string }) => (
-        <a class="card" href={url(`problemy/${p.slug}/`)}>
+      {problems.map((p: { slug: string; title: string; summary: string }, i: number) => (
+        <a class:list={['card', 'reveal', `d${i % 3}`]} href={url(`problemy/${p.slug}/`)}>
+          <CardIcon name={p.slug} />
           <h3>{p.title}</h3>
           <p>{p.summary}</p>
-          <span class="card__more">Детальніше →</span>
+          <span class="card__more">Детальніше <svg aria-hidden="true"><use href="#i-arrow" /></svg></span>
         </a>
       ))}
     </div>
   </section>
   <BookingCta />
 </Base>
+
+<style>
+  .page-hero .section-head { margin-bottom: 0; }
+  .list { padding-top: 24px; }
+</style>

@@ -1,18 +1,36 @@
 ---
 interface Props {
   review: { name: string; source: string; text: string };
+  class?: string;
 }
 
-const { review } = Astro.props;
+const { review, class: className = '' } = Astro.props;
+const initial = review.name.trim().charAt(0).toUpperCase();
 ---
-<figure class="card review">
+<figure class:list={['review', className]}>
+  <div class="stars" aria-hidden="true">
+    {[1, 2, 3, 4, 5].map(() => <svg><use href="#i-star" /></svg>)}
+  </div>
   <blockquote>«{review.text}»</blockquote>
-  <figcaption>{review.name} · <span>{review.source}</span></figcaption>
+  <figcaption class="reviewer">
+    <span class="avatar" aria-hidden="true">{initial}</span>
+    <span><b>{review.name}</b><span>{review.source}</span></span>
+  </figcaption>
 </figure>
 
 <style>
-  .review { margin: 0; }
-  .review blockquote { margin: 0 0 1rem; font-family: var(--font-serif); font-size: 1.3rem; line-height: 1.4; }
-  .review figcaption { font-weight: 600; }
-  .review figcaption span { color: var(--c-muted); font-weight: 400; }
+  .review {
+    margin: 0; background: var(--paper); border: 1px solid var(--line);
+    border-radius: 160px 160px var(--r-lg) var(--r-lg); padding: 56px 30px 32px; text-align: center;
+    display: flex; flex-direction: column;
+    transition: transform .45s var(--ease), box-shadow .45s;
+  }
+  .review:hover { box-shadow: var(--sh-2); }
+  .stars { display: flex; justify-content: center; gap: 4px; margin-bottom: 22px; }
+  .stars svg { width: 17px; height: 17px; fill: var(--honey); }
+  blockquote { margin: 0 0 24px; font-family: var(--f-serif); font-style: italic; font-size: 18px; line-height: 1.6; color: var(--sage-800); white-space: pre-line; flex: 1; }
+  .reviewer { display: flex; align-items: center; justify-content: center; gap: 12px; }
+  .avatar { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-family: var(--f-display); font-size: 18px; color: var(--forest); background: var(--sage-100); }
+  .reviewer b { display: block; font-size: 15px; color: var(--forest); text-align: left; }
+  .reviewer span span { font-size: 13px; color: var(--muted); display: block; text-align: left; }
 </style>

@@ -1,0 +1,19 @@
+---
+// Декоративна гілочка евкаліпта для кутка фото в арці.
+interface Props {
+  class?: string;
+}
+const { class: className = '' } = Astro.props;
+---
+<svg class:list={['sprig', className]} viewBox="0 0 120 200" aria-hidden="true">
+  <path d="M60 196C62 140 58 90 70 20" fill="none" stroke="#6B7140" stroke-width="2" stroke-linecap="round" />
+  <use href="#euc" transform="translate(60 170) rotate(-50)" /><use href="#euc" transform="translate(61 150) rotate(50) scale(-1 1)" />
+  <use href="#euc" transform="translate(61 122) rotate(-46) scale(.9)" /><use href="#euc" transform="translate(63 98) rotate(46) scale(-.9 .9)" />
+  <use href="#euc" transform="translate(65 72) rotate(-40) scale(.78)" /><use href="#euc" transform="translate(67 50) rotate(40) scale(-.7 .7)" />
+  <use href="#euc" transform="translate(70 28) rotate(-8) scale(.6)" />
+</svg>
+
+<style>
+  .sprig { position: absolute; left: -40px; top: -30px; width: 120px; transform: rotate(-18deg); z-index: 2; pointer-events: none; }
+  @media (max-width: 600px) { .sprig { left: -12px; width: 86px; } }
+</style>

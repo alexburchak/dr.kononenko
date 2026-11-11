@@ -3,15 +3,46 @@ import site from '../data/site.yaml';
 
 interface Props {
   compact?: boolean;
+  // split: месенджери (Telegram, Viber, Instagram) в одному ряду, телефони — під ними
+  split?: boolean;
 }
 
-const { compact = false } = Astro.props;
+const { compact = false, split = false } = Astro.props;
 const c = site.contacts;
 const phoneDigits = c.phone.replace(/[^\d]/g, '');
+const arrow = '<svg aria-hidden="true"><use href="#i-arrow" /></svg>';
 ---
-<div class="btn-row">
-  <a class="btn btn--primary" href={`https://t.me/${c.telegram}`} target="_blank" rel="noopener">Telegram</a>
-  <a class="btn btn--primary" href={`viber://chat?number=%2B${phoneDigits}`}>Viber</a>
-  <a class="btn btn--ghost" href={`tel:${c.phone}`}>{compact ? 'Зателефонувати' : c.phoneDisplay}</a>
-  {!compact && <a class="btn btn--ghost" href={`https://instagram.com/${c.instagram}`} target="_blank" rel="noopener">Instagram</a>}
-</div>
+{split ? (
+  <div class="booking-split">
+    <div class="btn-row">
+      <a class="btn btn--primary" href={`https://t.me/${c.telegram}`} target="_blank" rel="noopener">Telegram <Fragment set:html={arrow} /></a>
+      <a class="btn btn--primary" href={`viber://chat?number=%2B${phoneDigits}`}>Viber <Fragment set:html={arrow} /></a>
+      <a class="btn btn--primary" href={`https://www.instagram.com/${c.instagram}`} target="_blank" rel="noopener">Instagram <Fragment set:html={arrow} /></a>
+    </div>
+    <div class="btn-row">
+      <a class="btn btn--ghost" href={`tel:${c.phone}`}>{c.phoneDisplay}</a>
+      {c.phone2 && <a class="btn btn--ghost" href={`tel:${c.phone2}`}>{c.phone2Display}</a>}
+    </div>
+  </div>
+) : (
+  <div class="btn-row">
+    <a class="btn btn--primary" href={`https://t.me/${c.telegram}`} target="_blank" rel="noopener">Telegram <Fragment set:html={arrow} /></a>
+    <a class="btn btn--primary" href={`viber://chat?number=%2B${phoneDigits}`}>Viber <Fragment set:html={arrow} /></a>
+    {compact
+      ? <a class="btn btn--ghost" href={`tel:${c.phone}`}>Зателефонувати</a>
+      : <>
+          <a class="btn btn--ghost" href={`tel:${c.phone}`}>{c.phoneDisplay}</a>
+          {c.phone2 && <a class="btn btn--ghost" href={`tel:${c.phone2}`}>{c.phone2Display}</a>}
+        </>}
+    {!compact && <a class="btn btn--ghost" href={`https://www.instagram.com/${c.instagram}`} target="_blank" rel="noopener">Instagram</a>}
+  </div>
+)}
+
+<style>
+  .booking-split { display: grid; gap: 12px; }
+  @media (max-width: 600px) {
+    .booking-split .btn-row:first-child { flex-wrap: nowrap; gap: 8px; }
+    .booking-split .btn-row:first-child .btn { flex: 1 1 0; min-width: 0; padding: 14px 8px; font-size: 14px; }
+    .booking-split .btn-row:first-child .btn :global(svg) { display: none; }
+  }
+</style>

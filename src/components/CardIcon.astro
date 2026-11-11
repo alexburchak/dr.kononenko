@@ -1,0 +1,9 @@
+---
+import { icon } from '../lib/icons';
+
+interface Props {
+  name: string;
+}
+const { name } = Astro.props;
+---
+<div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true" set:html={icon(name)} /></div>

@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Лікар Кононенко · Дерматолог, косметолог у Дніпрі</title>
+<meta name="description" content="Олена Кононенко — лікар-дерматолог, косметолог у Дніпрі. Спочатку діагноз, потім процедура. Доказовий догляд за шкірою.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;
+  --bg-2:#f4f6f9;
+  --bg-3:#eaeef4;
+  --line:#e1e6ee;
+  --line-2:#cdd4df;
+  --ink:#13203f;
+  --ink-2:#47536d;
+  --ink-3:#8790a5;
+  --coral:#ff5a4c;
+  --coral-d:#e0412f;
+  --coral-soft:#fff0ed;
+  --skin:#f7d9cf;
+  --serif:"Literata",Georgia,"Times New Roman",serif;
+  --sans:"Onest","Golos Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --r:10px;
+  --r-sm:6px;
+  --r-lg:18px;
+  --shadow:0 1px 2px rgba(19,32,63,.06),0 12px 32px -18px rgba(19,32,63,.22);
+  --shadow-h:0 2px 4px rgba(19,32,63,.06),0 22px 44px -20px rgba(19,32,63,.32);
+  --max:1200px;
+  --gut:clamp(16px,4vw,48px);
+  --sec:clamp(72px,9vw,124px);
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16.5px;line-height:1.65;overflow-x:hidden}
+svg{display:block;max-width:100%}
+a{color:var(--ink);text-decoration-color:var(--coral);text-decoration-thickness:1.5px;text-underline-offset:3px}
+a:hover{color:var(--coral-d)}
+h1,h2,h3,h4{margin:0;line-height:1.12;font-weight:500}
+h2{font-family:var(--serif);font-size:clamp(2rem,4.2vw,3.2rem);letter-spacing:-.015em}
+h2 em,h1 em{font-style:italic;color:var(--coral-d)}
+h3{font-family:var(--sans);font-weight:600;font-size:1.2rem;letter-spacing:-.005em}
+p{margin:0 0 1em}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.mono{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);padding:5px 10px;border:1px solid var(--line-2);border-radius:999px;background:var(--bg)}
+.tag i{width:7px;height:7px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 3px var(--coral-soft)}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;z-index:100;background:#fff;padding:8px 12px}
+:focus-visible{outline:2px solid var(--coral);outline-offset:3px}
+section{padding:var(--sec) 0;position:relative}
+.grid-bg{background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:32px 32px;background-position:-1px -1px}
+.alt{background:var(--bg-2)}
+.sec-head{display:grid;grid-template-columns:200px 1fr;gap:24px;margin-bottom:clamp(36px,5vw,56px);align-items:start}
+.sec-head .idx{font-family:var(--mono);font-size:.78rem;color:var(--ink-3);letter-spacing:.06em;border-top:2px solid var(--ink);padding-top:10px;text-transform:uppercase}
+.sec-head .idx b{color:var(--coral-d);font-weight:500}
+.sec-head p{color:var(--ink-2);max-width:640px;margin:14px 0 0;font-size:1.05rem}
+@media (max-width:760px){.sec-head{grid-template-columns:1fr;gap:14px}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 18px;border-radius:var(--r-sm);font-family:var(--sans);font-weight:500;font-size:.95rem;text-decoration:none;border:1px solid var(--ink);color:var(--ink);background:var(--bg);transition:transform .25s var(--ease),background .25s,color .25s,box-shadow .25s,border-color .25s;white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow);color:var(--ink)}
+.btn--coral{background:var(--coral);border-color:var(--coral);color:#fff}
+.btn--coral:hover{background:var(--coral-d);border-color:var(--coral-d);color:#fff}
+.btn--ink{background:var(--ink);color:#fff}
+.btn--ink:hover{background:#22325a;color:#fff}
+.btn--line{border-color:var(--line-2)}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+
+/* header */
+.hdr{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.hdr__in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:66px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.brand svg{width:32px;height:32px;flex:none}
+.brand b{display:block;font-weight:600;font-size:1.02rem;line-height:1.1;white-space:nowrap}
+.brand small{display:block;font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap}
+.nav{display:flex;align-items:center;gap:clamp(12px,1.6vw,24px)}
+.nav a{font-size:.9rem;text-decoration:none;color:var(--ink-2);white-space:nowrap;position:relative}
+.nav a:not(.btn)::before{content:"";position:absolute;left:-10px;top:50%;width:4px;height:4px;border-radius:50%;background:var(--coral);opacity:0;transform:translateY(-50%) scale(.4);transition:.25s var(--ease)}
+.nav a:not(.btn):hover{color:var(--ink)}
+.nav a:not(.btn):hover::before{opacity:1;transform:translateY(-50%) scale(1)}
+.nav .btn{display:none}
+.burger{display:none;width:44px;height:44px;border:1px solid var(--line-2);border-radius:var(--r-sm);background:#fff;cursor:pointer}
+.burger span{display:block;width:18px;height:1.5px;background:var(--ink);margin:4px auto}
+@media (max-width:1140px){
+  .nav{position:fixed;left:0;right:0;top:66px;display:none;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid var(--line);padding:6px var(--gut) 18px;box-shadow:var(--shadow)}
+  .nav.open{display:flex}
+  .nav a{padding:13px 0;border-bottom:1px solid var(--line);font-size:1rem}
+  .nav a:not(.btn)::before{display:none}
+  .nav .btn{display:inline-flex;justify-content:center;margin-top:14px;padding:12px}
+  .burger{display:block}
+  .hdr__cta{display:none!important}
+}
+
+/* hero */
+.hero{padding:clamp(36px,5vw,64px) 0 clamp(56px,7vw,96px);overflow:hidden;border-bottom:1px solid var(--line)}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:40px 40px;-webkit-mask-image:radial-gradient(ellipse 70% 80% at 75% 45%,#000 20%,transparent 75%);mask-image:radial-gradient(ellipse 70% 80% at 75% 45%,#000 20%,transparent 75%);opacity:.7;pointer-events:none}
+.hero__grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px);align-items:center}
+.hero__meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.6rem,5.6vw,4.7rem);letter-spacing:-.025em;line-height:1.02;margin-bottom:22px}
+.hero h1 .u{position:relative;white-space:nowrap}
+.hero h1 .u::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.1em;background:var(--coral);opacity:.9;border-radius:2px}
+.hero__sub{font-size:1.02rem;font-weight:600;margin-bottom:6px}
+.hero__lead{font-size:clamp(1.05rem,1.4vw,1.18rem);color:var(--ink-2);max-width:32em;margin-bottom:28px}
+.hero__spec{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:0;margin-top:34px;border:1px solid var(--line);border-radius:var(--r);background:#fff;overflow:hidden}
+.hero__spec div{padding:12px 18px;border-right:1px solid var(--line)}
+.hero__spec div:last-child{border-right:0}
+.hero__spec b{display:block;font-size:.95rem;font-weight:600}
+.hero__spec span{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.scope{position:relative}
+.scope svg{width:100%;height:auto;overflow:visible}
+.spin{transform-origin:240px 240px;animation:spin 80s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.pulse{animation:pulse 3.2s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes pulse{0%,100%{opacity:.35;transform:scale(.9)}50%{opacity:.9;transform:scale(1.05)}}
+.drift{animation:drift 12s ease-in-out infinite}
+@keyframes drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media (max-width:900px){.hero__grid{grid-template-columns:1fr}.scope{max-width:520px;margin:0 auto;width:100%}}
+@media (max-width:520px){.hero__spec{grid-template-columns:1fr 1fr}.hero__spec div:nth-child(2){border-right:0}.hero__spec div:last-child{grid-column:1/-1;border-top:1px solid var(--line)}}
+
+/* highlights */
+.hl{padding:0;border-bottom:1px solid var(--line)}
+.hl__grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.hl__item{padding:34px clamp(18px,3vw,36px);border-right:1px solid var(--line);position:relative;transition:background .3s}
+.hl__item:first-child{padding-left:0}
+.hl__item:last-child{border-right:0}
+.hl__item:hover{background:linear-gradient(180deg,var(--coral-soft),transparent)}
+.hl__item .mono{display:flex;justify-content:space-between;margin-bottom:18px}
+.hl__item svg{width:44px;height:44px;margin-bottom:14px}
+.hl__item h3{font-family:var(--serif);font-weight:500;font-size:1.55rem;margin-bottom:6px}
+.hl__item p{color:var(--ink-2);margin:0}
+@media (max-width:820px){.hl__grid{grid-template-columns:1fr}.hl__item{border-right:0;border-bottom:1px solid var(--line);padding-left:0}.hl__item:last-child{border-bottom:0}}
+
+/* about */
+.about__grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,5vw,72px);align-items:start}
+.idcard{border:1px solid var(--line-2);border-radius:var(--r-lg);background:#fff;box-shadow:var(--shadow);overflow:hidden;position:sticky;top:90px}
+.idcard__top{display:flex;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--bg-2)}
+.idcard svg{width:100%;height:auto}
+.idcard__body{padding:16px 18px;display:grid;grid-template-columns:1fr auto;gap:4px 12px;border-top:1px solid var(--line)}
+.idcard__body b{font-family:var(--serif);font-size:1.35rem;font-weight:500}
+.idcard__body span{color:var(--ink-2);font-size:.92rem}
+.about__intro{font-family:var(--serif);font-size:clamp(1.15rem,1.7vw,1.35rem);line-height:1.55;margin:22px 0 26px}
+.check{list-style:none;margin:0 0 40px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.check li{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px solid var(--line);border-radius:var(--r);background:#fff;font-size:.95rem;line-height:1.45}
+.check svg{width:20px;height:20px;flex:none;margin-top:1px}
+.blk-h{display:flex;align-items:center;gap:12px;margin:0 0 16px}
+.blk-h h3{font-size:1.05rem}
+.blk-h::after{content:"";flex:1;height:1px;background:var(--line)}
+.edu{list-style:none;margin:0 0 40px;padding:0}
+.edu li{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:14px 0;border-bottom:1px dashed var(--line-2)}
+.edu li:first-child{border-top:1px dashed var(--line-2)}
+.edu .mono{color:var(--coral-d);font-size:.8rem;padding-top:2px}
+.certs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+.cert{margin:0;border:1px solid var(--line);border-radius:var(--r);padding:12px;background:#fff;transition:transform .3s var(--ease),box-shadow .3s}
+.cert:hover{transform:translateY(-3px);box-shadow:var(--shadow-h)}
+.cert svg{width:100%;height:auto;margin-bottom:10px}
+.cert figcaption{font-size:.85rem;line-height:1.35}
+.cert .mono{display:block;font-size:.64rem;margin-bottom:3px}
+.license{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;padding:14px 16px;border-radius:var(--r);background:var(--ink);color:#dfe4ef;font-size:.88rem;line-height:1.45}
+.license .mono{color:var(--coral);display:block;margin-bottom:2px}
+.license svg{width:36px;height:36px}
+@media (max-width:900px){.about__grid{grid-template-columns:1fr}.idcard{position:relative;top:0;max-width:440px}}
+@media (max-width:560px){.check{grid-template-columns:1fr}.edu li{grid-template-columns:1fr;gap:4px}.certs{grid-template-columns:1fr 1fr}}
+
+/* skin layers */
+.layers{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(24px,4vw,56px);align-items:center;margin-bottom:clamp(48px,6vw,72px);padding:clamp(18px,3vw,32px);border:1px solid var(--line);border-radius:var(--r-lg);background:#fff}
+.layers svg{width:100%;height:auto}
+.layers ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.layers li{padding:14px 16px;border-radius:var(--r);border:1px solid var(--line);background:var(--bg-2)}
+.layers li b{display:block;font-weight:600}
+.layers li span{font-size:.9rem;color:var(--ink-2)}
+.layers li .mono{display:block;margin-bottom:2px;color:var(--coral-d)}
+@media (max-width:900px){.layers{grid-template-columns:1fr}}
+
+/* prices */
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.pg{border:1px solid var(--line);border-radius:var(--r-lg);background:#fff;overflow:hidden;transition:box-shadow .3s,border-color .3s}
+.pg:hover{box-shadow:var(--shadow-h);border-color:var(--line-2)}
+.pg--wide{grid-column:1/-1}
+.pg__h{padding:18px 20px 16px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto;gap:4px 16px;background:linear-gradient(180deg,var(--bg-2),#fff)}
+.pg__h h3{font-family:var(--serif);font-weight:500;font-size:1.5rem}
+.pg__h p{grid-column:1/-1;margin:0;color:var(--ink-2);font-size:.92rem}
+.pg__h .mono{align-self:center}
+.row{display:grid;grid-template-columns:1fr 112px 116px;gap:14px;padding:16px 20px;border-bottom:1px solid var(--line);align-items:start;transition:background .2s}
+.row:last-child{border-bottom:0}
+.row:hover{background:var(--coral-soft)}
+.row b{font-weight:600;display:block}
+.row span{color:var(--ink-2);font-size:.9rem;display:block;line-height:1.45;margin-top:2px}
+.row .dur{font-family:var(--mono);font-size:.8rem;color:var(--ink-2);padding-top:3px;display:flex;gap:6px;align-items:center}
+.row .dur svg{width:13px;height:13px;flex:none}
+.row .pr{font-family:var(--mono);font-weight:500;font-size:.95rem;text-align:right;color:var(--ink);padding-top:1px;white-space:nowrap}
+.alert{display:flex;gap:14px;align-items:center;margin-top:18px;padding:16px 20px;border-radius:var(--r);background:var(--coral-soft);border:1px solid #ffd2cb;color:#8e2a1f}
+.alert svg{width:26px;height:26px;flex:none}
+.alert b{font-weight:600}
+.pnote{margin:14px 0 0;font-size:.9rem;color:var(--ink-3)}
+@media (max-width:900px){.pgrid{grid-template-columns:1fr}}
+@media (max-width:520px){.row{grid-template-columns:1fr auto;}.row .dur{grid-column:1;grid-row:2;padding-top:0}.row .pr{grid-column:2;grid-row:1}}
+
+/* case files */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cf{position:relative;border:1px solid var(--line-2);border-radius:4px var(--r-lg) var(--r-lg) var(--r-lg);background:#fff;display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s}
+.cf:hover{transform:translateY(-4px);box-shadow:var(--shadow-h)}
+.cf::before{content:"";position:absolute;left:-1px;top:-14px;width:44%;height:15px;border:1px solid var(--line-2);border-bottom:0;border-radius:8px 14px 0 0;background:#fff}
+.cf__h{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line)}
+.cf__h .mono b{color:var(--coral-d);font-weight:500}
+.cf__stamp{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--coral-d);border:1.5px solid var(--coral);padding:2px 7px;border-radius:4px;transform:rotate(-4deg)}
+.cf__top{display:grid;grid-template-columns:96px 1fr;gap:16px;padding:18px;align-items:center;border-bottom:1px dashed var(--line-2)}
+.cf__top svg{width:96px;height:96px}
+.cf__top h3{font-family:var(--serif);font-weight:500;font-size:1.6rem;margin-bottom:6px}
+.cf__top p{margin:0;color:var(--ink-2);font-size:.92rem;line-height:1.45}
+.cf dl{margin:0;padding:16px 18px;display:grid;gap:14px}
+.cf dt{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);display:flex;gap:8px;align-items:center}
+.cf dt::before{content:"";width:10px;height:1.5px;background:var(--coral)}
+.cf dd{margin:4px 0 0;font-size:.94rem;line-height:1.5}
+.cf__f{margin-top:auto;padding:14px 18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:.9rem;background:var(--bg-2);border-radius:0 0 var(--r-lg) var(--r-lg)}
+.cf__f a{font-weight:500}
+@media (max-width:980px){.cases{grid-template-columns:1fr;max-width:640px;row-gap:34px}}
+
+/* protocol */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:var(--r-lg);background:#fff;overflow:hidden}
+.step{padding:26px 22px 28px;border-right:1px solid var(--line);position:relative}
+.step:last-child{border-right:0}
+.step__ruler{height:14px;margin:0 -22px 20px;background-image:linear-gradient(90deg,var(--line-2) 1px,transparent 1px);background-size:10px 100%;-webkit-mask-image:linear-gradient(180deg,#000 50%,transparent 50%);mask-image:linear-gradient(180deg,#000 50%,transparent 50%)}
+.step__n{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.step__n b{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-size:.85rem;font-weight:500;background:var(--ink);color:#fff}
+.step:first-child .step__n b{background:var(--coral)}
+.step h3{margin-bottom:8px}
+.step p{color:var(--ink-2);font-size:.94rem;margin:0}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}.step:nth-child(2){border-right:0}.step:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}.step{border-right:0;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}}
+
+/* results */
+.res{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.spec{border:1px solid var(--line);border-radius:var(--r-lg);background:#fff;padding:18px}
+.spec__pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.spec figure{margin:0;position:relative}
+.spec figure svg{width:100%;height:auto}
+.spec figcaption{position:absolute;left:8px;top:8px;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:#fff;border:1px solid var(--line-2)}
+.spec figure:last-child figcaption{background:var(--coral);color:#fff;border-color:var(--coral)}
+.spec__cap{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.spec__cap b{font-family:var(--serif);font-weight:500;font-size:1.25rem}
+.consent{display:flex;gap:10px;align-items:center;margin-top:18px;font-size:.9rem;color:var(--ink-2)}
+.consent svg{width:20px;height:20px;flex:none}
+@media (max-width:820px){.res{grid-template-columns:1fr}}
+
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.rev{grid-column:span 2;margin:0;border:1px solid var(--line);border-radius:var(--r-lg);padding:22px;background:#fff;display:flex;flex-direction:column;transition:transform .3s var(--ease),box-shadow .3s}
+.rev:nth-child(4),.rev:nth-child(5){grid-column:span 3}
+.rev:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.rev__h{display:flex;justify-content:space-between;margin-bottom:12px}
+.rev p{font-family:var(--serif);font-size:1.05rem;line-height:1.55;margin-bottom:18px}
+.rev footer{margin-top:auto;display:flex;align-items:center;gap:10px}
+.rev footer i{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:600;background:var(--bg-3);font-size:.9rem}
+.rev footer b{font-weight:600;display:block;line-height:1.2}
+.rev footer span{font-family:var(--mono);font-size:.7rem;color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em}
+.revs__more{margin-top:20px;color:var(--ink-2)}
+@media (max-width:900px){.revs{grid-template-columns:1fr 1fr}.rev,.rev:nth-child(4),.rev:nth-child(5){grid-column:span 1}.rev:nth-child(5){grid-column:1/-1}}
+@media (max-width:560px){.revs{grid-template-columns:1fr}.rev:nth-child(5){grid-column:auto}}
+
+/* aftercare */
+.care{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pr-card{border:1px solid var(--line);border-radius:var(--r-lg);background:#fff;display:flex;flex-direction:column;overflow:hidden}
+.pr-card__h{padding:16px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px}
+.pr-card__h .mono{white-space:nowrap}.pr-card__h h3{font-family:var(--serif);font-weight:500;font-size:1.3rem}
+.pr-card ul{list-style:none;margin:0;padding:8px 18px 14px}
+.pr-card li{display:flex;gap:11px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:.93rem;line-height:1.45}
+.pr-card li:last-child{border-bottom:0}
+.pr-card li::before{content:"";width:14px;height:14px;flex:none;margin-top:3px;border:1.5px solid var(--ink);border-radius:3px;background:radial-gradient(circle,var(--coral) 0 3px,transparent 3.5px)}
+.pr-card .warn{margin:auto 18px 18px;padding:12px 14px;border-radius:var(--r-sm);background:var(--coral-soft);color:#8e2a1f;font-size:.88rem;line-height:1.45;border-left:3px solid var(--coral)}
+@media (max-width:960px){.care{grid-template-columns:1fr;max-width:640px}}
+
+/* faq */
+.faq{max-width:900px}
+.faq details{border:1px solid var(--line);border-radius:var(--r);background:#fff;margin-bottom:10px;transition:border-color .25s,box-shadow .25s}
+.faq details[open]{border-color:var(--line-2);box-shadow:var(--shadow)}
+.faq summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:52px 1fr 28px;gap:10px;align-items:center;padding:18px 18px;font-weight:600;font-size:1.05rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .mono{color:var(--coral-d)}
+.faq summary i{width:28px;height:28px;border-radius:50%;border:1px solid var(--line-2);position:relative;transition:transform .3s var(--ease),background .25s}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1.5px;background:var(--ink);transform:translate(-50%,-50%)}
+.faq summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq details[open] summary i{background:var(--coral);border-color:var(--coral);transform:rotate(45deg)}
+.faq details[open] summary i::before,.faq details[open] summary i::after{background:#fff}
+.faq summary:hover{color:var(--coral-d)}
+.faq .ans{padding:0 18px 20px 80px;color:var(--ink-2)}
+@media (max-width:560px){.faq summary{grid-template-columns:36px 1fr 28px}.faq .ans{padding-left:64px}}
+
+/* contacts */
+.ct{display:grid;grid-template-columns:1fr 1.1fr;gap:20px;align-items:stretch}
+.ct__info{border:1px solid var(--line);border-radius:var(--r-lg);background:#fff;padding:clamp(20px,3vw,32px)}
+.ct__row{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.ct__row:first-child{padding-top:0}
+.ct__row .mono{padding-top:3px}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:2px 18px;font-family:var(--mono);font-size:.9rem}
+.ct__book{padding-top:18px}
+.ct__book p{margin:0 0 14px;color:var(--ink-2)}
+.map{border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--bg-2);display:flex;flex-direction:column;margin:0}
+.map svg{width:100%;flex:1;min-height:340px}
+.map figcaption{padding:10px 16px;border-top:1px solid var(--line);background:#fff;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+@media (max-width:900px){.ct{grid-template-columns:1fr}}
+@media (max-width:480px){.ct__row{grid-template-columns:1fr;gap:4px}}
+
+/* footer */
+.ftr{background:var(--ink);color:#c5cbdb;padding:56px 0 84px;font-size:.92rem}
+.ftr a{color:#fff;text-decoration:none}
+.ftr a:hover{color:var(--coral)}
+.ftr__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.12)}
+.ftr .brand{color:#fff;margin-bottom:12px}
+.ftr .brand small{color:#8f98b0}
+.ftr h4{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:#8f98b0;font-weight:400;margin-bottom:12px}
+.ftr ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.ftr__bot{padding-top:22px;display:grid;gap:6px;font-size:.84rem;color:#8f98b0}
+.ftr__bot .disc{color:#fff;font-weight:500;display:flex;gap:10px;align-items:center}
+.ftr__bot .disc::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--coral);flex:none}
+@media (max-width:860px){.ftr__grid{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.ftr__grid{grid-template-columns:1fr}}
+
+.badge{position:fixed;left:10px;bottom:10px;z-index:60;font-family:var(--mono);font-size:.66rem;letter-spacing:.04em;padding:5px 10px;border-radius:6px;background:rgba(255,255,255,.94);border:1px solid var(--line-2);color:var(--ink);box-shadow:var(--shadow);pointer-events:none}
+.badge b{color:var(--coral-d);font-weight:500}
+
+.js .rv{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">До змісту</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="ic-tg" viewBox="0 0 24 24"><path fill="currentColor" d="M21.5 3.6 2.9 10.8c-1.3.5-1.2 1.2-.2 1.5l4.8 1.5 1.8 5.6c.2.6.4.8.9.8.4 0 .6-.2.9-.4l2.3-2.2 4.7 3.5c.9.5 1.5.2 1.7-.8l3.1-14.6c.3-1.3-.5-1.9-1.4-1.5Zm-3.1 3.3-8.9 8-.3 3.6-1.6-5 10.3-6.6c.5-.3.9 0 .5 0Z"/></symbol>
+    <symbol id="ic-vb" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" d="M12 2.5c5.2 0 8.5 2.4 8.5 8.2 0 5.6-3.3 8-8.5 8-.8 0-1.6 0-2.3-.2L6 21v-3.4C4 16.4 3.5 14 3.5 10.7 3.5 4.9 6.8 2.5 12 2.5Z"/><path fill="currentColor" d="M9 7.3c.3-.2.7-.2.9.1l.9 1.3c.2.3.2.7-.1.9l-.5.4c.4 1 1.2 1.9 2.2 2.4l.4-.5c.3-.3.6-.3.9-.1l1.3.9c.3.2.4.6.1.9l-.5.6c-.5.5-1.2.6-1.9.3-1.9-.8-3.4-2.3-4.2-4.2-.3-.7-.2-1.4.3-1.9Z"/></symbol>
+    <symbol id="ic-ig" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="17" cy="7" r="1.1" fill="currentColor"/></symbol>
+    <symbol id="ic-ph" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" d="M5 3.5h3.2l1.6 4.2-2 1.4a11 11 0 0 0 7.1 7.1l1.4-2 4.2 1.6V19a1.5 1.5 0 0 1-1.6 1.5C10.6 20 4 13.4 3.5 5.1A1.5 1.5 0 0 1 5 3.5Z"/></symbol>
+    <symbol id="ic-ok" viewBox="0 0 20 20"><rect x="1" y="1" width="18" height="18" rx="4" fill="#fff0ed" stroke="#ff5a4c"/><path d="M5.5 10.3l3 2.9 6-6.4" fill="none" stroke="#e0412f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="ic-clock" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M7 3.8V7l2.2 1.4" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></symbol>
+    <symbol id="logo" viewBox="0 0 32 32"><circle cx="16" cy="16" r="15" fill="#13203f"/><circle cx="16" cy="16" r="9" fill="none" stroke="#fff" stroke-width="1.2"/><path d="M16 4v4M16 24v4M4 16h4M24 16h4" stroke="#fff" stroke-width="1.2"/><circle cx="16" cy="16" r="3" fill="#ff5a4c"/></symbol>
+  </defs>
+</svg>
+
+<header class="hdr">
+  <div class="wrap hdr__in">
+    <a class="brand" href="#top" aria-label="Лікар Кононенко — на початок"><svg aria-hidden="true"><use href="#logo"/></svg><span><b>Лікар Кононенко</b><small>дерматолог · косметолог</small></span></a>
+    <nav class="nav" id="nav" aria-label="Розділи">
+      <a href="#about">Про лікаря</a>
+      <a href="#prices">Послуги та ціни</a>
+      <a href="#problems">Проблеми шкіри</a>
+      <a href="#process">Як проходить</a>
+      <a href="#reviews">Відгуки</a>
+      <a href="#aftercare">Пам’ятки</a>
+      <a href="#faq">Питання</a>
+      <a href="#contacts">Контакти</a>
+      <a class="btn btn--coral" href="#contacts">Записатися</a>
+    </nav>
+    <a class="btn btn--coral hdr__cta" href="#contacts">Записатися</a>
+    <button class="burger" id="burger" aria-label="Меню" aria-controls="nav" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="wrap hero__grid">
+    <div>
+      <div class="hero__meta"><span class="tag"><i></i>м. Дніпро</span><span class="tag">Дерматологія та косметологія</span></div>
+      <p class="hero__sub">Лікар-дерматолог, косметолог у Дніпрі</p>
+      <h1>Спочатку <span class="u">діагноз,</span><br>потім <em>процедура.</em></h1>
+      <p class="hero__lead">Доказовий догляд за шкірою від лікаря з медичною освітою. Олена Кононенко — прийом лише за попереднім записом.</p>
+      <div class="btns">
+        <a class="btn btn--coral" href="https://t.me/dr_kononenko" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#ic-tg"/></svg>Telegram</a>
+        <a class="btn btn--ink" href="viber://chat?number=%2B380670000000"><svg aria-hidden="true"><use href="#ic-vb"/></svg>Viber</a>
+        <a class="btn" href="https://instagram.com/dr_kononenko" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#ic-ig"/></svg>Instagram</a>
+        <a class="btn btn--line" href="tel:+380670000000"><svg aria-hidden="true"><use href="#ic-ph"/></svg>+38 (067) 000-00-00</a>
+      </div>
+      <div class="hero__spec">
+        <div><span>Метод</span><b>Огляд і дерматоскопія</b></div>
+        <div><span>Підхід</span><b>Доказова медицина</b></div>
+        <div><span>Запис</span><b>Месенджер або дзвінок</b></div>
+      </div>
+    </div>
+
+    <div class="scope" aria-hidden="true">
+      <svg viewBox="-40 -20 560 640">
+        <defs>
+          <clipPath id="lens"><circle cx="240" cy="240" r="196"/></clipPath>
+          <radialGradient id="lensBg" cx="45%" cy="40%" r="70%"><stop offset="0" stop-color="#fdeee8"/><stop offset=".7" stop-color="#f7dcd2"/><stop offset="1" stop-color="#efc9bd"/></radialGradient>
+          <radialGradient id="vign" cx="50%" cy="50%" r="50%"><stop offset=".7" stop-color="#13203f" stop-opacity="0"/><stop offset="1" stop-color="#13203f" stop-opacity=".28"/></radialGradient>
+          <radialGradient id="glare" cx="35%" cy="28%" r="40%"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+        </defs>
+        <circle cx="240" cy="240" r="236" fill="#fff" stroke="#cdd4df"/>
+        <g class="spin"><line x1="472" y1="240" x2="458" y2="240" stroke="#ff5a4c" stroke-width="1.6"/><line x1="471.9" y1="248.1" x2="466.9" y2="247.9" stroke="#13203f" stroke-width="0.8"/><line x1="471.4" y1="256.2" x2="466.4" y2="255.8" stroke="#13203f" stroke-width="0.8"/><line x1="470.7" y1="264.3" x2="465.8" y2="263.7" stroke="#13203f" stroke-width="0.8"/><line x1="469.7" y1="272.3" x2="464.8" y2="271.6" stroke="#13203f" stroke-width="0.8"/><line x1="468.5" y1="280.3" x2="459.6" y2="278.7" stroke="#13203f" stroke-width="0.8"/><line x1="466.9" y1="288.2" x2="462" y2="287.2" stroke="#13203f" stroke-width="0.8"/><line x1="465.1" y1="296.1" x2="460.3" y2="294.9" stroke="#13203f" stroke-width="0.8"/><line x1="463" y1="303.9" x2="458.2" y2="302.6" stroke="#13203f" stroke-width="0.8"/><line x1="460.6" y1="311.7" x2="455.9" y2="310.1" stroke="#13203f" stroke-width="0.8"/><line x1="458" y1="319.3" x2="449.6" y2="316.3" stroke="#13203f" stroke-width="0.8"/><line x1="455.1" y1="326.9" x2="450.5" y2="325" stroke="#13203f" stroke-width="0.8"/><line x1="451.9" y1="334.4" x2="447.4" y2="332.3" stroke="#13203f" stroke-width="0.8"/><line x1="448.5" y1="341.7" x2="444" y2="339.5" stroke="#13203f" stroke-width="0.8"/><line x1="444.8" y1="348.9" x2="440.4" y2="346.6" stroke="#13203f" stroke-width="0.8"/><line x1="440.9" y1="356" x2="428.8" y2="349" stroke="#13203f" stroke-width="1.6"/><line x1="436.7" y1="362.9" x2="432.5" y2="360.3" stroke="#13203f" stroke-width="0.8"/><line x1="432.3" y1="369.7" x2="428.2" y2="366.9" stroke="#13203f" stroke-width="0.8"/><line x1="427.7" y1="376.4" x2="423.6" y2="373.4" stroke="#13203f" stroke-width="0.8"/><line x1="422.8" y1="382.8" x2="418.9" y2="379.8" stroke="#13203f" stroke-width="0.8"/><line x1="417.7" y1="389.1" x2="410.8" y2="383.3" stroke="#13203f" stroke-width="0.8"/><line x1="412.4" y1="395.2" x2="408.7" y2="391.9" stroke="#13203f" stroke-width="0.8"/><line x1="406.9" y1="401.2" x2="403.3" y2="397.7" stroke="#13203f" stroke-width="0.8"/><line x1="401.2" y1="406.9" x2="397.7" y2="403.3" stroke="#13203f" stroke-width="0.8"/><line x1="395.2" y1="412.4" x2="391.9" y2="408.7" stroke="#13203f" stroke-width="0.8"/><line x1="389.1" y1="417.7" x2="383.3" y2="410.8" stroke="#13203f" stroke-width="0.8"/><line x1="382.8" y1="422.8" x2="379.8" y2="418.9" stroke="#13203f" stroke-width="0.8"/><line x1="376.4" y1="427.7" x2="373.4" y2="423.6" stroke="#13203f" stroke-width="0.8"/><line x1="369.7" y1="432.3" x2="366.9" y2="428.2" stroke="#13203f" stroke-width="0.8"/><line x1="362.9" y1="436.7" x2="360.3" y2="432.5" stroke="#13203f" stroke-width="0.8"/><line x1="356" y1="440.9" x2="349" y2="428.8" stroke="#13203f" stroke-width="1.6"/><line x1="348.9" y1="444.8" x2="346.6" y2="440.4" stroke="#13203f" stroke-width="0.8"/><line x1="341.7" y1="448.5" x2="339.5" y2="444" stroke="#13203f" stroke-width="0.8"/><line x1="334.4" y1="451.9" x2="332.3" y2="447.4" stroke="#13203f" stroke-width="0.8"/><line x1="326.9" y1="455.1" x2="325" y2="450.5" stroke="#13203f" stroke-width="0.8"/><line x1="319.3" y1="458" x2="316.3" y2="449.6" stroke="#13203f" stroke-width="0.8"/><line x1="311.7" y1="460.6" x2="310.1" y2="455.9" stroke="#13203f" stroke-width="0.8"/><line x1="303.9" y1="463" x2="302.6" y2="458.2" stroke="#13203f" stroke-width="0.8"/><line x1="296.1" y1="465.1" x2="294.9" y2="460.3" stroke="#13203f" stroke-width="0.8"/><line x1="288.2" y1="466.9" x2="287.2" y2="462" stroke="#13203f" stroke-width="0.8"/><line x1="280.3" y1="468.5" x2="278.7" y2="459.6" stroke="#13203f" stroke-width="0.8"/><line x1="272.3" y1="469.7" x2="271.6" y2="464.8" stroke="#13203f" stroke-width="0.8"/><line x1="264.3" y1="470.7" x2="263.7" y2="465.8" stroke="#13203f" stroke-width="0.8"/><line x1="256.2" y1="471.4" x2="255.8" y2="466.4" stroke="#13203f" stroke-width="0.8"/><line x1="248.1" y1="471.9" x2="247.9" y2="466.9" stroke="#13203f" stroke-width="0.8"/><line x1="240" y1="472" x2="240" y2="458" stroke="#ff5a4c" stroke-width="1.6"/><line x1="231.9" y1="471.9" x2="232.1" y2="466.9" stroke="#13203f" stroke-width="0.8"/><line x1="223.8" y1="471.4" x2="224.2" y2="466.4" stroke="#13203f" stroke-width="0.8"/><line x1="215.7" y1="470.7" x2="216.3" y2="465.8" stroke="#13203f" stroke-width="0.8"/><line x1="207.7" y1="469.7" x2="208.4" y2="464.8" stroke="#13203f" stroke-width="0.8"/><line x1="199.7" y1="468.5" x2="201.3" y2="459.6" stroke="#13203f" stroke-width="0.8"/><line x1="191.8" y1="466.9" x2="192.8" y2="462" stroke="#13203f" stroke-width="0.8"/><line x1="183.9" y1="465.1" x2="185.1" y2="460.3" stroke="#13203f" stroke-width="0.8"/><line x1="176.1" y1="463" x2="177.4" y2="458.2" stroke="#13203f" stroke-width="0.8"/><line x1="168.3" y1="460.6" x2="169.9" y2="455.9" stroke="#13203f" stroke-width="0.8"/><line x1="160.7" y1="458" x2="163.7" y2="449.6" stroke="#13203f" stroke-width="0.8"/><line x1="153.1" y1="455.1" x2="155" y2="450.5" stroke="#13203f" stroke-width="0.8"/><line x1="145.6" y1="451.9" x2="147.7" y2="447.4" stroke="#13203f" stroke-width="0.8"/><line x1="138.3" y1="448.5" x2="140.5" y2="444" stroke="#13203f" stroke-width="0.8"/><line x1="131.1" y1="444.8" x2="133.4" y2="440.4" stroke="#13203f" stroke-width="0.8"/><line x1="124" y1="440.9" x2="131" y2="428.8" stroke="#13203f" stroke-width="1.6"/><line x1="117.1" y1="436.7" x2="119.7" y2="432.5" stroke="#13203f" stroke-width="0.8"/><line x1="110.3" y1="432.3" x2="113.1" y2="428.2" stroke="#13203f" stroke-width="0.8"/><line x1="103.6" y1="427.7" x2="106.6" y2="423.6" stroke="#13203f" stroke-width="0.8"/><line x1="97.2" y1="422.8" x2="100.2" y2="418.9" stroke="#13203f" stroke-width="0.8"/><line x1="90.9" y1="417.7" x2="96.7" y2="410.8" stroke="#13203f" stroke-width="0.8"/><line x1="84.8" y1="412.4" x2="88.1" y2="408.7" stroke="#13203f" stroke-width="0.8"/><line x1="78.8" y1="406.9" x2="82.3" y2="403.3" stroke="#13203f" stroke-width="0.8"/><line x1="73.1" y1="401.2" x2="76.7" y2="397.7" stroke="#13203f" stroke-width="0.8"/><line x1="67.6" y1="395.2" x2="71.3" y2="391.9" stroke="#13203f" stroke-width="0.8"/><line x1="62.3" y1="389.1" x2="69.2" y2="383.3" stroke="#13203f" stroke-width="0.8"/><line x1="57.2" y1="382.8" x2="61.1" y2="379.8" stroke="#13203f" stroke-width="0.8"/><line x1="52.3" y1="376.4" x2="56.4" y2="373.4" stroke="#13203f" stroke-width="0.8"/><line x1="47.7" y1="369.7" x2="51.8" y2="366.9" stroke="#13203f" stroke-width="0.8"/><line x1="43.3" y1="362.9" x2="47.5" y2="360.3" stroke="#13203f" stroke-width="0.8"/><line x1="39.1" y1="356" x2="51.2" y2="349" stroke="#13203f" stroke-width="1.6"/><line x1="35.2" y1="348.9" x2="39.6" y2="346.6" stroke="#13203f" stroke-width="0.8"/><line x1="31.5" y1="341.7" x2="36" y2="339.5" stroke="#13203f" stroke-width="0.8"/><line x1="28.1" y1="334.4" x2="32.6" y2="332.3" stroke="#13203f" stroke-width="0.8"/><line x1="24.9" y1="326.9" x2="29.5" y2="325" stroke="#13203f" stroke-width="0.8"/><line x1="22" y1="319.3" x2="30.4" y2="316.3" stroke="#13203f" stroke-width="0.8"/><line x1="19.4" y1="311.7" x2="24.1" y2="310.1" stroke="#13203f" stroke-width="0.8"/><line x1="17" y1="303.9" x2="21.8" y2="302.6" stroke="#13203f" stroke-width="0.8"/><line x1="14.9" y1="296.1" x2="19.7" y2="294.9" stroke="#13203f" stroke-width="0.8"/><line x1="13.1" y1="288.2" x2="18" y2="287.2" stroke="#13203f" stroke-width="0.8"/><line x1="11.5" y1="280.3" x2="20.4" y2="278.7" stroke="#13203f" stroke-width="0.8"/><line x1="10.3" y1="272.3" x2="15.2" y2="271.6" stroke="#13203f" stroke-width="0.8"/><line x1="9.3" y1="264.3" x2="14.2" y2="263.7" stroke="#13203f" stroke-width="0.8"/><line x1="8.6" y1="256.2" x2="13.6" y2="255.8" stroke="#13203f" stroke-width="0.8"/><line x1="8.1" y1="248.1" x2="13.1" y2="247.9" stroke="#13203f" stroke-width="0.8"/><line x1="8" y1="240" x2="22" y2="240" stroke="#ff5a4c" stroke-width="1.6"/><line x1="8.1" y1="231.9" x2="13.1" y2="232.1" stroke="#13203f" stroke-width="0.8"/><line x1="8.6" y1="223.8" x2="13.6" y2="224.2" stroke="#13203f" stroke-width="0.8"/><line x1="9.3" y1="215.7" x2="14.2" y2="216.3" stroke="#13203f" stroke-width="0.8"/><line x1="10.3" y1="207.7" x2="15.2" y2="208.4" stroke="#13203f" stroke-width="0.8"/><line x1="11.5" y1="199.7" x2="20.4" y2="201.3" stroke="#13203f" stroke-width="0.8"/><line x1="13.1" y1="191.8" x2="18" y2="192.8" stroke="#13203f" stroke-width="0.8"/><line x1="14.9" y1="183.9" x2="19.7" y2="185.1" stroke="#13203f" stroke-width="0.8"/><line x1="17" y1="176.1" x2="21.8" y2="177.4" stroke="#13203f" stroke-width="0.8"/><line x1="19.4" y1="168.3" x2="24.1" y2="169.9" stroke="#13203f" stroke-width="0.8"/><line x1="22" y1="160.7" x2="30.4" y2="163.7" stroke="#13203f" stroke-width="0.8"/><line x1="24.9" y1="153.1" x2="29.5" y2="155" stroke="#13203f" stroke-width="0.8"/><line x1="28.1" y1="145.6" x2="32.6" y2="147.7" stroke="#13203f" stroke-width="0.8"/><line x1="31.5" y1="138.3" x2="36" y2="140.5" stroke="#13203f" stroke-width="0.8"/><line x1="35.2" y1="131.1" x2="39.6" y2="133.4" stroke="#13203f" stroke-width="0.8"/><line x1="39.1" y1="124" x2="51.2" y2="131" stroke="#13203f" stroke-width="1.6"/><line x1="43.3" y1="117.1" x2="47.5" y2="119.7" stroke="#13203f" stroke-width="0.8"/><line x1="47.7" y1="110.3" x2="51.8" y2="113.1" stroke="#13203f" stroke-width="0.8"/><line x1="52.3" y1="103.6" x2="56.4" y2="106.6" stroke="#13203f" stroke-width="0.8"/><line x1="57.2" y1="97.2" x2="61.1" y2="100.2" stroke="#13203f" stroke-width="0.8"/><line x1="62.3" y1="90.9" x2="69.2" y2="96.7" stroke="#13203f" stroke-width="0.8"/><line x1="67.6" y1="84.8" x2="71.3" y2="88.1" stroke="#13203f" stroke-width="0.8"/><line x1="73.1" y1="78.8" x2="76.7" y2="82.3" stroke="#13203f" stroke-width="0.8"/><line x1="78.8" y1="73.1" x2="82.3" y2="76.7" stroke="#13203f" stroke-width="0.8"/><line x1="84.8" y1="67.6" x2="88.1" y2="71.3" stroke="#13203f" stroke-width="0.8"/><line x1="90.9" y1="62.3" x2="96.7" y2="69.2" stroke="#13203f" stroke-width="0.8"/><line x1="97.2" y1="57.2" x2="100.2" y2="61.1" stroke="#13203f" stroke-width="0.8"/><line x1="103.6" y1="52.3" x2="106.6" y2="56.4" stroke="#13203f" stroke-width="0.8"/><line x1="110.3" y1="47.7" x2="113.1" y2="51.8" stroke="#13203f" stroke-width="0.8"/><line x1="117.1" y1="43.3" x2="119.7" y2="47.5" stroke="#13203f" stroke-width="0.8"/><line x1="124" y1="39.1" x2="131" y2="51.2" stroke="#13203f" stroke-width="1.6"/><line x1="131.1" y1="35.2" x2="133.4" y2="39.6" stroke="#13203f" stroke-width="0.8"/><line x1="138.3" y1="31.5" x2="140.5" y2="36" stroke="#13203f" stroke-width="0.8"/><line x1="145.6" y1="28.1" x2="147.7" y2="32.6" stroke="#13203f" stroke-width="0.8"/><line x1="153.1" y1="24.9" x2="155" y2="29.5" stroke="#13203f" stroke-width="0.8"/><line x1="160.7" y1="22" x2="163.7" y2="30.4" stroke="#13203f" stroke-width="0.8"/><line x1="168.3" y1="19.4" x2="169.9" y2="24.1" stroke="#13203f" stroke-width="0.8"/><line x1="176.1" y1="17" x2="177.4" y2="21.8" stroke="#13203f" stroke-width="0.8"/><line x1="183.9" y1="14.9" x2="185.1" y2="19.7" stroke="#13203f" stroke-width="0.8"/><line x1="191.8" y1="13.1" x2="192.8" y2="18" stroke="#13203f" stroke-width="0.8"/><line x1="199.7" y1="11.5" x2="201.3" y2="20.4" stroke="#13203f" stroke-width="0.8"/><line x1="207.7" y1="10.3" x2="208.4" y2="15.2" stroke="#13203f" stroke-width="0.8"/><line x1="215.7" y1="9.3" x2="216.3" y2="14.2" stroke="#13203f" stroke-width="0.8"/><line x1="223.8" y1="8.6" x2="224.2" y2="13.6" stroke="#13203f" stroke-width="0.8"/><line x1="231.9" y1="8.1" x2="232.1" y2="13.1" stroke="#13203f" stroke-width="0.8"/><line x1="240" y1="8" x2="240" y2="22" stroke="#ff5a4c" stroke-width="1.6"/><line x1="248.1" y1="8.1" x2="247.9" y2="13.1" stroke="#13203f" stroke-width="0.8"/><line x1="256.2" y1="8.6" x2="255.8" y2="13.6" stroke="#13203f" stroke-width="0.8"/><line x1="264.3" y1="9.3" x2="263.7" y2="14.2" stroke="#13203f" stroke-width="0.8"/><line x1="272.3" y1="10.3" x2="271.6" y2="15.2" stroke="#13203f" stroke-width="0.8"/><line x1="280.3" y1="11.5" x2="278.7" y2="20.4" stroke="#13203f" stroke-width="0.8"/><line x1="288.2" y1="13.1" x2="287.2" y2="18" stroke="#13203f" stroke-width="0.8"/><line x1="296.1" y1="14.9" x2="294.9" y2="19.7" stroke="#13203f" stroke-width="0.8"/><line x1="303.9" y1="17" x2="302.6" y2="21.8" stroke="#13203f" stroke-width="0.8"/><line x1="311.7" y1="19.4" x2="310.1" y2="24.1" stroke="#13203f" stroke-width="0.8"/><line x1="319.3" y1="22" x2="316.3" y2="30.4" stroke="#13203f" stroke-width="0.8"/><line x1="326.9" y1="24.9" x2="325" y2="29.5" stroke="#13203f" stroke-width="0.8"/><line x1="334.4" y1="28.1" x2="332.3" y2="32.6" stroke="#13203f" stroke-width="0.8"/><line x1="341.7" y1="31.5" x2="339.5" y2="36" stroke="#13203f" stroke-width="0.8"/><line x1="348.9" y1="35.2" x2="346.6" y2="39.6" stroke="#13203f" stroke-width="0.8"/><line x1="356" y1="39.1" x2="349" y2="51.2" stroke="#13203f" stroke-width="1.6"/><line x1="362.9" y1="43.3" x2="360.3" y2="47.5" stroke="#13203f" stroke-width="0.8"/><line x1="369.7" y1="47.7" x2="366.9" y2="51.8" stroke="#13203f" stroke-width="0.8"/><line x1="376.4" y1="52.3" x2="373.4" y2="56.4" stroke="#13203f" stroke-width="0.8"/><line x1="382.8" y1="57.2" x2="379.8" y2="61.1" stroke="#13203f" stroke-width="0.8"/><line x1="389.1" y1="62.3" x2="383.3" y2="69.2" stroke="#13203f" stroke-width="0.8"/><line x1="395.2" y1="67.6" x2="391.9" y2="71.3" stroke="#13203f" stroke-width="0.8"/><line x1="401.2" y1="73.1" x2="397.7" y2="76.7" stroke="#13203f" stroke-width="0.8"/><line x1="406.9" y1="78.8" x2="403.3" y2="82.3" stroke="#13203f" stroke-width="0.8"/><line x1="412.4" y1="84.8" x2="408.7" y2="88.1" stroke="#13203f" stroke-width="0.8"/><line x1="417.7" y1="90.9" x2="410.8" y2="96.7" stroke="#13203f" stroke-width="0.8"/><line x1="422.8" y1="97.2" x2="418.9" y2="100.2" stroke="#13203f" stroke-width="0.8"/><line x1="427.7" y1="103.6" x2="423.6" y2="106.6" stroke="#13203f" stroke-width="0.8"/><line x1="432.3" y1="110.3" x2="428.2" y2="113.1" stroke="#13203f" stroke-width="0.8"/><line x1="436.7" y1="117.1" x2="432.5" y2="119.7" stroke="#13203f" stroke-width="0.8"/><line x1="440.9" y1="124" x2="428.8" y2="131" stroke="#13203f" stroke-width="1.6"/><line x1="444.8" y1="131.1" x2="440.4" y2="133.4" stroke="#13203f" stroke-width="0.8"/><line x1="448.5" y1="138.3" x2="444" y2="140.5" stroke="#13203f" stroke-width="0.8"/><line x1="451.9" y1="145.6" x2="447.4" y2="147.7" stroke="#13203f" stroke-width="0.8"/><line x1="455.1" y1="153.1" x2="450.5" y2="155" stroke="#13203f" stroke-width="0.8"/><line x1="458" y1="160.7" x2="449.6" y2="163.7" stroke="#13203f" stroke-width="0.8"/><line x1="460.6" y1="168.3" x2="455.9" y2="169.9" stroke="#13203f" stroke-width="0.8"/><line x1="463" y1="176.1" x2="458.2" y2="177.4" stroke="#13203f" stroke-width="0.8"/><line x1="465.1" y1="183.9" x2="460.3" y2="185.1" stroke="#13203f" stroke-width="0.8"/><line x1="466.9" y1="191.8" x2="462" y2="192.8" stroke="#13203f" stroke-width="0.8"/><line x1="468.5" y1="199.7" x2="459.6" y2="201.3" stroke="#13203f" stroke-width="0.8"/><line x1="469.7" y1="207.7" x2="464.8" y2="208.4" stroke="#13203f" stroke-width="0.8"/><line x1="470.7" y1="215.7" x2="465.8" y2="216.3" stroke="#13203f" stroke-width="0.8"/><line x1="471.4" y1="223.8" x2="466.4" y2="224.2" stroke="#13203f" stroke-width="0.8"/><line x1="471.9" y1="231.9" x2="466.9" y2="232.1" stroke="#13203f" stroke-width="0.8"/></g>
+        <circle cx="240" cy="240" r="204" fill="#13203f"/>
+        <g clip-path="url(#lens)">
+          <rect x="0" y="0" width="480" height="480" fill="url(#lensBg)"/>
+          <g stroke="#fbeae4" stroke-width="2.2" stroke-linejoin="round"><polygon points="169,43.6 154.5,51.4 139.7,43.4 140.4,26.3 155.1,19.6 168.5,27.5" fill="#f8dbd1"/><ellipse cx="152.9" cy="34.9" rx="3.6" ry="2.8" fill="#c98a7c" opacity=".55"/><polygon points="198.9,43.9 185.3,51.4 170.9,43.7 173.4,27.9 186.5,19.9 200.2,28.3" fill="#f4cbbf"/><ellipse cx="187.2" cy="37.2" rx="3.8" ry="3.1" fill="#c98a7c" opacity=".55"/><polygon points="232.4,47.5 217.7,51.1 207.2,40.2 211.5,25.5 226.5,21.3 237.8,32.8" fill="#f8dbd1"/><ellipse cx="221.1" cy="35.2" rx="4.1" ry="3.3" fill="#c98a7c" opacity=".55"/><polygon points="267.9,43.4 251.5,47.1 239.7,35.6 244.5,20.1 260.1,14.8 272.3,26.7" fill="#f7d7cc"/><ellipse cx="255.3" cy="30.9" rx="3.5" ry="3.4" fill="#c98a7c" opacity=".55"/><polygon points="300.5,39.2 287,46.4 274.7,37.4 275.8,22.8 288.9,15.9 301.3,24.2" fill="#f8dbd1"/><ellipse cx="288.4" cy="29.1" rx="3.7" ry="3.1" fill="#c98a7c" opacity=".55"/><polygon points="338.1,47.4 323.3,51.8 310.9,42.4 312.8,25.9 328.8,21.4 340.5,31.9" fill="#f4cbbf"/><ellipse cx="324.3" cy="36.5" rx="3.8" ry="3.6" fill="#c98a7c" opacity=".55"/><polygon points="119.9,71.5 104.8,79.4 90.8,69.6 92,52.8 107.1,45.3 120.9,54.8" fill="#f4cbbf"/><ellipse cx="104.8" cy="62.1" rx="4.4" ry="3.7" fill="#c98a7c" opacity=".55"/><polygon points="153.6,72.1 139.1,78.7 125,70.7 126.2,54 140.9,47.6 155.5,55.4" fill="#f6d3c8"/><ellipse cx="138.9" cy="62" rx="3.7" ry="2.9" fill="#c98a7c" opacity=".55"/><polygon points="184.2,77.3 168.8,82 156.7,70.6 162.3,55.7 177,50.2 189.3,61.6" fill="#f4cbbf"/><ellipse cx="172.8" cy="64.9" rx="4.5" ry="3.1" fill="#c98a7c" opacity=".55"/><polygon points="220.7,76.1 206.1,83.7 192.9,73.2 196,57.6 209.9,51.8 221.9,60.7" fill="#f2c4b8"/><ellipse cx="209.3" cy="65.2" rx="4.5" ry="3.7" fill="#c98a7c" opacity=".55"/><polygon points="252.7,71.8 238.7,76.7 224.9,68.4 228.4,51.9 243.7,46.5 257.2,56.3" fill="#f2c4b8"/><ellipse cx="243" cy="61.1" rx="4.6" ry="2.7" fill="#c98a7c" opacity=".55"/><polygon points="283.3,73.9 268.3,79 255.8,68.2 261.2,53.2 275.8,47.1 288.3,58.4" fill="#f7d7cc"/><ellipse cx="273.2" cy="63.4" rx="4.5" ry="3.6" fill="#c98a7c" opacity=".55"/><polygon points="318.7,71.5 302.9,77.4 290.2,66.8 292.4,50.4 307.7,46 319.4,55.5" fill="#f7d7cc"/><ellipse cx="306.3" cy="61.1" rx="3.8" ry="3.2" fill="#c98a7c" opacity=".55"/><polygon points="356.1,73.8 341.9,80.6 328.8,72.6 328.2,56.5 342.9,49.3 356.6,57.7" fill="#f6d3c8"/><ellipse cx="342.2" cy="65.8" rx="4.1" ry="3.2" fill="#c98a7c" opacity=".55"/><polygon points="389.7,73.1 374.6,80 361.9,68.9 364.2,52.3 380.1,46 391.7,57.6" fill="#f7d7cc"/><ellipse cx="378.9" cy="61.8" rx="4" ry="3.1" fill="#c98a7c" opacity=".55"/><polygon points="99.5,99.6 85.4,107.7 72.9,98 71.7,81.9 86.7,76 100.6,83.4" fill="#f4cbbf"/><ellipse cx="84.7" cy="90.8" rx="4.1" ry="3.1" fill="#c98a7c" opacity=".55"/><polygon points="129.7,101.4 115.4,107.3 103.8,96.3 108,81.6 122.2,76.4 134.4,86.6" fill="#f7d7cc"/><ellipse cx="120.7" cy="90" rx="4.6" ry="3" fill="#c98a7c" opacity=".55"/><polygon points="171.7,99.6 156.4,104.9 142.6,97 143.8,80.3 159,73 172.5,82.8" fill="#f8dbd1"/><ellipse cx="157.3" cy="90" rx="4.1" ry="3.2" fill="#c98a7c" opacity=".55"/><polygon points="198.7,101.7 183.7,107.8 173.1,95.5 177.2,81.1 191.3,76.8 202.5,86.9" fill="#f7d7cc"/><ellipse cx="189.2" cy="89.5" rx="4.6" ry="3.2" fill="#c98a7c" opacity=".55"/><polygon points="232.5,104.2 217.8,107.5 206.3,97.1 211.3,82.2 226,78.8 236.5,89.5" fill="#f6d3c8"/><ellipse cx="220.6" cy="94.9" rx="4.3" ry="3.3" fill="#c98a7c" opacity=".55"/><polygon points="266.4,102.6 251.6,108.9 238.5,97.9 243.9,82.6 257.9,78 270.1,87.3" fill="#f4cbbf"/><ellipse cx="255" cy="91.4" rx="4" ry="3.4" fill="#c98a7c" opacity=".55"/><polygon points="305.2,104.7 289.2,110.9 277.6,99.3 280.3,84.2 294.5,78.8 306.2,88.5" fill="#f4cbbf"/><ellipse cx="291.7" cy="93.3" rx="3.5" ry="2.9" fill="#c98a7c" opacity=".55"/><polygon points="334.4,103 320.9,109.3 306.7,101.8 308,84.9 323.3,78.1 335.9,87.8" fill="#f4cbbf"/><ellipse cx="322.8" cy="92.6" rx="3.7" ry="3" fill="#c98a7c" opacity=".55"/><polygon points="369.6,101.9 354,107.3 342.1,97.9 341.7,81.9 357,76.7 369.3,85.6" fill="#f8dbd1"/><ellipse cx="355.1" cy="91.7" rx="4.1" ry="2.9" fill="#c98a7c" opacity=".55"/><polygon points="405.3,97.7 391.8,105 379.7,95.6 380.9,81 394.3,73.9 406.8,82.8" fill="#f7d7cc"/><ellipse cx="394.9" cy="90.7" rx="3.6" ry="3.6" fill="#c98a7c" opacity=".55"/><polygon points="50.6,133.6 35.7,140.1 23.4,129.5 25,113 40.8,107.3 53.3,117.9" fill="#f6d3c8"/><ellipse cx="39.6" cy="124.1" rx="4.6" ry="3.4" fill="#c98a7c" opacity=".55"/><polygon points="84.3,127.9 71.2,135.9 58.4,127.7 56.8,111.8 71.5,104.2 85.6,112.3" fill="#f7d7cc"/><ellipse cx="72.1" cy="120.3" rx="3.4" ry="3.5" fill="#c98a7c" opacity=".55"/><polygon points="118.5,132.6 103.4,136.9 90.2,128.1 93.9,112.6 108.1,107.6 120.1,116.8" fill="#f4cbbf"/><ellipse cx="104.7" cy="122.8" rx="4" ry="3.6" fill="#c98a7c" opacity=".55"/><polygon points="147.1,133.5 133.6,141.4 121.3,131.5 121.7,115.8 136.4,109.6 149.9,118.2" fill="#f8dbd1"/><ellipse cx="135.5" cy="123.6" rx="4.1" ry="3.2" fill="#c98a7c" opacity=".55"/><polygon points="188.6,128.3 174.2,135.9 161.5,126.2 162.1,110.6 176.4,102.7 190.8,111.8" fill="#f7d7cc"/><ellipse cx="174.1" cy="121.3" rx="4.7" ry="2.7" fill="#c98a7c" opacity=".55"/><polygon points="216.6,136 201.3,139.2 190.9,128 193.9,112 210.1,109.9 221.5,120.7" fill="#f4cbbf"/><ellipse cx="206.7" cy="123.5" rx="3.9" ry="3.3" fill="#c98a7c" opacity=".55"/><polygon points="254.2,128.9 240.4,136.6 225.9,128.7 227.6,112.4 241.4,105.6 256.1,112.6" fill="#f2c4b8"/><ellipse cx="240.5" cy="121.6" rx="4" ry="3.1" fill="#c98a7c" opacity=".55"/><polygon points="284,130.1 269.8,136.7 255.7,128.1 259,112.2 272.8,106.5 286.5,114.2" fill="#f8dbd1"/><ellipse cx="270.8" cy="120.6" rx="4.8" ry="3.3" fill="#c98a7c" opacity=".55"/><polygon points="319.1,130.1 305.8,136.6 291.8,128.9 294.4,112.9 308.4,104.6 320.9,115.2" fill="#f8dbd1"/><ellipse cx="306.8" cy="121" rx="4.5" ry="3.5" fill="#c98a7c" opacity=".55"/><polygon points="353,129.7 337.6,135.5 326.1,123.6 330.4,108.6 344.9,104.5 357.9,113.9" fill="#f2c4b8"/><ellipse cx="341.3" cy="119.9" rx="4.3" ry="3" fill="#c98a7c" opacity=".55"/><polygon points="386.3,133.7 372.2,140.8 359.2,132.4 358.8,116.4 373.5,107.9 386.4,118.1" fill="#f4cbbf"/><ellipse cx="372" cy="125.4" rx="3.9" ry="2.9" fill="#c98a7c" opacity=".55"/><polygon points="418.8,131.6 403.5,134.8 391.1,124.4 395.5,107.8 411.9,104.9 422.2,116.4" fill="#f4cbbf"/><ellipse cx="406.6" cy="118.9" rx="4.2" ry="3" fill="#c98a7c" opacity=".55"/><polygon points="455.3,132.5 442,141.3 429.1,131.4 429.2,115.2 444,109.2 456.8,117.5" fill="#f6d3c8"/><ellipse cx="443.1" cy="124.7" rx="3.9" ry="3.4" fill="#c98a7c" opacity=".55"/><polygon points="67.7,161.2 52.8,166 39.9,156.3 42.8,139.5 58.7,136.2 70.7,145.7" fill="#f2c4b8"/><ellipse cx="57.7" cy="150.8" rx="3.5" ry="3.7" fill="#c98a7c" opacity=".55"/><polygon points="102.5,161.6 87.7,168.4 75.9,157.6 78.2,142.6 92.4,134.8 103.8,146.3" fill="#f2c4b8"/><ellipse cx="88.3" cy="153" rx="3.4" ry="2.8" fill="#c98a7c" opacity=".55"/><polygon points="134.2,160 118,164.4 106.2,153.3 109.8,137.8 125,132.1 135.7,143.9" fill="#f8dbd1"/><ellipse cx="121.6" cy="148.8" rx="3.9" ry="2.9" fill="#c98a7c" opacity=".55"/><polygon points="168.7,157.4 154.2,165.4 140.8,155.1 141.8,138.4 157.1,132.4 169.6,141.8" fill="#f4cbbf"/><ellipse cx="153.8" cy="147.9" rx="4.3" ry="2.8" fill="#c98a7c" opacity=".55"/><polygon points="198,164.1 183.9,169.3 171.9,159.5 175.1,144.1 189.9,138.7 202.5,149" fill="#f2c4b8"/><ellipse cx="186.3" cy="153.9" rx="3.4" ry="3" fill="#c98a7c" opacity=".55"/><polygon points="237.3,158.1 222.9,165.2 211.3,154.2 213,138.7 227.7,133.5 241.3,142.4" fill="#f6d3c8"/><ellipse cx="227.2" cy="148.6" rx="3.7" ry="2.9" fill="#c98a7c" opacity=".55"/><polygon points="266.8,163.7 252,167.9 241.7,156.4 244.5,140.3 260.6,138.4 270.8,149.3" fill="#f6d3c8"/><ellipse cx="255.2" cy="152.6" rx="4.4" ry="3" fill="#c98a7c" opacity=".55"/><polygon points="301,156.9 287.5,165.1 274,156 274.9,140.1 289.1,133.3 303.1,141.2" fill="#f8dbd1"/><ellipse cx="290.2" cy="148.5" rx="3.5" ry="2.8" fill="#c98a7c" opacity=".55"/><polygon points="333.4,162.6 317.7,167.2 306.9,155.1 310.3,139.2 326.1,136.2 338.3,146.8" fill="#f6d3c8"/><ellipse cx="320.3" cy="151" rx="3.9" ry="3.7" fill="#c98a7c" opacity=".55"/><polygon points="367.2,161.2 352.7,165.9 340.6,155 345.1,138.8 360.8,136.5 371.1,147" fill="#f6d3c8"/><ellipse cx="358.1" cy="149" rx="3.7" ry="2.8" fill="#c98a7c" opacity=".55"/><polygon points="407.7,160.8 392.3,165.4 378.6,157.5 380.4,141.1 395.5,133.7 407.8,144.4" fill="#f7d7cc"/><ellipse cx="395.4" cy="151.2" rx="4.7" ry="2.7" fill="#c98a7c" opacity=".55"/><polygon points="437,164 420.7,166.5 410.3,155.1 414.3,140.1 429.7,136.2 441.8,147.5" fill="#f4cbbf"/><ellipse cx="423.2" cy="153.2" rx="3.8" ry="3.4" fill="#c98a7c" opacity=".55"/><polygon points="49.3,188.9 35.3,196.7 21.9,187.6 22.5,171.6 36.8,165.3 50.1,173.1" fill="#f6d3c8"/><ellipse cx="38" cy="179.4" rx="3.5" ry="2.8" fill="#c98a7c" opacity=".55"/><polygon points="82.1,191.9 67.9,198.2 54.9,188.8 57,172.5 72.2,166.1 85.6,176.2" fill="#f6d3c8"/><ellipse cx="71.1" cy="181.8" rx="3.8" ry="3" fill="#c98a7c" opacity=".55"/><polygon points="114.3,188.7 100.3,194.6 88.1,185.3 88.7,169 104.3,164.4 116,173.8" fill="#f8dbd1"/><ellipse cx="104.2" cy="179.5" rx="3.7" ry="3.5" fill="#c98a7c" opacity=".55"/><polygon points="152.6,192.9 138.6,201.4 124.2,192.5 124.5,175.5 139.5,169.8 152.7,177.3" fill="#f6d3c8"/><ellipse cx="137.3" cy="185" rx="4.5" ry="2.9" fill="#c98a7c" opacity=".55"/><polygon points="182.7,190.1 168.1,197.9 154.4,188.6 156.8,173.2 169.9,164.9 183.8,173.7" fill="#f8dbd1"/><ellipse cx="167.9" cy="180.7" rx="3.6" ry="2.9" fill="#c98a7c" opacity=".55"/><polygon points="215.7,191.8 201.4,196.2 189.6,186.8 191.9,171 207.2,167 218.9,176.8" fill="#f4cbbf"/><ellipse cx="202.4" cy="181.8" rx="4.1" ry="3.1" fill="#c98a7c" opacity=".55"/><polygon points="255.6,190.9 241.3,198.6 228.1,189.5 229.1,174 242.9,165 256.7,174.7" fill="#f2c4b8"/><ellipse cx="243.9" cy="181.5" rx="4.2" ry="3.1" fill="#c98a7c" opacity=".55"/><polygon points="284,195.1 269,198.1 257.2,187.4 263.1,172.5 277.7,169.7 290.1,179.9" fill="#f2c4b8"/><ellipse cx="271.9" cy="182" rx="4.2" ry="3.1" fill="#c98a7c" opacity=".55"/><polygon points="322.8,186.2 309.7,195.3 296.2,186.2 296,170.2 310.2,161.4 324.4,170.4" fill="#f4cbbf"/><ellipse cx="308.5" cy="177.7" rx="4.1" ry="3.7" fill="#c98a7c" opacity=".55"/><polygon points="351.7,193 335.6,195.8 324.9,185.2 326.9,169.1 343.4,164.3 354.6,176.6" fill="#f6d3c8"/><ellipse cx="339.7" cy="181.6" rx="3.5" ry="3.4" fill="#c98a7c" opacity=".55"/><polygon points="390.1,195 374.2,199.9 361.9,189.2 365.9,173.9 380.4,168.2 392.6,178.6" fill="#f6d3c8"/><ellipse cx="376.9" cy="183.9" rx="3.9" ry="2.8" fill="#c98a7c" opacity=".55"/><polygon points="418.6,193.2 403.9,198.3 392.1,186.9 397.9,172.2 412.7,166.4 422.7,178.9" fill="#f7d7cc"/><ellipse cx="408.1" cy="184.1" rx="4.5" ry="3.4" fill="#c98a7c" opacity=".55"/><polygon points="455.2,188.7 440.8,195.2 428.8,185.3 430.9,170.6 444.7,162.2 457.2,173.1" fill="#f2c4b8"/><ellipse cx="443.7" cy="180.5" rx="4" ry="2.9" fill="#c98a7c" opacity=".55"/><polygon points="29.9,218.4 16,226.1 3.4,217.1 2.5,201.5 16.8,195.2 31,202.2" fill="#f7d7cc"/><ellipse cx="14.7" cy="211.1" rx="4.6" ry="3.4" fill="#c98a7c" opacity=".55"/><polygon points="68.9,215.7 54.7,223.7 41.9,214.4 42.2,199.5 55.3,190.2 68.5,199.8" fill="#f4cbbf"/><ellipse cx="55.7" cy="208.1" rx="3.7" ry="3.6" fill="#c98a7c" opacity=".55"/><polygon points="101,218.3 86.1,225.8 73.3,215.4 75.3,199.9 89.4,191.7 102.3,202.2" fill="#f7d7cc"/><ellipse cx="86.8" cy="208.8" rx="3.8" ry="2.8" fill="#c98a7c" opacity=".55"/><polygon points="130.2,220.1 114,224.6 104.1,211.8 107.2,196.1 122.9,193.8 134.4,204.3" fill="#f8dbd1"/><ellipse cx="120.6" cy="208" rx="4.1" ry="3.4" fill="#c98a7c" opacity=".55"/><polygon points="170.9,219.5 155.1,225.2 143.2,214.4 145.7,198.9 160.3,193.4 171.8,203.5" fill="#f8dbd1"/><ellipse cx="158.8" cy="208.6" rx="3.6" ry="3.5" fill="#c98a7c" opacity=".55"/><polygon points="199.3,222 184.5,230 171.2,219.8 172.3,203.5 187,197.4 199,206.5" fill="#f6d3c8"/><ellipse cx="184.7" cy="212" rx="4.3" ry="3.1" fill="#c98a7c" opacity=".55"/><polygon points="234.8,217.5 219.9,222 208.3,212.8 209.4,197.4 224.3,192.1 237,201.5" fill="#f7d7cc"/><ellipse cx="220.9" cy="207.7" rx="4.2" ry="2.9" fill="#c98a7c" opacity=".55"/><polygon points="272.4,219.6 257.2,225.7 244.6,217.4 245.3,202.4 258.5,194 272.9,202.5" fill="#f8dbd1"/><ellipse cx="257.5" cy="209.4" rx="3.4" ry="3.4" fill="#c98a7c" opacity=".55"/><polygon points="303.4,219.9 288.1,226.4 275.7,214.9 279.9,199.5 294.7,192.8 305.4,204.7" fill="#f7d7cc"/><ellipse cx="289.5" cy="208.3" rx="3.6" ry="3.6" fill="#c98a7c" opacity=".55"/><polygon points="333.6,221.3 319.2,226.8 307.1,216.5 309.9,200.5 325.4,195.3 337.2,206.3" fill="#f7d7cc"/><ellipse cx="320.9" cy="210.6" rx="3.8" ry="2.8" fill="#c98a7c" opacity=".55"/><polygon points="372.6,222.4 358.1,229.1 345.9,217.6 350,201.8 365.3,196.3 376.8,207.7" fill="#f4cbbf"/><ellipse cx="363.7" cy="211.6" rx="4.3" ry="2.8" fill="#c98a7c" opacity=".55"/><polygon points="406.4,224.6 391.6,227.7 379.9,217.4 384.3,201.6 400.3,197.7 412.4,209.5" fill="#f8dbd1"/><ellipse cx="394.9" cy="215.2" rx="4.6" ry="2.8" fill="#c98a7c" opacity=".55"/><polygon points="438.9,220.3 423,222.9 412.5,212 415.1,196 431.1,193.7 442.2,204.3" fill="#f7d7cc"/><ellipse cx="426" cy="209.9" rx="4.3" ry="3.4" fill="#c98a7c" opacity=".55"/><polygon points="475.5,224.3 459.8,230.3 446.4,220.2 449.7,204.2 464.5,197.5 477.2,207.9" fill="#f8dbd1"/><ellipse cx="463.3" cy="213.5" rx="4.2" ry="3.3" fill="#c98a7c" opacity=".55"/><polygon points="44.6,253.2 30.5,258 18.1,248.4 22.7,233.5 36.7,228.9 47.7,238.8" fill="#f7d7cc"/><ellipse cx="34.7" cy="242.1" rx="4.7" ry="3.3" fill="#c98a7c" opacity=".55"/><polygon points="83.3,253.9 67.6,257.9 56.5,247.1 60.1,232.3 74.5,228.3 87.6,237.6" fill="#f6d3c8"/><ellipse cx="72.4" cy="243.2" rx="3.8" ry="2.8" fill="#c98a7c" opacity=".55"/><polygon points="114.1,250.4 100.2,257.5 88,248.3 88.4,233.3 102.1,226.4 116,234.4" fill="#f8dbd1"/><ellipse cx="102.8" cy="242.9" rx="4.2" ry="3.2" fill="#c98a7c" opacity=".55"/><polygon points="147.2,251.9 132.8,257.3 122.2,245.9 125,230.8 140,227.4 152,237.1" fill="#f6d3c8"/><ellipse cx="136.8" cy="240.9" rx="4" ry="3.3" fill="#c98a7c" opacity=".55"/><polygon points="183.9,249.8 170.3,256.6 156.1,249.8 156.1,233.1 170.8,224.5 184.7,233.9" fill="#f7d7cc"/><ellipse cx="169.6" cy="243.5" rx="3.8" ry="2.9" fill="#c98a7c" opacity=".55"/><polygon points="221.3,248.6 206.9,254.8 192.6,247.9 193.4,231.3 207.9,223.2 221.8,232.3" fill="#f8dbd1"/><ellipse cx="205.8" cy="241.7" rx="4.6" ry="3.5" fill="#c98a7c" opacity=".55"/><polygon points="251.9,250.2 237.7,256.7 224.7,247.5 227.3,232.1 241.4,223.8 254.4,234.5" fill="#f2c4b8"/><ellipse cx="238" cy="241.4" rx="4.3" ry="3.3" fill="#c98a7c" opacity=".55"/><polygon points="283.9,251.3 268.3,256.2 255.7,246.4 258.7,230.8 273.2,224.9 286.1,234.7" fill="#f8dbd1"/><ellipse cx="271.1" cy="239.1" rx="4" ry="3.6" fill="#c98a7c" opacity=".55"/><polygon points="319.7,247.4 304.6,254.7 292.5,244.2 293.9,229.2 307.5,222.6 320.2,231.3" fill="#f7d7cc"/><ellipse cx="305.6" cy="236.8" rx="4.7" ry="3" fill="#c98a7c" opacity=".55"/><polygon points="359,252.4 344.4,258.6 331.8,250.3 332.6,235.3 345.9,228 358.9,236.4" fill="#f8dbd1"/><ellipse cx="344" cy="244" rx="3.5" ry="2.9" fill="#c98a7c" opacity=".55"/><polygon points="388.6,246.8 373.2,253.1 360.5,243 362.1,226.9 377.1,221 389,230.8" fill="#f7d7cc"/><ellipse cx="376.2" cy="234.8" rx="3.7" ry="3.6" fill="#c98a7c" opacity=".55"/><polygon points="424.2,251.7 408.2,256.7 395.9,245.9 398.6,229.4 414.6,224.6 426.7,235.4" fill="#f4cbbf"/><ellipse cx="412.1" cy="241.2" rx="4" ry="3" fill="#c98a7c" opacity=".55"/><polygon points="458.2,247.3 442.8,253.6 429.8,243.5 432.7,227.9 446.9,221.5 459.5,231" fill="#f7d7cc"/><ellipse cx="446.3" cy="237.3" rx="4.3" ry="3.6" fill="#c98a7c" opacity=".55"/><polygon points="26,282.4 11.5,286.5 0.8,275.5 4,259.9 20.2,255.2 30.3,268" fill="#f8dbd1"/><ellipse cx="14" cy="272.1" rx="4.1" ry="3.5" fill="#c98a7c" opacity=".55"/><polygon points="64.6,281.6 49.2,285.7 36.5,275.1 42.2,259.8 57.1,254.4 68.2,266.2" fill="#f6d3c8"/><ellipse cx="54" cy="270.9" rx="4.3" ry="3" fill="#c98a7c" opacity=".55"/><polygon points="100.8,275.3 85.8,282.7 71.7,274.3 72.3,258 86.5,251.5 99.7,259" fill="#f2c4b8"/><ellipse cx="87.9" cy="266.5" rx="3.7" ry="3.5" fill="#c98a7c" opacity=".55"/><polygon points="134.4,276.3 119.6,284.2 105.8,275 106.8,259 120.9,251.3 133.7,260.3" fill="#f4cbbf"/><ellipse cx="119.7" cy="268" rx="4.5" ry="3.6" fill="#c98a7c" opacity=".55"/><polygon points="166.3,277.5 152,284.7 140.2,273.5 141.7,257.3 157.3,252.9 169.4,262.5" fill="#f8dbd1"/><ellipse cx="156.7" cy="268.7" rx="4.1" ry="3.5" fill="#c98a7c" opacity=".55"/><polygon points="202.7,278.7 188,284.1 175.6,273.7 179.9,258.7 194.4,251.7 205.3,263.6" fill="#f8dbd1"/><ellipse cx="192.5" cy="266.7" rx="4.5" ry="3.6" fill="#c98a7c" opacity=".55"/><polygon points="236.7,278.3 221.4,281.1 210.9,270.9 212.7,254.9 229,251 239.7,262.8" fill="#f6d3c8"/><ellipse cx="225.3" cy="268.3" rx="3.7" ry="3.2" fill="#c98a7c" opacity=".55"/><polygon points="271.8,277.1 257,283.6 243.8,273.9 245.2,257 260.8,252.6 274.7,260.7" fill="#f7d7cc"/><ellipse cx="260.1" cy="268.8" rx="3.7" ry="3.4" fill="#c98a7c" opacity=".55"/><polygon points="304.7,281.5 289.1,287.1 277,277 279.1,261.8 293.2,256.3 306,265" fill="#f6d3c8"/><ellipse cx="291.2" cy="272.8" rx="4.4" ry="3" fill="#c98a7c" opacity=".55"/><polygon points="333.7,280.3 319.3,285.3 306.9,275.1 310.9,259.3 326,255.1 337.8,265.4" fill="#f2c4b8"/><ellipse cx="322.3" cy="272" rx="3.5" ry="3.4" fill="#c98a7c" opacity=".55"/><polygon points="372.5,276.8 356.8,283 345.3,271.3 346.8,254.9 362.9,250.4 375,260.8" fill="#f4cbbf"/><ellipse cx="358.1" cy="267" rx="4.3" ry="3.1" fill="#c98a7c" opacity=".55"/><polygon points="408.2,278.4 393.2,285.1 381.4,274.2 383.1,258.7 397.8,252.9 410.5,262.5" fill="#f8dbd1"/><ellipse cx="394.7" cy="269.8" rx="3.9" ry="3.2" fill="#c98a7c" opacity=".55"/><polygon points="436.6,281.4 420.6,285.6 410.3,273 414.8,258.2 429.9,254.7 441.2,265.8" fill="#f6d3c8"/><ellipse cx="426.5" cy="267.6" rx="4.4" ry="3.6" fill="#c98a7c" opacity=".55"/><polygon points="473.3,274.7 460,281.4 445.8,273.5 448,256.9 462.8,249.9 476.5,259.2" fill="#f7d7cc"/><ellipse cx="461.8" cy="266.8" rx="4.3" ry="3.4" fill="#c98a7c" opacity=".55"/><polygon points="48.6,308.7 35.3,315.4 21,308.6 21.2,291.7 36.2,284.3 49.5,293.3" fill="#f4cbbf"/><ellipse cx="36.9" cy="301" rx="3.8" ry="3" fill="#c98a7c" opacity=".55"/><polygon points="82.5,307.6 67.2,314.6 55.8,303.3 56.6,287.8 71.3,283 83.2,291.9" fill="#f2c4b8"/><ellipse cx="69.8" cy="299.3" rx="4" ry="2.7" fill="#c98a7c" opacity=".55"/><polygon points="115.2,312 98.8,314.8 87.9,303.3 92.9,288.8 107.8,283.8 118,295.9" fill="#f4cbbf"/><ellipse cx="103.7" cy="299.2" rx="3.4" ry="3.4" fill="#c98a7c" opacity=".55"/><polygon points="153.8,309.7 140.4,317.3 127.6,308.2 128,292.4 142.4,285.6 156.3,294" fill="#f6d3c8"/><ellipse cx="140.9" cy="302.4" rx="4.3" ry="2.9" fill="#c98a7c" opacity=".55"/><polygon points="186.1,307.6 171.1,313.7 157.8,303.4 160.6,286.5 176.3,282.9 187.6,292.3" fill="#f6d3c8"/><ellipse cx="171.9" cy="298" rx="4.5" ry="2.8" fill="#c98a7c" opacity=".55"/><polygon points="218.9,309.7 203.9,316.4 191.5,307.2 191.6,292 205.5,284.3 218.7,293.3" fill="#f4cbbf"/><ellipse cx="203.3" cy="301.7" rx="3.9" ry="3.4" fill="#c98a7c" opacity=".55"/><polygon points="254.4,308.3 238.9,315.4 225.5,305 227.9,288.7 242.7,283 254.5,292.4" fill="#f7d7cc"/><ellipse cx="240.2" cy="298.7" rx="4.7" ry="3.6" fill="#c98a7c" opacity=".55"/><polygon points="288.2,307.9 272.7,313.1 259.5,303.9 261.8,287.7 276.9,280.6 290.2,291.1" fill="#f8dbd1"/><ellipse cx="275.5" cy="296.8" rx="3.8" ry="2.9" fill="#c98a7c" opacity=".55"/><polygon points="322.1,311.3 307.5,315.3 294.6,305.6 298.4,288.8 314.4,286.1 327.5,295.8" fill="#f7d7cc"/><ellipse cx="311.7" cy="302.4" rx="3.9" ry="2.8" fill="#c98a7c" opacity=".55"/><polygon points="356.3,310.2 341.3,318.1 328.7,307.8 328.8,292 343.4,284.5 356.6,293.9" fill="#f4cbbf"/><ellipse cx="344.1" cy="301.3" rx="3.4" ry="3.1" fill="#c98a7c" opacity=".55"/><polygon points="388.2,307.9 374.6,314.8 361.6,305.6 363.9,290.1 378.1,282.4 390.4,292.9" fill="#f7d7cc"/><ellipse cx="376.6" cy="297.9" rx="3.7" ry="2.9" fill="#c98a7c" opacity=".55"/><polygon points="423.5,308 408.7,313.7 397.3,303.1 400.1,288.5 414.3,280.8 426.1,292.5" fill="#f6d3c8"/><ellipse cx="410.9" cy="297.8" rx="3.5" ry="3" fill="#c98a7c" opacity=".55"/><polygon points="452,307 438,312.3 424.7,303 428.4,286.9 443.6,281.4 455,292.3" fill="#f8dbd1"/><ellipse cx="440.4" cy="299.1" rx="4.4" ry="3.6" fill="#c98a7c" opacity=".55"/><polygon points="64.6,333.7 50.5,342.4 36.9,333.1 36,316.6 51,308.3 63.7,318.2" fill="#f7d7cc"/><ellipse cx="51.3" cy="327.1" rx="4.4" ry="2.8" fill="#c98a7c" opacity=".55"/><polygon points="100.3,335.4 85.3,342.5 72.4,333.7 71.3,317.6 86.2,310.8 99.1,319.2" fill="#f4cbbf"/><ellipse cx="84.4" cy="328.2" rx="4.7" ry="2.8" fill="#c98a7c" opacity=".55"/><polygon points="132.1,336 117,340.4 105.2,329.1 109.7,313.1 125.7,309.7 135.8,321.4" fill="#f8dbd1"/><ellipse cx="122.4" cy="326.8" rx="4.3" ry="3" fill="#c98a7c" opacity=".55"/><polygon points="168.8,338.3 155.2,345.4 142.5,337.2 142.1,321.7 156.1,315.1 169.1,322.9" fill="#f4cbbf"/><ellipse cx="157.3" cy="331.7" rx="4" ry="3.7" fill="#c98a7c" opacity=".55"/><polygon points="201.7,336.3 187.1,341.7 176,330.2 179.2,314.3 195.2,309.7 207.7,321.3" fill="#f2c4b8"/><ellipse cx="192.5" cy="326.4" rx="4" ry="3.1" fill="#c98a7c" opacity=".55"/><polygon points="236.6,338 222.4,343.1 211.3,333 212.7,317.4 228.3,312.3 239.4,323.2" fill="#f4cbbf"/><ellipse cx="224.3" cy="327.8" rx="3.6" ry="3" fill="#c98a7c" opacity=".55"/><polygon points="272.8,335.8 258.6,342.6 244.2,335 246.8,319.1 260.2,309.9 272.5,320.4" fill="#f4cbbf"/><ellipse cx="259.6" cy="328.5" rx="3.6" ry="3.5" fill="#c98a7c" opacity=".55"/><polygon points="306.9,336.5 293.1,343.1 280.1,334.6 281.3,318.9 295.5,312.8 309.5,320.6" fill="#f8dbd1"/><ellipse cx="292.9" cy="328.4" rx="4" ry="3.2" fill="#c98a7c" opacity=".55"/><polygon points="337.5,339.8 321.5,342.9 310.1,332.3 314.4,317.8 328.8,312.6 339.8,323.6" fill="#f4cbbf"/><ellipse cx="323.6" cy="326.7" rx="4.4" ry="3.4" fill="#c98a7c" opacity=".55"/><polygon points="370.8,333.9 356.5,341.3 343.4,332.7 343.9,317.5 357.3,309.1 371.4,317.5" fill="#f4cbbf"/><ellipse cx="357.2" cy="324.2" rx="3.5" ry="3.5" fill="#c98a7c" opacity=".55"/><polygon points="406.8,338.5 392.1,345.4 377.6,338.1 377.8,321.2 392.6,313.9 405.2,322.8" fill="#f2c4b8"/><ellipse cx="390.9" cy="330.5" rx="3.7" ry="3.3" fill="#c98a7c" opacity=".55"/><polygon points="442.4,335.9 426.9,341.7 415.6,329.9 417.7,313.6 434,308.2 444.5,320.5" fill="#f8dbd1"/><ellipse cx="431.3" cy="326.4" rx="4.6" ry="3" fill="#c98a7c" opacity=".55"/><polygon points="85.1,366.8 70.1,373.3 57.1,365.5 57.4,350.5 70.3,342.7 84.9,349.7" fill="#f6d3c8"/><ellipse cx="68.3" cy="359.7" rx="4.4" ry="3" fill="#c98a7c" opacity=".55"/><polygon points="118.4,368.1 104.2,374.4 91.9,364.6 94.6,349.6 108.5,343.8 120.6,353" fill="#f2c4b8"/><ellipse cx="106.3" cy="358.7" rx="3.8" ry="2.8" fill="#c98a7c" opacity=".55"/><polygon points="150.3,366.2 134.7,370 122.1,360.7 124.6,344.5 140,340.4 153.2,349.5" fill="#f2c4b8"/><ellipse cx="138.1" cy="355.6" rx="4.2" ry="2.8" fill="#c98a7c" opacity=".55"/><polygon points="188,363.9 173.5,371.4 160.1,361.3 161.7,344.6 177.1,338.6 191.1,347.7" fill="#f8dbd1"/><ellipse cx="176.6" cy="356" rx="3.5" ry="3.2" fill="#c98a7c" opacity=".55"/><polygon points="222.2,369.7 208,377.1 195.1,367.6 195.9,351.8 210.3,346 223.4,354" fill="#f7d7cc"/><ellipse cx="209.9" cy="359.7" rx="4" ry="3.1" fill="#c98a7c" opacity=".55"/><polygon points="258.3,366.3 243.2,374.7 230.6,364.6 228.9,348.8 243.7,341.1 258.4,349.1" fill="#f7d7cc"/><ellipse cx="242.6" cy="357.6" rx="4.7" ry="3.4" fill="#c98a7c" opacity=".55"/><polygon points="285.9,368.4 270.3,373.2 258,363.8 259.3,348 274.2,343.1 287.2,351.7" fill="#f7d7cc"/><ellipse cx="273.9" cy="356.3" rx="4.2" ry="3.7" fill="#c98a7c" opacity=".55"/><polygon points="319.6,370 303.3,373.5 292.7,361.8 295.9,346.1 311.9,341.8 322.5,353.9" fill="#f2c4b8"/><ellipse cx="308" cy="358.1" rx="4.3" ry="2.9" fill="#c98a7c" opacity=".55"/><polygon points="356.1,367.8 340.9,373.2 329,362.9 331.7,347.8 346,342.5 358.5,351.9" fill="#f2c4b8"/><ellipse cx="345.4" cy="357.1" rx="4.7" ry="2.9" fill="#c98a7c" opacity=".55"/><polygon points="391.6,365.5 377.5,373.5 365.3,362.8 367.2,347.9 380.6,341.9 393.8,349.9" fill="#f7d7cc"/><ellipse cx="380.6" cy="356.3" rx="3.5" ry="3.1" fill="#c98a7c" opacity=".55"/><polygon points="422.5,367.5 409,376.6 394.9,367.3 396.8,351.5 410.1,343.9 423.3,352.1" fill="#f4cbbf"/><ellipse cx="410" cy="360.8" rx="4.5" ry="3.2" fill="#c98a7c" opacity=".55"/><polygon points="101.4,394.8 86,399.3 73.1,388.7 77.8,372.7 93.2,368.4 105.6,378.9" fill="#f7d7cc"/><ellipse cx="90" cy="383.3" rx="4" ry="3.2" fill="#c98a7c" opacity=".55"/><polygon points="135.5,395.4 120.7,401.3 108.3,391.9 109.1,375.8 124.5,369 137.2,379.5" fill="#f2c4b8"/><ellipse cx="121.8" cy="385.9" rx="4.5" ry="3.2" fill="#c98a7c" opacity=".55"/><polygon points="165.3,396.1 149.9,402.1 138.5,389.8 143.2,374.7 157.9,370.3 170.7,380.6" fill="#f6d3c8"/><ellipse cx="152.2" cy="384.4" rx="4.6" ry="3" fill="#c98a7c" opacity=".55"/><polygon points="201.2,396.2 186.1,402.5 173.6,391.4 177.3,375.6 192.2,370.3 203.2,381" fill="#f8dbd1"/><ellipse cx="189.1" cy="383.9" rx="3.5" ry="3" fill="#c98a7c" opacity=".55"/><polygon points="235.3,398.5 219.5,402 208,392.1 210.5,376.9 225.4,371.8 238.2,381.8" fill="#f7d7cc"/><ellipse cx="221.7" cy="387.3" rx="4.5" ry="2.9" fill="#c98a7c" opacity=".55"/><polygon points="267.2,401.7 252.1,405 239.3,395.2 243.9,379.1 259.9,374.2 272.4,385.9" fill="#f2c4b8"/><ellipse cx="256.3" cy="390.7" rx="4.5" ry="2.9" fill="#c98a7c" opacity=".55"/><polygon points="307.6,394.9 293.5,401.5 279.6,394.4 279.8,378.2 294.1,370 308.2,378.6" fill="#f6d3c8"/><ellipse cx="294.9" cy="385.8" rx="4.3" ry="2.7" fill="#c98a7c" opacity=".55"/><polygon points="336.2,400.2 321,404.5 308.6,395.1 311.3,379.2 326.3,374.5 339,384" fill="#f7d7cc"/><ellipse cx="323.7" cy="388.2" rx="3.7" ry="3.3" fill="#c98a7c" opacity=".55"/><polygon points="368,396.6 354.3,402 340.5,393.6 344.1,377.4 358.9,371.6 371.2,381.6" fill="#f6d3c8"/><ellipse cx="357.1" cy="388.1" rx="4.2" ry="2.9" fill="#c98a7c" opacity=".55"/><polygon points="405.2,394 391,402.6 376.2,394.1 378.4,378.1 391.3,370.5 405.4,377.6" fill="#f6d3c8"/><ellipse cx="389.4" cy="387.2" rx="4.2" ry="3.7" fill="#c98a7c" opacity=".55"/><polygon points="116.9,428.6 102.8,436.3 90.3,426.4 91.2,411.1 105.2,402.9 118.3,412.9" fill="#f4cbbf"/><ellipse cx="102.3" cy="418.5" rx="3.9" ry="2.7" fill="#c98a7c" opacity=".55"/><polygon points="153.2,425.1 138.8,432.8 126.5,422.2 127.5,406.2 142.5,398.8 155.1,409.6" fill="#f8dbd1"/><ellipse cx="140.9" cy="415.5" rx="4" ry="3.1" fill="#c98a7c" opacity=".55"/><polygon points="186,423.6 171.4,430.4 158.5,422.5 158.5,407.4 171.7,399 186.1,406.8" fill="#f7d7cc"/><ellipse cx="171.3" cy="416.5" rx="4.5" ry="2.9" fill="#c98a7c" opacity=".55"/><polygon points="218.8,428.5 203.3,433.3 189.2,425.1 192.1,408.7 206.7,403.1 219.5,411.9" fill="#f4cbbf"/><ellipse cx="206.7" cy="420.2" rx="4.2" ry="3.2" fill="#c98a7c" opacity=".55"/><polygon points="256.2,426.5 241.6,431.8 228.1,423.4 230.3,407 245.2,402.1 259,410.3" fill="#f2c4b8"/><ellipse cx="241.5" cy="417.8" rx="3.6" ry="2.7" fill="#c98a7c" opacity=".55"/><polygon points="286.6,428.5 272,432.8 259.1,422.9 264.7,407.9 279.4,401.4 291.6,413.2" fill="#f8dbd1"/><ellipse cx="274.2" cy="418.9" rx="3.5" ry="3" fill="#c98a7c" opacity=".55"/><polygon points="323.9,425.9 308.5,431.7 295.3,422.6 297,406.3 312,399.1 325.9,409" fill="#f4cbbf"/><ellipse cx="308.3" cy="416.7" rx="4.3" ry="3.1" fill="#c98a7c" opacity=".55"/><polygon points="352.8,428 337.9,434.3 326.6,422.6 329.3,406.8 344.5,403 355.6,413.2" fill="#f7d7cc"/><ellipse cx="342.3" cy="418.6" rx="3.5" ry="2.8" fill="#c98a7c" opacity=".55"/><polygon points="386.4,423.6 372.3,429.2 359.6,421 360.3,405.1 375,399.5 389,407.5" fill="#f7d7cc"/><ellipse cx="373.6" cy="414.6" rx="4.7" ry="3.4" fill="#c98a7c" opacity=".55"/><polygon points="167.2,459.1 151.8,466.2 138.9,455.3 141.8,439.8 155.9,433.1 168.3,443" fill="#f2c4b8"/><ellipse cx="153.7" cy="448.4" rx="4.1" ry="3.4" fill="#c98a7c" opacity=".55"/><polygon points="204.2,457.3 189.1,462 176,453 178.2,436.4 193.9,430.4 206.2,441.2" fill="#f4cbbf"/><ellipse cx="189.5" cy="447.8" rx="4.5" ry="3" fill="#c98a7c" opacity=".55"/><polygon points="235.5,459.9 220.4,464.4 209.4,454.2 211.5,439.2 226.3,433.9 237.7,444.4" fill="#f8dbd1"/><ellipse cx="221.9" cy="450.1" rx="4.1" ry="3.2" fill="#c98a7c" opacity=".55"/><polygon points="269.6,452.7 255.1,458.7 242.7,447.8 247.3,432.6 261.8,426.5 273.9,437.6" fill="#f4cbbf"/><ellipse cx="257.8" cy="443.9" rx="4.1" ry="3.5" fill="#c98a7c" opacity=".55"/><polygon points="300.8,457.5 285.7,463.7 272.8,453 277.3,437.6 291.4,432.1 303.4,442" fill="#f4cbbf"/><ellipse cx="286.9" cy="448.9" rx="3.8" ry="2.8" fill="#c98a7c" opacity=".55"/><polygon points="337,457.9 322.9,465.5 310,456.4 310.1,440.6 324.4,434.6 337.8,442.1" fill="#f2c4b8"/><ellipse cx="322" cy="450.2" rx="4.7" ry="3.3" fill="#c98a7c" opacity=".55"/></g><g fill="none" stroke="#ff5a4c" stroke-width="1.6" opacity=".9"><circle cx="240" cy="240" r="12"/></g>
+          <!-- pore -->
+          <ellipse cx="300" cy="300" rx="22" ry="17" fill="#d99c8d" opacity=".55"/><ellipse cx="300" cy="300" rx="11" ry="8" fill="#b56f62" opacity=".6"/>
+          <!-- melanin cluster -->
+          <g fill="#a9705a" opacity=".55"><circle cx="164" cy="186" r="4"/><circle cx="174" cy="180" r="3"/><circle cx="170" cy="194" r="3.5"/><circle cx="158" cy="196" r="2.6"/><circle cx="180" cy="190" r="2.2"/></g>
+          <path d="M40 270 C 120 250 180 290 260 262 S 400 230 460 250" fill="none" stroke="#e7a99b" stroke-width="2" opacity=".6"/>
+          <path d="M60 140 C 140 150 200 120 280 140" fill="none" stroke="#e7a99b" stroke-width="1.4" opacity=".5"/>
+          <rect x="0" y="0" width="480" height="480" fill="url(#vign)"/>
+          <ellipse cx="190" cy="160" rx="160" ry="120" fill="url(#glare)"/>
+          <!-- crosshair -->
+          <g stroke="#13203f" stroke-width=".8" opacity=".45"><path d="M240 44V200M240 280V436M44 240H200M280 240H436"/><circle cx="240" cy="240" r="40" fill="none" stroke-dasharray="3 4"/></g>
+          <circle class="pulse" cx="240" cy="240" r="22" fill="none" stroke="#ff5a4c" stroke-width="2"/>
+        </g>
+        <circle cx="240" cy="240" r="196" fill="none" stroke="#fff" stroke-width="2" opacity=".6"/>
+        <!-- callouts -->
+        <g font-family="IBM Plex Mono,monospace" font-size="11" letter-spacing=".6" fill="#13203f">
+          <g><circle cx="300" cy="300" r="4" fill="#ff5a4c"/><path d="M300 300 L 400 420 H 486" stroke="#13203f" stroke-width="1" fill="none"/><rect x="404" y="404" width="100" height="22" rx="4" fill="#fff" stroke="#cdd4df"/><text x="412" y="419">ПОРА</text></g>
+          <g><circle cx="170" cy="188" r="4" fill="#ff5a4c"/><path d="M170 188 L 70 70 H -12" stroke="#13203f" stroke-width="1" fill="none"/><rect x="-36" y="56" width="118" height="22" rx="4" fill="#fff" stroke="#cdd4df"/><text x="-28" y="71">МЕЛАНІН</text></g>
+          <g><circle cx="240" cy="240" r="3" fill="#13203f"/><path d="M262 226 L 410 92 H 490" stroke="#13203f" stroke-width="1" fill="none"/><rect x="386" y="78" width="132" height="22" rx="4" fill="#13203f"/><text x="394" y="93" fill="#fff">КЕРАТИНОЦИТИ</text></g>
+          <text x="-30" y="520" fill="#8790a5">FIG. 01</text><text x="-30" y="538" fill="#8790a5">ДЕРМАТОСКОПІЯ ·</text><text x="-30" y="556" fill="#8790a5">УМОВНЕ ЗОБРАЖЕННЯ</text><path d="M-30 500 H 120" stroke="#ff5a4c" stroke-width="2"/><path d="M240 476 V 500 H 250" stroke="#cdd4df" fill="none" stroke-dasharray="3 3"/>
+        </g>
+        <!-- molecule chain -->
+        <g class="drift" transform="translate(250 420)"><rect x="0" y="70" width="250" height="126" rx="10" fill="#fff" fill-opacity=".92" stroke="#cdd4df"/><polygon points="57.3,140 40,150 22.7,140 22.7,120 40,110 57.3,120" fill="#fff" stroke="#13203f" stroke-width="1.6"/><circle cx="57.3" cy="140" r="2.4" fill="#13203f"/><circle cx="40" cy="150" r="3.4" fill="#ff5a4c"/><circle cx="22.7" cy="140" r="2.4" fill="#13203f"/><circle cx="22.7" cy="120" r="2.4" fill="#13203f"/><circle cx="40" cy="110" r="2.4" fill="#13203f"/><circle cx="57.3" cy="120" r="2.4" fill="#13203f"/><line x1="40" y1="110" x2="40" y2="92" stroke="#13203f" stroke-width="1.4"/><text x="32" y="88" font-family="IBM Plex Mono,monospace" font-size="10" fill="#47536d">OH</text><polygon points="119.3,120 102,130 84.7,120 84.7,100 102,90 119.3,100" fill="#fff" stroke="#13203f" stroke-width="1.6"/><circle cx="119.3" cy="120" r="2.4" fill="#13203f"/><circle cx="102" cy="130" r="3.4" fill="#ff5a4c"/><circle cx="84.7" cy="120" r="2.4" fill="#13203f"/><circle cx="84.7" cy="100" r="2.4" fill="#13203f"/><circle cx="102" cy="90" r="2.4" fill="#13203f"/><circle cx="119.3" cy="100" r="2.4" fill="#13203f"/><line x1="102" y1="130" x2="102" y2="148" stroke="#13203f" stroke-width="1.4"/><text x="94" y="160" font-family="IBM Plex Mono,monospace" font-size="10" fill="#47536d">COOH</text><line x1="57.3" y1="140" x2="84.7" y2="100" stroke="#13203f" stroke-width="1.6"/><circle cx="71" cy="120" r="4" fill="#fff" stroke="#ff5a4c" stroke-width="1.6"/><polygon points="181.3,140 164,150 146.7,140 146.7,120 164,110 181.3,120" fill="#fff" stroke="#13203f" stroke-width="1.6"/><circle cx="181.3" cy="140" r="2.4" fill="#13203f"/><circle cx="164" cy="150" r="3.4" fill="#ff5a4c"/><circle cx="146.7" cy="140" r="2.4" fill="#13203f"/><circle cx="146.7" cy="120" r="2.4" fill="#13203f"/><circle cx="164" cy="110" r="2.4" fill="#13203f"/><circle cx="181.3" cy="120" r="2.4" fill="#13203f"/><line x1="164" y1="110" x2="164" y2="92" stroke="#13203f" stroke-width="1.4"/><text x="156" y="88" font-family="IBM Plex Mono,monospace" font-size="10" fill="#47536d">OH</text><line x1="119.3" y1="120" x2="146.7" y2="120" stroke="#13203f" stroke-width="1.6"/><circle cx="133" cy="120" r="4" fill="#fff" stroke="#ff5a4c" stroke-width="1.6"/><polygon points="243.3,120 226,130 208.7,120 208.7,100 226,90 243.3,100" fill="#fff" stroke="#13203f" stroke-width="1.6"/><circle cx="243.3" cy="120" r="2.4" fill="#13203f"/><circle cx="226" cy="130" r="3.4" fill="#ff5a4c"/><circle cx="208.7" cy="120" r="2.4" fill="#13203f"/><circle cx="208.7" cy="100" r="2.4" fill="#13203f"/><circle cx="226" cy="90" r="2.4" fill="#13203f"/><circle cx="243.3" cy="100" r="2.4" fill="#13203f"/><line x1="226" y1="130" x2="226" y2="148" stroke="#13203f" stroke-width="1.4"/><text x="218" y="160" font-family="IBM Plex Mono,monospace" font-size="10" fill="#47536d">NHAc</text><line x1="181.3" y1="140" x2="208.7" y2="100" stroke="#13203f" stroke-width="1.6"/><circle cx="195" cy="120" r="4" fill="#fff" stroke="#ff5a4c" stroke-width="1.6"/><text x="10" y="186" font-family="IBM Plex Mono,monospace" font-size="10" letter-spacing=".6" fill="#8790a5">ГІАЛУРОНОВА КИСЛОТА · СХЕМА</text></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="hl" aria-label="Переваги">
+  <div class="wrap hl__grid">
+    <article class="hl__item rv">
+      <div class="mono"><span>01 / освіта</span><span>●</span></div>
+      <svg viewBox="0 0 44 44"><rect x=".5" y=".5" width="43" height="43" rx="10" fill="#fff0ed" stroke="#ffd2cb"/><path d="M15 12v8a7 7 0 0 0 14 0v-8M22 27v3a5 5 0 0 0 5 5h1" fill="none" stroke="#13203f" stroke-width="1.6" stroke-linecap="round"/><circle cx="30" cy="35" r="2.6" fill="#ff5a4c"/></svg>
+      <h3>Лікар-дерматолог</h3>
+      <p>Вища медична освіта та спеціалізація з дерматовенерології.</p>
+    </article>
+    <article class="hl__item rv">
+      <div class="mono"><span>02 / досвід</span><span>●</span></div>
+      <svg viewBox="0 0 44 44"><rect x=".5" y=".5" width="43" height="43" rx="10" fill="#fff0ed" stroke="#ffd2cb"/><path d="M10 32h24M13 32V24M19 32V18M25 32V21M31 32V13" stroke="#13203f" stroke-width="1.8" stroke-linecap="round"/><circle cx="31" cy="13" r="2.6" fill="#ff5a4c"/></svg>
+      <h3>10+ років практики</h3>
+      <p>Щоденна практика та постійне навчання: сучасні протоколи й доказові методики.</p>
+    </article>
+    <article class="hl__item rv">
+      <div class="mono"><span>03 / план</span><span>●</span></div>
+      <svg viewBox="0 0 44 44"><rect x=".5" y=".5" width="43" height="43" rx="10" fill="#fff0ed" stroke="#ffd2cb"/><rect x="13" y="10" width="18" height="24" rx="2" fill="none" stroke="#13203f" stroke-width="1.6"/><path d="M17 17h10M17 21h10M17 25h6" stroke="#13203f" stroke-width="1.6" stroke-linecap="round"/><circle cx="29" cy="31" r="4" fill="#ff5a4c"/></svg>
+      <h3>Індивідуальний план</h3>
+      <p>Процедури підбираються після огляду, а не за прайсом.</p>
+    </article>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="idx"><b>§ 01</b> — про лікаря</div>
+      <div><h2>Олена Кононенко</h2><p>Лікар-дерматолог, косметолог. Працює з причиною, а не лише з наслідком.</p></div>
+    </div>
+    <div class="about__grid">
+      <figure class="idcard rv" style="margin:0">
+        <div class="idcard__top"><span class="mono">Лікар · Дніпро</span><span class="mono" style="color:var(--coral-d)">● на прийомі за записом</span></div>
+        <svg viewBox="0 0 400 380" aria-hidden="true">
+          <defs><pattern id="g16" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#e1e6ee"/></pattern>
+            <linearGradient id="coatG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#eef1f6"/></linearGradient></defs>
+          <rect width="400" height="380" fill="#f8f9fb"/><rect width="400" height="380" fill="url(#g16)"/>
+          <circle cx="200" cy="190" r="150" fill="none" stroke="#cdd4df" stroke-dasharray="2 6"/>
+          <circle cx="200" cy="190" r="110" fill="#fff0ed"/>
+          <path d="M92 380 C 98 300 140 272 200 268 C 260 272 302 300 308 380Z" fill="url(#coatG)" stroke="#13203f" stroke-width="1.6"/>
+          <path d="M200 268 L 178 380 M200 268 L 222 380" stroke="#13203f" stroke-width="1.2"/>
+          <path d="M172 274 L 200 318 L 228 274" fill="#13203f"/>
+          <rect x="184" y="226" width="32" height="48" rx="14" fill="#f4d2c6" stroke="#13203f" stroke-width="1.4"/>
+          <ellipse cx="200" cy="176" rx="52" ry="62" fill="#f8ddd2" stroke="#13203f" stroke-width="1.6"/>
+          <path d="M146 186 C 136 118 170 104 202 104 C 240 104 264 128 254 190 C 248 156 232 140 204 136 C 178 134 156 150 146 186Z" fill="#13203f"/>
+          <path d="M146 186 C 140 222 146 248 160 262 L 166 196Z M254 190 C 260 224 254 248 240 262 L 236 196Z" fill="#13203f"/>
+          <path d="M178 182 q8 -5 16 0 M206 182 q8 -5 16 0" stroke="#13203f" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <path d="M188 210 q12 8 24 0" stroke="#e0412f" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+          <!-- dermatoscope in pocket -->
+          <rect x="246" y="300" width="34" height="8" rx="2" fill="#13203f"/><rect x="258" y="290" width="10" height="34" rx="3" fill="#13203f"/><circle cx="263" cy="288" r="8" fill="#fff" stroke="#13203f" stroke-width="1.6"/><circle cx="263" cy="288" r="3" fill="#ff5a4c"/>
+          <!-- annotation ticks -->
+          <g font-family="IBM Plex Mono,monospace" font-size="10" fill="#8790a5"><path d="M30 60h30M30 60v30" stroke="#ff5a4c" stroke-width="1.5" fill="none"/><path d="M370 320h-30M370 320v-30" stroke="#ff5a4c" stroke-width="1.5" fill="none"/><text x="30" y="350">ID · ДЕРМАТОЛОГ</text></g>
+        </svg>
+        <figcaption class="idcard__body"><b>Олена Кононенко</b><span class="mono" style="align-self:center">Дніпро</span><span>Лікар-дерматолог, косметолог</span></figcaption>
+      </figure>
+      <div>
+        <p class="about__intro rv">Я лікар-дерматолог і косметолог. Моя мета — здорова шкіра, а не лише швидкий ефект. Тому кожна робота починається з консультації: ми з’ясовуємо причину проблеми, і лише потім я пропоную лікування чи процедури.</p>
+        <ul class="check rv">
+          <li><svg aria-hidden="true"><use href="#ic-ok"/></svg>Лікар-дерматолог з вищою медичною освітою</li>
+          <li><svg aria-hidden="true"><use href="#ic-ok"/></svg>10+ років практики</li>
+          <li><svg aria-hidden="true"><use href="#ic-ok"/></svg>Доказовий підхід: спочатку діагноз, потім процедура</li>
+          <li><svg aria-hidden="true"><use href="#ic-ok"/></svg>Лише сертифіковані препарати та стерильні інструменти</li>
+        </ul>
+        <div class="blk-h rv"><span class="mono">A.</span><h3>Освіта та досвід</h3></div>
+        <ul class="edu rv">
+          <li><span class="mono">2008–2014</span><span>Дніпровський державний медичний університет, спеціальність «Лікувальна справа»</span></li>
+          <li><span class="mono">2014–2016</span><span>Інтернатура за спеціальністю «Дерматовенерологія»</span></li>
+          <li><span class="mono">2016 — сьогодні</span><span>Практикуючий лікар-дерматолог, косметолог</span></li>
+        </ul>
+        <div class="blk-h rv"><span class="mono">B.</span><h3>Дипломи та сертифікати</h3></div>
+        <div class="certs rv">
+          <figure class="cert"><svg viewBox="0 0 120 84" aria-hidden="true"><rect x=".5" y=".5" width="119" height="83" rx="4" fill="#f8f9fb" stroke="#cdd4df"/><path d="M14 18h60M14 28h92M14 36h92M14 44h70" stroke="#cdd4df" stroke-width="3" stroke-linecap="round"/><circle cx="96" cy="64" r="10" fill="#fff0ed" stroke="#ff5a4c"/><path d="M92 63l3 3 5-6" stroke="#e0412f" stroke-width="1.6" fill="none"/></svg><figcaption><span class="mono">Doc · 01</span>Диплом лікаря</figcaption></figure>
+          <figure class="cert"><svg viewBox="0 0 120 84" aria-hidden="true"><rect x=".5" y=".5" width="119" height="83" rx="4" fill="#f8f9fb" stroke="#cdd4df"/><path d="M14 18h50M14 28h92M14 36h92M14 44h56" stroke="#cdd4df" stroke-width="3" stroke-linecap="round"/><rect x="82" y="54" width="24" height="20" rx="3" fill="#13203f"/><path d="M88 64h12" stroke="#ff5a4c" stroke-width="2"/></svg><figcaption><span class="mono">Doc · 02</span>Сертифікат лікаря-спеціаліста</figcaption></figure>
+          <figure class="cert"><svg viewBox="0 0 120 84" aria-hidden="true"><rect x=".5" y=".5" width="119" height="83" rx="4" fill="#f8f9fb" stroke="#cdd4df"/><path d="M14 18h66M14 28h92M14 36h80M14 44h60" stroke="#cdd4df" stroke-width="3" stroke-linecap="round"/><path d="M84 72l18-18M98 50l6 6M86 66l-4 4" stroke="#13203f" stroke-width="2.4" stroke-linecap="round"/><circle cx="100" cy="52" r="2.5" fill="#ff5a4c"/></svg><figcaption><span class="mono">Doc · 03</span>Курс з ін’єкційної косметології</figcaption></figure>
+        </div>
+        <div class="license rv">
+          <svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="16.5" fill="none" stroke="#ff5a4c" stroke-dasharray="2 2"/><path d="M11 18l5 5 9-10" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          <div><span class="mono">Ліцензія</span>Ліцензія МОЗ України на медичну практику, наказ № 000 від 01.01.2025, ФОП Кононенко О.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="prices" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="idx"><b>§ 02</b> — послуги та ціни</div>
+      <div><h2>Чим я можу <em>допомогти</em></h2><p>Кожне лікування починається з консультації: спочатку з’ясовуємо причину, потім підбираємо процедури. Остаточна вартість залежить від стану шкіри та обсягу процедури.</p></div>
+    </div>
+
+    <div class="layers rv">
+      <svg viewBox="0 0 640 330" role="img" aria-label="Схема шарів шкіри: епідерміс, дерма, гіподерма">
+        <defs>
+          <linearGradient id="epi" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbe3da"/><stop offset="1" stop-color="#f4cfc2"/></linearGradient>
+          <linearGradient id="der" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f9e9e4"/><stop offset="1" stop-color="#f3dcd5"/></linearGradient>
+          <linearGradient id="hyp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff6dc"/><stop offset="1" stop-color="#fbeac0"/></linearGradient>
+          <clipPath id="blockClip"><rect x="20" y="30" width="420" height="280" rx="8"/></clipPath>
+          <pattern id="fib" width="40" height="20" patternUnits="userSpaceOnUse"><path d="M0 10 C 10 2 20 18 30 10 S 40 4 40 10" fill="none" stroke="#e8b9ad" stroke-width="1.2"/></pattern>
+        </defs>
+        <g clip-path="url(#blockClip)">
+          <rect x="20" y="30" width="420" height="280" fill="url(#hyp)"/>
+          <ellipse cx="37.2" cy="244" rx="16.2" ry="10.9" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="72.5" cy="245.1" rx="15.8" ry="10.2" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="108.6" cy="245.8" rx="18.9" ry="11.8" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="150.9" cy="248.8" rx="18.8" ry="11.2" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="188.5" cy="243.4" rx="17.7" ry="11.2" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="222.4" cy="246.4" rx="18.8" ry="11" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="263.2" cy="244.8" rx="16.4" ry="11.8" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="296.2" cy="244.1" rx="17.7" ry="10.9" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="334.7" cy="247" rx="16.5" ry="11.2" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="375.3" cy="246.2" rx="17.3" ry="10.8" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="410.9" cy="244.1" rx="18.6" ry="11.1" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="448.9" cy="248.2" rx="16" ry="10.2" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="53.2" cy="266.5" rx="17" ry="11.1" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="88.8" cy="268.4" rx="15.5" ry="11" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="129.7" cy="265.5" rx="16.6" ry="10.1" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="166.5" cy="270.2" rx="17.2" ry="11.4" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="207.1" cy="265.7" rx="19" ry="11.4" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="239.8" cy="270" rx="16.6" ry="10.3" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="284.7" cy="268.4" rx="18.1" ry="10.3" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="321.2" cy="265.3" rx="15.9" ry="10.7" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="353.1" cy="268.6" rx="15.9" ry="10.6" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="396.7" cy="267.6" rx="18.6" ry="11.2" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="436" cy="268.4" rx="18.7" ry="11.7" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="468.3" cy="269.5" rx="16.4" ry="11.5" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="35.4" cy="292" rx="15.5" ry="10.7" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="73.9" cy="292.7" rx="17.9" ry="10.1" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="110.8" cy="287.6" rx="17.2" ry="11.6" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="144.9" cy="292.6" rx="17.7" ry="10.5" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="183.5" cy="289.7" rx="18.4" ry="11.2" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="220.9" cy="287.1" rx="15.4" ry="11.6" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="259.5" cy="290.3" rx="16.2" ry="11.4" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="299" cy="287.9" rx="18.5" ry="11.1" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="339.5" cy="291.8" rx="18.8" ry="10" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="374.7" cy="287.9" rx="17" ry="11.7" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="416.4" cy="287.2" rx="15.7" ry="11.6" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="453.4" cy="289.4" rx="16.9" ry="10.3" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="55.8" cy="311.4" rx="18.5" ry="11.2" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="87.6" cy="311" rx="15.9" ry="11.8" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="129.7" cy="309.3" rx="15.7" ry="10.7" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="166.7" cy="312.5" rx="16.6" ry="10.7" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="201" cy="312.5" rx="16.3" ry="10" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="242.7" cy="314.9" rx="15.2" ry="10.3" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="282.4" cy="310.6" rx="16.1" ry="11" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="317.1" cy="312.4" rx="17.1" ry="11.9" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="360.9" cy="309.2" rx="17.2" ry="11.5" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="398" cy="313.6" rx="17.5" ry="11.3" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="431.9" cy="310.7" rx="18.2" ry="11.7" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/><ellipse cx="474.5" cy="313.1" rx="16.2" ry="11.5" fill="#fff3d2" stroke="#efd59a" stroke-width="1"/>
+          <path d="M20 96 C 60 86 90 110 130 98 S 200 84 240 100 S 320 112 360 96 S 420 88 440 98 V 230 C 380 236 320 222 260 232 S 120 238 20 228Z" fill="url(#der)"/>
+          <path d="M20 96 C 60 86 90 110 130 98 S 200 84 240 100 S 320 112 360 96 S 420 88 440 98 V 230 C 380 236 320 222 260 232 S 120 238 20 228Z" fill="url(#fib)" opacity=".7"/>
+          <path d="M20 30 H440 V98 C 420 88 400 92 360 96 S 280 112 240 100 S 170 86 130 98 S 50 86 20 96Z" fill="url(#epi)"/>
+          <path d="M20 30 H440 V40 H20Z" fill="#f0bfb0"/>
+          <g fill="none" stroke="#e5ab9c" stroke-width="1" opacity=".8"><ellipse cx="24" cy="48" rx="6.5" ry="4.5"/><ellipse cx="38.5" cy="48" rx="6.5" ry="4.5"/><ellipse cx="53" cy="48" rx="6.5" ry="4.5"/><ellipse cx="67.5" cy="48" rx="6.5" ry="4.5"/><ellipse cx="82" cy="48" rx="6.5" ry="4.5"/><ellipse cx="96.5" cy="48" rx="6.5" ry="4.5"/><ellipse cx="111" cy="48" rx="6.5" ry="4.5"/><ellipse cx="125.5" cy="48" rx="6.5" ry="4.5"/><ellipse cx="140" cy="48" rx="6.5" ry="4.5"/><ellipse cx="154.5" cy="48" rx="6.5" ry="4.5"/><ellipse cx="169" cy="48" rx="6.5" ry="4.5"/><ellipse cx="183.5" cy="48" rx="6.5" ry="4.5"/><ellipse cx="198" cy="48" rx="6.5" ry="4.5"/><ellipse cx="212.5" cy="48" rx="6.5" ry="4.5"/><ellipse cx="227" cy="48" rx="6.5" ry="4.5"/><ellipse cx="241.5" cy="48" rx="6.5" ry="4.5"/><ellipse cx="256" cy="48" rx="6.5" ry="4.5"/><ellipse cx="270.5" cy="48" rx="6.5" ry="4.5"/><ellipse cx="285" cy="48" rx="6.5" ry="4.5"/><ellipse cx="299.5" cy="48" rx="6.5" ry="4.5"/><ellipse cx="314" cy="48" rx="6.5" ry="4.5"/><ellipse cx="328.5" cy="48" rx="6.5" ry="4.5"/><ellipse cx="343" cy="48" rx="6.5" ry="4.5"/><ellipse cx="357.5" cy="48" rx="6.5" ry="4.5"/><ellipse cx="372" cy="48" rx="6.5" ry="4.5"/><ellipse cx="386.5" cy="48" rx="6.5" ry="4.5"/><ellipse cx="401" cy="48" rx="6.5" ry="4.5"/><ellipse cx="415.5" cy="48" rx="6.5" ry="4.5"/><ellipse cx="430" cy="48" rx="6.5" ry="4.5"/><ellipse cx="444.5" cy="48" rx="6.5" ry="4.5"/><ellipse cx="31" cy="62" rx="6.5" ry="5.5"/><ellipse cx="45.5" cy="62" rx="6.5" ry="5.5"/><ellipse cx="60" cy="62" rx="6.5" ry="5.5"/><ellipse cx="74.5" cy="62" rx="6.5" ry="5.5"/><ellipse cx="89" cy="62" rx="6.5" ry="5.5"/><ellipse cx="103.5" cy="62" rx="6.5" ry="5.5"/><ellipse cx="118" cy="62" rx="6.5" ry="5.5"/><ellipse cx="132.5" cy="62" rx="6.5" ry="5.5"/><ellipse cx="147" cy="62" rx="6.5" ry="5.5"/><ellipse cx="161.5" cy="62" rx="6.5" ry="5.5"/><ellipse cx="176" cy="62" rx="6.5" ry="5.5"/><ellipse cx="190.5" cy="62" rx="6.5" ry="5.5"/><ellipse cx="205" cy="62" rx="6.5" ry="5.5"/><ellipse cx="219.5" cy="62" rx="6.5" ry="5.5"/><ellipse cx="234" cy="62" rx="6.5" ry="5.5"/><ellipse cx="248.5" cy="62" rx="6.5" ry="5.5"/><ellipse cx="263" cy="62" rx="6.5" ry="5.5"/><ellipse cx="277.5" cy="62" rx="6.5" ry="5.5"/><ellipse cx="292" cy="62" rx="6.5" ry="5.5"/><ellipse cx="306.5" cy="62" rx="6.5" ry="5.5"/><ellipse cx="321" cy="62" rx="6.5" ry="5.5"/><ellipse cx="335.5" cy="62" rx="6.5" ry="5.5"/><ellipse cx="350" cy="62" rx="6.5" ry="5.5"/><ellipse cx="364.5" cy="62" rx="6.5" ry="5.5"/><ellipse cx="379" cy="62" rx="6.5" ry="5.5"/><ellipse cx="393.5" cy="62" rx="6.5" ry="5.5"/><ellipse cx="408" cy="62" rx="6.5" ry="5.5"/><ellipse cx="422.5" cy="62" rx="6.5" ry="5.5"/><ellipse cx="437" cy="62" rx="6.5" ry="5.5"/><ellipse cx="451.5" cy="62" rx="6.5" ry="5.5"/><ellipse cx="24" cy="76" rx="6.5" ry="5.5"/><ellipse cx="38.5" cy="76" rx="6.5" ry="5.5"/><ellipse cx="53" cy="76" rx="6.5" ry="5.5"/><ellipse cx="67.5" cy="76" rx="6.5" ry="5.5"/><ellipse cx="82" cy="76" rx="6.5" ry="5.5"/><ellipse cx="96.5" cy="76" rx="6.5" ry="5.5"/><ellipse cx="111" cy="76" rx="6.5" ry="5.5"/><ellipse cx="125.5" cy="76" rx="6.5" ry="5.5"/><ellipse cx="140" cy="76" rx="6.5" ry="5.5"/><ellipse cx="154.5" cy="76" rx="6.5" ry="5.5"/><ellipse cx="169" cy="76" rx="6.5" ry="5.5"/><ellipse cx="183.5" cy="76" rx="6.5" ry="5.5"/><ellipse cx="198" cy="76" rx="6.5" ry="5.5"/><ellipse cx="212.5" cy="76" rx="6.5" ry="5.5"/><ellipse cx="227" cy="76" rx="6.5" ry="5.5"/><ellipse cx="241.5" cy="76" rx="6.5" ry="5.5"/><ellipse cx="256" cy="76" rx="6.5" ry="5.5"/><ellipse cx="270.5" cy="76" rx="6.5" ry="5.5"/><ellipse cx="285" cy="76" rx="6.5" ry="5.5"/><ellipse cx="299.5" cy="76" rx="6.5" ry="5.5"/><ellipse cx="314" cy="76" rx="6.5" ry="5.5"/><ellipse cx="328.5" cy="76" rx="6.5" ry="5.5"/><ellipse cx="343" cy="76" rx="6.5" ry="5.5"/><ellipse cx="357.5" cy="76" rx="6.5" ry="5.5"/><ellipse cx="372" cy="76" rx="6.5" ry="5.5"/><ellipse cx="386.5" cy="76" rx="6.5" ry="5.5"/><ellipse cx="401" cy="76" rx="6.5" ry="5.5"/><ellipse cx="415.5" cy="76" rx="6.5" ry="5.5"/><ellipse cx="430" cy="76" rx="6.5" ry="5.5"/><ellipse cx="444.5" cy="76" rx="6.5" ry="5.5"/></g>
+          <!-- hair follicle -->
+          <path d="M150 30 C 150 80 146 130 152 200" stroke="#7a5246" stroke-width="3" fill="none"/>
+          <path d="M150 0 C 152 14 148 22 150 30" stroke="#7a5246" stroke-width="3" fill="none"/>
+          <ellipse cx="152" cy="204" rx="10" ry="12" fill="#d79a86"/>
+          <path d="M140 60 C 128 80 128 130 142 200 M160 60 C 172 80 172 130 162 200" stroke="#e5ab9c" fill="none"/>
+          <!-- vessels -->
+          <path d="M20 200 C 90 186 140 214 220 196 S 360 186 440 204" stroke="#ff5a4c" stroke-width="3" fill="none" opacity=".75"/>
+          <path d="M20 212 C 100 200 150 226 230 208 S 370 200 440 216" stroke="#5b7bd6" stroke-width="2.4" fill="none" opacity=".6"/>
+          <path d="M300 196 C 296 160 310 130 306 104 M330 192 C 336 160 326 130 334 106" stroke="#ff5a4c" stroke-width="1.4" fill="none" opacity=".6"/>
+          <!-- hyaluronic dots -->
+          <g fill="#13203f" opacity=".35"><circle cx="325.8" cy="166" r="1.6"/><circle cx="170.2" cy="170.6" r="1.4"/><circle cx="54.2" cy="147.1" r="1.3"/><circle cx="425.4" cy="163" r="1.4"/><circle cx="127.4" cy="135.8" r="1.3"/><circle cx="84.2" cy="110.8" r="1.9"/><circle cx="211.3" cy="159" r="1.6"/><circle cx="151" cy="128.6" r="1.1"/><circle cx="150.6" cy="143.9" r="1.7"/><circle cx="250.5" cy="213.1" r="1.3"/><circle cx="398.5" cy="174.2" r="1.1"/><circle cx="101.5" cy="173.9" r="2"/><circle cx="172.8" cy="195.2" r="1.4"/><circle cx="377.3" cy="117.5" r="1.5"/><circle cx="389.6" cy="140.3" r="1.3"/><circle cx="39.2" cy="128.1" r="1.3"/><circle cx="311.8" cy="134" r="1.4"/><circle cx="110.1" cy="176.3" r="1.9"/><circle cx="289.2" cy="131.6" r="1.7"/><circle cx="415.3" cy="176.1" r="1.1"/><circle cx="353.8" cy="206.3" r="1.3"/><circle cx="84.7" cy="130.7" r="1.5"/><circle cx="380.2" cy="180.4" r="1.9"/><circle cx="114.9" cy="145.9" r="1.7"/><circle cx="289.6" cy="154.6" r="1.7"/><circle cx="165.1" cy="116.3" r="1.4"/><circle cx="48.2" cy="178.9" r="1.3"/><circle cx="227.7" cy="175.8" r="1.3"/><circle cx="215.4" cy="111.5" r="1.9"/><circle cx="255.7" cy="218.6" r="1.1"/><circle cx="275.6" cy="189.7" r="1.3"/><circle cx="67.4" cy="127.2" r="1.1"/><circle cx="336.9" cy="119.9" r="1.8"/><circle cx="199.3" cy="169.3" r="1.6"/><circle cx="252" cy="182.3" r="1.6"/><circle cx="162.3" cy="191.5" r="1.3"/><circle cx="314.6" cy="194" r="1.8"/><circle cx="153.7" cy="195" r="2"/><circle cx="211.3" cy="140.6" r="1.5"/><circle cx="406.4" cy="124.5" r="1"/><circle cx="220.3" cy="182.1" r="1.8"/><circle cx="175" cy="218.8" r="1.2"/><circle cx="332.6" cy="119.9" r="1"/><circle cx="83.7" cy="116.6" r="1.5"/><circle cx="252.1" cy="130" r="1.9"/><circle cx="176.2" cy="126.4" r="1.2"/><circle cx="325.1" cy="211.4" r="1.2"/><circle cx="41.6" cy="195.6" r="1.2"/><circle cx="422.9" cy="164.9" r="1.6"/><circle cx="167.7" cy="198.1" r="1.5"/><circle cx="159.5" cy="209.4" r="1.1"/><circle cx="323.4" cy="117.2" r="1.6"/><circle cx="190.7" cy="205" r="1.1"/><circle cx="255.7" cy="155.1" r="1.9"/><circle cx="408" cy="179" r="1.2"/><circle cx="130.8" cy="138.9" r="1.4"/><circle cx="122.6" cy="132.4" r="1.8"/><circle cx="287.1" cy="142.8" r="2"/><circle cx="116.6" cy="172.6" r="1.2"/><circle cx="375.2" cy="205.6" r="1.3"/><circle cx="330.6" cy="200.5" r="1.3"/><circle cx="162.6" cy="163.4" r="1.9"/><circle cx="94.6" cy="185.1" r="1.6"/><circle cx="211.2" cy="173.7" r="1.9"/><circle cx="113.9" cy="207.2" r="1.4"/><circle cx="341.9" cy="205" r="1.2"/><circle cx="375.6" cy="219.4" r="1.3"/><circle cx="39.8" cy="122.3" r="2"/><circle cx="33.8" cy="210.3" r="1.2"/><circle cx="324.4" cy="120.7" r="1.2"/></g>
+        </g>
+        <rect x="20" y="30" width="420" height="280" rx="8" fill="none" stroke="#cdd4df"/>
+        <!-- ruler -->
+        <g stroke="#8790a5" stroke-width="1"><line x1="12" y1="30" x2="4" y2="30"/><line x1="12" y1="40" x2="8" y2="40"/><line x1="12" y1="50" x2="8" y2="50"/><line x1="12" y1="60" x2="8" y2="60"/><line x1="12" y1="70" x2="8" y2="70"/><line x1="12" y1="80" x2="4" y2="80"/><line x1="12" y1="90" x2="8" y2="90"/><line x1="12" y1="100" x2="8" y2="100"/><line x1="12" y1="110" x2="8" y2="110"/><line x1="12" y1="120" x2="8" y2="120"/><line x1="12" y1="130" x2="4" y2="130"/><line x1="12" y1="140" x2="8" y2="140"/><line x1="12" y1="150" x2="8" y2="150"/><line x1="12" y1="160" x2="8" y2="160"/><line x1="12" y1="170" x2="8" y2="170"/><line x1="12" y1="180" x2="4" y2="180"/><line x1="12" y1="190" x2="8" y2="190"/><line x1="12" y1="200" x2="8" y2="200"/><line x1="12" y1="210" x2="8" y2="210"/><line x1="12" y1="220" x2="8" y2="220"/><line x1="12" y1="230" x2="4" y2="230"/><line x1="12" y1="240" x2="8" y2="240"/><line x1="12" y1="250" x2="8" y2="250"/><line x1="12" y1="260" x2="8" y2="260"/><line x1="12" y1="270" x2="8" y2="270"/><line x1="12" y1="280" x2="4" y2="280"/><line x1="12" y1="290" x2="8" y2="290"/><line x1="12" y1="300" x2="8" y2="300"/><line x1="12" y1="310" x2="8" y2="310"/></g>
+        <!-- callouts -->
+        <g font-family="IBM Plex Mono,monospace" font-size="11" letter-spacing=".5">
+          <path d="M440 62 H 470" stroke="#13203f"/><circle cx="440" cy="62" r="3" fill="#ff5a4c"/>
+          <text x="476" y="58" fill="#13203f" font-weight="500">ЕПІДЕРМІС</text><text x="476" y="74" fill="#8790a5">пілінги · чистка</text>
+          <path d="M440 160 H 470" stroke="#13203f"/><circle cx="440" cy="160" r="3" fill="#ff5a4c"/>
+          <text x="476" y="156" fill="#13203f" font-weight="500">ДЕРМА</text><text x="476" y="172" fill="#8790a5">біоревіталізація</text><text x="476" y="186" fill="#8790a5">мезотерапія</text>
+          <path d="M440 270 H 470" stroke="#13203f"/><circle cx="440" cy="270" r="3" fill="#ff5a4c"/>
+          <text x="476" y="266" fill="#13203f" font-weight="500">ГІПОДЕРМА</text><text x="476" y="282" fill="#8790a5">підшкірний шар</text>
+          <text x="20" y="20" fill="#8790a5">FIG. 02 — БУДОВА ШКІРИ, СХЕМА</text>
+        </g>
+      </svg>
+      <ul>
+        <li><span class="mono">Шар 1 · епідерміс</span><b>Оновлення і тон</b><span>Хімічні пілінги та чистки працюють із поверхневим шаром: текстура, сяйво, постакне.</span></li>
+        <li><span class="mono">Шар 2 · дерма</span><b>Зволоження і якість шкіри</b><span>Біоревіталізація гіалуроновою кислотою та мезотерапія — лише після консультації.</span></li>
+        <li><span class="mono">Перед усім</span><b>Діагноз</b><span>Огляд шкіри та дерматоскопія за потреби визначають, що саме і в якому порядку робити.</span></li>
+      </ul>
+    </div>
+
+    <div class="pgrid">
+      <article class="pg rv" id="konsultatsiia">
+        <header class="pg__h"><h3>Консультація</h3><span class="mono">GRP · 01</span><p>З неї починається будь-яке лікування — огляд, діагноз і план догляду.</p></header>
+        <div class="row"><div><b>Консультація лікаря-дерматолога</b><span>Огляд шкіри, дерматоскопія за потреби, план лікування та домашнього догляду.</span></div><div class="dur"><svg aria-hidden="true"><use href="#ic-clock"/></svg>40 хв</div><div class="pr">800 грн</div></div>
+        <div class="row"><div><b>Повторна консультація</b><span>Оцінка результату та корекція плану протягом 1 місяця.</span></div><div class="dur"><svg aria-hidden="true"><use href="#ic-clock"/></svg>20 хв</div><div class="pr">400 грн</div></div>
+      </article>
+      <article class="pg rv" id="chystka">
+        <header class="pg__h"><h3>Чистка та догляд</h3><span class="mono">GRP · 02</span><p>Очищення та відновлення шкіри обличчя.</p></header>
+        <div class="row"><div><b>Комбінована чистка обличчя</b><span>Ультразвукова та механічна чистка, заспокійлива маска.</span></div><div class="dur"><svg aria-hidden="true"><use href="#ic-clock"/></svg>90 хв</div><div class="pr">від 1200 грн</div></div>
+        <div class="row"><div><b>Доглядова процедура за типом шкіри</b><span>Зволоження, живлення або заспокоєння — підбирається на консультації.</span></div><div class="dur"><svg aria-hidden="true"><use href="#ic-clock"/></svg>60 хв</div><div class="pr">від 1000 грн</div></div>
+      </article>
+      <article class="pg rv" id="pilingy">
+        <header class="pg__h"><h3>Пілінги</h3><span class="mono">GRP · 03</span><p>Хімічні пілінги для оновлення шкіри, вирівнювання тону й текстури.</p></header>
+        <div class="row"><div><b>Поверхневий пілінг</b><span>Оновлення шкіри, сяйво, легка корекція постакне.</span></div><div class="dur"><svg aria-hidden="true"><use href="#ic-clock"/></svg>45 хв</div><div class="pr">від 900 грн</div></div>
+        <div class="row"><div><b>Серединний пілінг</b><span>Пігментація, рубці постакне, вікові зміни.</span></div><div class="dur"><svg aria-hidden="true"><use href="#ic-clock"/></svg>60 хв</div><div class="pr">від 2000 грн</div></div>
+      </article>
+      <article class="pg rv" id="inyektsii">
+        <header class="pg__h"><h3>Ін’єкційні методики</h3><span class="mono">GRP · 04</span><p>Виконуються лише після консультації та з урахуванням протипоказань.</p></header>
+        <div class="row"><div><b>Біоревіталізація</b><span>Глибоке зволоження шкіри гіалуроновою кислотою.</span></div><div class="dur"><svg aria-hidden="true"><use href="#ic-clock"/></svg>45 хв</div><div class="pr">від 3500 грн</div></div>
+        <div class="row"><div><b>Мезотерапія</b><span>Вітамінні та лікувальні коктейлі для шкіри обличчя чи шкіри голови.</span></div><div class="dur"><svg aria-hidden="true"><use href="#ic-clock"/></svg>45 хв</div><div class="pr">від 1800 грн</div></div>
+      </article>
+      <article class="pg pg--wide rv" id="akne">
+        <header class="pg__h"><h3>Лікування акне</h3><span class="mono">GRP · 05</span><p>Комплексна програма — від діагностики до догляду за шкірою після лікування.</p></header>
+        <div class="row"><div><b>Програма лікування акне</b><span>Консультація, призначення лікування, контроль щомісяця.</span></div><div class="dur"><svg aria-hidden="true"><use href="#ic-clock"/></svg>3–6 місяців</div><div class="pr">за планом</div></div>
+        <div class="row"><div><b>Процедура проти запалень</b><span>Чистка та протизапальний пілінг під час лікування.</span></div><div class="dur"><svg aria-hidden="true"><use href="#ic-clock"/></svg>60 хв</div><div class="pr">від 1100 грн</div></div>
+      </article>
+    </div>
+    <div class="alert rv" role="note">
+      <svg viewBox="0 0 26 26" aria-hidden="true"><path d="M13 2.5 24.5 22.5h-23Z" fill="#ff5a4c"/><path d="M13 10v6M13 19v.6" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+      <div><b>Є протипоказання.</b> Ін’єкційні методики, пілінги та лікування акне — лише після консультації лікаря.</div>
+    </div>
+  </div>
+</section>
+
+<section id="problems">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="idx"><b>§ 03</b> — проблеми шкіри</div>
+      <div><h2>З чим до мене <em>звертаються</em></h2><p>Причину визначає лікар на огляді — від цього залежить лікування. Нижче — коротка «картка» кожного з найчастіших запитів.</p></div>
+    </div>
+    <div class="cases" style="padding-top:14px">
+      <article class="cf rv">
+        <div class="cf__h"><span class="mono">Case file · <b>01</b></span><span class="cf__stamp">Акне</span></div>
+        <div class="cf__top">
+          <svg viewBox="0 0 96 96" aria-hidden="true"><defs><clipPath id="m1"><circle cx="48" cy="48" r="40"/></clipPath></defs><circle cx="48" cy="48" r="46" fill="#fff" stroke="#cdd4df"/><circle cx="48" cy="48" r="40" fill="#f9e0d7"/><g clip-path="url(#m1)"><g fill="none" stroke="#efc3b6"><polygon points="33.8,-2.3 27.4,-0.9 23.5,-5.5 24.4,-11.6 30.7,-13.4 35.3,-8.7" fill="none"/><polygon points="46.6,-4.8 40.7,-3.5 36.7,-7.6 37.5,-13.7 43.8,-15.6 47.6,-10.7" fill="none"/><polygon points="59.5,-5.7 53.7,-2.9 49.1,-7 49.1,-12.9 54.7,-15 60,-12" fill="none"/><polygon points="72.4,-3.7 67.2,-1.4 62.6,-4.6 63,-10.3 68.2,-13.1 73.6,-9.8" fill="none"/><polygon points="14,6.5 7.9,7.4 3.5,3.2 5.2,-2.8 11.4,-4.5 15.4,0.4" fill="none"/><polygon points="27.3,6.1 22,9.3 17.2,5.9 16.7,-0 22.1,-3.1 27,0.3" fill="none"/><polygon points="40,7.2 34.2,9.8 29.8,5.8 30.3,0.2 35.6,-2.8 40.9,0.8" fill="none"/><polygon points="52.8,6.1 47.3,8.1 42.4,4.5 43.5,-1.8 49.4,-3.4 54.4,0.2" fill="none"/><polygon points="66.7,5.6 60.8,7.4 56.4,3.6 56.9,-2.6 62.8,-4.2 67.2,-0.5" fill="none"/><polygon points="79.5,6 73.3,7.9 69,3.7 69.5,-2.4 75.6,-4.7 79.8,-0.2" fill="none"/><polygon points="92.9,6 87.7,8.9 83,5.4 82.8,-0.8 88.6,-3.6 93.3,0.3" fill="none"/><polygon points="7.5,19.1 1.7,21.1 -3.2,17.6 -1.9,11.8 3.4,9.3 7.9,13.1" fill="none"/><polygon points="21,19.8 14.9,21.7 10.4,16.8 12.9,11.1 18.7,9.3 23.1,13.9" fill="none"/><polygon points="33.2,20 26.9,21.8 23.1,16.9 24.5,11.3 30.1,10 34.8,13.7" fill="none"/><polygon points="47,19 41.6,21.7 37.3,17.4 38.2,11.6 43.8,9.2 48.5,13.3" fill="none"/><polygon points="58,18.5 52.9,22.1 47.7,18.4 47.7,12.1 53.4,9.8 58.3,12.7" fill="none"/><polygon points="73,18.7 67.3,21.7 61.9,18.1 62.2,11.7 67.9,9.6 73.2,12.3" fill="none"/><polygon points="84.2,17 78.7,19.6 73.7,16.1 73.9,9.9 79.6,8 84.3,11.1" fill="none"/><polygon points="96.6,16.4 91.2,19.1 86.4,15.1 87.4,9.1 93,7.2 97.4,10.8" fill="none"/><polygon points="0.7,29.5 -4.5,31.9 -9.3,28.5 -8.8,22.4 -3.1,19.8 1.7,23.7" fill="none"/><polygon points="14.3,28.9 8.7,31.6 3.8,27.7 4.3,21.5 10,19.2 14.7,22.9" fill="none"/><polygon points="27.4,27.9 21.8,30.7 16.5,26.7 17.8,20.6 23.4,17.7 28.5,21.7" fill="none"/><polygon points="38.3,30.6 32.1,32.3 27.9,27.5 29.7,21.7 35.4,20.6 39.6,24.6" fill="none"/><polygon points="53.5,29.7 48.1,32.1 43.2,28.4 44.1,22.3 49.8,19.9 54.5,23.9" fill="none"/><polygon points="65.4,29.4 60.5,32.6 55,29.7 55.4,23.6 60.6,20.6 65.5,23.7" fill="none"/><polygon points="76.7,30.3 71.2,31.9 66.8,27.7 68.3,21.6 74.4,20.6 78.4,24.8" fill="none"/><polygon points="90.9,30.3 85.1,32.1 80.5,27.7 82.6,21.6 88.7,19.8 92.7,24.7" fill="none"/><polygon points="105.6,29.1 100,31.4 95.3,27.1 96.8,20.9 102.8,19.2 107.2,23.4" fill="none"/><polygon points="-7.4,41.9 -13.4,43.3 -17.9,39 -15.7,33.3 -10.1,31.8 -6.1,36.1" fill="none"/><polygon points="8.8,41.8 2.8,44 -2.3,40.1 -1,33.9 4.8,31.7 10,35.5" fill="none"/><polygon points="19.1,40.1 13.4,42 9.3,37.7 10.5,31.8 16.5,29.7 20.7,34.4" fill="none"/><polygon points="34.1,40.1 28,42 23.8,37.8 24,31.6 30.1,30.3 35.3,33.6" fill="none"/><polygon points="46.7,39.5 41,42.2 35.5,38.8 36,32.3 41.8,30.1 46.6,33.4" fill="none"/><polygon points="57.6,40.8 52.1,43.5 47.9,38.9 49.2,33.4 54.6,31.4 58.8,35.3" fill="none"/><polygon points="70.3,40.1 64.7,41.9 60.2,37.6 62.2,31.8 67.9,30.6 72.1,34.6" fill="none"/><polygon points="85.5,40.1 79.4,41.8 74.7,38 76.1,32.2 81.5,30.1 86.4,33.7" fill="none"/><polygon points="98.4,40.3 92.8,43.1 87.6,39.6 88.4,33.5 93.8,30.8 99,34.1" fill="none"/><polygon points="110.3,41.7 104.7,44.2 99.6,40.6 100.4,34.5 105.9,32.5 110.7,35.7" fill="none"/><polygon points="2.5,51.1 -3,54.4 -8.3,50.8 -8.1,44.6 -2.5,41.8 2.5,45.1" fill="none"/><polygon points="13.6,50.5 8.5,53.8 3.2,50.3 3.7,44.1 9.2,41.1 14.2,44.7" fill="none"/><polygon points="26.5,49.9 21.1,52.5 15.7,49.6 16.1,43.4 21.6,40.2 27.1,43.6" fill="none"/><polygon points="40.4,52.6 34.5,54.5 29.8,51.2 30.5,45.5 35.7,43.1 41,46.2" fill="none"/><polygon points="52.1,50.9 46.3,53.5 41.2,49.5 42.1,43.3 47.8,41.4 52.6,44.7" fill="none"/><polygon points="66.6,50.6 60.8,53 55.9,49.7 55.7,43.5 61.5,41 66.5,44.3" fill="none"/><polygon points="78.4,52.7 72.9,55.3 67.7,51.9 68.1,45.4 74,43 78.6,46.9" fill="none"/><polygon points="92.3,50.8 86.3,52.4 81.8,48.3 83.3,42.3 89,40.9 93.6,44.7" fill="none"/><polygon points="104.9,53.4 99.3,54.9 94.8,50.8 97,45.1 102.6,43.4 106.5,47.9" fill="none"/><polygon points="-5.4,62.3 -10.5,65.2 -15.6,62.2 -15.9,56.1 -10.4,53.6 -4.9,56.1" fill="none"/><polygon points="8.4,63.7 2.5,66.5 -2.8,62.6 -1.7,56.4 3.8,53.6 8.7,57.5" fill="none"/><polygon points="20.9,63.4 14.9,64.8 10.5,60.6 12.3,55 18,52.7 22,57.4" fill="none"/><polygon points="32.3,63.2 26.6,64.8 21.7,61.1 23.3,54.8 29.3,53.3 33.6,57.4" fill="none"/><polygon points="46.8,61.3 41.8,64.8 36.8,61.3 36.5,55.4 41.8,52.6 46.8,55.5" fill="none"/><polygon points="59.1,63 53.6,65.4 49,61.2 50.4,55.5 56,52.9 60.4,57.3" fill="none"/><polygon points="72.4,63 67.1,65.9 62.3,62.6 61.6,56.5 67.3,54.1 72.2,57.1" fill="none"/><polygon points="85.1,62.2 79.4,65 73.9,61.8 74.6,55.6 79.8,52.2 85.4,55.7" fill="none"/><polygon points="98.6,62.5 93.4,66.1 88.3,62.4 88.6,56.6 93.5,53.4 98.4,56.6" fill="none"/><polygon points="110.6,62.9 105.3,65.9 100.3,62.7 100,56.7 105.3,53.9 111,56.6" fill="none"/><polygon points="0.2,75.2 -5.6,77.7 -9.8,73.2 -8.9,67.3 -3.2,65.3 1.5,69.3" fill="none"/><polygon points="12.8,75.6 6.7,77.3 1.8,73.2 3.6,67.2 9.3,65.4 13.6,69.5" fill="none"/><polygon points="26.5,75.5 20.5,77.9 15.7,73.8 16.4,67.4 22.4,65.9 26.9,69.4" fill="none"/><polygon points="40.6,73.5 34.7,75.1 30.1,71.2 31.2,65 37.1,63.8 41.9,67.4" fill="none"/><polygon points="52.2,75.7 46.5,77.5 42.4,73.4 43.4,67.6 49.3,65.3 53.3,70" fill="none"/><polygon points="64.2,73.1 58.7,74.8 54.4,71.1 55.1,65.1 61,63.2 65.1,67.4" fill="none"/><polygon points="77.7,73.9 71.8,75.6 67.1,71.4 69.1,65.5 75,63.3 79.5,67.9" fill="none"/><polygon points="90.1,73.2 84.7,74.7 79.7,71.1 81.9,65.2 87.6,62.9 91.5,67.7" fill="none"/><polygon points="104,75.3 98.5,77.5 93.7,73.5 95,67.3 100.9,65.6 105.7,69.5" fill="none"/><polygon points="6.5,83.9 0.8,86.2 -3.9,82.7 -3.9,76.6 1.9,73.8 7.1,77.6" fill="none"/><polygon points="19.7,86 14.2,88.1 9,84.4 10.7,78.4 16.4,76.3 20.6,80.3" fill="none"/><polygon points="32.8,85.7 27.6,89 22.3,85.4 22.9,79.2 28.4,76.2 33.8,79.6" fill="none"/><polygon points="47.1,87.4 41,89.1 37,84.4 38.3,78.2 44.7,76.7 48.6,81.6" fill="none"/><polygon points="57.9,84.5 52.2,86.5 47.6,82.5 49.4,76.8 54.9,74.3 59.2,78.8" fill="none"/><polygon points="71.5,85.2 65.8,87.4 60.7,84.4 60.7,78.1 66.5,75.6 71.3,79.1" fill="none"/><polygon points="85.8,87.2 79.4,88.6 75.5,83.7 77.3,78.2 83,76.7 87.2,81" fill="none"/><polygon points="98.1,86.3 92.5,89.3 87.3,85.6 88.2,79.5 93.6,77 98.9,80.1" fill="none"/><polygon points="13.5,98.1 7.9,100.5 3.2,96.8 3.8,91 9.3,87.9 14.5,91.8" fill="none"/><polygon points="26.4,96.4 20.6,98.5 16.2,94.2 17.6,88.6 23,86.8 28.1,90.2" fill="none"/><polygon points="41,97.2 35.8,100.3 30.5,96.7 31.2,90.5 36.7,87.5 41.8,91.3" fill="none"/><polygon points="51,95.2 45.6,98 40.9,93.9 41.7,87.9 47.5,85.4 52.6,89.3" fill="none"/><polygon points="65.3,96.7 60.1,99.1 54.8,96.2 56,90.2 61.2,87.1 66.1,90.9" fill="none"/><polygon points="78.9,97.1 73.2,98.6 68.9,94.3 70.8,88.5 76.7,86.7 81.2,91.4" fill="none"/><polygon points="90.3,97.1 84.6,99.1 79.7,95.5 80.5,89.1 86.5,87.6 91.5,91" fill="none"/><polygon points="32.2,106.5 27.1,109.7 21.8,106.5 22.3,100.6 27.2,97.4 32.4,100.5" fill="none"/><polygon points="46.1,109.9 40.2,111.2 35.5,107.5 37.3,101.8 42.9,99.4 47.7,103.7" fill="none"/><polygon points="61.2,108.9 55.1,110.9 50.5,107.1 51,101.1 56.7,99.1 61.6,102.5" fill="none"/><polygon points="72,109.1 66.1,111.8 60.8,108.3 61.6,102.4 66.7,99.9 72.1,102.6" fill="none"/></g><circle cx="38" cy="40" r="8" fill="#ef9a8b"/><circle cx="38" cy="40" r="3" fill="#fff6f2"/><circle cx="60" cy="58" r="6" fill="#ef9a8b" opacity=".8"/><circle cx="58" cy="32" r="2.4" fill="#5c3a32"/><circle cx="34" cy="62" r="2" fill="#5c3a32"/></g><path d="M48 2v8M48 86v8M2 48h8M86 48h8" stroke="#13203f"/></svg>
+          <div><h3>Акне</h3><p>Висипання, запалення, чорні цятки та постакне.</p></div>
+        </div>
+        <dl><div><dt>Причини</dt><dd>Гормональні зміни, генетика, неправильний догляд, стрес, деякі ліки.</dd></div><div><dt>Лікування</dt><dd>Медикаментозне лікування за призначенням лікаря, чистки та пілінги, підбір домашнього догляду, контроль результату щомісяця.</dd></div></dl>
+        <div class="cf__f"><span class="mono">→ GRP · 05</span><a href="#akne">Лікування акне</a></div>
+      </article>
+      <article class="cf rv">
+        <div class="cf__h"><span class="mono">Case file · <b>02</b></span><span class="cf__stamp">Розацеа</span></div>
+        <div class="cf__top">
+          <svg viewBox="0 0 96 96" aria-hidden="true"><defs><clipPath id="m2"><circle cx="48" cy="48" r="40"/></clipPath></defs><circle cx="48" cy="48" r="46" fill="#fff" stroke="#cdd4df"/><circle cx="48" cy="48" r="40" fill="#f7d3cc"/><g clip-path="url(#m2)"><ellipse cx="48" cy="50" rx="34" ry="22" fill="#f2a89a" opacity=".55"/><g fill="none" stroke="#e0412f" stroke-width="1.3" stroke-linecap="round" opacity=".8"><path d="M14 44c8-6 14 4 22-2s12-8 20-2 10 4 18-2"/><path d="M26 60c6-4 10 2 16-2M52 64c6-4 12 2 18-2M40 44l-4-8M58 46l4-8M36 58l-6 6"/></g></g><path d="M48 2v8M48 86v8M2 48h8M86 48h8" stroke="#13203f"/></svg>
+          <div><h3>Розацеа та купероз</h3><p>Почервоніння, судинна сіточка, чутлива шкіра.</p></div>
+        </div>
+        <dl><div><dt>Причини</dt><dd>Підвищена чутливість судин; тригери — сонце, тепло, алкоголь, гостра їжа, неправильні засоби догляду.</dd></div><div><dt>Лікування</dt><dd>Медикаментозна терапія, щадний догляд, захист від сонця, процедури для зміцнення судин.</dd></div></dl>
+        <div class="cf__f"><span class="mono">→ GRP · 01</span><a href="#konsultatsiia">Почати з консультації</a></div>
+      </article>
+      <article class="cf rv">
+        <div class="cf__h"><span class="mono">Case file · <b>03</b></span><span class="cf__stamp">Пігментація</span></div>
+        <div class="cf__top">
+          <svg viewBox="0 0 96 96" aria-hidden="true"><defs><clipPath id="m3"><circle cx="48" cy="48" r="40"/></clipPath></defs><circle cx="48" cy="48" r="46" fill="#fff" stroke="#cdd4df"/><circle cx="48" cy="48" r="40" fill="#f6e1d2"/><g clip-path="url(#m3)"><g fill="none" stroke="#ebcdb9"><polygon points="33.8,-2.3 27.4,-0.9 23.5,-5.5 24.4,-11.6 30.7,-13.4 35.3,-8.7" fill="none"/><polygon points="46.6,-4.8 40.7,-3.5 36.7,-7.6 37.5,-13.7 43.8,-15.6 47.6,-10.7" fill="none"/><polygon points="59.5,-5.7 53.7,-2.9 49.1,-7 49.1,-12.9 54.7,-15 60,-12" fill="none"/><polygon points="72.4,-3.7 67.2,-1.4 62.6,-4.6 63,-10.3 68.2,-13.1 73.6,-9.8" fill="none"/><polygon points="14,6.5 7.9,7.4 3.5,3.2 5.2,-2.8 11.4,-4.5 15.4,0.4" fill="none"/><polygon points="27.3,6.1 22,9.3 17.2,5.9 16.7,-0 22.1,-3.1 27,0.3" fill="none"/><polygon points="40,7.2 34.2,9.8 29.8,5.8 30.3,0.2 35.6,-2.8 40.9,0.8" fill="none"/><polygon points="52.8,6.1 47.3,8.1 42.4,4.5 43.5,-1.8 49.4,-3.4 54.4,0.2" fill="none"/><polygon points="66.7,5.6 60.8,7.4 56.4,3.6 56.9,-2.6 62.8,-4.2 67.2,-0.5" fill="none"/><polygon points="79.5,6 73.3,7.9 69,3.7 69.5,-2.4 75.6,-4.7 79.8,-0.2" fill="none"/><polygon points="92.9,6 87.7,8.9 83,5.4 82.8,-0.8 88.6,-3.6 93.3,0.3" fill="none"/><polygon points="7.5,19.1 1.7,21.1 -3.2,17.6 -1.9,11.8 3.4,9.3 7.9,13.1" fill="none"/><polygon points="21,19.8 14.9,21.7 10.4,16.8 12.9,11.1 18.7,9.3 23.1,13.9" fill="none"/><polygon points="33.2,20 26.9,21.8 23.1,16.9 24.5,11.3 30.1,10 34.8,13.7" fill="none"/><polygon points="47,19 41.6,21.7 37.3,17.4 38.2,11.6 43.8,9.2 48.5,13.3" fill="none"/><polygon points="58,18.5 52.9,22.1 47.7,18.4 47.7,12.1 53.4,9.8 58.3,12.7" fill="none"/><polygon points="73,18.7 67.3,21.7 61.9,18.1 62.2,11.7 67.9,9.6 73.2,12.3" fill="none"/><polygon points="84.2,17 78.7,19.6 73.7,16.1 73.9,9.9 79.6,8 84.3,11.1" fill="none"/><polygon points="96.6,16.4 91.2,19.1 86.4,15.1 87.4,9.1 93,7.2 97.4,10.8" fill="none"/><polygon points="0.7,29.5 -4.5,31.9 -9.3,28.5 -8.8,22.4 -3.1,19.8 1.7,23.7" fill="none"/><polygon points="14.3,28.9 8.7,31.6 3.8,27.7 4.3,21.5 10,19.2 14.7,22.9" fill="none"/><polygon points="27.4,27.9 21.8,30.7 16.5,26.7 17.8,20.6 23.4,17.7 28.5,21.7" fill="none"/><polygon points="38.3,30.6 32.1,32.3 27.9,27.5 29.7,21.7 35.4,20.6 39.6,24.6" fill="none"/><polygon points="53.5,29.7 48.1,32.1 43.2,28.4 44.1,22.3 49.8,19.9 54.5,23.9" fill="none"/><polygon points="65.4,29.4 60.5,32.6 55,29.7 55.4,23.6 60.6,20.6 65.5,23.7" fill="none"/><polygon points="76.7,30.3 71.2,31.9 66.8,27.7 68.3,21.6 74.4,20.6 78.4,24.8" fill="none"/><polygon points="90.9,30.3 85.1,32.1 80.5,27.7 82.6,21.6 88.7,19.8 92.7,24.7" fill="none"/><polygon points="105.6,29.1 100,31.4 95.3,27.1 96.8,20.9 102.8,19.2 107.2,23.4" fill="none"/><polygon points="-7.4,41.9 -13.4,43.3 -17.9,39 -15.7,33.3 -10.1,31.8 -6.1,36.1" fill="none"/><polygon points="8.8,41.8 2.8,44 -2.3,40.1 -1,33.9 4.8,31.7 10,35.5" fill="none"/><polygon points="19.1,40.1 13.4,42 9.3,37.7 10.5,31.8 16.5,29.7 20.7,34.4" fill="none"/><polygon points="34.1,40.1 28,42 23.8,37.8 24,31.6 30.1,30.3 35.3,33.6" fill="none"/><polygon points="46.7,39.5 41,42.2 35.5,38.8 36,32.3 41.8,30.1 46.6,33.4" fill="none"/><polygon points="57.6,40.8 52.1,43.5 47.9,38.9 49.2,33.4 54.6,31.4 58.8,35.3" fill="none"/><polygon points="70.3,40.1 64.7,41.9 60.2,37.6 62.2,31.8 67.9,30.6 72.1,34.6" fill="none"/><polygon points="85.5,40.1 79.4,41.8 74.7,38 76.1,32.2 81.5,30.1 86.4,33.7" fill="none"/><polygon points="98.4,40.3 92.8,43.1 87.6,39.6 88.4,33.5 93.8,30.8 99,34.1" fill="none"/><polygon points="110.3,41.7 104.7,44.2 99.6,40.6 100.4,34.5 105.9,32.5 110.7,35.7" fill="none"/><polygon points="2.5,51.1 -3,54.4 -8.3,50.8 -8.1,44.6 -2.5,41.8 2.5,45.1" fill="none"/><polygon points="13.6,50.5 8.5,53.8 3.2,50.3 3.7,44.1 9.2,41.1 14.2,44.7" fill="none"/><polygon points="26.5,49.9 21.1,52.5 15.7,49.6 16.1,43.4 21.6,40.2 27.1,43.6" fill="none"/><polygon points="40.4,52.6 34.5,54.5 29.8,51.2 30.5,45.5 35.7,43.1 41,46.2" fill="none"/><polygon points="52.1,50.9 46.3,53.5 41.2,49.5 42.1,43.3 47.8,41.4 52.6,44.7" fill="none"/><polygon points="66.6,50.6 60.8,53 55.9,49.7 55.7,43.5 61.5,41 66.5,44.3" fill="none"/><polygon points="78.4,52.7 72.9,55.3 67.7,51.9 68.1,45.4 74,43 78.6,46.9" fill="none"/><polygon points="92.3,50.8 86.3,52.4 81.8,48.3 83.3,42.3 89,40.9 93.6,44.7" fill="none"/><polygon points="104.9,53.4 99.3,54.9 94.8,50.8 97,45.1 102.6,43.4 106.5,47.9" fill="none"/><polygon points="-5.4,62.3 -10.5,65.2 -15.6,62.2 -15.9,56.1 -10.4,53.6 -4.9,56.1" fill="none"/><polygon points="8.4,63.7 2.5,66.5 -2.8,62.6 -1.7,56.4 3.8,53.6 8.7,57.5" fill="none"/><polygon points="20.9,63.4 14.9,64.8 10.5,60.6 12.3,55 18,52.7 22,57.4" fill="none"/><polygon points="32.3,63.2 26.6,64.8 21.7,61.1 23.3,54.8 29.3,53.3 33.6,57.4" fill="none"/><polygon points="46.8,61.3 41.8,64.8 36.8,61.3 36.5,55.4 41.8,52.6 46.8,55.5" fill="none"/><polygon points="59.1,63 53.6,65.4 49,61.2 50.4,55.5 56,52.9 60.4,57.3" fill="none"/><polygon points="72.4,63 67.1,65.9 62.3,62.6 61.6,56.5 67.3,54.1 72.2,57.1" fill="none"/><polygon points="85.1,62.2 79.4,65 73.9,61.8 74.6,55.6 79.8,52.2 85.4,55.7" fill="none"/><polygon points="98.6,62.5 93.4,66.1 88.3,62.4 88.6,56.6 93.5,53.4 98.4,56.6" fill="none"/><polygon points="110.6,62.9 105.3,65.9 100.3,62.7 100,56.7 105.3,53.9 111,56.6" fill="none"/><polygon points="0.2,75.2 -5.6,77.7 -9.8,73.2 -8.9,67.3 -3.2,65.3 1.5,69.3" fill="none"/><polygon points="12.8,75.6 6.7,77.3 1.8,73.2 3.6,67.2 9.3,65.4 13.6,69.5" fill="none"/><polygon points="26.5,75.5 20.5,77.9 15.7,73.8 16.4,67.4 22.4,65.9 26.9,69.4" fill="none"/><polygon points="40.6,73.5 34.7,75.1 30.1,71.2 31.2,65 37.1,63.8 41.9,67.4" fill="none"/><polygon points="52.2,75.7 46.5,77.5 42.4,73.4 43.4,67.6 49.3,65.3 53.3,70" fill="none"/><polygon points="64.2,73.1 58.7,74.8 54.4,71.1 55.1,65.1 61,63.2 65.1,67.4" fill="none"/><polygon points="77.7,73.9 71.8,75.6 67.1,71.4 69.1,65.5 75,63.3 79.5,67.9" fill="none"/><polygon points="90.1,73.2 84.7,74.7 79.7,71.1 81.9,65.2 87.6,62.9 91.5,67.7" fill="none"/><polygon points="104,75.3 98.5,77.5 93.7,73.5 95,67.3 100.9,65.6 105.7,69.5" fill="none"/><polygon points="6.5,83.9 0.8,86.2 -3.9,82.7 -3.9,76.6 1.9,73.8 7.1,77.6" fill="none"/><polygon points="19.7,86 14.2,88.1 9,84.4 10.7,78.4 16.4,76.3 20.6,80.3" fill="none"/><polygon points="32.8,85.7 27.6,89 22.3,85.4 22.9,79.2 28.4,76.2 33.8,79.6" fill="none"/><polygon points="47.1,87.4 41,89.1 37,84.4 38.3,78.2 44.7,76.7 48.6,81.6" fill="none"/><polygon points="57.9,84.5 52.2,86.5 47.6,82.5 49.4,76.8 54.9,74.3 59.2,78.8" fill="none"/><polygon points="71.5,85.2 65.8,87.4 60.7,84.4 60.7,78.1 66.5,75.6 71.3,79.1" fill="none"/><polygon points="85.8,87.2 79.4,88.6 75.5,83.7 77.3,78.2 83,76.7 87.2,81" fill="none"/><polygon points="98.1,86.3 92.5,89.3 87.3,85.6 88.2,79.5 93.6,77 98.9,80.1" fill="none"/><polygon points="13.5,98.1 7.9,100.5 3.2,96.8 3.8,91 9.3,87.9 14.5,91.8" fill="none"/><polygon points="26.4,96.4 20.6,98.5 16.2,94.2 17.6,88.6 23,86.8 28.1,90.2" fill="none"/><polygon points="41,97.2 35.8,100.3 30.5,96.7 31.2,90.5 36.7,87.5 41.8,91.3" fill="none"/><polygon points="51,95.2 45.6,98 40.9,93.9 41.7,87.9 47.5,85.4 52.6,89.3" fill="none"/><polygon points="65.3,96.7 60.1,99.1 54.8,96.2 56,90.2 61.2,87.1 66.1,90.9" fill="none"/><polygon points="78.9,97.1 73.2,98.6 68.9,94.3 70.8,88.5 76.7,86.7 81.2,91.4" fill="none"/><polygon points="90.3,97.1 84.6,99.1 79.7,95.5 80.5,89.1 86.5,87.6 91.5,91" fill="none"/><polygon points="32.2,106.5 27.1,109.7 21.8,106.5 22.3,100.6 27.2,97.4 32.4,100.5" fill="none"/><polygon points="46.1,109.9 40.2,111.2 35.5,107.5 37.3,101.8 42.9,99.4 47.7,103.7" fill="none"/><polygon points="61.2,108.9 55.1,110.9 50.5,107.1 51,101.1 56.7,99.1 61.6,102.5" fill="none"/><polygon points="72,109.1 66.1,111.8 60.8,108.3 61.6,102.4 66.7,99.9 72.1,102.6" fill="none"/></g><path d="M26 34c6-8 22-6 22 4s-12 14-20 10-8-8-2-14Z" fill="#b57e5f" opacity=".6"/><circle cx="62" cy="38" r="6" fill="#b57e5f" opacity=".45"/><path d="M50 58c8-4 20 0 18 8s-14 8-18 4-6-10 0-12Z" fill="#b57e5f" opacity=".55"/></g><path d="M48 2v8M48 86v8M2 48h8M86 48h8" stroke="#13203f"/></svg>
+          <div><h3>Пігментація</h3><p>Пігментні плями, мелазма, постзапальна гіперпігментація.</p></div>
+        </div>
+        <dl><div><dt>Причини</dt><dd>Сонце, гормональні зміни, наслідки запалень та травм шкіри. Перед лікуванням лікар обов’язково оглядає утворення.</dd></div><div><dt>Лікування</dt><dd>Пілінги, засоби для вирівнювання тону, щоденний сонцезахист, поступовий план з контролем результату.</dd></div></dl>
+        <div class="cf__f"><span class="mono">→ GRP · 03</span><a href="#pilingy">Пілінги</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="alt grid-bg">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="idx"><b>§ 04</b> — протокол</div>
+      <div><h2>Як проходить <em>лікування</em></h2><p>Без поспіху та без нав’язування зайвих послуг. Кожен крок пояснюю й узгоджую з вами.</p></div>
+    </div>
+    <ol class="steps rv">
+      <li class="step"><div class="step__ruler"></div><div class="step__n"><b>01</b><span class="mono">Діагностика</span></div><h3>Консультація та огляд</h3><p>Огляд шкіри, дерматоскопія за потреби, з’ясування причини проблеми.</p></li>
+      <li class="step"><div class="step__ruler"></div><div class="step__n"><b>02</b><span class="mono">План</span></div><h3>Індивідуальний план</h3><p>Лікування, процедури та домашній догляд — підібрані саме для вашої шкіри.</p></li>
+      <li class="step"><div class="step__ruler"></div><div class="step__n"><b>03</b><span class="mono">Процедури</span></div><h3>Процедури</h3><p>Сертифіковані препарати, стерильні інструменти, уважність до комфорту.</p></li>
+      <li class="step"><div class="step__ruler"></div><div class="step__n"><b>04</b><span class="mono">Контроль</span></div><h3>Догляд і контроль</h3><p>Пам’ятка після процедури та контрольний візит для оцінки результату.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="results">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="idx"><b>§ 05</b> — результати</div>
+      <div><h2>До і <em>після</em></h2><p>Фото публікуються лише з письмової згоди пацієнтів. Результат індивідуальний і залежить від стану шкіри.</p></div>
+    </div>
+    <div class="res">
+      <article class="spec rv">
+        <div class="spec__pair">
+          <figure><svg viewBox="0 0 220 220" aria-hidden="true"><defs><clipPath id="r1"><rect width="220" height="220" rx="12"/></clipPath></defs><g clip-path="url(#r1)"><rect width="220" height="220" fill="#f6d6cb"/><g fill="none" stroke="#ecbdaf"><path d="M88.6 114.3 q-17.9 -1.7 -51.8 12.6"/><path d="M101.9 121 q31.2 7.2 46.5 30.5"/><path d="M131.2 170.3 q29.6 -1.4 43.2 13.2"/><path d="M1.8 174.3 q-1.2 5.2 -18.3 26.3"/><path d="M215.7 211.5 q-6.1 18.9 -28.3 53.8"/><path d="M17.8 -16.4 q6.5 8.4 -2.9 32.8"/><path d="M25.6 38.1 q34.5 -5.5 53 5"/><path d="M85.7 182.2 q6.1 23 -3.7 61.9"/><path d="M99.9 139 q10.9 13.8 5.9 43.5"/><path d="M219.4 219 q-20.7 7.7 -57.3 31.5"/><path d="M55.7 35.1 q18.3 5.2 20.6 26.4"/><path d="M163.9 76.1 q-13.9 3.4 -43.7 22.9"/><path d="M209.9 183.4 q28.2 -8 40.5 0.1"/><path d="M198.5 92.8 q-16.9 -6.5 -49.8 3.1"/><path d="M-2.5 131.1 q-8.7 5.9 -33.4 27.9"/><path d="M0.9 59.8 q-25.7 -4.2 -67.5 7.6"/><path d="M8.3 39.1 q23.7 -2.9 31.3 10.3"/><path d="M171.3 22.6 q3.2 17.7 -9.7 51.5"/><path d="M25.8 155.7 q36.5 4.4 57 24.9"/><path d="M8 81 q25.1 5.5 34.1 27"/><path d="M213 172.8 q29.4 22.3 42.9 60.6"/><path d="M30.6 74.6 q-19.9 5.7 -55.7 27.4"/><path d="M4.1 217.4 q24.8 5.3 33.6 26.6"/><path d="M165.4 58.9 q18.1 5.5 20.1 27"/><path d="M1.6 119.9 q29.7 12.8 43.4 41.5"/><path d="M69.2 88.8 q-18.9 -4.5 -53.7 6.9"/></g><g fill="#ec8e7e"><circle cx="60" cy="70" r="11"/><circle cx="132" cy="56" r="7"/><circle cx="150" cy="128" r="12"/><circle cx="82" cy="146" r="8"/><circle cx="112" cy="100" r="5"/><circle cx="48" cy="118" r="6"/><circle cx="172" cy="84" r="5"/></g><g fill="#fff4ef"><circle cx="58" cy="68" r="3.5"/><circle cx="148" cy="126" r="3.8"/><circle cx="81" cy="144" r="2.6"/></g><g fill="#5c3a32"><circle cx="100" cy="70" r="2"/><circle cx="130" cy="160" r="2"/><circle cx="180" cy="150" r="2"/></g></g><g stroke="#13203f" opacity=".5"><path d="M110 0v10M110 210v10M0 110h10M210 110h10"/></g></svg><figcaption>До</figcaption></figure>
+          <figure><svg viewBox="0 0 220 220" aria-hidden="true"><defs><clipPath id="r2"><rect width="220" height="220" rx="12"/></clipPath></defs><g clip-path="url(#r2)"><rect width="220" height="220" fill="#f9e3da"/><g fill="none" stroke="#f0cdc1"><path d="M88.6 114.3 q-17.9 -1.7 -51.8 12.6"/><path d="M101.9 121 q31.2 7.2 46.5 30.5"/><path d="M131.2 170.3 q29.6 -1.4 43.2 13.2"/><path d="M1.8 174.3 q-1.2 5.2 -18.3 26.3"/><path d="M215.7 211.5 q-6.1 18.9 -28.3 53.8"/><path d="M17.8 -16.4 q6.5 8.4 -2.9 32.8"/><path d="M25.6 38.1 q34.5 -5.5 53 5"/><path d="M85.7 182.2 q6.1 23 -3.7 61.9"/><path d="M99.9 139 q10.9 13.8 5.9 43.5"/><path d="M219.4 219 q-20.7 7.7 -57.3 31.5"/><path d="M55.7 35.1 q18.3 5.2 20.6 26.4"/><path d="M163.9 76.1 q-13.9 3.4 -43.7 22.9"/><path d="M209.9 183.4 q28.2 -8 40.5 0.1"/><path d="M198.5 92.8 q-16.9 -6.5 -49.8 3.1"/><path d="M-2.5 131.1 q-8.7 5.9 -33.4 27.9"/><path d="M0.9 59.8 q-25.7 -4.2 -67.5 7.6"/><path d="M8.3 39.1 q23.7 -2.9 31.3 10.3"/><path d="M171.3 22.6 q3.2 17.7 -9.7 51.5"/><path d="M25.8 155.7 q36.5 4.4 57 24.9"/><path d="M8 81 q25.1 5.5 34.1 27"/><path d="M213 172.8 q29.4 22.3 42.9 60.6"/><path d="M30.6 74.6 q-19.9 5.7 -55.7 27.4"/><path d="M4.1 217.4 q24.8 5.3 33.6 26.6"/><path d="M165.4 58.9 q18.1 5.5 20.1 27"/><path d="M1.6 119.9 q29.7 12.8 43.4 41.5"/><path d="M69.2 88.8 q-18.9 -4.5 -53.7 6.9"/></g><g fill="#efb2a5" opacity=".45"><circle cx="150" cy="128" r="5"/><circle cx="60" cy="70" r="4"/></g><ellipse cx="80" cy="60" rx="90" ry="40" fill="#fff" opacity=".25"/></g><g stroke="#13203f" opacity=".5"><path d="M110 0v10M110 210v10M0 110h10M210 110h10"/></g></svg><figcaption>Після</figcaption></figure>
+        </div>
+        <div class="spec__cap"><b>Лікування акне, 4 місяці</b><span class="mono">Case · 01</span></div>
+      </article>
+      <article class="spec rv">
+        <div class="spec__pair">
+          <figure><svg viewBox="0 0 220 220" aria-hidden="true"><defs><clipPath id="r3"><rect width="220" height="220" rx="12"/></clipPath></defs><g clip-path="url(#r3)"><rect width="220" height="220" fill="#f3dccb"/><g fill="none" stroke="#e6c6b0"><path d="M88.6 114.3 q-17.9 -1.7 -51.8 12.6"/><path d="M101.9 121 q31.2 7.2 46.5 30.5"/><path d="M131.2 170.3 q29.6 -1.4 43.2 13.2"/><path d="M1.8 174.3 q-1.2 5.2 -18.3 26.3"/><path d="M215.7 211.5 q-6.1 18.9 -28.3 53.8"/><path d="M17.8 -16.4 q6.5 8.4 -2.9 32.8"/><path d="M25.6 38.1 q34.5 -5.5 53 5"/><path d="M85.7 182.2 q6.1 23 -3.7 61.9"/><path d="M99.9 139 q10.9 13.8 5.9 43.5"/><path d="M219.4 219 q-20.7 7.7 -57.3 31.5"/><path d="M55.7 35.1 q18.3 5.2 20.6 26.4"/><path d="M163.9 76.1 q-13.9 3.4 -43.7 22.9"/><path d="M209.9 183.4 q28.2 -8 40.5 0.1"/><path d="M198.5 92.8 q-16.9 -6.5 -49.8 3.1"/><path d="M-2.5 131.1 q-8.7 5.9 -33.4 27.9"/><path d="M0.9 59.8 q-25.7 -4.2 -67.5 7.6"/><path d="M8.3 39.1 q23.7 -2.9 31.3 10.3"/><path d="M171.3 22.6 q3.2 17.7 -9.7 51.5"/><path d="M25.8 155.7 q36.5 4.4 57 24.9"/><path d="M8 81 q25.1 5.5 34.1 27"/><path d="M213 172.8 q29.4 22.3 42.9 60.6"/><path d="M30.6 74.6 q-19.9 5.7 -55.7 27.4"/><path d="M4.1 217.4 q24.8 5.3 33.6 26.6"/><path d="M165.4 58.9 q18.1 5.5 20.1 27"/><path d="M1.6 119.9 q29.7 12.8 43.4 41.5"/><path d="M69.2 88.8 q-18.9 -4.5 -53.7 6.9"/></g><g fill="#b07a5a" opacity=".55"><path d="M40 60c14-12 40-6 38 10s-26 22-38 14-14-14 0-24Z"/><path d="M118 118c16-8 44 0 42 16s-30 16-42 10-14-18 0-26Z"/><circle cx="148" cy="62" r="10"/><circle cx="66" cy="150" r="7"/><circle cx="104" cy="88" r="4"/></g></g><g stroke="#13203f" opacity=".5"><path d="M110 0v10M110 210v10M0 110h10M210 110h10"/></g></svg><figcaption>До</figcaption></figure>
+          <figure><svg viewBox="0 0 220 220" aria-hidden="true"><defs><clipPath id="r4"><rect width="220" height="220" rx="12"/></clipPath></defs><g clip-path="url(#r4)"><rect width="220" height="220" fill="#f7e6d9"/><g fill="none" stroke="#ecd6c5"><path d="M88.6 114.3 q-17.9 -1.7 -51.8 12.6"/><path d="M101.9 121 q31.2 7.2 46.5 30.5"/><path d="M131.2 170.3 q29.6 -1.4 43.2 13.2"/><path d="M1.8 174.3 q-1.2 5.2 -18.3 26.3"/><path d="M215.7 211.5 q-6.1 18.9 -28.3 53.8"/><path d="M17.8 -16.4 q6.5 8.4 -2.9 32.8"/><path d="M25.6 38.1 q34.5 -5.5 53 5"/><path d="M85.7 182.2 q6.1 23 -3.7 61.9"/><path d="M99.9 139 q10.9 13.8 5.9 43.5"/><path d="M219.4 219 q-20.7 7.7 -57.3 31.5"/><path d="M55.7 35.1 q18.3 5.2 20.6 26.4"/><path d="M163.9 76.1 q-13.9 3.4 -43.7 22.9"/><path d="M209.9 183.4 q28.2 -8 40.5 0.1"/><path d="M198.5 92.8 q-16.9 -6.5 -49.8 3.1"/><path d="M-2.5 131.1 q-8.7 5.9 -33.4 27.9"/><path d="M0.9 59.8 q-25.7 -4.2 -67.5 7.6"/><path d="M8.3 39.1 q23.7 -2.9 31.3 10.3"/><path d="M171.3 22.6 q3.2 17.7 -9.7 51.5"/><path d="M25.8 155.7 q36.5 4.4 57 24.9"/><path d="M8 81 q25.1 5.5 34.1 27"/><path d="M213 172.8 q29.4 22.3 42.9 60.6"/><path d="M30.6 74.6 q-19.9 5.7 -55.7 27.4"/><path d="M4.1 217.4 q24.8 5.3 33.6 26.6"/><path d="M165.4 58.9 q18.1 5.5 20.1 27"/><path d="M1.6 119.9 q29.7 12.8 43.4 41.5"/><path d="M69.2 88.8 q-18.9 -4.5 -53.7 6.9"/></g><g fill="#c9a084" opacity=".22"><path d="M40 60c14-12 40-6 38 10s-26 22-38 14-14-14 0-24Z"/><path d="M118 118c16-8 44 0 42 16s-30 16-42 10-14-18 0-26Z"/></g><ellipse cx="80" cy="60" rx="90" ry="40" fill="#fff" opacity=".25"/></g><g stroke="#13203f" opacity=".5"><path d="M110 0v10M110 210v10M0 110h10M210 110h10"/></g></svg><figcaption>Після</figcaption></figure>
+        </div>
+        <div class="spec__cap"><b>Курс пілінгів від пігментації, 5 процедур</b><span class="mono">Case · 02</span></div>
+      </article>
+    </div>
+    <p class="consent"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5l7 3v5c0 4-3 7-7 9-4-2-7-5-7-9v-5z" fill="#fff0ed" stroke="#ff5a4c"/><path d="M7 10l2 2 4-4" stroke="#e0412f" stroke-width="1.5" fill="none"/></svg>Ілюстрації-заглушки. Справжні фото буде додано лише з письмової згоди пацієнтів.</p>
+  </div>
+</section>
+
+<section id="reviews" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="idx"><b>§ 06</b> — відгуки</div>
+      <div><h2>Що кажуть <em>пацієнти</em></h2><p>Відгуки публікуються лише з дозволу пацієнтів.</p></div>
+    </div>
+    <div class="revs">
+      <blockquote class="rev rv"><div class="rev__h"><span class="mono">Note · 01</span><span class="mono">Instagram</span></div><p>Нарешті лікар, який пояснив, звідки в мене висипання, а не просто продав процедуру. За три місяці шкіра стала чистою.</p><footer><i>А</i><div><b>Анна</b><span>Instagram</span></div></footer></blockquote>
+      <blockquote class="rev rv"><div class="rev__h"><span class="mono">Note · 02</span><span class="mono">Google</span></div><p>Дуже уважний підхід, усе стерильно й акуратно. Після пілінгу отримала докладну пам’ятку з догляду.</p><footer><i>І</i><div><b>Ірина</b><span>Google</span></div></footer></blockquote>
+      <blockquote class="rev rv"><div class="rev__h"><span class="mono">Note · 03</span><span class="mono">Instagram</span></div><p>Ходжу на біоревіталізацію вже рік. Результат природний, ніхто не здогадується, просто «гарно виглядаєш».</p><footer><i>М</i><div><b>Марія</b><span>Instagram</span></div></footer></blockquote>
+      <blockquote class="rev rv"><div class="rev__h"><span class="mono">Note · 04</span><span class="mono">Google</span></div><p>Записалася з пігментацією, яку роками не могла прибрати. Лікар чесно сказала, чого чекати, і результат перевершив очікування.</p><footer><i>О</i><div><b>Олена</b><span>Google</span></div></footer></blockquote>
+      <blockquote class="rev rv"><div class="rev__h"><span class="mono">Note · 05</span><span class="mono">Instagram</span></div><p>Затишний кабінет, приємна атмосфера, жодного нав’язування зайвих послуг.</p><footer><i>К</i><div><b>Катерина</b><span>Instagram</span></div></footer></blockquote>
+    </div>
+    <p class="revs__more">Більше відгуків і робіт — в Instagram <a href="https://instagram.com/dr_kononenko" target="_blank" rel="noopener">@dr_kononenko</a></p>
+  </div>
+</section>
+
+<section id="aftercare">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="idx"><b>§ 07</b> — пам’ятки</div>
+      <div><h2>Догляд <em>після процедур</em></h2><p>Після кожної процедури ви отримуєте посилання на пам’ятку — щоб усе важливе було під рукою.</p></div>
+    </div>
+    <div class="care">
+      <article class="pr-card rv">
+        <div class="pr-card__h"><h3>Після пілінгу</h3><span class="mono">P · 01</span></div>
+        <ul>
+          <li>Не торкайтеся обличчя руками перший день.</li>
+          <li>Не використовуйте скраби, кислоти та ретиноїди 7 днів.</li>
+          <li>Щодня наносьте сонцезахисний крем SPF 50, навіть у похмуру погоду.</li>
+          <li>Не відвідуйте сауну, басейн і солярій 7 днів.</li>
+          <li>Лущення — нормальна реакція. Не здирайте лусочки.</li>
+        </ul>
+        <p class="warn">Якщо з’явилися сильне печіння, набряк або пухирі — одразу напишіть лікарю.</p>
+      </article>
+      <article class="pr-card rv">
+        <div class="pr-card__h"><h3>Після чистки обличчя</h3><span class="mono">P · 02</span></div>
+        <ul>
+          <li>Не наносьте декоративну косметику 12 годин.</li>
+          <li>Умивайтеся м’яким засобом, без скрабів 3 дні.</li>
+          <li>Не засмагайте 3–5 днів.</li>
+        </ul>
+        <p class="warn">Почервоніння проходить протягом доби. Якщо ні — напишіть лікарю.</p>
+      </article>
+      <article class="pr-card rv">
+        <div class="pr-card__h"><h3>Після ін’єкційних процедур</h3><span class="mono">P · 03</span></div>
+        <ul>
+          <li>Не торкайтеся місць ін’єкцій і не робіть масаж обличчя 2 доби.</li>
+          <li>Не наносьте косметику 12 годин.</li>
+          <li>Уникайте сауни, спорту та алкоголю 2 доби.</li>
+          <li>Невеликі папули та синці проходять за 2–5 днів.</li>
+        </ul>
+        <p class="warn">Якщо набряк посилюється, з’явився біль або зміна кольору шкіри — негайно зв’яжіться з лікарем.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="idx"><b>§ 08</b> — питання</div>
+      <div><h2>Часті <em>запитання</em></h2><p>Не знайшли відповідь? Напишіть у <a href="https://t.me/dr_kononenko" target="_blank" rel="noopener">Telegram</a> — відповім особисто.</p></div>
+    </div>
+    <div class="faq rv">
+      <details open><summary><span class="mono">Q.01</span>Чи боляче?<i aria-hidden="true"></i></summary><div class="ans">Більшість процедур безболісні або викликають легкий дискомфорт. Для ін’єкційних методик використовується знеболювальний крем.</div></details>
+      <details><summary><span class="mono">Q.02</span>Скільки процедур потрібно?<i aria-hidden="true"></i></summary><div class="ans">Залежить від стану шкіри та мети. Точну кількість лікар визначає на консультації — зазвичай це курс із 3–6 процедур.</div></details>
+      <details><summary><span class="mono">Q.03</span>Які протипоказання?<i aria-hidden="true"></i></summary><div class="ans">Вагітність і годування груддю (для частини процедур), гострі запалення, герпес у період загострення, деякі хронічні захворювання. Повний перелік обговорюється на консультації.</div></details>
+      <details><summary><span class="mono">Q.04</span>Як підготуватися до процедури?<i aria-hidden="true"></i></summary><div class="ans">За 1–2 тижні до пілінгів уникайте засмаги та агресивних засобів. Детальні рекомендації ви отримаєте під час запису.</div></details>
+      <details><summary><span class="mono">Q.05</span>Чи можна одразу прийти на процедуру без консультації?<i aria-hidden="true"></i></summary><div class="ans">На доглядові процедури — так. На пілінги, ін’єкційні методики та лікування акне — лише після консультації лікаря.</div></details>
+      <details><summary><span class="mono">Q.06</span>Як записатися?<i aria-hidden="true"></i></summary><div class="ans">Напишіть у Telegram, Viber або Instagram чи зателефонуйте. Прийом лише за попереднім записом.</div></details>
+    </div>
+  </div>
+</section>
+
+<section id="contacts">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="idx"><b>§ 09</b> — контакти та запис</div>
+      <div><h2>Запишіться <em>на консультацію</em></h2><p>Прийом лише за попереднім записом. Напишіть у зручний месенджер — я підберу для вас час.</p></div>
+    </div>
+    <div class="ct">
+      <div class="ct__info rv">
+        <div class="ct__row"><span class="mono">Адреса</span><div><b>м. Дніпро, вул. Прикладна, 1, офіс 10</b><br><span style="color:var(--ink-2)">Біля станції метро «Вокзальна», 2-й поверх, вхід з двору</span></div></div>
+        <div class="ct__row"><span class="mono">Телефон</span><div><a href="tel:+380670000000">+38 (067) 000-00-00</a></div></div>
+        <div class="ct__row"><span class="mono">Графік</span><div class="hours"><span>Пн–Пт</span><span>10:00–19:00</span><span>Сб</span><span>10:00–15:00</span><span>Нд</span><span>вихідний</span></div></div>
+        <div class="ct__book">
+          <span class="mono" style="color:var(--coral-d)">Запис</span>
+          <p>Прийом лише за попереднім записом.</p>
+          <div class="btns">
+            <a class="btn btn--coral" href="https://t.me/dr_kononenko" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#ic-tg"/></svg>Telegram</a>
+            <a class="btn btn--ink" href="viber://chat?number=%2B380670000000"><svg aria-hidden="true"><use href="#ic-vb"/></svg>Viber</a>
+            <a class="btn" href="https://instagram.com/dr_kononenko" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#ic-ig"/></svg>Instagram</a>
+            <a class="btn btn--line" href="tel:+380670000000"><svg aria-hidden="true"><use href="#ic-ph"/></svg>Зателефонувати</a>
+          </div>
+        </div>
+      </div>
+      <figure class="map rv">
+        <svg viewBox="0 0 560 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Умовна схема розташування кабінету">
+          <defs><pattern id="mg" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#e1e6ee" stroke-width=".8"/></pattern></defs>
+          <rect width="560" height="400" fill="#f4f6f9"/><rect width="560" height="400" fill="url(#mg)"/>
+          <g fill="#e6eaf0"><rect x="30" y="30" width="150" height="100" rx="4"/><rect x="220" y="30" width="110" height="100" rx="4"/><rect x="370" y="30" width="160" height="60" rx="4"/><rect x="30" y="170" width="150" height="110" rx="4"/><rect x="370" y="130" width="160" height="150" rx="4"/><rect x="30" y="320" width="230" height="60" rx="4"/><rect x="300" y="320" width="230" height="60" rx="4"/></g>
+          <rect x="220" y="170" width="110" height="110" rx="4" fill="#fff0ed" stroke="#ff5a4c" stroke-dasharray="4 3"/>
+          <g stroke="#fff" stroke-width="16"><path d="M0 150H560M200 0V400M350 0V400M0 300H560"/></g>
+          <text x="275" y="146" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10" fill="#47536d">ВУЛ. ПРИКЛАДНА</text>
+          <g transform="translate(410 205)"><circle r="15" fill="#13203f"/><text y="5" text-anchor="middle" font-family="Onest,sans-serif" font-weight="600" font-size="14" fill="#fff">М</text><text y="34" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10" fill="#47536d">«ВОКЗАЛЬНА»</text></g>
+          <path d="M290 225 C 330 225 360 210 395 206" stroke="#13203f" stroke-width="1.4" stroke-dasharray="4 4" fill="none"/>
+          <g transform="translate(275 225)">
+            <circle r="30" fill="#ff5a4c" opacity=".14" class="pulse"/>
+            <circle r="9" fill="#ff5a4c" stroke="#fff" stroke-width="3"/>
+            <path d="M-40 0H-14M14 0H40M0 -40V-14M0 14V40" stroke="#13203f" stroke-width="1"/>
+          </g>
+          <g font-family="IBM Plex Mono,monospace" font-size="9" fill="#8790a5"><text x="40" y="14">A</text><text x="120" y="14">B</text><text x="200" y="14">C</text><text x="280" y="14">D</text><text x="360" y="14">E</text><text x="440" y="14">F</text><text x="520" y="14">G</text><text x="6" y="50">1</text><text x="6" y="130">2</text><text x="6" y="210">3</text><text x="6" y="290">4</text><text x="6" y="370">5</text></g>
+        </svg>
+        <figcaption><span class="mono">FIG. 03 — схема умовна</span><span class="mono">Точний маршрут надішлю під час запису</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr__grid">
+      <div>
+        <a class="brand" href="#top"><svg aria-hidden="true"><use href="#logo"/></svg><span><b>Лікар Кононенко</b><small>дерматолог · косметолог</small></span></a>
+        <p style="margin:0">Лікар-дерматолог, косметолог у Дніпрі.</p>
+      </div>
+      <div><h4>Розділи</h4><ul><li><a href="#about">Про лікаря</a></li><li><a href="#prices">Послуги та ціни</a></li><li><a href="#problems">Проблеми шкіри</a></li><li><a href="#aftercare">Пам’ятки</a></li><li><a href="#contacts">Контакти</a></li></ul></div>
+      <div><h4>Зв’язок</h4><ul><li><a href="tel:+380670000000">+38 (067) 000-00-00</a></li><li><a href="https://t.me/dr_kononenko" target="_blank" rel="noopener">Telegram</a></li><li><a href="viber://chat?number=%2B380670000000">Viber</a></li><li><a href="https://instagram.com/dr_kononenko" target="_blank" rel="noopener">Instagram</a></li></ul></div>
+      <div><h4>Графік</h4><ul><li>Пн–Пт: 10:00–19:00</li><li>Сб: 10:00–15:00</li><li>Нд: вихідний</li><li>м. Дніпро, вул. Прикладна, 1</li></ul></div>
+    </div>
+    <div class="ftr__bot">
+      <span class="disc">Є протипоказання, необхідна консультація лікаря.</span>
+      <span>Ліцензія МОЗ України на медичну практику, наказ № 000 від 01.01.2025, ФОП Кононенко О.</span>
+      <span>Конфіденційність · © 2026 Лікар Кононенко</span>
+    </div>
+  </div>
+</footer>
+
+<div class="badge">Дизайн <b>20</b> · Лабораторія шкіри</div>
+
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav');
+  b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  n.addEventListener('click',function(e){if(e.target.closest('a')){n.classList.remove('open');b.setAttribute('aria-expanded','false')}});
+  var ds=document.querySelectorAll('.faq details');
+  ds.forEach(function(x){x.addEventListener('toggle',function(){if(x.open)ds.forEach(function(y){if(y!==x)y.open=false})})});
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce&&'IntersectionObserver'in window){
+    document.documentElement.classList.add('js');
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -6% 0px'});
+    document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,20 +1,32 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Eyebrow from '../../components/Eyebrow.astro';
 import aftercare from '../../data/aftercare.yaml';
 import { url } from '../../lib/url';
 ---
 <Base title="Пам'ятки після процедур">
   <section class="page-hero">
-    <div class="container">
-      <h1>Пам'ятки після процедур</h1>
-      <p>Як доглядати за шкірою після процедури, щоб отримати найкращий результат.</p>
+    <div class="container section-head center">
+      <Eyebrow class="reveal">Догляд</Eyebrow>
+      <h1 class="reveal d1">Пам'ятки після <em>процедур</em></h1>
+      <p class="lead reveal d2">Як доглядати за шкірою після процедури, щоб отримати найкращий результат.</p>
     </div>
   </section>
-  <section class="section" style="padding-top: 24px">
-    <div class="container grid grid--3">
-      {aftercare.map((a: { slug: string; title: string }) => (
-        <a class="card" href={url(`pamiatky/${a.slug}/`)}><h3>{a.title}</h3><span class="card__more">Відкрити →</span></a>
+  <section class="section list">
+    <div class="container grid grid--2 honey-set">
+      {aftercare.map((a: { slug: string; title: string }, i: number) => (
+        <a class:list={['card', 'reveal', `d${i % 2}`]} href={url(`pamiatky/${a.slug}/`)}>
+          <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sprig" /></svg></div>
+          <h3>{a.title}</h3>
+          <span class="card__more">Відкрити <svg aria-hidden="true"><use href="#i-arrow" /></svg></span>
+        </a>
       ))}
     </div>
   </section>
 </Base>
+
+<style>
+  .page-hero .section-head { margin-bottom: 0; }
+  .list { padding-top: 24px; padding-bottom: clamp(110px, 12vw, 160px); }
+  .grid { max-width: 960px; }
+</style>

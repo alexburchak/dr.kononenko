@@ -3,29 +3,78 @@ import Base from '../layouts/Base.astro';
 import BookingButtons from '../components/BookingButtons.astro';
 import BookingCta from '../components/BookingCta.astro';
 import ReviewCard from '../components/ReviewCard.astro';
+import CardIcon from '../components/CardIcon.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import Sprig from '../components/Sprig.astro';
+import Wave from '../components/Wave.astro';
 import site from '../data/site.yaml';
 import prices from '../data/prices.yaml';
 import reviews from '../data/reviews.yaml';
 import { url } from '../lib/url';
+
+const highlights: { title: string; text: string }[] = site.highlights;
+const hours: { days: string; time: string }[] = site.hours;
 ---
 <Base>
+  <!-- HERO -->
   <section class="hero">
-    <div class="container split">
+    <div class="container hero__grid">
       <div>
-        <div class="eyebrow">{site.address.city}</div>
-        <h1>{site.title}</h1>
-        <p class="hero__lead">{site.tagline}</p>
-        <BookingButtons />
+        <span class="pill reveal"><i><svg aria-hidden="true"><use href="#i-leaf" /></svg></i>{site.address.city}</span>
+        <h1 class="reveal d1">{site.title}</h1>
+        <p class="lead reveal d2">{site.tagline}</p>
+        <div class="reveal d3"><BookingButtons /></div>
+        <ul class="hero__facts reveal d3">
+          <li><svg aria-hidden="true"><use href="#i-pin" /></svg><span><b>{site.address.street}</b>{site.address.landmark}</span></li>
+          <li><svg aria-hidden="true"><use href="#i-clock" /></svg><span>{hours.map((h) => <b>{h.days}: {h.time}</b>)}{site.hoursNote}</span></li>
+        </ul>
       </div>
-      <img class="photo hero__photo" src={url(site.images.portrait)} alt={`${site.doctorName}, лікар-дерматолог`} width="900" height="1100" />
-    </div>
-  </section>
 
-  <section class="section section--soft">
+      <div class="hero__art reveal d2">
+        <div class="arch hero__arch">
+          <img src={url(site.images.portrait)} alt={`${site.doctorName}, лікар-дерматолог`} width="900" height="1100" />
+        </div>
+        <svg class="hero__leaves" viewBox="0 0 480 600" aria-hidden="true">
+          <path d="M108 360C96 250 170 170 258 176C350 182 396 260 384 350" fill="none" stroke="#C69E52" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="2 7" opacity=".9" />
+          <g class="sway">
+            <path d="M40 600C52 500 32 400 76 290" fill="none" stroke="#6B7140" stroke-width="2.4" stroke-linecap="round" />
+            <use href="#round" transform="translate(44 550) rotate(-62) scale(1.1)" />
+            <use href="#round" transform="translate(46 515) rotate(58) scale(1.05)" />
+            <use href="#round" transform="translate(44 472) rotate(-58)" />
+            <use href="#round" transform="translate(48 435) rotate(56) scale(.98)" />
+            <use href="#round" transform="translate(54 395) rotate(-52) scale(.92)" />
+            <use href="#round" transform="translate(62 356) rotate(50) scale(.84)" />
+            <use href="#round" transform="translate(72 318) rotate(-48) scale(.74)" />
+          </g>
+          <g class="sway s2">
+            <path d="M444 600C430 510 458 420 416 320" fill="none" stroke="#6B7140" stroke-width="2.2" stroke-linecap="round" />
+            <use href="#olive" transform="translate(438 550) rotate(52)" />
+            <use href="#olive" transform="translate(440 510) rotate(-40) scale(.95)" />
+            <use href="#olive" transform="translate(442 466) rotate(48) scale(.9)" />
+            <use href="#olive" transform="translate(436 420) rotate(-44) scale(.84)" />
+            <use href="#olive" transform="translate(428 378) rotate(44) scale(.76)" />
+            <use href="#olive" transform="translate(418 342) rotate(-48) scale(.66)" />
+            <circle cx="430" cy="440" r="7" fill="#4E5A2E" />
+          </g>
+          <path class="drift" d="M410 150c7 10 11 16 11 22a11 11 0 0 1-22 0c0-6 4-12 11-22z" fill="#DDB872" stroke="#A9823A" stroke-width="1" />
+          <path class="drift d2" d="M60 200c5 7 8 11 8 15a8 8 0 0 1-16 0c0-4 3-8 8-15z" fill="#EFDDB2" stroke="#A9823A" stroke-width="1" />
+          <path d="M440 220l3 8 8 3-8 3-3 8-3-8-8-3 8-3z" fill="#C69E52" />
+          <path d="M40 260l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" fill="#C69E52" opacity=".8" />
+        </svg>
+        {highlights[0] && (
+          <div class="float-card">
+            <span class="float-card__ic"><svg aria-hidden="true"><use href="#i-check" /></svg></span>
+            <div><b>{highlights[0].title}</b><span>{site.doctorName}</span></div>
+          </div>
+        )}
+      </div>
+    </div>
+
     <div class="container">
-      <div class="grid grid--3">
-        {site.highlights.map((h: { title: string; text: string }) => (
-          <div class="card">
+      <div class="grid grid--3 honey-set highlights">
+        {highlights.map((h, i) => (
+          <div class:list={['card', 'reveal', `d${i % 3}`]}>
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sprig" /></svg></div>
             <h3>{h.title}</h3>
             <p>{h.text}</p>
           </div>
@@ -34,57 +83,92 @@ import { url } from '../lib/url';
     </div>
   </section>
 
+  <Wave fill="oat" />
+
+  <!-- ABOUT -->
+  <section class="section bg-oat">
+    <div class="container about">
+      <div class="about__art reveal">
+        <Sprig />
+        <div class="arch about__arch">
+          <img src={url(site.images.atWork)} alt={`${site.doctorName} під час прийому`} width="1200" height="900" loading="lazy" />
+        </div>
+        <div class="sig"><b>{site.doctorName}</b><span>дерматолог · косметолог</span></div>
+      </div>
+      <div>
+        <Eyebrow class="reveal">Про лікаря</Eyebrow>
+        <h2 class="reveal d1">{site.doctorName}</h2>
+        <blockquote class="philo reveal d2">{site.about.intro}</blockquote>
+        <h3 class="sub-h reveal">Освіта та досвід</h3>
+        <ul class="timeline reveal">
+          {site.about.education.map((e: { year: string; text: string }) => <li><b>{e.year}</b><span>{e.text}</span></li>)}
+        </ul>
+        <a class="btn btn--ghost reveal" href={url('pro-likarya/')}>Освіта та сертифікати <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <Wave fill="oat" flip variant={2} />
+
+  <!-- SERVICES -->
   <section class="section">
     <div class="container">
-      <div class="eyebrow">Напрями</div>
-      <h2>Чим я можу допомогти</h2>
-      <p class="section__lead">Кожне лікування починається з консультації: спочатку з'ясовуємо причину, потім підбираємо процедури.</p>
+      <div class="section-head center">
+        <Eyebrow class="reveal">Напрями</Eyebrow>
+        <h2 class="reveal d1">Чим я можу <em>допомогти</em></h2>
+        <p class="lead reveal d2">Кожне лікування починається з консультації: спочатку з'ясовуємо причину, потім підбираємо процедури.</p>
+      </div>
       <div class="grid grid--3">
-        {prices.map((g: { group: string; id: string; description: string }) => (
-          <a class="card" href={url(`poslugy/#${g.id}`)}>
+        {prices.map((g: { group: string; id: string; description: string }, i: number) => (
+          <a class:list={['card', 'reveal', `d${i % 3}`]} href={url(`poslugy/#${g.id}`)}>
+            <CardIcon name={g.id} />
             <h3>{g.group}</h3>
             <p>{g.description}</p>
-            <span class="card__more">Ціни →</span>
+            <span class="card__more">Ціни <svg aria-hidden="true"><use href="#i-arrow" /></svg></span>
           </a>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="section section--sand">
-    <div class="container split">
-      <img class="photo" src={url(site.images.atWork)} alt={`${site.doctorName} під час прийому`} width="1200" height="900" loading="lazy" />
+  <Wave fill="forest" variant={2} />
+
+  <!-- LOCATION -->
+  <section class="section bg-forest">
+    <div class="container location">
       <div>
-        <div class="eyebrow">Про лікаря</div>
-        <h2>{site.doctorName}</h2>
-        <p>{site.about.intro}</p>
-        <a class="btn btn--ghost" href={url('pro-likarya/')}>Освіта та сертифікати</a>
+        <Eyebrow class="reveal">Як знайти</Eyebrow>
+        <h2 class="reveal d1">Кабінет у центрі <em>Дніпра</em></h2>
+        <ul class="info-list reveal d2">
+          <li><svg aria-hidden="true"><use href="#i-pin" /></svg><div><b>Адреса</b>{site.address.city}, {site.address.street}<br />{site.address.landmark}</div></li>
+          <li><svg aria-hidden="true"><use href="#i-clock" /></svg><div><b>Графік</b>{hours.map((h) => <>{h.days}: {h.time}<br /></>)}{site.hoursNote}</div></li>
+          <li><svg aria-hidden="true"><use href="#i-phone" /></svg><div><b>Телефони</b><a href={`tel:${site.contacts.phone}`}>{site.contacts.phoneDisplay}</a> · Viber{site.contacts.phone2 && <><br /><a href={`tel:${site.contacts.phone2}`}>{site.contacts.phone2Display}</a> · Telegram</>}</div></li>
+        </ul>
+        <a class="btn btn--honey reveal d3" href={url('kontakty/')}>Контакти та мапа <svg aria-hidden="true"><use href="#i-arrow" /></svg></a>
+      </div>
+      <div class="location__art reveal d1">
+        <div class="arch location__arch">
+          <img src={url(site.images.cabinet)} alt="Кабінет лікаря" width="1200" height="900" loading="lazy" />
+        </div>
       </div>
     </div>
   </section>
 
+  <Wave fill="forest" flip variant={3} />
+
+  <!-- REVIEWS -->
   <section class="section">
     <div class="container">
-      <div class="eyebrow">Відгуки</div>
-      <h2>Що кажуть пацієнти</h2>
-      <div class="grid grid--3">
-        {reviews.slice(0, 3).map((r: { name: string; source: string; text: string }) => <ReviewCard review={r} />)}
+      <div class="section-head center">
+        <Eyebrow class="reveal">Відгуки</Eyebrow>
+        <h2 class="reveal d1">Що кажуть <em>пацієнти</em></h2>
       </div>
-      <p style="margin-top: 1.5rem"><a href={url('vidguky/')}>Усі відгуки →</a></p>
-    </div>
-  </section>
-
-  <section class="section section--soft">
-    <div class="container split">
-      <div>
-        <div class="eyebrow">Як знайти</div>
-        <h2>Кабінет у центрі Дніпра</h2>
-        <p><strong>{site.address.city}, {site.address.street}</strong><br />{site.address.landmark}</p>
-        <p>{site.hours.map((h: { days: string; time: string }) => <>{h.days}: {h.time}<br /></>)}</p>
-        <p>{site.hoursNote}</p>
-        <a class="btn btn--ghost" href={url('kontakty/')}>Контакти та мапа</a>
+      <div class="reviews">
+        {reviews.slice(0, 3).map((r: { name: string; source: string; text: string }, i: number) => (
+          <ReviewCard review={r} class={`reveal d${i}`} />
+        ))}
       </div>
-      <img class="photo" src={url(site.images.cabinet)} alt="Кабінет лікаря" width="1200" height="900" loading="lazy" />
+      <p class="more"><a class="btn btn--ghost" href={url('vidguky/')}>Усі відгуки <svg aria-hidden="true"><use href="#i-arrow" /></svg></a></p>
     </div>
   </section>
 
@@ -92,7 +176,77 @@ import { url } from '../lib/url';
 </Base>
 
 <style>
-  .hero { padding: 56px 0 72px; }
-  .hero__lead { font-size: 1.2rem; color: var(--c-muted); margin-bottom: 2rem; max-width: 560px; }
-  .hero__photo { aspect-ratio: 9 / 11; max-height: 620px; }
+  /* Hero */
+  .hero { padding: clamp(40px, 6vw, 88px) 0 clamp(60px, 8vw, 110px); }
+  .hero__grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(36px, 6vw, 90px); align-items: center; }
+  .pill { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px 8px 10px; border-radius: 999px; background: var(--paper); border: 1px solid var(--line); font-size: 13.5px; font-weight: 600; color: var(--sage-800); margin-bottom: 26px; box-shadow: var(--sh-1); }
+  .pill i { width: 22px; height: 22px; border-radius: 50%; background: var(--sage-50); display: grid; place-items: center; }
+  .pill i svg { width: 13px; height: 13px; color: var(--sage-800); }
+  .hero h1 { font-size: clamp(34px, 4.4vw, 58px); margin-bottom: 24px; }
+  .hero .lead { margin-bottom: 34px; font-size: clamp(17px, 1.6vw, 20px); }
+  .hero__facts { list-style: none; margin: 44px 0 0; padding: 28px 0 0; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 20px 44px; }
+  .hero__facts li { display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; color: var(--muted); line-height: 1.5; }
+  .hero__facts svg { width: 22px; height: 22px; flex: none; color: var(--honey-600); margin-top: 2px; }
+  .hero__facts b { display: block; font-family: var(--f-display); font-weight: 400; font-size: 18px; color: var(--forest); }
+
+  .hero__art { position: relative; max-width: 480px; width: 100%; justify-self: center; }
+  .hero__arch { aspect-ratio: 4 / 5; }
+  .hero__leaves { position: absolute; inset: -4% -10% -3% -10%; width: 120%; height: 107%; pointer-events: none; }
+  .float-card {
+    position: absolute; left: -8%; bottom: 12%; max-width: 280px;
+    background: rgba(251, 248, 241, .95); border: 1px solid var(--line); border-radius: 16px;
+    padding: 14px 18px; box-shadow: var(--sh-2); display: flex; align-items: center; gap: 12px;
+    font-size: 13.5px; line-height: 1.35; animation: bob 7s ease-in-out infinite;
+  }
+  .float-card b { display: block; font-size: 14.5px; color: var(--forest); }
+  .float-card span { color: var(--muted); }
+  .float-card__ic { width: 38px; height: 38px; border-radius: 50%; background: var(--sage-50); display: grid; place-items: center; flex: none; }
+  .float-card__ic svg { width: 20px; height: 20px; color: var(--sage-800); }
+  @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  .drift { animation: drift 9s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  .drift.d2 { animation-delay: -4s; animation-duration: 11s; }
+  @keyframes drift { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-12px) rotate(6deg); } }
+  .sway { animation: sway 10s ease-in-out infinite; transform-box: fill-box; transform-origin: 50% 100%; }
+  .sway.s2 { animation-delay: -5s; }
+  @keyframes sway { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(-2.2deg); } }
+
+  .highlights { margin-top: clamp(56px, 7vw, 96px); }
+  .highlights .card h3 { font-size: 21px; }
+
+  /* About */
+  .about { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(40px, 7vw, 100px); align-items: start; }
+  .about__art { position: relative; max-width: 440px; width: 100%; }
+  .about__arch { aspect-ratio: 4 / 5; }
+  .sig { position: absolute; right: -18px; bottom: 28px; background: var(--paper); padding: 16px 20px; border-radius: var(--r); box-shadow: var(--sh-2); border: 1px solid var(--line); }
+  .sig b { display: block; font-family: var(--f-display); font-weight: 400; font-size: 19px; color: var(--forest); }
+  .sig span { font-size: 13px; color: var(--muted); }
+  .philo { margin: 10px 0 34px; padding: 26px 30px; background: var(--paper); border-radius: var(--r); border-left: 3px solid var(--honey); font-family: var(--f-serif); font-style: italic; font-size: clamp(18px, 1.7vw, 21px); line-height: 1.6; color: var(--sage-800); }
+  .sub-h { font-family: var(--f-sans); font-size: 12.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--olive); font-weight: 700; margin-bottom: 18px; }
+  .timeline { margin-bottom: 26px; }
+
+  /* Location */
+  .location { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(40px, 6vw, 90px); align-items: center; }
+  .location__art { max-width: 440px; width: 100%; justify-self: center; }
+  .location__arch { aspect-ratio: 4 / 5; }
+  .info-list { list-style: none; padding: 0; margin: 10px 0 34px; display: grid; gap: 20px; }
+  .info-list li { display: flex; gap: 14px; align-items: flex-start; font-size: 16px; }
+  .info-list svg { width: 22px; height: 22px; flex: none; color: var(--honey); margin-top: 3px; }
+  .info-list b { display: block; color: var(--cream); font-weight: 700; font-size: 12.5px; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 4px; }
+
+  /* Reviews */
+  .reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: start; }
+  .reviews :global(.review:nth-child(2)) { background: var(--sage-50); margin-top: 28px; }
+  .more { text-align: center; margin: 48px 0 0; }
+
+  @media (max-width: 960px) {
+    .hero__grid, .about, .location { grid-template-columns: 1fr; }
+    .hero__art { max-width: 420px; margin-top: 10px; }
+    .about__art { margin-inline: auto; }
+    .reviews { grid-template-columns: 1fr; max-width: 560px; margin-inline: auto; }
+    .reviews :global(.review:nth-child(2)) { margin-top: 0; }
+  }
+  @media (max-width: 600px) {
+    .float-card { left: 0; bottom: 6%; }
+    .sig { right: 8px; }
+  }
 </style>

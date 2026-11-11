@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lumière Skin Clinic · Dr. Elena Marin, MD · Dermatology &amp; Cosmetology</title>
+<meta name="description" content="Lumière Skin Clinic in Copenhagen. Evidence-based dermatology and natural-looking aesthetic cosmetology by board-certified dermatologist Dr. Elena Marin, MD.">
+<script>document.documentElement.classList.add('js');</script>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F7F2E8;
+  --paper:#FBF8F1;
+  --oat:#EEE6D5;
+  --oat-2:#E2D6BF;
+  --sage-50:#E5EADD;
+  --sage-100:#D3DCC9;
+  --sage:#93A88A;
+  --sage-600:#6A8263;
+  --sage-800:#3F5640;
+  --olive:#6B7140;
+  --forest:#26342A;
+  --honey:#C69E52;
+  --honey-600:#A9823A;
+  --honey-soft:#EFDDB2;
+  --ink:#2A2F26;
+  --muted:#5E6556;
+  --line:rgba(63,86,64,.16);
+
+  --f-display:"Gloock","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --f-serif:"Lora","Iowan Old Style",Georgia,"Times New Roman",serif;
+  --f-sans:"Mulish","Segoe UI","Helvetica Neue",system-ui,-apple-system,Arial,sans-serif;
+
+  --r-sm:10px;
+  --r:18px;
+  --r-lg:28px;
+  --arch:999px 999px var(--r-lg) var(--r-lg);
+  --sh-1:0 1px 2px rgba(38,52,42,.05),0 6px 18px -6px rgba(38,52,42,.10);
+  --sh-2:0 30px 60px -28px rgba(38,52,42,.38),0 8px 20px -10px rgba(38,52,42,.12);
+  --ease:cubic-bezier(.22,.7,.2,1);
+  --gutter:clamp(20px,4vw,40px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px;-webkit-text-size-adjust:100%}
+body{
+  margin:0;color:var(--ink);font-family:var(--f-sans);font-size:17px;line-height:1.7;
+  background:
+    radial-gradient(1200px 600px at 85% -10%,rgba(211,220,201,.55),transparent 60%),
+    radial-gradient(900px 500px at -10% 30%,rgba(239,221,178,.35),transparent 60%),
+    var(--cream);
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+.container{width:min(1200px,100% - 2*var(--gutter));margin-inline:auto}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Paper grain */
+.grain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:90;opacity:.09;mix-blend-mode:multiply}
+
+/* Type */
+h1,h2,h3,h4{font-family:var(--f-display);font-weight:400;line-height:1.08;letter-spacing:-.01em;margin:0;color:var(--forest)}
+h1 em,h2 em,h3 em{font-family:var(--f-serif);font-style:italic;font-weight:400;color:var(--sage-600)}
+h2{font-size:clamp(34px,4.6vw,58px)}
+p{margin:0 0 1em}
+.lead{font-size:clamp(17px,1.5vw,19px);color:var(--muted);max-width:56ch}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--olive);margin-bottom:18px}
+.eyebrow svg{width:18px;height:18px;color:var(--sage-600)}
+.section{padding:clamp(80px,10vw,132px) 0;position:relative}
+.section-head{max-width:720px;margin-bottom:clamp(40px,5vw,64px)}
+.section-head.center{text-align:center;margin-inline:auto}
+.section-head.center .lead{margin-inline:auto}
+.section-head h2{margin-bottom:18px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;font-weight:700;font-size:15px;letter-spacing:.01em;border:1.5px solid transparent;cursor:pointer;transition:transform .35s var(--ease),background-color .3s,color .3s,box-shadow .35s,border-color .3s}
+.btn svg{width:18px;height:18px;transition:transform .35s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn-primary{background:var(--forest);color:var(--cream);box-shadow:0 10px 24px -12px rgba(38,52,42,.6)}
+.btn-primary:hover{background:var(--sage-800);transform:translateY(-2px);box-shadow:0 16px 30px -14px rgba(38,52,42,.7)}
+.btn-ghost{border-color:rgba(38,52,42,.35);color:var(--forest);background:rgba(251,248,241,.5)}
+.btn-ghost:hover{border-color:var(--forest);background:var(--paper);transform:translateY(-2px)}
+.btn-honey{background:var(--honey);color:var(--forest)}
+.btn-honey:hover{background:var(--honey-soft);transform:translateY(-2px)}
+:focus-visible{outline:2px solid var(--honey-600);outline-offset:3px;border-radius:6px}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:60;background:rgba(247,242,232,.82);backdrop-filter:saturate(1.2) blur(14px);-webkit-backdrop-filter:saturate(1.2) blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-mark{width:40px;height:40px;flex:none}
+.logo-text{display:flex;flex-direction:column;line-height:1}
+.logo-text b{font-family:var(--f-display);font-weight:400;font-size:25px;color:var(--forest);letter-spacing:.005em}
+.logo-text small{font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--olive);margin-top:5px;font-weight:700}
+.nav-links{display:flex;gap:clamp(16px,2vw,30px);list-style:none;margin:0;padding:0}
+.nav-links a{font-size:15px;font-weight:600;color:var(--ink);position:relative;padding:6px 0}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1.5px;background:var(--honey);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav .btn{padding:12px 20px;font-size:14px}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--line);background:var(--paper);cursor:pointer;align-items:center;justify-content:center}
+.burger span{display:block;width:18px;height:1.5px;background:var(--forest);position:relative;transition:background .2s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:1.5px;background:var(--forest);transition:transform .3s var(--ease)}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.nav-open .burger span{background:transparent}
+.nav-open .burger span::before{transform:translateY(6px) rotate(45deg)}
+.nav-open .burger span::after{transform:translateY(-6px) rotate(-45deg)}
+.mobile-nav{display:none}
+
+/* Hero */
+.hero{padding:clamp(48px,7vw,96px) 0 clamp(60px,8vw,110px);position:relative}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,6vw,90px);align-items:center}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--line);font-size:13.5px;font-weight:600;color:var(--sage-800);margin-bottom:28px;box-shadow:var(--sh-1)}
+.pill i{width:22px;height:22px;border-radius:50%;background:var(--sage-50);display:grid;place-items:center}
+.pill i svg{width:13px;height:13px;color:var(--sage-800)}
+.hero h1{font-size:clamp(44px,6.3vw,84px);margin-bottom:26px}
+.hero h1 em{display:inline-block}
+.hero .lead{margin-bottom:36px;font-size:clamp(17px,1.6vw,20px)}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px}
+.stats{display:flex;flex-wrap:wrap;gap:0;margin-top:52px;padding-top:30px;border-top:1px solid var(--line)}
+.stat{padding-right:clamp(20px,3vw,40px);margin-right:clamp(20px,3vw,40px);border-right:1px solid var(--line)}
+.stat:last-child{border:0;margin:0;padding:0}
+.stat b{display:block;font-family:var(--f-display);font-weight:400;font-size:clamp(30px,3vw,40px);color:var(--forest);line-height:1}
+.stat b .star{color:var(--honey);font-size:.7em;vertical-align:.15em}
+.stat span{font-size:13.5px;color:var(--muted);font-weight:600}
+
+.hero-art{position:relative;max-width:520px;width:100%;justify-self:center}
+.hero-arch{aspect-ratio:4/5;border-radius:var(--arch);background:
+  radial-gradient(circle at 50% 42%,rgba(239,221,178,.85),transparent 55%),
+  linear-gradient(180deg,var(--sage-50),var(--sage-100));box-shadow:var(--sh-2);position:relative;overflow:hidden}
+.hero-arch::after{content:"";position:absolute;inset:14px;border-radius:var(--arch);border:1px solid rgba(251,248,241,.7)}
+.hero-illus{position:absolute;inset:-4% -8% -2% -8%;width:116%;height:106%;pointer-events:none}
+.float-card{position:absolute;background:rgba(251,248,241,.94);border:1px solid var(--line);border-radius:16px;padding:14px 18px;box-shadow:var(--sh-2);display:flex;align-items:center;gap:12px;font-size:13.5px;line-height:1.35;animation:bob 7s ease-in-out infinite}
+.float-card b{display:block;font-size:14.5px;color:var(--forest)}
+.float-card span{color:var(--muted)}
+.float-card .ic{width:38px;height:38px;border-radius:50%;background:var(--sage-50);display:grid;place-items:center;flex:none}
+.float-card .ic svg{width:20px;height:20px;color:var(--sage-800)}
+.fc-1{left:-8%;bottom:16%}
+.fc-2{right:-6%;top:12%;animation-delay:-3.5s;flex-direction:column;align-items:flex-start;gap:2px;padding:14px 18px}
+.fc-2 b{font-family:var(--f-display);font-weight:400;font-size:30px;line-height:1}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.drift{animation:drift 9s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.drift.d2{animation-delay:-4s;animation-duration:11s}
+@keyframes drift{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-12px) rotate(6deg)}}
+.sway{animation:sway 10s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 100%}
+.sway.s2{animation-delay:-5s}
+@keyframes sway{0%,100%{transform:rotate(0)}50%{transform:rotate(-2.2deg)}}
+
+/* Wave dividers */
+.wave{display:block;width:100%;height:clamp(40px,6vw,90px);margin-bottom:-1px}
+.wave.flip{transform:scaleY(-1);margin-top:-1px;margin-bottom:0}
+.fill-oat{fill:var(--oat)}.fill-cream{fill:var(--cream)}.fill-forest{fill:var(--forest)}.fill-sage{fill:var(--sage-50)}
+
+/* Credentials strip */
+.strip{padding:22px 0 0}
+.strip ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:14px 34px;color:var(--sage-800);font-family:var(--f-serif);font-style:italic;font-size:18px}
+.strip li{display:flex;align-items:center;gap:12px}
+.strip li svg{width:16px;height:16px;color:var(--honey)}
+
+/* About */
+.bg-oat{background:var(--oat)}
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(40px,7vw,100px);align-items:start}
+.portrait{position:relative;max-width:440px}
+.portrait-arch{aspect-ratio:4/5;border-radius:var(--arch);overflow:hidden;background:linear-gradient(180deg,#DCE3D2,#C9D4BE);box-shadow:var(--sh-2)}
+.portrait-arch svg{width:100%;height:100%}
+.portrait-sig{position:absolute;right:-18px;bottom:28px;background:var(--paper);padding:16px 20px;border-radius:var(--r);box-shadow:var(--sh-2);border:1px solid var(--line)}
+.portrait-sig b{display:block;font-family:var(--f-display);font-weight:400;font-size:20px;color:var(--forest)}
+.portrait-sig span{font-size:13px;color:var(--muted)}
+.portrait-sprig{position:absolute;left:-46px;top:-30px;width:130px;transform:rotate(-18deg)}
+.about-body h2{margin-bottom:22px}
+.philo{margin:34px 0;padding:28px 30px;background:var(--paper);border-radius:var(--r);border-left:3px solid var(--honey);font-family:var(--f-serif);font-style:italic;font-size:clamp(19px,1.8vw,22px);line-height:1.55;color:var(--sage-800);position:relative}
+.philo cite{display:block;margin-top:14px;font-style:normal;font-family:var(--f-sans);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--olive);font-weight:700}
+.about-cols{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.about-cols h3{font-family:var(--f-sans);font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--olive);font-weight:700;margin-bottom:14px}
+.timeline{list-style:none;margin:0;padding:0}
+.timeline li{position:relative;padding:0 0 16px 22px;font-size:15px;line-height:1.5}
+.timeline li::before{content:"";position:absolute;left:0;top:7px;width:9px;height:9px;border-radius:50%;background:var(--sage);box-shadow:0 0 0 4px var(--sage-50)}
+.timeline li::after{content:"";position:absolute;left:4px;top:20px;bottom:0;width:1px;background:var(--line)}
+.timeline li:last-child::after{display:none}
+.timeline b{display:block;color:var(--forest)}
+.timeline span{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;background:var(--paper);border:1px solid var(--line);font-size:13.5px;font-weight:600;color:var(--sage-800)}
+.chip svg{width:15px;height:15px;color:var(--honey-600)}
+
+/* Services */
+.svc-group{margin-top:56px}
+.svc-group:first-of-type{margin-top:0}
+.svc-label{display:flex;align-items:center;gap:18px;margin-bottom:26px}
+.svc-label h3{font-size:clamp(26px,2.6vw,34px)}
+.svc-label .tag{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:6px 12px;border-radius:999px;background:var(--sage-50);color:var(--sage-800)}
+.svc-label.honey .tag{background:var(--honey-soft);color:#6B5220}
+.svc-label::after{content:"";flex:1;height:1px;background:var(--line)}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.svc-grid.six{grid-template-columns:repeat(3,1fr)}
+.svc{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px 26px 28px;position:relative;overflow:hidden;transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .3s}
+.svc::before{content:"";position:absolute;right:-40px;top:-40px;width:120px;height:120px;border-radius:50%;background:var(--sage-50);opacity:0;transform:scale(.6);transition:opacity .45s,transform .6s var(--ease)}
+.svc:hover{transform:translateY(-6px);box-shadow:var(--sh-2);border-color:transparent}
+.svc:hover::before{opacity:1;transform:scale(1)}
+.svc-icon{width:58px;height:58px;border-radius:46% 54% 50% 50%/55% 45% 55% 45%;background:var(--sage-50);display:grid;place-items:center;margin-bottom:22px;position:relative;transition:border-radius .6s var(--ease)}
+.svc:hover .svc-icon{border-radius:54% 46% 45% 55%/45% 55% 45% 55%}
+.svc-icon svg{width:28px;height:28px;color:var(--sage-800);fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.honey-set .svc-icon{background:var(--honey-soft)}
+.honey-set .svc-icon svg{color:#7A5E26}
+.honey-set .svc::before{background:rgba(239,221,178,.55)}
+.svc h4{font-size:22px;margin-bottom:10px;position:relative}
+.svc p{font-size:15px;color:var(--muted);margin:0;position:relative;line-height:1.6}
+
+/* Journey */
+.bg-forest{background:var(--forest);color:#DDE3D5}
+.bg-forest h2{color:var(--cream)}
+.bg-forest h2 em{color:var(--honey-soft)}
+.bg-forest .eyebrow{color:var(--honey)}
+.bg-forest .eyebrow svg{color:var(--honey)}
+.bg-forest .lead{color:#B9C3B1}
+.journey{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.vine{position:absolute;left:4%;right:4%;top:6px;width:92%;height:70px;pointer-events:none}
+.step{position:relative;padding-top:6px}
+.step-num{width:64px;height:64px;border-radius:50%;background:var(--forest);border:1.5px solid var(--honey);display:grid;place-items:center;font-family:var(--f-display);font-size:26px;color:var(--honey-soft);margin-bottom:26px;position:relative;z-index:1;transition:background .4s,color .4s}
+.step:hover .step-num{background:var(--honey);color:var(--forest)}
+.step h3{color:var(--cream);font-size:24px;margin-bottom:10px}
+.step p{font-size:15.5px;color:#B9C3B1;margin:0}
+.step small{display:inline-block;margin-top:14px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--honey)}
+
+/* Results */
+.results-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:center}
+.ba{position:relative;aspect-ratio:300/380;max-width:440px;width:100%;margin-inline:auto;border-radius:var(--arch);overflow:hidden;box-shadow:var(--sh-2);--pos:50%;user-select:none}
+.ba svg{position:absolute;inset:0;width:100%;height:100%}
+.ba .after{clip-path:inset(0 0 0 var(--pos))}
+.ba-line{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;background:var(--paper);transform:translateX(-1px);pointer-events:none}
+.ba-knob{position:absolute;top:58%;left:var(--pos);width:48px;height:48px;border-radius:50%;background:var(--paper);transform:translate(-50%,-50%);box-shadow:var(--sh-2);display:grid;place-items:center;pointer-events:none}
+.ba-knob svg{position:static;width:22px;height:22px;color:var(--forest)}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.ba-tag{position:absolute;top:44%;padding:6px 12px;border-radius:999px;background:rgba(251,248,241,.9);font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--forest);pointer-events:none}
+.ba-tag.l{left:16px}.ba-tag.r{right:16px}
+.ba-caption{text-align:center;font-family:var(--f-serif);font-style:italic;color:var(--muted);font-size:15px;margin-top:18px}
+.res-stats{display:grid;gap:16px;margin:32px 0}
+.res-stat{display:flex;align-items:center;gap:20px;padding:18px 22px;background:var(--paper);border:1px solid var(--line);border-radius:var(--r)}
+.ring{width:66px;height:66px;flex:none}
+.ring circle{fill:none;stroke-width:5}
+.ring .bgc{stroke:var(--sage-50)}
+.ring .fg{stroke:var(--sage-600);stroke-linecap:round;transform:rotate(-90deg);transform-origin:center;stroke-dasharray:176;stroke-dashoffset:176;transition:stroke-dashoffset 1.6s var(--ease)}
+.ring.honey .fg{stroke:var(--honey)}
+.in .ring .fg{stroke-dashoffset:var(--off)}
+.ring text{font-family:var(--f-display);font-size:17px;fill:var(--forest)}
+.res-stat b{display:block;color:var(--forest);font-size:16px}
+.res-stat span{font-size:14.5px;color:var(--muted);line-height:1.5}
+.skin-figure{margin-top:clamp(60px,8vw,100px);display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(30px,5vw,60px);align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(24px,4vw,48px)}
+.skin-figure h3{font-size:clamp(26px,2.6vw,34px);margin-bottom:14px}
+.skin-figure p{color:var(--muted);font-size:15.5px}
+.legend{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px;font-size:14.5px}
+.legend li{display:flex;gap:12px;align-items:center}
+.legend i{width:14px;height:14px;border-radius:4px;flex:none}
+
+/* Prices */
+.price-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,6vw,80px);align-items:start}
+.menu{background:var(--paper);border-radius:var(--r-lg);padding:clamp(28px,4.5vw,56px);box-shadow:var(--sh-2);position:relative;outline:1px solid var(--line);outline-offset:-12px}
+.menu-title{text-align:center;margin-bottom:28px}
+.menu-title span{font-family:var(--f-serif);font-style:italic;color:var(--olive);font-size:17px}
+.menu-title h3{font-size:30px;margin-top:4px}
+.menu-title svg{width:120px;margin:14px auto 0;color:var(--sage-600)}
+.price-row{display:flex;align-items:baseline;gap:14px;padding:16px 0;border-bottom:1px dashed rgba(63,86,64,.22)}
+.price-row:last-of-type{border-bottom:0}
+.price-row .name{font-weight:700;color:var(--forest);font-size:16.5px}
+.price-row .name small{display:block;font-weight:400;color:var(--muted);font-size:13.5px;margin-top:2px}
+.price-row .dots{flex:1;border-bottom:1.5px dotted rgba(63,86,64,.35);transform:translateY(-5px);min-width:20px}
+.price-row .amt{font-family:var(--f-display);font-size:24px;color:var(--forest);white-space:nowrap}
+.price-row .amt small{font-family:var(--f-serif);font-style:italic;font-size:14px;color:var(--olive);margin-right:4px}
+.menu-note{margin-top:22px;text-align:center;font-size:13.5px;color:var(--muted)}
+.price-aside .lead{margin-bottom:28px}
+.perks{list-style:none;padding:0;margin:0 0 34px;display:grid;gap:14px}
+.perks li{display:flex;gap:14px;align-items:flex-start;font-size:15.5px}
+.perks svg{width:22px;height:22px;flex:none;color:var(--sage-600);margin-top:2px}
+
+/* Reviews */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.review{background:var(--paper);border:1px solid var(--line);border-radius:160px 160px var(--r-lg) var(--r-lg);padding:56px 32px 32px;text-align:center;transition:transform .45s var(--ease),box-shadow .45s}
+.review:hover{transform:translateY(-6px);box-shadow:var(--sh-2)}
+.review:nth-child(2){background:var(--sage-50);transform:translateY(28px)}
+.review:nth-child(2):hover{transform:translateY(22px)}
+.stars{display:flex;justify-content:center;gap:4px;margin-bottom:22px}
+.stars svg{width:17px;height:17px;fill:var(--honey)}
+.review blockquote{margin:0 0 24px;font-family:var(--f-serif);font-style:italic;font-size:18.5px;line-height:1.6;color:var(--sage-800)}
+.reviewer{display:flex;align-items:center;justify-content:center;gap:12px}
+.avatar{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-size:18px;color:var(--forest)}
+.reviewer b{display:block;font-size:15px;color:var(--forest);text-align:left}
+.reviewer span{font-size:13px;color:var(--muted);display:block;text-align:left}
+
+/* FAQ */
+.bg-sage{background:var(--sage-50)}
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(40px,6vw,80px);align-items:start}
+.faq-list{display:grid;gap:14px}
+.faq-item{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:box-shadow .35s}
+.faq-item.open{box-shadow:var(--sh-1)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 26px;background:none;border:0;cursor:pointer;text-align:left;font-family:var(--f-display);font-size:clamp(18px,1.7vw,21px);color:var(--forest);line-height:1.3}
+.faq-q .pm{width:34px;height:34px;flex:none;border-radius:50%;background:var(--sage-50);position:relative;transition:background .3s,transform .4s var(--ease)}
+.faq-q .pm::before,.faq-q .pm::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--forest);transform:translate(-50%,-50%)}
+.faq-q .pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .4s var(--ease)}
+.faq-item.open .pm{background:var(--honey-soft);transform:rotate(180deg)}
+.faq-item.open .pm::after{transform:translate(-50%,-50%) rotate(0)}
+.faq-a{overflow:hidden;transition:max-height .45s var(--ease)}
+.js .faq-a{max-height:0}
+.faq-a p{padding:0 26px 24px;margin:0;color:var(--muted);font-size:15.5px}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:stretch}
+.form-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(26px,4vw,48px);box-shadow:var(--sh-2)}
+.form-card h3{font-size:clamp(26px,2.6vw,34px);margin-bottom:8px}
+.form-card > p{color:var(--muted);margin-bottom:28px}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+.field label{font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--olive)}
+.field input,.field select,.field textarea{width:100%;padding:14px 16px;border-radius:var(--r-sm);border:1.5px solid var(--oat-2);background:var(--cream);font-size:15.5px;transition:border-color .25s,background .25s,box-shadow .25s;appearance:none;-webkit-appearance:none}
+.field select{background-image:linear-gradient(45deg,transparent 50%,var(--forest) 50%),linear-gradient(135deg,var(--forest) 50%,transparent 50%);background-position:calc(100% - 22px) 52%,calc(100% - 16px) 52%;background-size:6px 6px;background-repeat:no-repeat;padding-right:40px}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--sage-600);background:var(--paper);box-shadow:0 0 0 4px rgba(147,168,138,.22)}
+.form-foot{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;margin-top:6px}
+.form-foot small{color:var(--muted);font-size:13px;max-width:36ch}
+.form-ok{display:none;grid-column:1/-1;padding:16px 18px;border-radius:var(--r-sm);background:var(--sage-50);color:var(--sage-800);font-weight:600}
+.form.sent .form-ok{display:block}
+.info-card{background:var(--forest);color:#DDE3D5;border-radius:var(--r-lg);padding:clamp(26px,3.5vw,40px);display:flex;flex-direction:column;gap:26px}
+.map{border-radius:var(--r);overflow:hidden;background:var(--oat)}
+.map svg{width:100%;height:auto}
+.info-list{list-style:none;padding:0;margin:0;display:grid;gap:16px}
+.info-list li{display:flex;gap:14px;align-items:flex-start;font-size:15.5px}
+.info-list svg{width:20px;height:20px;flex:none;color:var(--honey);margin-top:3px}
+.info-list a:hover{color:var(--honey-soft)}
+.info-list b{display:block;color:var(--cream);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:2px}
+.hours{width:100%;border-collapse:collapse;font-size:14.5px}
+.hours td{padding:7px 0;border-bottom:1px solid rgba(221,227,213,.14)}
+.hours td:last-child{text-align:right;color:var(--cream)}
+.hours tr:last-child td{border-bottom:0}
+
+/* Footer */
+.site-footer{background:var(--forest);color:#B9C3B1;padding:30px 0 40px;font-size:14.5px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding:50px 0 40px;border-bottom:1px solid rgba(221,227,213,.14)}
+.site-footer .logo-text b{color:var(--cream)}
+.site-footer .logo-text small{color:var(--honey)}
+.site-footer h4{font-family:var(--f-sans);font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--honey);font-weight:700;margin-bottom:16px}
+.site-footer ul{list-style:none;padding:0;margin:0;display:grid;gap:9px}
+.site-footer a:hover{color:var(--cream)}
+.foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:26px;font-size:13px}
+
+/* Badge */
+.badge{position:fixed;left:14px;bottom:14px;z-index:200;padding:7px 12px;border-radius:999px;background:rgba(38,52,42,.88);color:var(--cream);font-size:11.5px;font-weight:600;letter-spacing:.04em;box-shadow:0 6px 18px -8px rgba(0,0,0,.4);backdrop-filter:blur(6px)}
+
+/* Reveal */
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .reveal.in{opacity:1;transform:none}
+.js .reveal.d1{transition-delay:.08s}.js .reveal.d2{transition-delay:.16s}.js .reveal.d3{transition-delay:.24s}
+
+/* Responsive */
+@media (max-width:1080px){
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .svc-grid.six{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:960px){
+  .nav-links,.nav .btn{display:none}
+  .burger{display:inline-flex}
+  .mobile-nav{display:block;position:absolute;top:100%;left:0;right:0;background:var(--cream);border-bottom:1px solid var(--line);padding:16px var(--gutter) 28px;transform:translateY(-12px);opacity:0;visibility:hidden;transition:all .35s var(--ease);z-index:55;box-shadow:var(--sh-2)}
+  .nav-open .mobile-nav{transform:none;opacity:1;visibility:visible}
+  .mobile-nav ul{list-style:none;margin:0 0 20px;padding:0}
+  .mobile-nav li a{display:block;padding:13px 0;border-bottom:1px solid var(--line);font-family:var(--f-display);font-size:22px;color:var(--forest)}
+  .hero-grid,.about-grid,.results-grid,.price-wrap,.faq-grid,.contact-grid,.skin-figure{grid-template-columns:1fr}
+  .hero-art{max-width:440px;margin-top:10px}
+  .portrait{margin-inline:auto}
+  .journey{grid-template-columns:1fr 1fr;gap:40px 28px}
+  .vine{display:none}
+  .reviews{grid-template-columns:1fr;max-width:560px;margin-inline:auto}
+  .review:nth-child(2){transform:none}
+  .review:nth-child(2):hover{transform:translateY(-6px)}
+}
+@media (max-width:600px){
+  body{font-size:16px}
+  .svc-grid,.svc-grid.six{grid-template-columns:1fr}
+  .about-cols{grid-template-columns:1fr}
+  .journey{grid-template-columns:1fr}
+  .form{grid-template-columns:1fr}
+  .stats{display:grid;grid-template-columns:repeat(3,auto);justify-content:space-between;gap:0}
+  .stat{padding-right:14px;margin-right:0}
+  .stat span{font-size:12px}
+  .fc-1{left:-2%;bottom:10%}
+  .fc-2{right:-2%}
+  .portrait-sig{right:8px}
+  .portrait-sprig{left:-20px;width:96px}
+  .foot-grid{grid-template-columns:1fr}
+  .price-row{flex-wrap:wrap}
+  .price-row .dots{display:none}
+  .price-row .amt{margin-left:auto}
+  .cta-row .btn{flex:1 1 auto;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1;transform:none}
+  .ring .fg{stroke-dashoffset:var(--off)}
+}
+</style>
+</head>
+<body>
+
+<svg class="grain" aria-hidden="true"><filter id="grainF"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(#grainF)"/></svg>
+
+<!-- Shared symbols -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 10 10 5 20 4c-1 10-6 15-15 15z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M5 19 13 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m8 12.5 2.6 2.6L16 9.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4L2.8 9.5l6.4-.8z"/></symbol>
+    <symbol id="i-sprig" viewBox="0 0 24 24"><path d="M12 22V6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M12 9c-3 0-5-2-5-5 3 0 5 2 5 5zM12 9c3 0 5-2 5-5-3 0-5 2-5 5zM12 15c-3 0-5-2-5-5 3 0 5 2 5 5zM12 15c3 0 5-2 5-5-3 0-5 2-5 5z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></symbol>
+    <g id="euc"><path d="M0 0C-13-4-17-22-9-34C-3-30 4-18 0 0Z" fill="#A9BBA1" stroke="#5E7A5A" stroke-width="1.2"/><path d="M0 0C-3-11-5-21-8-31" fill="none" stroke="#5E7A5A" stroke-width=".9" stroke-linecap="round"/></g>
+    <g id="round"><ellipse cx="0" cy="-17" rx="14" ry="17" fill="#B3C3AA" stroke="#647F5F" stroke-width="1.2"/><path d="M0 0V-30" stroke="#647F5F" stroke-width=".9" stroke-linecap="round"/></g>
+    <g id="olive"><path d="M0 0C-6-14-5-36 0-52C5-36 6-14 0 0Z" fill="#8E9A5E" stroke="#5C6534" stroke-width="1.1"/><path d="M0-2V-46" stroke="#5C6534" stroke-width=".8"/></g>
+  </defs>
+</svg>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="#top" class="logo" aria-label="Lumière Skin Clinic home">
+      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="#E5EADD"/>
+        <path d="M20 32V13" stroke="#3F5640" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M20 18c-4.5 0-7-3-7-7.5 4.5 0 7 3 7 7.5zM20 18c4.5 0 7-3 7-7.5-4.5 0-7 3-7 7.5zM20 26c-4 0-6.5-2.6-6.5-6.5 4 0 6.5 2.6 6.5 6.5zM20 26c4 0 6.5-2.6 6.5-6.5-4 0-6.5 2.6-6.5 6.5z" fill="#93A88A" stroke="#3F5640" stroke-width="1"/>
+        <circle cx="20" cy="9" r="2" fill="#C69E52"/>
+      </svg>
+      <span class="logo-text"><b>Lumière</b><small>Skin Clinic</small></span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#prices">Prices</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="btn btn-primary">Book a consultation</a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav"><span></span></button>
+  </div>
+  <div class="mobile-nav" id="mobile-nav">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#prices">Prices</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-primary">Book a consultation <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="pill reveal"><i><svg aria-hidden="true"><use href="#i-leaf"/></svg></i>Dermatology &amp; Cosmetology · Copenhagen</span>
+      <h1 class="reveal d1">Healthy, beautiful skin, <em>rooted</em> in medical science.</h1>
+      <p class="lead reveal d2">Dr. Elena Marin pairs board-certified dermatology with a gentle, natural approach to aesthetics, so your skin is cared for as a living organ, not a surface to cover.</p>
+      <div class="cta-row reveal d3">
+        <a href="#contact" class="btn btn-primary">Book a consultation <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a href="#services" class="btn btn-ghost">Explore treatments</a>
+      </div>
+      <div class="stats reveal d3">
+        <div class="stat"><b>12+</b><span>years in practice</span></div>
+        <div class="stat"><b>8,000+</b><span>patients cared for</span></div>
+        <div class="stat"><b>4.9<span class="star"> ★</span></b><span>average rating</span></div>
+      </div>
+    </div>
+
+    <div class="hero-art reveal d2">
+      <div class="hero-arch"></div>
+      <svg class="hero-illus" viewBox="0 0 480 600" role="img" aria-label="Illustration of an amber serum dropper bottle surrounded by eucalyptus, olive leaves, aloe and chamomile">
+        <defs>
+          <linearGradient id="glass" x1="0" x2="1">
+            <stop offset="0" stop-color="#9E7533"/><stop offset=".28" stop-color="#C99A4C"/><stop offset=".5" stop-color="#DDB872"/><stop offset=".78" stop-color="#BF8F42"/><stop offset="1" stop-color="#8E6629"/>
+          </linearGradient>
+          <linearGradient id="bulb" x1="0" x2="1">
+            <stop offset="0" stop-color="#2E4132"/><stop offset=".45" stop-color="#4F6B53"/><stop offset="1" stop-color="#26342A"/>
+          </linearGradient>
+          <linearGradient id="aloe" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0" stop-color="#5E7A5A"/><stop offset="1" stop-color="#ADC0A1"/>
+          </linearGradient>
+          <radialGradient id="halo"><stop offset="0" stop-color="#FBF8F1" stop-opacity=".9"/><stop offset="1" stop-color="#FBF8F1" stop-opacity="0"/></radialGradient>
+        </defs>
+        <circle cx="240" cy="330" r="170" fill="url(#halo)"/>
+        <!-- loose hand-drawn ring -->
+        <path d="M108 360C96 250 170 170 258 176C350 182 396 260 384 350" fill="none" stroke="#C69E52" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="2 7" opacity=".9"/>
+
+        <!-- left eucalyptus sprig -->
+        <g class="sway">
+          <path d="M92 590C104 490 84 390 128 280C146 236 168 198 196 164" fill="none" stroke="#6B7140" stroke-width="2.4" stroke-linecap="round"/>
+          <use href="#round" transform="translate(96 540) rotate(-62) scale(1.1)"/>
+          <use href="#round" transform="translate(98 505) rotate(58) scale(1.05)"/>
+          <use href="#round" transform="translate(96 462) rotate(-58)"/>
+          <use href="#round" transform="translate(100 425) rotate(56) scale(.98)"/>
+          <use href="#round" transform="translate(106 385) rotate(-52) scale(.95)"/>
+          <use href="#round" transform="translate(114 346) rotate(50) scale(.9)"/>
+          <use href="#round" transform="translate(124 308) rotate(-48) scale(.86)"/>
+          <use href="#round" transform="translate(136 272) rotate(44) scale(.8)"/>
+          <use href="#round" transform="translate(150 240) rotate(-42) scale(.74)"/>
+          <use href="#round" transform="translate(166 210) rotate(38) scale(.66)"/>
+          <use href="#round" transform="translate(182 184) rotate(-30) scale(.58)"/>
+          <use href="#round" transform="translate(196 165) rotate(20) scale(.5)"/>
+        </g>
+
+        <!-- right olive sprig -->
+        <g class="sway s2">
+          <path d="M412 592C398 500 426 410 384 300C370 262 352 236 326 214" fill="none" stroke="#6B7140" stroke-width="2.2" stroke-linecap="round"/>
+          <use href="#olive" transform="translate(406 540) rotate(52)"/>
+          <use href="#olive" transform="translate(408 500) rotate(-40) scale(.95)"/>
+          <use href="#olive" transform="translate(410 456) rotate(48) scale(.95)"/>
+          <use href="#olive" transform="translate(404 410) rotate(-44) scale(.9)"/>
+          <use href="#olive" transform="translate(396 366) rotate(44) scale(.88)"/>
+          <use href="#olive" transform="translate(384 324) rotate(-48) scale(.82)"/>
+          <use href="#olive" transform="translate(368 284) rotate(36) scale(.76)"/>
+          <use href="#olive" transform="translate(352 254) rotate(-56) scale(.7)"/>
+          <use href="#olive" transform="translate(336 228) rotate(10) scale(.62)"/>
+          <circle cx="398" cy="430" r="7" fill="#4E5A2E"/><circle cx="402" cy="428" r="2" fill="#FBF8F1" opacity=".5"/>
+          <circle cx="380" cy="300" r="6" fill="#4E5A2E"/>
+        </g>
+
+        <!-- bottle shadow -->
+        <ellipse cx="240" cy="548" rx="118" ry="13" fill="#26342A" opacity=".14"/>
+
+        <!-- bottle -->
+        <g>
+          <path d="M210 262H270V278C300 286 320 306 320 334V510C320 528 306 542 288 542H192C174 542 160 528 160 510V334C160 306 180 286 210 278Z" fill="url(#glass)"/>
+          <path d="M172 336C172 316 186 300 206 294" fill="none" stroke="#FBF8F1" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/>
+          <path d="M176 360V520" stroke="#FBF8F1" stroke-opacity=".32" stroke-width="7" stroke-linecap="round"/>
+          <path d="M302 372V500" stroke="#FBF8F1" stroke-opacity=".18" stroke-width="4" stroke-linecap="round"/>
+          <!-- label -->
+          <rect x="184" y="364" width="112" height="128" rx="8" fill="#FBF8F1"/>
+          <rect x="190" y="370" width="100" height="116" rx="5" fill="none" stroke="#93A88A" stroke-width=".8"/>
+          <g transform="translate(240 392)">
+            <path d="M0 8V-8" stroke="#3F5640" stroke-width="1"/>
+            <path d="M0-2c-4 0-6-2.5-6-6 4 0 6 2.5 6 6zM0-2c4 0 6-2.5 6-6-4 0-6 2.5-6 6z" fill="#93A88A" stroke="#3F5640" stroke-width=".7"/>
+          </g>
+          <text x="240" y="424" text-anchor="middle" font-family="Gloock, Georgia, serif" font-size="17" fill="#26342A" letter-spacing="1.5">LUMIÈRE</text>
+          <text x="240" y="444" text-anchor="middle" font-family="Lora, Georgia, serif" font-style="italic" font-size="12.5" fill="#6A8263">Botanical serum</text>
+          <line x1="214" y1="456" x2="266" y2="456" stroke="#C69E52" stroke-width=".8"/>
+          <text x="240" y="472" text-anchor="middle" font-family="Mulish, Arial, sans-serif" font-size="7.5" font-weight="700" fill="#6B7140" letter-spacing="1.6">30 ML · DERM-TESTED</text>
+          <!-- collar -->
+          <rect x="202" y="226" width="76" height="42" rx="7" fill="#26342A"/>
+          <path d="M210 234V260M220 234V260M230 234V260M240 234V260M250 234V260M260 234V260M270 234V260" stroke="#4F6B53" stroke-width="1.4"/>
+          <!-- bulb -->
+          <path d="M216 230V168C216 140 228 124 240 124C252 124 264 140 264 168V230Z" fill="url(#bulb)"/>
+          <path d="M226 210V170C226 152 231 140 238 136" fill="none" stroke="#FBF8F1" stroke-opacity=".3" stroke-width="4" stroke-linecap="round"/>
+        </g>
+
+        <!-- floating droplets & sparkles -->
+        <path class="drift" d="M340 150c7 10 11 16 11 22a11 11 0 0 1-22 0c0-6 4-12 11-22z" fill="#DDB872" stroke="#A9823A" stroke-width="1"/>
+        <path class="drift d2" d="M136 188c5 7 8 11 8 15a8 8 0 0 1-16 0c0-4 3-8 8-15z" fill="#EFDDB2" stroke="#A9823A" stroke-width="1"/>
+        <path d="M372 210l3 8 8 3-8 3-3 8-3-8-8-3 8-3z" fill="#C69E52"/>
+        <path d="M112 250l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" fill="#C69E52" opacity=".8"/>
+
+        <!-- aloe foreground -->
+        <g class="sway">
+          <path d="M126 600C112 534 122 470 156 424C150 480 156 540 178 600Z" fill="url(#aloe)" stroke="#4F6B53" stroke-width="1"/>
+          <path d="M152 600C164 540 196 490 240 462C212 508 202 552 208 600Z" fill="url(#aloe)" stroke="#4F6B53" stroke-width="1"/>
+          <path d="M140 520l-4-2M146 490l-4-3M152 460l-4-3M176 540l-4-1M190 512l-4-2" stroke="#3F5640" stroke-width="1.2" stroke-linecap="round"/>
+        </g>
+        <g class="sway s2">
+          <path d="M360 600C374 536 364 480 330 438C340 490 332 548 312 600Z" fill="url(#aloe)" stroke="#4F6B53" stroke-width="1"/>
+          <path d="M348 530l4-2M346 500l4-3M340 470l4-3" stroke="#3F5640" stroke-width="1.2" stroke-linecap="round"/>
+        </g>
+
+        <!-- chamomile -->
+        <g transform="translate(344 520)">
+          <g fill="#FBF8F1" stroke="#C9BFA6" stroke-width=".8">
+            <ellipse cx="0" cy="-13" rx="5" ry="11"/><ellipse cx="0" cy="-13" rx="5" ry="11" transform="rotate(40)"/><ellipse cx="0" cy="-13" rx="5" ry="11" transform="rotate(80)"/><ellipse cx="0" cy="-13" rx="5" ry="11" transform="rotate(120)"/><ellipse cx="0" cy="-13" rx="5" ry="11" transform="rotate(160)"/><ellipse cx="0" cy="-13" rx="5" ry="11" transform="rotate(200)"/><ellipse cx="0" cy="-13" rx="5" ry="11" transform="rotate(240)"/><ellipse cx="0" cy="-13" rx="5" ry="11" transform="rotate(280)"/><ellipse cx="0" cy="-13" rx="5" ry="11" transform="rotate(320)"/>
+          </g>
+          <circle r="7" fill="#C69E52"/><circle r="3" cx="-2" cy="-2" fill="#DDB872"/>
+        </g>
+        <g transform="translate(118 470) scale(.7)">
+          <g fill="#FBF8F1" stroke="#C9BFA6" stroke-width="1">
+            <ellipse cx="0" cy="-13" rx="5" ry="11"/><ellipse cx="0" cy="-13" rx="5" ry="11" transform="rotate(45)"/><ellipse cx="0" cy="-13" rx="5" ry="11" transform="rotate(90)"/><ellipse cx="0" cy="-13" rx="5" ry="11" transform="rotate(135)"/><ellipse cx="0" cy="-13" rx="5" ry="11" transform="rotate(180)"/><ellipse cx="0" cy="-13" rx="5" ry="11" transform="rotate(225)"/><ellipse cx="0" cy="-13" rx="5" ry="11" transform="rotate(270)"/><ellipse cx="0" cy="-13" rx="5" ry="11" transform="rotate(315)"/>
+          </g>
+          <circle r="7" fill="#C69E52"/>
+        </g>
+      </svg>
+
+      <div class="float-card fc-1">
+        <span class="ic"><svg aria-hidden="true"><use href="#i-check"/></svg></span>
+        <div><b>Board-certified</b><span>Dermatologist · EADV member</span></div>
+      </div>
+      <div class="float-card fc-2">
+        <b>98%</b><span>would recommend us</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container strip">
+    <ul>
+      <li><svg aria-hidden="true"><use href="#i-sprig"/></svg>Evidence-based protocols</li>
+      <li><svg aria-hidden="true"><use href="#i-sprig"/></svg>Natural-looking results</li>
+      <li><svg aria-hidden="true"><use href="#i-sprig"/></svg>Medical-grade products</li>
+      <li><svg aria-hidden="true"><use href="#i-sprig"/></svg>Unhurried, 45-minute consultations</li>
+    </ul>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path class="fill-oat" d="M0 54C160 20 320 14 520 40S900 92 1100 62 1360 18 1440 30V90H0Z"/></svg>
+
+<!-- ABOUT -->
+<section class="section bg-oat" id="about">
+  <div class="container about-grid">
+    <div class="portrait reveal">
+      <svg class="portrait-sprig" viewBox="0 0 120 200" aria-hidden="true">
+        <path d="M60 196C62 140 58 90 70 20" fill="none" stroke="#6B7140" stroke-width="2" stroke-linecap="round"/>
+        <use href="#euc" transform="translate(60 170) rotate(-50)"/><use href="#euc" transform="translate(61 150) rotate(50) scale(-1 1)"/>
+        <use href="#euc" transform="translate(61 122) rotate(-46) scale(.9)"/><use href="#euc" transform="translate(63 98) rotate(46) scale(-.9 .9)"/>
+        <use href="#euc" transform="translate(65 72) rotate(-40) scale(.78)"/><use href="#euc" transform="translate(67 50) rotate(40) scale(-.7 .7)"/>
+        <use href="#euc" transform="translate(70 28) rotate(-8) scale(.6)"/>
+      </svg>
+      <div class="portrait-arch">
+        <svg viewBox="0 0 360 450" role="img" aria-label="Stylized portrait of Dr. Elena Marin in a white coat">
+          <circle cx="180" cy="200" r="132" fill="#EFDDB2" opacity=".7"/>
+          <g opacity=".75">
+            <path d="M40 450C40 360 30 300 70 230" fill="none" stroke="#6B7140" stroke-width="2"/>
+            <use href="#round" transform="translate(50 380) rotate(-50)"/><use href="#round" transform="translate(48 340) rotate(50)"/><use href="#round" transform="translate(54 300) rotate(-46) scale(.9)"/><use href="#round" transform="translate(62 262) rotate(44) scale(.8)"/>
+            <path d="M326 450C330 370 336 310 300 250" fill="none" stroke="#6B7140" stroke-width="2"/>
+            <use href="#olive" transform="translate(328 400) rotate(40)"/><use href="#olive" transform="translate(330 360) rotate(-40) scale(.9)"/><use href="#olive" transform="translate(322 318) rotate(36) scale(.85)"/><use href="#olive" transform="translate(308 280) rotate(-40) scale(.75)"/>
+          </g>
+          <!-- hair back -->
+          <path d="M112 236C100 160 136 108 186 106C238 106 266 150 258 222C256 262 250 290 236 300H128C116 288 114 262 112 236Z" fill="#4A3A2E"/>
+          <circle cx="212" cy="96" r="30" fill="#4A3A2E"/>
+          <path d="M196 74C210 66 228 70 236 82" fill="none" stroke="#6B5444" stroke-width="2" stroke-linecap="round"/>
+          <!-- neck -->
+          <path d="M158 262H202V318C192 330 168 330 158 318Z" fill="#E2BFA2"/>
+          <path d="M158 286C170 296 190 296 202 286" fill="none" stroke="#CFA587" stroke-width="2"/>
+          <!-- face -->
+          <ellipse cx="182" cy="196" rx="56" ry="70" fill="#EBCBB0"/>
+          <path d="M126 196C124 150 150 124 186 124C222 126 240 152 238 190C222 170 196 150 160 150C144 160 132 176 126 196Z" fill="#4A3A2E"/>
+          <path d="M156 206C162 210 170 210 176 206M196 206C202 210 210 210 216 206" fill="none" stroke="#7A5A48" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M186 214C184 224 184 230 190 232" fill="none" stroke="#C9A084" stroke-width="2" stroke-linecap="round"/>
+          <path d="M172 244C180 250 194 250 202 244" fill="none" stroke="#B87D6A" stroke-width="2.4" stroke-linecap="round"/>
+          <circle cx="158" cy="228" r="10" fill="#E8B49E" opacity=".45"/><circle cx="212" cy="228" r="10" fill="#E8B49E" opacity=".45"/>
+          <circle cx="126" cy="214" r="4" fill="#C69E52"/>
+          <!-- coat -->
+          <path d="M30 450C38 370 86 330 150 314L180 360L210 314C276 330 322 370 330 450Z" fill="#FBF8F1"/>
+          <path d="M150 314L180 360L210 314L196 310L180 334L164 310Z" fill="#93A88A"/>
+          <path d="M150 314L140 450M210 314L220 450" stroke="#D9D1BF" stroke-width="2"/>
+          <path d="M150 314L176 400L140 410M210 314L184 400L220 410" fill="none" stroke="#D9D1BF" stroke-width="2" stroke-linejoin="round"/>
+          <rect x="236" y="384" width="44" height="34" rx="4" fill="none" stroke="#D9D1BF" stroke-width="2"/>
+          <path d="M248 372V394" stroke="#3F5640" stroke-width="3" stroke-linecap="round"/>
+          <!-- stethoscope -->
+          <path d="M150 318C130 360 128 390 136 412C142 430 160 432 168 418" fill="none" stroke="#3F5640" stroke-width="4" stroke-linecap="round"/>
+          <path d="M210 318C222 350 224 372 220 392" fill="none" stroke="#3F5640" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="220" cy="402" r="11" fill="#C69E52" stroke="#3F5640" stroke-width="3"/>
+        </svg>
+      </div>
+      <div class="portrait-sig"><b>Dr. Elena Marin, MD</b><span>Dermatologist &amp; Cosmetologist</span></div>
+    </div>
+
+    <div class="about-body">
+      <span class="eyebrow reveal"><svg aria-hidden="true"><use href="#i-leaf"/></svg>About the doctor</span>
+      <h2 class="reveal d1">Skin care that listens <em>first</em>, then treats.</h2>
+      <p class="lead reveal d2">For more than twelve years, Dr. Elena Marin has helped patients understand their skin, from stubborn acne and rosacea to subtle, graceful ageing. Trained in clinical dermatology and aesthetic medicine, she believes the best results are the ones nobody can quite name: you simply look rested, healthy and like yourself.</p>
+      <blockquote class="philo reveal">“Healthy skin is the foundation of beautiful skin. I treat the cause, respect the face’s natural architecture, and only recommend what the evidence supports.”<cite>Dr. Elena Marin · Treatment philosophy</cite></blockquote>
+      <div class="about-cols">
+        <div class="reveal">
+          <h3>Education &amp; training</h3>
+          <ul class="timeline">
+            <li><b>MD, Medicine</b><span>University of Copenhagen</span></li>
+            <li><b>Specialist in Dermato-Venereology</b><span>Rigshospitalet residency, 5 years</span></li>
+            <li><b>Fellowship, Aesthetic Dermatology</b><span>Advanced injectables &amp; lasers, Paris</span></li>
+          </ul>
+        </div>
+        <div class="reveal d1">
+          <h3>Certifications</h3>
+          <div class="chips">
+            <span class="chip"><svg aria-hidden="true"><use href="#i-check"/></svg>Board-certified dermatologist</span>
+            <span class="chip"><svg aria-hidden="true"><use href="#i-check"/></svg>EADV member</span>
+            <span class="chip"><svg aria-hidden="true"><use href="#i-check"/></svg>Certified laser specialist</span>
+            <span class="chip"><svg aria-hidden="true"><use href="#i-check"/></svg>Advanced dermatoscopy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="wave flip" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path class="fill-oat" d="M0 40C200 80 420 86 640 56S1040 6 1240 26 1400 60 1440 52V0H0Z"/></svg>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow reveal"><svg aria-hidden="true"><use href="#i-leaf"/></svg>Treatments</span>
+      <h2 class="reveal d1">Medicine for the skin, <em>gently</em> applied.</h2>
+      <p class="lead reveal d2">Two disciplines under one roof: medical dermatology to diagnose and heal, aesthetic cosmetology to refine and restore. Every plan begins with understanding your skin.</p>
+    </div>
+
+    <div class="svc-group">
+      <div class="svc-label reveal"><h3>Medical Dermatology</h3><span class="tag">Diagnose &amp; heal</span></div>
+      <div class="svc-grid">
+        <article class="svc reveal">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c5 0 8 3.6 8 8.4C20 17 16.5 21 12 21s-8-4-8-9.6C4 6.6 7 3 12 3z"/><circle cx="9" cy="10" r=".9" fill="currentColor"/><circle cx="15" cy="9.5" r=".7" fill="currentColor"/><circle cx="13.5" cy="14.5" r="1.1" fill="currentColor"/><circle cx="8.5" cy="14" r=".6" fill="currentColor"/></svg></div>
+          <h4>Acne &amp; rosacea</h4>
+          <p>Calming, scar-preventing protocols combining prescription therapy, peels and light treatments.</p>
+        </article>
+        <article class="svc reveal d1">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.4 15.4 21 21"/><circle cx="10.5" cy="10.5" r="2.2" fill="currentColor" stroke="none"/></svg></div>
+          <h4>Mole check &amp; dermatoscopy</h4>
+          <p>Full-body skin cancer screening with digital dermatoscopy and mapped follow-up.</p>
+        </article>
+        <article class="svc reveal d2">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7c3-2 6 2 9 0s6-2 9 0"/><path d="M3 12c3-2 6 2 9 0s6-2 9 0"/><path d="M3 17c3-2 6 2 9 0s6-2 9 0"/></svg></div>
+          <h4>Eczema &amp; psoriasis</h4>
+          <p>Long-term control of flares with modern topicals, phototherapy and barrier repair.</p>
+        </article>
+        <article class="svc reveal d3">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 21c0-7 1-12 6-17"/><path d="M11 21c0-6 1.5-10 5-14"/><path d="M16 21c0-4 1-7 3-9"/><path d="M3 21h18"/></svg></div>
+          <h4>Hair &amp; scalp</h4>
+          <p>Trichoscopy-led diagnosis of hair loss, dandruff and scalp inflammation, with clear treatment paths.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="svc-group honey-set">
+      <div class="svc-label honey reveal"><h3>Aesthetic Cosmetology</h3><span class="tag">Refine &amp; restore</span></div>
+      <div class="svc-grid six">
+        <article class="svc reveal">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 3l4 4M19 5l-3 3"/><path d="M16 8 8 16l-3 .9.9-3L14 6z"/><path d="M10 10l1.6 1.6M12 8l1.6 1.6"/><path d="M5.5 18.5 3 21"/></svg></div>
+          <h4>Botulinum toxin</h4>
+          <p>Softens expression lines while keeping movement natural. Micro-dosed, never frozen.</p>
+        </article>
+        <article class="svc reveal d1">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c3.5 4.5 6 7.7 6 11a6 6 0 0 1-12 0c0-3.3 2.5-6.5 6-11z"/><path d="M12 11.5v5M9.5 14h5"/></svg></div>
+          <h4>Dermal fillers</h4>
+          <p>Hyaluronic acid to restore lost volume, hydrate lips and refine contours with restraint.</p>
+        </article>
+        <article class="svc reveal d2">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7.5 12 3.5l8 4-8 4z"/><path d="M4 12l8 4 8-4"/><path d="M4 16.5l8 4 8-4"/></svg></div>
+          <h4>Chemical peels</h4>
+          <p>Fruit-acid to medium-depth peels for glow, pigmentation and fine texture.</p>
+        </article>
+        <article class="svc reveal">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3.5M12 18v3.5M2.5 12H6M18 12h3.5M5.3 5.3l2.5 2.5M16.2 16.2l2.5 2.5M5.3 18.7l2.5-2.5M16.2 7.8l2.5-2.5"/></svg></div>
+          <h4>Laser resurfacing &amp; IPL</h4>
+          <p>Fractional laser and intense pulsed light for scars, redness, sun damage and tone.</p>
+        </article>
+        <article class="svc reveal d1">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 3h7M10 3v13.5a2 2 0 0 0 4 0V3"/><path d="M10 11h4"/><path d="M19 12.5c1 1.4 1.6 2.3 1.6 3.1a1.6 1.6 0 0 1-3.2 0c0-.8.6-1.7 1.6-3.1z"/></svg></div>
+          <h4>PRP &amp; mesotherapy</h4>
+          <p>Your own growth factors and vitamin cocktails to revitalise skin and support hair growth.</p>
+        </article>
+        <article class="svc reveal d2">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19C5 10 10 5 20 4c-1 10-6 15-15 15z"/><path d="M5 19 13 11"/><path d="M10 14.5h3.5M12 11.5h3"/></svg></div>
+          <h4>Facials &amp; skincare plans</h4>
+          <p>Medical facials and a home routine built around your skin type, season and goals.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path class="fill-forest" d="M0 60C180 26 380 10 600 34S980 90 1180 70 1380 30 1440 34V90H0Z"/></svg>
+
+<!-- JOURNEY -->
+<section class="section bg-forest" id="journey">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow reveal"><svg aria-hidden="true"><use href="#i-leaf"/></svg>Your journey</span>
+      <h2 class="reveal d1">Four unhurried steps <em>to calmer skin.</em></h2>
+      <p class="lead reveal d2">Good dermatology takes time. We plan carefully, treat precisely and stay with you long after the appointment.</p>
+    </div>
+    <div class="journey">
+      <svg class="vine" viewBox="0 0 1000 70" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M30 32C140 6 220 60 340 32S540 6 660 32 880 60 990 30" fill="none" stroke="#C69E52" stroke-width="1.2" stroke-dasharray="3 6" vector-effect="non-scaling-stroke"/>
+      </svg>
+      <div class="step reveal"><div class="step-num">1</div><h3>Consultation &amp; skin analysis</h3><p>A 45-minute conversation and dermatoscopic examination of your skin, history and goals.</p><small>45 min</small></div>
+      <div class="step reveal d1"><div class="step-num">2</div><h3>Personal treatment plan</h3><p>A written plan with clear options, expected results, timelines and transparent prices.</p><small>Yours to keep</small></div>
+      <div class="step reveal d2"><div class="step-num">3</div><h3>Treatment</h3><p>Performed by Dr. Marin herself, with medical-grade products and calm, careful technique.</p><small>Doctor-led</small></div>
+      <div class="step reveal d3"><div class="step-num">4</div><h3>Aftercare &amp; follow-up</h3><p>A tailored home routine, a check-in call and a review visit to fine-tune your results.</p><small>Ongoing</small></div>
+    </div>
+  </div>
+</section>
+
+<svg class="wave flip" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path class="fill-forest" d="M0 30C220 70 420 80 660 50S1060 4 1260 24 1420 54 1440 50V0H0Z"/></svg>
+
+<!-- RESULTS -->
+<section class="section" id="results">
+  <div class="container">
+    <div class="results-grid">
+      <div class="reveal">
+        <div class="ba" id="ba">
+          <svg viewBox="0 0 300 380" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <radialGradient id="bfBg" cx=".4" cy=".4" r=".8"><stop offset="0" stop-color="#E9C9B1"/><stop offset="1" stop-color="#D6AE93"/></radialGradient>
+              <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".09" numOctaves="2" seed="4"/><feColorMatrix values="0 0 0 0 .55  0 0 0 0 .32  0 0 0 0 .26  0 0 0 .9 -.25"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+            </defs>
+            <rect width="300" height="380" fill="url(#bfBg)"/>
+            <rect width="300" height="380" fill="#000" filter="url(#rough)" opacity=".55"/>
+            <g fill="#C07D6C" opacity=".55">
+              <circle cx="150" cy="170" r="5"/><circle cx="168" cy="196" r="3.5"/><circle cx="132" cy="210" r="6"/><circle cx="182" cy="150" r="3"/><circle cx="118" cy="168" r="4"/><circle cx="158" cy="232" r="4.5"/><circle cx="196" cy="214" r="3"/><circle cx="140" cy="140" r="2.5"/>
+              <ellipse cx="160" cy="200" rx="44" ry="30" opacity=".35"/>
+            </g>
+            <g fill="#9A6A55" opacity=".5"><circle cx="100" cy="120" r="2"/><circle cx="124" cy="250" r="2.4"/><circle cx="176" cy="260" r="1.8"/></g>
+          </svg>
+          <svg class="after" viewBox="0 0 300 380" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <radialGradient id="afBg" cx=".55" cy=".38" r=".85"><stop offset="0" stop-color="#F6E2D0"/><stop offset=".6" stop-color="#EBCDB5"/><stop offset="1" stop-color="#DDBBA0"/></radialGradient>
+              <radialGradient id="dew" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".65"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient>
+            </defs>
+            <rect width="300" height="380" fill="url(#afBg)"/>
+            <ellipse cx="170" cy="150" rx="70" ry="46" fill="url(#dew)"/>
+            <ellipse cx="150" cy="220" rx="40" ry="26" fill="url(#dew)" opacity=".6"/>
+          </svg>
+          <svg viewBox="0 0 300 380" aria-hidden="true" preserveAspectRatio="xMidYMid slice" style="pointer-events:none">
+            <path d="M118 0C120 30 140 56 172 62C206 68 224 96 222 132C221 150 216 160 222 172L246 206C250 214 244 218 236 220C238 230 236 236 232 242C236 248 234 256 226 260C228 280 218 296 196 298C180 300 170 310 168 340L166 380" fill="none" stroke="#FBF8F1" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" opacity=".95"/>
+            <path d="M204 150C212 146 222 148 226 154" fill="none" stroke="#FBF8F1" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="ba-tag l">Before</span><span class="ba-tag r">After</span>
+          <div class="ba-line"></div>
+          <div class="ba-knob"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l-5 6 5 6M15 6l5 6-5 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+        </div>
+        <p class="ba-caption">Illustrative: rosacea &amp; texture plan, 12 weeks. Drag to compare.</p>
+      </div>
+
+      <div>
+        <span class="eyebrow reveal"><svg aria-hidden="true"><use href="#i-leaf"/></svg>Results</span>
+        <h2 class="reveal d1">Quiet change you <em>feel</em> as much as see.</h2>
+        <p class="lead reveal d2">We measure progress with standardised photography and skin analysis at every review, so results are tracked, not guessed.</p>
+        <div class="res-stats reveal d2">
+          <div class="res-stat">
+            <svg class="ring" viewBox="0 0 66 66" aria-hidden="true"><circle class="bgc" cx="33" cy="33" r="28"/><circle class="fg" cx="33" cy="33" r="28" style="--off:11"/><text x="33" y="39" text-anchor="middle">94%</text></svg>
+            <div><b>Calmer, clearer skin</b><span>of acne &amp; rosacea patients report visible improvement within 12 weeks.</span></div>
+          </div>
+          <div class="res-stat">
+            <svg class="ring honey" viewBox="0 0 66 66" aria-hidden="true"><circle class="bgc" cx="33" cy="33" r="28"/><circle class="fg" cx="33" cy="33" r="28" style="--off:16"/><text x="33" y="39" text-anchor="middle">91%</text></svg>
+            <div><b>Natural-looking results</b><span>of aesthetic patients say friends noticed they looked “rested”, not “done”.</span></div>
+          </div>
+          <div class="res-stat">
+            <svg class="ring" viewBox="0 0 66 66" aria-hidden="true"><circle class="bgc" cx="33" cy="33" r="28"/><circle class="fg" cx="33" cy="33" r="28" style="--off:5"/><text x="33" y="39" text-anchor="middle">97%</text></svg>
+            <div><b>Return for follow-up</b><span>continue with a long-term skin health plan after their first treatment.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="skin-figure reveal">
+      <svg viewBox="0 0 560 300" role="img" aria-label="Cross-section of skin showing epidermis, dermis with collagen fibres, and hypodermis">
+        <defs>
+          <clipPath id="skinClip"><rect x="20" y="20" width="400" height="260" rx="22"/></clipPath>
+        </defs>
+        <g clip-path="url(#skinClip)">
+          <rect x="20" y="20" width="400" height="260" fill="#F4E5CC"/>
+          <path d="M20 104C80 92 120 112 180 100S300 92 360 104 410 100 420 98V280H20Z" fill="#EBCFBC"/>
+          <path d="M20 206C80 196 140 214 220 204S360 196 420 208V280H20Z" fill="#F3E6C8"/>
+          <path d="M20 60C80 50 130 70 200 58S330 52 420 60V20H20Z" fill="#E0B89C"/>
+          <path d="M20 60C80 50 130 70 200 58S330 52 420 60" fill="none" stroke="#C69E52" stroke-width="1.2"/>
+          <path d="M20 104C80 92 120 112 180 100S300 92 360 104 410 100 420 98" fill="none" stroke="#B88E73" stroke-width="1.2"/>
+          <g fill="none" stroke="#C98F7A" stroke-width="1.5" stroke-linecap="round" opacity=".8">
+            <path d="M40 130c20-10 40 10 60 0s40 10 60 0"/><path d="M190 140c20-10 40 10 60 0s40 10 60 0"/><path d="M60 170c20-10 40 10 60 0s40 10 60 0 40 10 60 0"/><path d="M290 176c20-10 40 10 60 0s30 8 60 0"/><path d="M80 150c16-8 32 8 48 0"/><path d="M320 132c16-8 32 8 48 0"/>
+          </g>
+          <g fill="none" stroke="#93A88A" stroke-width="1.2" opacity=".9"><path d="M120 120c10 20-10 40 0 60M260 116c-10 22 10 40 0 62"/></g>
+          <g fill="#FBF8F1" stroke="#D9C49C" stroke-width="1.2">
+            <circle cx="50" cy="240" r="16"/><circle cx="84" cy="250" r="14"/><circle cx="118" cy="238" r="17"/><circle cx="154" cy="252" r="15"/><circle cx="190" cy="240" r="16"/><circle cx="226" cy="252" r="14"/><circle cx="262" cy="240" r="17"/><circle cx="298" cy="252" r="15"/><circle cx="334" cy="240" r="16"/><circle cx="370" cy="252" r="14"/><circle cx="404" cy="240" r="16"/>
+          </g>
+          <path d="M330 20C334 70 322 120 340 186" fill="none" stroke="#5B4636" stroke-width="2.4" stroke-linecap="round"/>
+          <ellipse cx="340" cy="190" rx="9" ry="12" fill="#B88E73"/>
+          <g fill="#C69E52"><circle cx="70" cy="40" r="3"/><circle cx="150" cy="36" r="2.4"/><circle cx="250" cy="42" r="3"/></g>
+        </g>
+        <g font-family="Mulish, Arial, sans-serif" font-size="12" fill="#26342A" font-weight="700">
+          <path d="M400 46H440" stroke="#26342A" stroke-width="1"/><circle cx="400" cy="46" r="3" fill="#26342A"/>
+          <text x="448" y="42">Epidermis</text><text x="448" y="57" font-weight="400" font-size="10.5" fill="#5E6556">barrier &amp; tone</text>
+          <path d="M380 150H440" stroke="#26342A" stroke-width="1"/><circle cx="380" cy="150" r="3" fill="#26342A"/>
+          <text x="448" y="146">Dermis</text><text x="448" y="161" font-weight="400" font-size="10.5" fill="#5E6556">collagen &amp; elastin</text>
+          <path d="M404 240H440" stroke="#26342A" stroke-width="1"/><circle cx="404" cy="240" r="3" fill="#26342A"/>
+          <text x="448" y="236">Hypodermis</text><text x="448" y="251" font-weight="400" font-size="10.5" fill="#5E6556">volume &amp; support</text>
+        </g>
+      </svg>
+      <div>
+        <h3>We treat <em>every layer</em> it needs.</h3>
+        <p>Peels renew the epidermis, lasers and PRP stimulate collagen in the dermis, and fillers restore structure deeper down. Knowing the layer is what makes results precise, and safe.</p>
+        <ul class="legend">
+          <li><i style="background:#E0B89C"></i>Peels, IPL, facials</li>
+          <li><i style="background:#EBCFBC"></i>Laser, PRP, mesotherapy, toxin</li>
+          <li><i style="background:#F3E6C8;border:1px solid #D9C49C"></i>Hyaluronic fillers</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path class="fill-oat" d="M0 40C200 10 380 20 600 46S1000 86 1200 60 1400 30 1440 36V90H0Z"/></svg>
+
+<!-- PRICES -->
+<section class="section bg-oat" id="prices">
+  <div class="container price-wrap">
+    <div class="price-aside">
+      <span class="eyebrow reveal"><svg aria-hidden="true"><use href="#i-leaf"/></svg>Prices</span>
+      <h2 class="reveal d1">Clear prices, <em>no surprises.</em></h2>
+      <p class="lead reveal d2">Every treatment starts with a consultation. You receive a written quote before anything begins, and the consultation fee is credited towards your first treatment.</p>
+      <ul class="perks reveal d2">
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Consultation fee credited to treatment booked within 30 days</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Follow-up review included with every aesthetic treatment</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Card, MobilePay and instalment plans accepted</li>
+      </ul>
+      <a href="#contact" class="btn btn-primary reveal d3">Book a consultation <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+
+    <div class="menu reveal d1">
+      <div class="menu-title">
+        <span>The Lumière</span>
+        <h3>Treatment menu</h3>
+        <svg viewBox="0 0 120 16" aria-hidden="true"><path d="M2 8H46M74 8H118" stroke="currentColor" stroke-width="1"/><path d="M60 14V3M60 8c-4 0-6-2-6-5 4 0 6 2 6 5zM60 8c4 0 6-2 6-5-4 0-6 2-6 5z" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+      </div>
+      <div class="price-row"><span class="name">Consultation<small>45 min, skin analysis &amp; written plan</small></span><span class="dots"></span><span class="amt">€80</span></div>
+      <div class="price-row"><span class="name">Dermatoscopy mole check<small>Full-body screening with digital mapping</small></span><span class="dots"></span><span class="amt">€120</span></div>
+      <div class="price-row"><span class="name">Chemical peel<small>Superficial to medium depth</small></span><span class="dots"></span><span class="amt"><small>from</small>€150</span></div>
+      <div class="price-row"><span class="name">PRP therapy<small>Face, neck or scalp</small></span><span class="dots"></span><span class="amt"><small>from</small>€220</span></div>
+      <div class="price-row"><span class="name">Botulinum toxin<small>One to three areas</small></span><span class="dots"></span><span class="amt"><small>from</small>€250</span></div>
+      <div class="price-row"><span class="name">Hyaluronic filler<small>Per 1 ml syringe, premium brands</small></span><span class="dots"></span><span class="amt"><small>from</small>€350</span></div>
+      <div class="price-row"><span class="name">Laser resurfacing<small>Fractional, per session</small></span><span class="dots"></span><span class="amt"><small>from</small>€400</span></div>
+      <p class="menu-note">All prices in EUR and include VAT. Final pricing is confirmed after consultation.</p>
+    </div>
+  </div>
+</section>
+
+<svg class="wave flip" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path class="fill-oat" d="M0 50C240 84 460 80 700 50S1100 10 1300 30 1420 52 1440 48V0H0Z"/></svg>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow reveal"><svg aria-hidden="true"><use href="#i-leaf"/></svg>Kind words</span>
+      <h2 class="reveal d1">Patients who <em>found their skin</em> again.</h2>
+    </div>
+    <div class="reviews">
+      <figure class="review reveal">
+        <div class="stars" aria-label="5 out of 5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <blockquote>“After years of trying everything for my rosacea, Dr. Marin explained what was actually happening in my skin. Three months later I stopped wearing foundation.”</blockquote>
+        <figcaption class="reviewer"><span class="avatar" style="background:#D3DCC9">S</span><span><b>Sofie L.</b><span>Rosacea treatment</span></span></figcaption>
+      </figure>
+      <figure class="review reveal d1">
+        <div class="stars" aria-label="5 out of 5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <blockquote>“The mole check was thorough and calm. Every spot was mapped and explained, and I left with a clear plan instead of worries.”</blockquote>
+        <figcaption class="reviewer"><span class="avatar" style="background:#EFDDB2">M</span><span><b>Mads K.</b><span>Dermatoscopy</span></span></figcaption>
+      </figure>
+      <figure class="review reveal d2">
+        <div class="stars" aria-label="5 out of 5 stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <blockquote>“I was nervous about fillers looking fake. Instead my colleagues asked if I’d been on holiday. Subtle, honest, beautiful work.”</blockquote>
+        <figcaption class="reviewer"><span class="avatar" style="background:#E2D6BF">A</span><span><b>Anna P.</b><span>Hyaluronic filler</span></span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path class="fill-sage" d="M0 56C200 24 420 16 640 42S1020 86 1220 64 1400 28 1440 32V90H0Z"/></svg>
+
+<!-- FAQ -->
+<section class="section bg-sage" id="faq">
+  <div class="container faq-grid">
+    <div>
+      <span class="eyebrow reveal"><svg aria-hidden="true"><use href="#i-leaf"/></svg>FAQ</span>
+      <h2 class="reveal d1">Questions, <em>answered</em> honestly.</h2>
+      <p class="lead reveal d2">Can’t find what you’re looking for? Write to us at <a href="mailto:hello@lumiere-clinic.dk" style="color:var(--sage-800);font-weight:700">hello@lumiere-clinic.dk</a> and Dr. Marin’s team will reply within one working day.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">Do I need a referral to book an appointment?<span class="pm" aria-hidden="true"></span></button>
+        <div class="faq-a"><p>No. Lumière is a private clinic and you can book directly. If you have a referral from your GP, please bring it along, together with any previous test results or prescriptions.</p></div>
+      </div>
+      <div class="faq-item reveal d1">
+        <button class="faq-q" aria-expanded="false">How do I know which treatment is right for me?<span class="pm" aria-hidden="true"></span></button>
+        <div class="faq-a"><p>That is exactly what the consultation is for. Dr. Marin examines your skin, discusses your goals and medical history, and recommends only what is likely to help, sometimes that means fewer treatments than you expected.</p></div>
+      </div>
+      <div class="faq-item reveal d1">
+        <button class="faq-q" aria-expanded="false">Will my results look natural?<span class="pm" aria-hidden="true"></span></button>
+        <div class="faq-a"><p>Natural results are our philosophy. We work in conservative doses, respect your facial anatomy and prefer gradual improvement with a review visit over doing too much at once.</p></div>
+      </div>
+      <div class="faq-item reveal d2">
+        <button class="faq-q" aria-expanded="false">Is there downtime after peels or laser treatments?<span class="pm" aria-hidden="true"></span></button>
+        <div class="faq-a"><p>Light peels and IPL usually mean a little redness for a day. Medium peels and fractional laser may need three to seven days of recovery. You’ll receive a written aftercare plan and can reach us anytime.</p></div>
+      </div>
+      <div class="faq-item reveal d2">
+        <button class="faq-q" aria-expanded="false">Which products do you use for injectables?<span class="pm" aria-hidden="true"></span></button>
+        <div class="faq-a"><p>Only CE-marked, clinically studied products from established manufacturers, stored and documented under medical regulations. Batch numbers are recorded in your patient file.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="wave flip" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path class="fill-sage" d="M0 36C220 76 440 82 680 52S1080 8 1280 28 1420 54 1440 50V0H0Z"/></svg>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-head center">
+      <span class="eyebrow reveal"><svg aria-hidden="true"><use href="#i-leaf"/></svg>Book &amp; visit</span>
+      <h2 class="reveal d1">Begin with a <em>conversation.</em></h2>
+      <p class="lead reveal d2">Request a time below and we’ll confirm your appointment by phone or email, usually the same day.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="form-card reveal">
+        <h3>Request an appointment</h3>
+        <p>Fields marked * are required.</p>
+        <form class="form" id="bookForm" novalidate>
+          <div class="field"><label for="f-name">Full name *</label><input id="f-name" name="name" autocomplete="name" required placeholder="Your name"></div>
+          <div class="field"><label for="f-phone">Phone *</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required placeholder="+45"></div>
+          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+          <div class="field"><label for="f-service">Service</label>
+            <select id="f-service" name="service">
+              <option>Consultation &amp; skin analysis</option>
+              <optgroup label="Medical Dermatology"><option>Acne &amp; rosacea</option><option>Mole check &amp; dermatoscopy</option><option>Eczema &amp; psoriasis</option><option>Hair &amp; scalp</option></optgroup>
+              <optgroup label="Aesthetic Cosmetology"><option>Botulinum toxin</option><option>Dermal fillers</option><option>Chemical peel</option><option>Laser resurfacing &amp; IPL</option><option>PRP / mesotherapy</option><option>Facials &amp; skincare plan</option></optgroup>
+            </select>
+          </div>
+          <div class="field full"><label for="f-date">Preferred date</label><input id="f-date" name="date" type="date"></div>
+          <div class="field full"><label for="f-msg">Message</label><textarea id="f-msg" name="message" placeholder="Tell us briefly about your skin concern"></textarea></div>
+          <div class="form-foot">
+            <small>Your details are handled confidentially under GDPR and used only to arrange your visit.</small>
+            <button type="submit" class="btn btn-primary">Send request <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+          <div class="form-ok" role="status">Thank you. We’ve received your request and will be in touch shortly.</div>
+        </form>
+      </div>
+
+      <aside class="info-card reveal d1">
+        <div class="map">
+          <svg viewBox="0 0 400 240" role="img" aria-label="Stylised map showing the clinic on Strandvejen by the Øresund coast">
+            <rect width="400" height="240" fill="#EEE6D5"/>
+            <path d="M300 0C286 50 312 90 296 140S318 210 304 240H400V0Z" fill="#D3DCC9"/>
+            <g fill="none" stroke="#B4C4AA" stroke-width="1.2" stroke-linecap="round"><path d="M330 40c8-4 16 4 24 0M346 90c8-4 16 4 24 0M324 150c8-4 16 4 24 0M350 200c8-4 16 4 24 0"/></g>
+            <ellipse cx="96" cy="70" rx="56" ry="34" fill="#DCE3D2"/>
+            <ellipse cx="150" cy="190" rx="44" ry="26" fill="#DCE3D2"/>
+            <g stroke="#FBF8F1" stroke-linecap="round" fill="none">
+              <path d="M276 0C262 50 288 92 272 140S292 210 280 240" stroke-width="9"/>
+              <path d="M0 118C80 110 180 128 276 120" stroke-width="6"/>
+              <path d="M40 0C60 80 70 160 60 240" stroke-width="5"/>
+              <path d="M180 0C190 70 200 150 190 240" stroke-width="5"/>
+              <path d="M0 40H180M60 190H272" stroke-width="3.5"/>
+            </g>
+            <path d="M276 0C262 50 288 92 272 140S292 210 280 240" stroke="#E2D6BF" stroke-width="1" fill="none" stroke-dasharray="4 5"/>
+            <text x="264" y="226" font-family="Mulish, Arial, sans-serif" font-size="9" font-weight="700" fill="#6B7140" letter-spacing="1.2" transform="rotate(-82 264 226)">STRANDVEJEN</text>
+            <text x="336" y="122" font-family="Lora, Georgia, serif" font-style="italic" font-size="12" fill="#6A8263">Øresund</text>
+            <g transform="translate(276 118)">
+              <circle r="26" fill="#C69E52" opacity=".18"/>
+              <path d="M0 0C-12-14-16-22-16-30a16 16 0 0 1 32 0c0 8-4 16-16 30z" fill="#26342A"/>
+              <circle cy="-30" r="6" fill="#C69E52"/>
+            </g>
+          </svg>
+        </div>
+        <ul class="info-list">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c-5-5.5-7-9-7-12a7 7 0 0 1 14 0c0 3-2 6.5-7 12z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><div><b>Address</b>Strandvejen 42, 2100 Copenhagen</div></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><div><b>Phone</b><a href="tel:+4512345678">+45 12 34 56 78</a></div></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m3.5 6.5 8.5 6 8.5-6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><div><b>Email</b><a href="mailto:hello@lumiere-clinic.dk">hello@lumiere-clinic.dk</a></div></li>
+        </ul>
+        <table class="hours" aria-label="Opening hours">
+          <tr><td>Monday – Thursday</td><td>09:00 – 18:00</td></tr>
+          <tr><td>Friday</td><td>09:00 – 16:00</td></tr>
+          <tr><td>Saturday</td><td>10:00 – 14:00</td></tr>
+          <tr><td>Sunday</td><td>Closed</td></tr>
+        </table>
+      </aside>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a href="#top" class="logo" aria-label="Lumière Skin Clinic">
+          <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#3F5640"/><path d="M20 32V13" stroke="#EFDDB2" stroke-width="1.5" stroke-linecap="round"/><path d="M20 18c-4.5 0-7-3-7-7.5 4.5 0 7 3 7 7.5zM20 18c4.5 0 7-3 7-7.5-4.5 0-7 3-7 7.5zM20 26c-4 0-6.5-2.6-6.5-6.5 4 0 6.5 2.6 6.5 6.5zM20 26c4 0 6.5-2.6 6.5-6.5-4 0-6.5 2.6-6.5 6.5z" fill="#93A88A" stroke="#EFDDB2" stroke-width="1"/><circle cx="20" cy="9" r="2" fill="#C69E52"/></svg>
+          <span class="logo-text"><b>Lumière</b><small>Skin Clinic</small></span>
+        </a>
+        <p style="margin-top:18px;max-width:34ch">Evidence-based dermatology and natural aesthetic care by Dr. Elena Marin, MD, on the Copenhagen coast.</p>
+      </div>
+      <div><h4>Clinic</h4><ul><li><a href="#about">About Dr. Marin</a></li><li><a href="#journey">Your journey</a></li><li><a href="#results">Results</a></li><li><a href="#reviews">Reviews</a></li></ul></div>
+      <div><h4>Treatments</h4><ul><li><a href="#services">Medical dermatology</a></li><li><a href="#services">Aesthetic cosmetology</a></li><li><a href="#prices">Prices</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h4>Visit</h4><ul><li>Strandvejen 42<br>2100 Copenhagen</li><li><a href="tel:+4512345678">+45 12 34 56 78</a></li><li><a href="mailto:hello@lumiere-clinic.dk">hello@lumiere-clinic.dk</a></li></ul></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Lumière Skin Clinic ApS. All rights reserved.</span><span>Privacy · Cookies · Patient rights</span></div>
+  </div>
+</footer>
+
+<div class="badge">Design 05 · Botanical</div>
+
+<script>
+(function(){
+  var burger=document.querySelector('.burger');
+  function setNav(open){burger.setAttribute('aria-expanded',open);document.body.classList.toggle('nav-open',open);}
+  burger.addEventListener('click',function(){setNav(burger.getAttribute('aria-expanded')!=='true');});
+  document.querySelectorAll('#mobile-nav a').forEach(function(a){a.addEventListener('click',function(){setNav(false);});});
+
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var item=btn.parentElement,a=btn.nextElementSibling,open=btn.getAttribute('aria-expanded')==='true';
+      btn.setAttribute('aria-expanded',!open);item.classList.toggle('open',!open);
+      a.style.maxHeight=open?'0px':a.scrollHeight+'px';
+    });
+  });
+
+  var ba=document.getElementById('ba');
+  if(ba){var r=ba.querySelector('input');r.addEventListener('input',function(){ba.style.setProperty('--pos',r.value+'%');});}
+
+  var form=document.getElementById('bookForm');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ok=true;form.querySelectorAll('[required]').forEach(function(f){if(!f.value.trim()){ok=false;f.style.borderColor='#A9823A';}else{f.style.borderColor='';}});
+    if(ok){form.classList.add('sent');form.reset();}
+  });
+
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){io.observe(el);});
+  }else{els.forEach(function(el){el.classList.add('in');});}
+})();
+</script>
+</body>
+</html>

@@ -1,14 +1,24 @@
 ---
 import Base from '../layouts/Base.astro';
+import Eyebrow from '../components/Eyebrow.astro';
 import site from '../data/site.yaml';
 ---
 <Base title="Конфіденційність">
-  <section class="section">
-    <div class="container" style="max-width: 820px">
-      <h1>Політика конфіденційності</h1>
-      <p>Цей сайт не має форм і не збирає персональних даних відвідувачів. Ви зв'язуєтеся з лікарем напряму через телефон чи месенджери, і далі діють правила цих сервісів.</p>
-      <p>На сторінці «Контакти» вбудована мапа Google, а шрифти завантажуються з Google Fonts; ці сервіси можуть отримувати технічні дані вашого браузера.</p>
-      <p>Фото «до/після» та відгуки публікуються лише з письмової згоди пацієнтів. Щоб прибрати своє фото чи відгук, напишіть лікарю: {site.contacts.phoneDisplay}.</p>
+  <section class="section doc">
+    <div class="container narrow">
+      <Eyebrow>Документи</Eyebrow>
+      <h1>Політика <em>конфіденційності</em></h1>
+      <div class="doc__body">
+        <p>Цей сайт не має форм і не збирає персональних даних відвідувачів. Ви зв'язуєтеся з лікарем напряму через телефон чи месенджери, і далі діють правила цих сервісів.</p>
+        <p>На сторінці «Контакти» вбудована мапа Google, а шрифти завантажуються з Google Fonts; ці сервіси можуть отримувати технічні дані вашого браузера.</p>
+        <p>Фото «до/після» та відгуки публікуються лише з письмової згоди пацієнтів. Щоб прибрати своє фото чи відгук, напишіть лікарю: {site.contacts.phoneDisplay}{site.contacts.phone2 && ` або ${site.contacts.phone2Display}`}.</p>
+      </div>
     </div>
   </section>
 </Base>
+
+<style>
+  .doc { padding-top: clamp(48px, 7vw, 88px); padding-bottom: clamp(110px, 12vw, 160px); }
+  .doc__body { margin-top: 28px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-lg); padding: clamp(24px, 4vw, 44px); color: var(--muted); }
+  .doc__body p:last-child { margin-bottom: 0; }
+</style>

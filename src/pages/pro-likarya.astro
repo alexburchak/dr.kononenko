@@ -1,50 +1,67 @@
 ---
 import Base from '../layouts/Base.astro';
 import BookingCta from '../components/BookingCta.astro';
+import Eyebrow from '../components/Eyebrow.astro';
+import Sprig from '../components/Sprig.astro';
+import Wave from '../components/Wave.astro';
 import site from '../data/site.yaml';
 import { url } from '../lib/url';
+
+const points = [
+  'Лікар-дерматолог з вищою медичною освітою',
+  site.about.experienceYears ? `${site.about.experienceYears}+ років практики` : null,
+  'Доказовий підхід: спочатку діагноз, потім процедура',
+  'Лише сертифіковані препарати та стерильні інструменти',
+].filter(Boolean);
 ---
 <Base title="Про лікаря" description={`${site.doctorName} — лікар-дерматолог, косметолог у Дніпрі. Освіта, досвід, сертифікати.`}>
-  <section class="section">
+  <section class="section intro">
     <div class="container split">
       <div>
-        <div class="eyebrow">Про лікаря</div>
-        <h1>{site.doctorName}</h1>
-        <p class="lead">{site.about.intro}</p>
-        <ul class="list-check">
-          <li>Лікар-дерматолог з вищою медичною освітою</li>
-          <li>{site.about.experienceYears}+ років практики</li>
-          <li>Доказовий підхід: спочатку діагноз, потім процедура</li>
-          <li>Лише сертифіковані препарати та стерильні інструменти</li>
+        <Eyebrow class="reveal">Про лікаря</Eyebrow>
+        <h1 class="reveal d1">{site.doctorName}</h1>
+        <blockquote class="philo reveal d2">{site.about.intro}</blockquote>
+        <ul class="list-check reveal d3">
+          {points.map((p) => <li><svg aria-hidden="true"><use href="#i-check" /></svg>{p}</li>)}
         </ul>
       </div>
-      <img class="photo" src={url(site.images.portrait)} alt={site.doctorName} width="900" height="1100" />
+      <div class="split__art reveal d1">
+        <Sprig />
+        <div class="arch portrait"><img src={url(site.images.portrait)} alt={site.doctorName} width="900" height="1100" /></div>
+        <div class="sig"><b>{site.doctorName}</b><span>дерматолог · косметолог</span></div>
+      </div>
     </div>
   </section>
 
-  <section class="section section--soft">
-    <div class="container">
-      <h2>Освіта та досвід</h2>
-      <ol class="timeline">
-        {site.about.education.map((e: { year: string; text: string }) => (
-          <li><span class="timeline__year">{e.year}</span><span>{e.text}</span></li>
-        ))}
-      </ol>
+  <Wave fill="oat" />
+  <section class="section bg-oat">
+    <div class="container edu">
+      <div>
+        <Eyebrow class="reveal">Освіта</Eyebrow>
+        <h2 class="reveal d1">Освіта та <em>досвід</em></h2>
+      </div>
+      <ul class="timeline reveal d2">
+        {site.about.education.map((e: { year: string; text: string }) => <li><b>{e.year}</b><span>{e.text}</span></li>)}
+      </ul>
     </div>
   </section>
+  <Wave fill="oat" flip variant={2} />
 
   <section class="section">
     <div class="container">
-      <h2>Дипломи та сертифікати</h2>
+      <div class="section-head center">
+        <Eyebrow class="reveal">Документи</Eyebrow>
+        <h2 class="reveal d1">Дипломи та <em>сертифікати</em></h2>
+      </div>
       <div class="grid grid--3">
-        {site.certificates.map((c: { image: string; caption: string }) => (
-          <figure class="cert">
-            <img class="photo" src={url(c.image)} alt={c.caption} width="900" height="650" loading="lazy" />
+        {site.certificates.map((c: { image: string; caption: string }, i: number) => (
+          <figure class:list={['cert', 'reveal', `d${i % 3}`]}>
+            <img src={url(c.image)} alt={c.caption} width="900" height="650" loading="lazy" />
             <figcaption>{c.caption}</figcaption>
           </figure>
         ))}
       </div>
-      <p class="license">{site.license}</p>
+      <p class="license reveal">{site.license}</p>
     </div>
   </section>
 
@@ -52,12 +69,18 @@ import { url } from '../lib/url';
 </Base>
 
 <style>
-  .lead { font-size: 1.15rem; }
-  .timeline { list-style: none; padding: 0; margin: 0; }
-  .timeline li { display: grid; grid-template-columns: 160px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--c-border); }
-  .timeline__year { font-weight: 700; color: var(--c-primary); }
-  @media (max-width: 600px) { .timeline li { grid-template-columns: 1fr; gap: 4px; } }
-  .cert { margin: 0; }
-  .cert figcaption { margin-top: .6rem; color: var(--c-muted); }
-  .license { margin-top: 2rem; color: var(--c-muted); font-size: .9rem; }
+  .intro { padding-top: clamp(48px, 7vw, 88px); }
+  .portrait { aspect-ratio: 4 / 5; }
+  .philo { margin: 10px 0 30px; padding: 26px 30px; background: var(--paper); border-radius: var(--r); border-left: 3px solid var(--honey); font-family: var(--f-serif); font-style: italic; font-size: clamp(18px, 1.7vw, 21px); line-height: 1.6; color: var(--sage-800); }
+  .sig { position: absolute; right: -18px; bottom: 28px; background: var(--paper); padding: 16px 20px; border-radius: var(--r); box-shadow: var(--sh-2); border: 1px solid var(--line); }
+  .sig b { display: block; font-family: var(--f-display); font-weight: 400; font-size: 19px; color: var(--forest); }
+  .sig span { font-size: 13px; color: var(--muted); }
+  .edu { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(32px, 6vw, 80px); align-items: start; }
+  .cert { margin: 0; background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 14px; transition: transform .45s var(--ease), box-shadow .45s; }
+  .cert:hover { transform: translateY(-6px); box-shadow: var(--sh-2); }
+  .cert img { border-radius: var(--r); width: 100%; aspect-ratio: 9 / 6.5; object-fit: cover; }
+  .cert figcaption { margin: 14px 6px 4px; font-family: var(--f-serif); font-style: italic; color: var(--sage-800); }
+  .license { margin-top: 40px; text-align: center; color: var(--muted); font-size: 14px; }
+  @media (max-width: 860px) { .edu { grid-template-columns: 1fr; } }
+  @media (max-width: 600px) { .sig { right: 8px; } }
 </style>

@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Лікар Кононенко · Дерматолог, косметолог у Дніпрі</title>
+<meta name="description" content="Олена Кононенко — лікар-дерматолог, косметолог у Дніпрі. Спочатку діагноз, потім процедура.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EBE5DE; --bg-2:#E3DCD3; --stone:#D6CDC2; --putty:#C4B8AA; --clay:#A99A8A;
+  --white:#F8F5F1; --ink:#2C2724; --ink-2:#4A433E; --muted:#6B625B;
+  --mauve:#94707E; --mauve-d:#76545F; --mauve-l:#D9C5CB;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --display:"Unbounded","Manrope",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --r-sm:14px; --r:24px; --r-lg:36px; --r-xl:999px;
+  --s1:8px; --s2:16px; --s3:24px; --s4:40px; --s5:64px; --s6:96px;
+  --sh-out:12px 14px 30px rgba(112,96,82,.22),-10px -10px 26px rgba(255,255,255,.75);
+  --sh-out-sm:6px 7px 16px rgba(112,96,82,.2),-6px -6px 14px rgba(255,255,255,.8);
+  --sh-in:inset 5px 5px 12px rgba(112,96,82,.2),inset -5px -5px 12px rgba(255,255,255,.75);
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--sans);overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--display);font-weight:300;line-height:1.15;margin:0;letter-spacing:-.01em}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+.wrap{width:min(1200px,100% - 40px);margin-inline:auto}
+section{padding:var(--s6) 0;scroll-margin-top:70px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:500 12px/1.45 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mauve-d)}
+.eyebrow::before{content:"";width:12px;height:12px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#C9A9B4,var(--mauve) 60%,var(--mauve-d));box-shadow:2px 3px 5px rgba(118,84,95,.35)}
+.h2{font-size:clamp(30px,4.2vw,52px);margin:18px 0 18px}
+.h2 em{font-style:normal;color:var(--mauve-d);font-weight:400}
+.lead{color:var(--muted);font-size:17px;max-width:620px}
+.sec-head{display:grid;grid-template-columns:1fr;gap:6px;margin-bottom:var(--s5)}
+@media(min-width:900px){.sec-head.split{grid-template-columns:1.1fr .9fr;align-items:end;gap:var(--s4)}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:var(--r-xl);font:500 15px/1 var(--sans);text-decoration:none;border:0;cursor:pointer;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .3s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-clay{background:linear-gradient(145deg,var(--white),var(--bg-2));color:var(--ink);box-shadow:var(--sh-out-sm)}
+.btn-clay:hover{transform:translateY(-2px);box-shadow:9px 11px 22px rgba(112,96,82,.26),-8px -8px 18px rgba(255,255,255,.85)}
+.btn-clay:active{box-shadow:var(--sh-in);transform:none}
+.btn-mauve{background:linear-gradient(145deg,#A58290,var(--mauve-d));color:#fff;box-shadow:6px 8px 18px rgba(118,84,95,.38),-6px -6px 14px rgba(255,255,255,.7)}
+.btn-mauve:hover{transform:translateY(-2px);box-shadow:9px 12px 24px rgba(118,84,95,.45),-6px -6px 14px rgba(255,255,255,.7)}
+:focus-visible{outline:2px solid var(--mauve-d);outline-offset:3px}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(235,229,222,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.6)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-mark{width:40px;height:40px}
+.logo-t{font:400 15px/1.1 var(--display)}
+.logo-t small{display:block;font:400 11px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.menu{display:flex;gap:4px}
+.menu a{display:block;padding:10px 14px;border-radius:var(--r-xl);text-decoration:none;font-size:14px;color:var(--ink-2);transition:background .3s,box-shadow .3s}
+.menu a:hover{background:var(--bg);box-shadow:var(--sh-in)}
+.nav .btn{min-height:44px;padding:0 20px;font-size:14px}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:0;background:linear-gradient(145deg,var(--white),var(--bg-2));box-shadow:var(--sh-out-sm);cursor:pointer;place-items:center}
+.burger span{display:block;width:18px;height:1.5px;background:var(--ink);position:relative;transition:.3s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:1.5px;background:var(--ink);transition:.3s}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.nav-open .burger span{background:transparent}
+.nav-open .burger span::before{top:0;transform:rotate(45deg)}
+.nav-open .burger span::after{top:0;transform:rotate(-45deg)}
+@media(max-width:1020px){
+  .burger{display:grid}
+  .nav>.btn{display:none}
+  .menu{position:fixed;inset:72px 0 auto 0;flex-direction:column;padding:16px 20px 28px;background:var(--bg);box-shadow:0 30px 40px rgba(112,96,82,.18);transform:translateY(-130%);transition:transform .45s var(--ease);z-index:-1}
+  .nav-open .menu{transform:none}
+  .menu a{padding:14px 16px;font-size:16px}
+}
+
+/* hero */
+.hero{padding:var(--s5) 0 var(--s6);position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:var(--s4);align-items:center}
+@media(min-width:960px){.hero-grid{grid-template-columns:1.02fr .98fr}}
+.hero h1{font-size:clamp(36px,5.6vw,74px);font-weight:300;margin:22px 0 26px;letter-spacing:-.025em}
+.hero h1 span{display:block;color:var(--mauve-d);font-weight:400}
+.hero .tag{font-size:clamp(17px,1.6vw,20px);color:var(--ink-2);max-width:520px;margin-bottom:var(--s4)}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:12px 26px;margin-top:var(--s4);font-size:14px;color:var(--muted)}
+.hero-meta b{font-weight:500;color:var(--ink)}
+.hero-art{position:relative;max-width:560px;width:100%;margin-inline:auto}
+.hero-art svg{width:100%;height:auto;overflow:visible}
+.float-a{animation:float 9s ease-in-out infinite}
+.float-b{animation:float 11s ease-in-out -3s infinite}
+.float-c{animation:float 13s ease-in-out -6s infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+.hero-label{position:absolute;left:0;top:14%;padding:14px 18px;border-radius:var(--r);background:linear-gradient(145deg,var(--white),var(--bg-2));box-shadow:var(--sh-out);font-size:13px;line-height:1.4;max-width:220px}
+.hero-label b{display:block;font:400 14px/1.3 var(--display);margin-bottom:4px}
+
+/* highlights */
+.hl{padding-top:0}
+.hl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:var(--s3)}
+.card{background:linear-gradient(150deg,#F1ECE6,#E6DFD7);border-radius:var(--r);box-shadow:var(--sh-out);padding:var(--s4) 32px;transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+.card:hover{transform:translateY(-4px)}
+.hl .card svg{width:72px;height:72px;margin-bottom:22px}
+.hl h3{font-size:20px;font-weight:400;margin-bottom:10px}
+.hl p{color:var(--muted)}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr;gap:var(--s5);align-items:start}
+@media(min-width:960px){.about-grid{grid-template-columns:.85fr 1.15fr}}
+@media(min-width:960px){.niche{position:sticky;top:100px}}
+.niche{border-radius:280px 280px var(--r-lg) var(--r-lg);background:linear-gradient(180deg,var(--bg-2),var(--stone));box-shadow:var(--sh-in);padding:28px 28px 0;position:relative;overflow:hidden}
+.niche svg{width:100%;height:auto}
+.plate{margin:-6px -28px 0;padding:22px 28px;background:linear-gradient(150deg,#F3EFEA,#E4DCD3);box-shadow:0 -8px 20px rgba(112,96,82,.12);text-align:center}
+.plate b{display:block;font:400 20px/1.2 var(--display)}
+.plate span{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.intro{font-size:18px;color:var(--ink-2);margin-bottom:var(--s4)}
+.checks{display:grid;gap:14px;margin-bottom:var(--s5)}
+.checks li{display:flex;gap:14px;align-items:flex-start}
+.checks li::before{content:"";flex:none;width:26px;height:26px;margin-top:-1px;border-radius:50%;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Cpath d='M8 13.5l3.2 3.2L18 9.5' fill='none' stroke='%2376545F' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/26px no-repeat,linear-gradient(145deg,var(--white),var(--bg-2));box-shadow:var(--sh-out-sm)}
+.sub-h{font-size:20px;font-weight:400;margin-bottom:var(--s3)}
+.timeline{display:grid;gap:14px;margin-bottom:var(--s5)}
+.timeline li{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:18px 22px;border-radius:var(--r-sm);box-shadow:var(--sh-in);background:var(--bg)}
+.timeline b{font:400 14px/1.6 var(--display);color:var(--mauve-d)}
+@media(max-width:560px){.timeline li{grid-template-columns:1fr;gap:4px}}
+.certs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:640px){.certs{grid-template-columns:1fr}.cert{display:flex;align-items:center;gap:16px;text-align:left}.cert svg{width:120px;flex:none;margin:0!important}}
+.cert{border-radius:var(--r-sm);padding:18px;background:linear-gradient(150deg,#F2EDE8,#E5DED6);box-shadow:var(--sh-out-sm);text-align:center;font-size:14px;color:var(--ink-2)}
+.cert svg{width:100%;height:auto;margin-bottom:12px;border-radius:10px}
+.license{margin-top:var(--s3);font-size:13px;color:var(--muted);display:flex;gap:10px;align-items:flex-start}
+.license svg{width:20px;height:20px;flex:none;margin-top:1px;color:var(--mauve-d)}
+
+/* services */
+.services{background:linear-gradient(180deg,var(--bg),var(--bg-2) 30%,var(--bg-2) 70%,var(--bg))}
+.svc-grid{display:grid;grid-template-columns:1fr;gap:var(--s3)}
+@media(min-width:900px){.svc-grid{grid-template-columns:1fr 1fr}.svc-grid .grp:first-child{grid-column:1/-1}}
+.grp{padding:36px 32px;scroll-margin-top:90px}
+.grp-h{display:flex;align-items:center;gap:16px;margin-bottom:8px}
+.grp-h svg{width:46px;height:46px;flex:none}
+.grp h3{font-size:22px;font-weight:400}
+.grp>p{color:var(--muted);font-size:15px;margin-bottom:20px}
+.svc{display:grid;grid-template-columns:1fr auto;gap:6px 18px;padding:18px 0;border-top:1px solid rgba(169,154,138,.35)}
+.svc h4{font:500 16px/1.4 var(--sans)}
+.svc p{grid-column:1;color:var(--muted);font-size:14px}
+.price{grid-row:1/span 2;grid-column:2;align-self:center;text-align:right;white-space:nowrap;font:400 17px/1.2 var(--display);color:var(--ink)}
+.dur{display:inline-block;margin-top:8px;font-size:12px;letter-spacing:.04em;padding:4px 12px;border-radius:var(--r-xl);box-shadow:var(--sh-in);color:var(--ink-2)}
+@media(max-width:520px){.svc{grid-template-columns:1fr}.price{grid-row:auto;grid-column:1;text-align:left;margin-top:6px}}
+.notice{margin-top:var(--s4);display:flex;gap:18px;align-items:center;padding:22px 28px;border-radius:var(--r);background:linear-gradient(145deg,#E9D9DD,#DCC6CC);box-shadow:var(--sh-out-sm);color:#4E3640}
+.notice svg{width:34px;height:34px;flex:none}
+.price-note{margin-top:18px;font-size:14px;color:var(--muted)}
+
+/* problems */
+.prob-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:var(--s3)}
+.prob{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.prob-art{height:170px;background:radial-gradient(120% 90% at 30% 20%,#F4F0EB,var(--stone));display:grid;place-items:center;box-shadow:inset 0 -10px 20px rgba(112,96,82,.08)}
+.prob-art svg{height:140px;width:auto}
+.prob-b{padding:28px 30px 32px;display:flex;flex-direction:column;flex:1}
+.prob h3{font-size:22px;font-weight:400;margin-bottom:8px}
+.prob .sum{color:var(--muted);margin-bottom:18px}
+.prob dl{margin:0 0 20px;display:grid;gap:14px}
+.prob dt{font:500 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--mauve-d);margin-bottom:6px}
+.prob dd{margin:0;font-size:15px;color:var(--ink-2)}
+.prob .link{margin-top:auto;align-self:flex-start;font-size:14px;text-decoration:none;padding:10px 18px;border-radius:var(--r-xl);box-shadow:var(--sh-out-sm);background:linear-gradient(145deg,var(--white),var(--bg-2));transition:box-shadow .3s}
+.prob .link:hover{box-shadow:var(--sh-in)}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:var(--s3);counter-reset:s;position:relative}
+.step{padding:34px 28px;text-align:left}
+.num{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;margin-bottom:22px;font:400 20px/1 var(--display);color:var(--mauve-d);background:radial-gradient(circle at 34% 28%,#FFFDFB,#E2DAD1 62%,#CFC4B8);box-shadow:8px 10px 18px rgba(112,96,82,.25),-6px -6px 14px rgba(255,255,255,.85)}
+.step h3{font-size:18px;font-weight:400;margin-bottom:10px}
+.step p{color:var(--muted);font-size:15px}
+
+/* results */
+.ba-grid{display:grid;grid-template-columns:1fr;gap:var(--s4)}
+@media(min-width:900px){.ba-grid{grid-template-columns:1fr 1fr}}
+.ba{padding:22px}
+.ba-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ba-pair figure{margin:0;position:relative;border-radius:18px;overflow:hidden;box-shadow:var(--sh-in)}
+.ba-pair svg{width:100%;height:auto}
+.ba-pair figcaption{position:absolute;top:12px;left:12px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:var(--r-xl);background:rgba(248,245,241,.88);box-shadow:var(--sh-out-sm)}
+.ba-cap{padding:18px 6px 4px;font:400 17px/1.4 var(--display)}
+.consent{margin-top:var(--s3);font-size:14px;color:var(--muted);text-align:center}
+
+/* reviews */
+.rev-grid{display:grid;grid-template-columns:1fr;gap:var(--s3)}
+@media(min-width:760px){.rev-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1080px){.rev-grid{grid-template-columns:repeat(6,1fr)}.rev{grid-column:span 2}.rev:nth-child(n+4){grid-column:span 3}}
+.rev{padding:32px 30px;margin:0;display:flex;flex-direction:column}
+.rev .who{margin-top:auto}
+.rev svg{width:34px;height:26px;margin-bottom:16px}
+.rev p{font-size:16px;color:var(--ink-2);margin-bottom:20px}
+.who{display:flex;align-items:center;gap:12px;font-weight:500}
+.ava{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font:400 15px/1 var(--display);color:var(--mauve-d);background:radial-gradient(circle at 34% 28%,#fff,#E2DAD1 60%,#CDC2B5);box-shadow:var(--sh-out-sm)}
+.who small{display:block;font-weight:400;font-size:13px;color:var(--muted)}
+.insta-more{text-align:center;margin-top:var(--s3);color:var(--muted)}
+.insta-more a{color:var(--mauve-d);font-weight:500}
+
+/* aftercare */
+.care-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:var(--s3)}
+.care{display:flex;flex-direction:column}
+.care h3{font-size:20px;font-weight:400;margin-bottom:20px;display:flex;align-items:center;gap:14px}
+.care h3 i{width:16px;height:16px;border-radius:50%;flex:none;background:radial-gradient(circle at 35% 30%,#fff,var(--putty));box-shadow:2px 3px 6px rgba(112,96,82,.3)}
+.care ul{display:grid;gap:12px;margin-bottom:22px}
+.care li{position:relative;padding-left:22px;font-size:15px;color:var(--ink-2)}
+.care li::before{content:"";position:absolute;left:2px;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--clay)}
+.warn{margin-top:auto;display:flex;gap:12px;padding:16px 18px;border-radius:var(--r-sm);box-shadow:var(--sh-in);font-size:14px;color:#5A3E49}
+.warn svg{width:22px;height:22px;flex:none;color:var(--mauve-d)}
+
+/* faq */
+.faq-grid{display:grid;grid-template-columns:1fr;gap:var(--s5)}
+@media(min-width:960px){.faq-grid{grid-template-columns:.8fr 1.2fr}}
+.faq-list{display:grid;gap:16px}
+.faq details{border-radius:var(--r);background:linear-gradient(150deg,#F1ECE6,#E6DFD7);box-shadow:var(--sh-out-sm);transition:box-shadow .35s}
+.faq details[open]{box-shadow:var(--sh-in);background:var(--bg)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 26px;font-weight:500;font-size:17px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{flex:none;width:34px;height:34px;border-radius:50%;position:relative;background:linear-gradient(145deg,var(--white),var(--bg-2));box-shadow:var(--sh-out-sm);transition:transform .35s var(--ease)}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--mauve-d);transform:translate(-50%,-50%)}
+.faq summary i::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .35s}
+.faq details[open] summary i::after{transform:translate(-50%,-50%) rotate(0)}
+.faq .ans{padding:0 26px 24px;color:var(--ink-2)}
+.faq-aside .art{margin-top:var(--s4);max-width:320px}
+
+/* contact */
+.contact{background:linear-gradient(180deg,var(--bg),var(--bg-2))}
+.ct-grid{display:grid;grid-template-columns:1fr;gap:var(--s4)}
+@media(min-width:960px){.ct-grid{grid-template-columns:1fr 1fr}}
+.msg{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:var(--s4) 0}
+@media(max-width:480px){.msg{grid-template-columns:1fr}}
+.msg a{display:flex;align-items:center;gap:14px;padding:18px 20px;border-radius:var(--r);text-decoration:none;background:linear-gradient(150deg,#F3EEE9,#E4DDD5);box-shadow:var(--sh-out-sm);transition:transform .35s var(--ease),box-shadow .35s}
+.msg a:hover{transform:translateY(-3px)}
+.msg a:active{box-shadow:var(--sh-in)}
+.msg .ic{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;flex:none;color:#fff;background:radial-gradient(circle at 34% 28%,#B898A4,var(--mauve-d));box-shadow:3px 4px 10px rgba(118,84,95,.35)}
+.msg .ic svg{width:22px;height:22px}
+.msg b{display:block;font-weight:500}
+.msg small{font-size:13px;color:var(--muted)}
+.info{display:grid;gap:18px}
+.info-row{display:grid;grid-template-columns:110px 1fr;gap:16px;padding-bottom:18px;border-bottom:1px solid rgba(169,154,138,.35)}
+.info-row:last-child{border:0}
+.info-row dt{font:500 12px/1.9 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--mauve-d)}
+.info-row dd{margin:0;color:var(--ink-2)}
+.info-row dd small{display:block;color:var(--muted);font-size:14px}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:4px 18px}
+@media(max-width:480px){.info-row{grid-template-columns:1fr;gap:4px}}
+.map{padding:14px;border-radius:var(--r-lg);align-self:center}
+.map svg{width:100%;height:auto;border-radius:26px}
+
+/* footer */
+footer{background:#2F2A27;color:#D9D1C7;padding:var(--s5) 0 72px;font-size:14px}
+.f-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--s4);margin-bottom:var(--s4)}
+footer h4{font:400 13px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#A99A8A;margin-bottom:16px}
+footer a{color:#F3EEE9;text-decoration:none}
+footer a:hover{text-decoration:underline}
+footer .f-brand{font:300 24px/1.2 var(--display);color:#F3EEE9;margin-bottom:10px}
+footer li{margin-bottom:8px}
+.f-bot{border-top:1px solid rgba(217,209,199,.18);padding-top:var(--s3);display:grid;gap:8px;color:#B5AAA0;font-size:13px}
+
+/* badge */
+.badge{position:fixed;left:12px;bottom:12px;z-index:60;font:500 11px/1 var(--sans);letter-spacing:.04em;padding:8px 12px;border-radius:var(--r-xl);color:var(--ink-2);background:rgba(241,236,230,.92);box-shadow:4px 5px 12px rgba(112,96,82,.25),-3px -3px 8px rgba(255,255,255,.7);pointer-events:none}
+
+@media(max-width:600px){
+  section{padding:72px 0}
+  .card{padding:28px 24px}
+  .grp{padding:28px 22px}
+  .hero-label{position:relative;left:auto;top:auto;margin:-8px auto 0;max-width:300px;text-align:center}
+  .msg a{padding:14px 16px}
+}
+/* reveal */
+.js .rv.pre{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv.pre.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-tg" viewBox="0 0 24 24"><path d="M21 4L3 11l6 2.2M21 4l-3 16-7.5-5.2M21 4L9 13.2m0 0V19l3-3.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+    <symbol id="i-viber" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5c5.5 0 8.5 2.4 8.5 8s-3 8-8.5 8c-.8 0-1.6 0-2.4-.2L6 21v-3.6C4 16 3.5 13.8 3.5 10.5c0-5.6 3-8 8.5-8z"/><path d="M9.2 7.6c.5-.4 1.1-.3 1.4.3l.6 1.2c.2.4 0 .9-.3 1.1l-.5.4c.5 1.2 1.4 2.1 2.6 2.6l.4-.5c.3-.3.7-.5 1.1-.3l1.2.6c.6.3.7.9.3 1.4-.6.9-1.6 1.2-2.6.8a8 8 0 01-4.6-4.6c-.4-1-.1-2 .4-3z"/></g></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5.5 3.5h3l1.6 4.2-2 1.4a11 11 0 006.1 6.1l1.4-2 4.2 1.6v3c0 1.4-1.1 2.5-2.5 2.5C10 20.3 3.7 14 3.7 6c0-1.4.9-2.5 1.8-2.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-insta" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".9" fill="currentColor"/></g></symbol>
+    <symbol id="i-warn" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.3v.2"/></g></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 15.5h6"/></g></symbol>
+    <!-- clay gradients -->
+    <radialGradient id="g-plaster" cx="38%" cy="30%" r="75%"><stop offset="0" stop-color="#FFFDFA"/><stop offset=".45" stop-color="#EFE9E2"/><stop offset=".8" stop-color="#D5CBC0"/><stop offset="1" stop-color="#BEB1A3"/></radialGradient>
+    <radialGradient id="g-stone" cx="35%" cy="28%" r="78%"><stop offset="0" stop-color="#F2ECE5"/><stop offset=".55" stop-color="#D3C8BC"/><stop offset="1" stop-color="#A89887"/></radialGradient>
+    <radialGradient id="g-putty" cx="35%" cy="28%" r="80%"><stop offset="0" stop-color="#E6DCD1"/><stop offset=".6" stop-color="#BCAD9D"/><stop offset="1" stop-color="#8E7E6E"/></radialGradient>
+    <radialGradient id="g-mauve" cx="34%" cy="28%" r="78%"><stop offset="0" stop-color="#E2CDD3"/><stop offset=".5" stop-color="#A9848F"/><stop offset="1" stop-color="#6C4C57"/></radialGradient>
+    <radialGradient id="g-mauve-l" cx="34%" cy="28%" r="80%"><stop offset="0" stop-color="#F6ECEE"/><stop offset=".6" stop-color="#D8BFC6"/><stop offset="1" stop-color="#A98893"/></radialGradient>
+    <filter id="f-soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8"/></filter>
+    <filter id="f-soft-s" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+  </defs>
+</svg>
+
+<header id="top">
+  <div class="wrap nav">
+    <a href="#top" class="logo" aria-label="Лікар Кононенко — на початок">
+      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><ellipse cx="21" cy="36" rx="13" ry="2.6" fill="#8E7E6E" opacity=".25" filter="url(#f-soft-s)"/><path d="M6 36V18a14 14 0 0128 0v18z" fill="url(#g-stone)"/><circle cx="20" cy="22" r="7.5" fill="url(#g-mauve)"/></svg>
+      <span class="logo-t">Лікар Кононенко<small>дерматолог · косметолог</small></span>
+    </a>
+    <ul class="menu" id="menu">
+      <li><a href="#about">Про лікаря</a></li>
+      <li><a href="#services">Послуги та ціни</a></li>
+      <li><a href="#problems">Проблеми шкіри</a></li>
+      <li><a href="#results">Результати</a></li>
+      <li><a href="#reviews">Відгуки</a></li>
+      <li><a href="#faq">Питання</a></li>
+      <li><a href="#contact">Контакти</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-mauve">Записатися</a>
+    <button class="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="menu"><span></span></button>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">м. Дніпро · дерматологія та косметологія</span>
+      <h1>Лікар-дерматолог, косметолог <span>у Дніпрі</span></h1>
+      <p class="tag">Спочатку діагноз, потім процедура. Доказовий догляд за шкірою від лікаря з медичною освітою.</p>
+      <div class="cta-row">
+        <a class="btn btn-mauve" href="https://t.me/dr_kononenko" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-tg"/></svg>Telegram</a>
+        <a class="btn btn-clay" href="viber://chat?number=%2B380670000000"><svg aria-hidden="true"><use href="#i-viber"/></svg>Viber</a>
+        <a class="btn btn-clay" href="tel:+380670000000"><svg aria-hidden="true"><use href="#i-phone"/></svg>+38 (067) 000-00-00</a>
+      </div>
+      <div class="hero-meta"><span><b>Олена Кононенко</b> — лікар-дерматолог, косметолог</span><span>Прийом лише за попереднім записом</span></div>
+    </div>
+    <div class="hero-art">
+      <svg viewBox="0 0 560 620" role="img" aria-label="Скульптурна композиція: гіпсовий бюст в арці, камені та сфери">
+        <defs>
+          <linearGradient id="h-arch" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E6DED5"/><stop offset="1" stop-color="#CFC4B7"/></linearGradient>
+          <linearGradient id="h-arch-in" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D1C6B9"/><stop offset=".6" stop-color="#E2DAD0"/><stop offset="1" stop-color="#D8CEC2"/></linearGradient>
+          <linearGradient id="h-neck" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#D9CFC4"/><stop offset=".35" stop-color="#F3EEE8"/><stop offset=".75" stop-color="#DCD2C7"/><stop offset="1" stop-color="#BDB0A2"/></linearGradient>
+          <radialGradient id="h-face" cx="40%" cy="34%" r="70%"><stop offset="0" stop-color="#FFFDFB"/><stop offset=".5" stop-color="#F0EAE3"/><stop offset=".85" stop-color="#D7CDC2"/><stop offset="1" stop-color="#C3B6A8"/></radialGradient>
+          <radialGradient id="h-bust" cx="38%" cy="20%" r="85%"><stop offset="0" stop-color="#FBF8F4"/><stop offset=".55" stop-color="#E5DDD4"/><stop offset="1" stop-color="#BBAE9F"/></radialGradient>
+          <radialGradient id="h-hair" cx="36%" cy="30%" r="80%"><stop offset="0" stop-color="#F6F1EB"/><stop offset=".6" stop-color="#DDD3C8"/><stop offset="1" stop-color="#B7A999"/></radialGradient>
+          <linearGradient id="h-plinth" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EEE8E1"/><stop offset="1" stop-color="#C9BDB0"/></linearGradient>
+          <radialGradient id="h-shade" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#9C8C7C" stop-opacity=".45"/><stop offset="1" stop-color="#9C8C7C" stop-opacity="0"/></radialGradient>
+        </defs>
+        <!-- arch -->
+        <path d="M70 600V280a210 210 0 01420 0v320z" fill="url(#h-arch)"/>
+        <path d="M110 600V290a170 170 0 01340 0v310z" fill="url(#h-arch-in)"/>
+        <ellipse cx="280" cy="140" rx="150" ry="60" fill="#B9AB9B" opacity=".16" filter="url(#f-soft)"/>
+        <!-- floor -->
+        <ellipse cx="280" cy="602" rx="250" ry="16" fill="#8E7E6E" opacity=".28" filter="url(#f-soft)"/>
+        <!-- plinth -->
+        <rect x="150" y="540" width="260" height="62" rx="10" fill="url(#h-plinth)"/>
+        <rect x="150" y="540" width="260" height="8" rx="4" fill="#FBF8F4" opacity=".8"/>
+        <!-- bust shoulders -->
+        <ellipse cx="280" cy="542" rx="140" ry="12" fill="#8E7E6E" opacity=".35" filter="url(#f-soft-s)"/>
+        <path d="M150 540c4-62 46-92 92-104 14-4 26-8 38-8s24 4 38 8c46 12 88 42 92 104z" fill="url(#h-bust)"/>
+        <path d="M200 470c20 18 50 26 80 26s60-8 80-26" fill="none" stroke="#B5A797" stroke-width="2" opacity=".5"/>
+        <!-- neck -->
+        <path d="M238 360c2 30 2 58-4 80 14 10 30 14 46 14s32-4 46-14c-6-22-6-50-4-80z" fill="url(#h-neck)"/>
+        <ellipse cx="284" cy="378" rx="46" ry="18" fill="#A99A8A" opacity=".45" filter="url(#f-soft-s)"/>
+        <!-- hair back bun -->
+        <circle cx="352" cy="178" r="46" fill="url(#h-hair)"/>
+        <path d="M322 160c12-14 34-18 50-6M326 186c14-12 36-12 50 0" fill="none" stroke="#BFB2A3" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+        <!-- head -->
+        <path d="M280 150c60 0 92 48 90 112-2 66-30 118-66 138-14 8-34 8-48 0-36-20-64-72-66-138-2-64 30-112 90-112z" fill="url(#h-face)"/>
+        <!-- hair cap -->
+        <path d="M190 256c-6-66 34-114 92-114 58 0 94 44 90 110-14-36-38-58-66-64-26 18-62 28-96 30-8 10-14 24-20 38z" fill="url(#h-hair)"/>
+        <path d="M196 236c22-30 60-50 102-52" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".45" filter="url(#f-soft-s)"/>
+        <!-- face shading (light from upper-left) -->
+        <path d="M340 230c14 40 10 100-24 150-8 10-18 18-30 22 34-30 52-90 54-172z" fill="#B3A595" opacity=".35" filter="url(#f-soft-s)"/>
+        <!-- brows -->
+        <path d="M226 244c12-8 28-9 40-3M296 241c12-6 28-5 40 3" fill="none" stroke="#C1B4A5" stroke-width="4" stroke-linecap="round" opacity=".7" filter="url(#f-soft-s)"/>
+        <!-- closed eyes -->
+        <path d="M230 268c10 8 26 8 36 0M298 268c10 8 26 8 36 0" fill="none" stroke="#9D8E7E" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M232 270c10 4 24 4 32 0M300 270c10 4 24 4 32 0" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity=".5" transform="translate(0 5)"/>
+        <!-- nose -->
+        <path d="M284 262c2 22 6 40 12 52 4 8-2 14-12 14-6 0-10-2-14-4" fill="none" stroke="#B2A494" stroke-width="2.6" stroke-linecap="round"/>
+        <ellipse cx="294" cy="300" rx="8" ry="22" fill="#B2A494" opacity=".3" filter="url(#f-soft-s)"/>
+        <ellipse cx="276" cy="290" rx="5" ry="20" fill="#FFFFFF" opacity=".55" filter="url(#f-soft-s)"/>
+        <!-- lips -->
+        <path d="M262 352c10-6 18-8 22-4 4-4 12-2 22 4-10 6-34 6-44 0z" fill="#D6C2BF"/>
+        <path d="M262 352c12 12 32 12 44 0" fill="none" stroke="#B5A193" stroke-width="2" stroke-linecap="round"/>
+        <ellipse cx="284" cy="368" rx="14" ry="4" fill="#FFFFFF" opacity=".45" filter="url(#f-soft-s)"/>
+        <!-- cheek highlight -->
+        <ellipse cx="240" cy="300" rx="22" ry="16" fill="#FFFFFF" opacity=".45" filter="url(#f-soft)"/>
+        <!-- spheres and pebbles -->
+        <g class="float-a"><ellipse cx="470" cy="420" rx="40" ry="8" fill="#8E7E6E" opacity=".25" filter="url(#f-soft-s)" transform="translate(0 112)"/><circle cx="472" cy="440" r="62" fill="url(#g-mauve)"/><ellipse cx="452" cy="414" rx="18" ry="11" fill="#fff" opacity=".35" filter="url(#f-soft-s)"/></g>
+        <g class="float-b"><circle cx="70" cy="360" r="30" fill="url(#g-plaster)"/></g>
+        <g class="float-c"><circle cx="488" cy="150" r="18" fill="url(#g-stone)"/></g>
+        <!-- pebble stack left -->
+        <ellipse cx="74" cy="600" rx="60" ry="9" fill="#8E7E6E" opacity=".3" filter="url(#f-soft-s)"/>
+        <ellipse cx="74" cy="580" rx="58" ry="24" fill="url(#g-putty)"/>
+        <ellipse cx="78" cy="546" rx="42" ry="18" fill="url(#g-stone)"/>
+        <ellipse cx="72" cy="518" rx="28" ry="13" fill="url(#g-plaster)"/>
+        <ellipse cx="76" cy="496" rx="16" ry="9" fill="url(#g-mauve-l)"/>
+      </svg>
+      <div class="hero-label"><b>Здорова шкіра</b>Мета — не швидкий ефект, а результат, який тримається.</div>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section class="hl" aria-label="Переваги">
+  <div class="wrap hl-grid">
+    <article class="card rv">
+      <svg viewBox="0 0 72 72" aria-hidden="true"><ellipse cx="36" cy="64" rx="22" ry="4" fill="#8E7E6E" opacity=".3" filter="url(#f-soft-s)"/><path d="M12 62V34a24 24 0 0148 0v28z" fill="url(#g-stone)"/><circle cx="36" cy="40" r="11" fill="url(#g-mauve)"/></svg>
+      <h3>Лікар-дерматолог</h3>
+      <p>Вища медична освіта та спеціалізація з дерматовенерології.</p>
+    </article>
+    <article class="card rv">
+      <svg viewBox="0 0 72 72" aria-hidden="true"><ellipse cx="36" cy="66" rx="26" ry="4" fill="#8E7E6E" opacity=".3" filter="url(#f-soft-s)"/><ellipse cx="36" cy="56" rx="26" ry="10" fill="url(#g-putty)"/><ellipse cx="36" cy="40" rx="19" ry="8" fill="url(#g-stone)"/><ellipse cx="36" cy="27" rx="13" ry="6" fill="url(#g-plaster)"/><circle cx="36" cy="14" r="6" fill="url(#g-mauve)"/></svg>
+      <h3>10+ років практики</h3>
+      <p>Щоденна практика та постійне навчання: сучасні протоколи й доказові методики.</p>
+    </article>
+    <article class="card rv">
+      <svg viewBox="0 0 72 72" aria-hidden="true"><ellipse cx="36" cy="64" rx="24" ry="4" fill="#8E7E6E" opacity=".3" filter="url(#f-soft-s)"/><circle cx="26" cy="44" r="17" fill="url(#g-plaster)"/><circle cx="48" cy="48" r="13" fill="url(#g-mauve-l)"/><circle cx="42" cy="24" r="9" fill="url(#g-stone)"/></svg>
+      <h3>Індивідуальний план</h3>
+      <p>Процедури підбираються після огляду, а не за прайсом.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="rv">
+      <div class="niche">
+        <svg viewBox="0 0 400 420" role="img" aria-label="Скульптурна композиція з каменів у ніші">
+          <ellipse cx="200" cy="410" rx="170" ry="12" fill="#8E7E6E" opacity=".3" filter="url(#f-soft)"/>
+          <path d="M70 420c0-80 50-140 130-140s130 60 130 140z" fill="url(#g-stone)"/>
+          <circle cx="200" cy="170" r="92" fill="url(#g-plaster)"/>
+          <path d="M150 140c18-30 58-40 84-26" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" opacity=".45" filter="url(#f-soft-s)"/>
+          <ellipse cx="200" cy="270" rx="70" ry="10" fill="#8E7E6E" opacity=".25" filter="url(#f-soft-s)"/>
+          <circle cx="312" cy="250" r="34" fill="url(#g-mauve)"/>
+          <ellipse cx="92" cy="380" rx="40" ry="20" fill="url(#g-putty)"/>
+          <ellipse cx="96" cy="352" rx="26" ry="12" fill="url(#g-plaster)"/>
+        </svg>
+        <div class="plate"><b>Олена Кононенко</b><span>лікар-дерматолог, косметолог</span></div>
+      </div>
+    </div>
+    <div>
+      <span class="eyebrow">Про лікаря</span>
+      <h2 class="h2">Олена <em>Кононенко</em></h2>
+      <p class="intro">Я лікар-дерматолог і косметолог. Моя мета — здорова шкіра, а не лише швидкий ефект. Тому кожна робота починається з консультації: ми з’ясовуємо причину проблеми, і лише потім я пропоную лікування чи процедури.</p>
+      <ul class="checks">
+        <li>Лікар-дерматолог з вищою медичною освітою</li>
+        <li>10+ років практики</li>
+        <li>Доказовий підхід: спочатку діагноз, потім процедура</li>
+        <li>Лише сертифіковані препарати та стерильні інструменти</li>
+      </ul>
+      <h3 class="sub-h">Освіта та досвід</h3>
+      <ol class="timeline" style="list-style:none;padding:0;margin-top:0">
+        <li><b>2008–2014</b><span>Дніпровський державний медичний університет, спеціальність «Лікувальна справа»</span></li>
+        <li><b>2014–2016</b><span>Інтернатура за спеціальністю «Дерматовенерологія»</span></li>
+        <li><b>2016–сьогодні</b><span>Практикуючий лікар-дерматолог, косметолог</span></li>
+      </ol>
+      <h3 class="sub-h">Дипломи та сертифікати</h3>
+      <div class="certs">
+        <figure class="cert" style="margin:0">
+          <svg viewBox="0 0 200 140" aria-hidden="true"><rect width="200" height="140" fill="#E4DCD3"/><rect x="22" y="16" width="156" height="108" rx="6" fill="url(#g-plaster)"/><rect x="34" y="28" width="132" height="84" rx="3" fill="none" stroke="#C4B8AA"/><path d="M60 52h80M70 64h60M78 76h44" stroke="#B5A797" stroke-width="3" stroke-linecap="round"/><circle cx="140" cy="98" r="11" fill="url(#g-mauve)"/></svg>
+          <figcaption>Диплом лікаря</figcaption>
+        </figure>
+        <figure class="cert" style="margin:0">
+          <svg viewBox="0 0 200 140" aria-hidden="true"><rect width="200" height="140" fill="#E4DCD3"/><rect x="22" y="16" width="156" height="108" rx="6" fill="url(#g-plaster)"/><path d="M100 30a20 20 0 110 40 20 20 0 010-40z" fill="url(#g-stone)"/><path d="M62 86h76M72 98h56" stroke="#B5A797" stroke-width="3" stroke-linecap="round"/><circle cx="100" cy="50" r="7" fill="url(#g-mauve)"/></svg>
+          <figcaption>Сертифікат лікаря-спеціаліста</figcaption>
+        </figure>
+        <figure class="cert" style="margin:0">
+          <svg viewBox="0 0 200 140" aria-hidden="true"><rect width="200" height="140" fill="#E4DCD3"/><rect x="22" y="16" width="156" height="108" rx="6" fill="url(#g-plaster)"/><path d="M46 40h70M46 52h90M46 64h54" stroke="#B5A797" stroke-width="3" stroke-linecap="round"/><ellipse cx="140" cy="96" rx="18" ry="9" fill="url(#g-putty)"/><ellipse cx="140" cy="84" rx="11" ry="6" fill="url(#g-mauve-l)"/></svg>
+          <figcaption>Курс з ін’єкційної косметології</figcaption>
+        </figure>
+      </div>
+      <p class="license"><svg aria-hidden="true"><use href="#i-doc"/></svg>Ліцензія МОЗ України на медичну практику, наказ № 000 від 01.01.2025, ФОП Кононенко О. — ЗАМІНИТИ</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <div class="wrap">
+    <div class="sec-head split">
+      <div><span class="eyebrow">Послуги та ціни</span><h2 class="h2">Чим я можу <em>допомогти</em></h2></div>
+      <p class="lead">Кожне лікування починається з консультації: спочатку з’ясовуємо причину, потім підбираємо процедури. Остаточна вартість залежить від стану шкіри та обсягу процедури і узгоджується на консультації.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="card grp rv" id="konsultatsiia">
+        <div class="grp-h"><svg viewBox="0 0 46 46" aria-hidden="true"><circle cx="23" cy="23" r="18" fill="url(#g-plaster)"/><circle cx="23" cy="23" r="7" fill="url(#g-mauve)"/></svg><h3>Консультація</h3></div>
+        <p>З неї починається будь-яке лікування — огляд, діагноз і план догляду.</p>
+        <div class="svc"><h4>Консультація лікаря-дерматолога</h4><span class="price">800 грн</span><p>Огляд шкіри, дерматоскопія за потреби, план лікування та домашнього догляду.<br><span class="dur">40 хв</span></p></div>
+        <div class="svc"><h4>Повторна консультація</h4><span class="price">400 грн</span><p>Оцінка результату та корекція плану протягом 1 місяця.<br><span class="dur">20 хв</span></p></div>
+      </article>
+      <article class="card grp rv" id="chystka">
+        <div class="grp-h"><svg viewBox="0 0 46 46" aria-hidden="true"><ellipse cx="23" cy="30" rx="18" ry="9" fill="url(#g-stone)"/><ellipse cx="23" cy="18" rx="11" ry="6" fill="url(#g-plaster)"/></svg><h3>Чистка та догляд</h3></div>
+        <p>Очищення та відновлення шкіри обличчя.</p>
+        <div class="svc"><h4>Комбінована чистка обличчя</h4><span class="price">від 1200 грн</span><p>Ультразвукова та механічна чистка, заспокійлива маска.<br><span class="dur">90 хв</span></p></div>
+        <div class="svc"><h4>Доглядова процедура за типом шкіри</h4><span class="price">від 1000 грн</span><p>Зволоження, живлення або заспокоєння — підбирається на консультації.<br><span class="dur">60 хв</span></p></div>
+      </article>
+      <article class="card grp rv" id="pilingy">
+        <div class="grp-h"><svg viewBox="0 0 46 46" aria-hidden="true"><path d="M8 40V22a15 15 0 0130 0v18z" fill="url(#g-stone)"/><path d="M15 40V24a8 8 0 0116 0v16z" fill="url(#g-mauve-l)"/></svg><h3>Пілінги</h3></div>
+        <p>Хімічні пілінги для оновлення шкіри, вирівнювання тону й текстури.</p>
+        <div class="svc"><h4>Поверхневий пілінг</h4><span class="price">від 900 грн</span><p>Оновлення шкіри, сяйво, легка корекція постакне.<br><span class="dur">45 хв</span></p></div>
+        <div class="svc"><h4>Серединний пілінг</h4><span class="price">від 2000 грн</span><p>Пігментація, рубці постакне, вікові зміни.<br><span class="dur">60 хв</span></p></div>
+      </article>
+      <article class="card grp rv" id="inyektsii">
+        <div class="grp-h"><svg viewBox="0 0 46 46" aria-hidden="true"><circle cx="17" cy="27" r="11" fill="url(#g-plaster)"/><circle cx="31" cy="20" r="8" fill="url(#g-mauve)"/><circle cx="32" cy="35" r="5" fill="url(#g-stone)"/></svg><h3>Ін’єкційні методики</h3></div>
+        <p>Виконуються лише після консультації та з урахуванням протипоказань.</p>
+        <div class="svc"><h4>Біоревіталізація</h4><span class="price">від 3500 грн</span><p>Глибоке зволоження шкіри гіалуроновою кислотою.<br><span class="dur">45 хв</span></p></div>
+        <div class="svc"><h4>Мезотерапія</h4><span class="price">від 1800 грн</span><p>Вітамінні та лікувальні коктейлі для шкіри обличчя чи шкіри голови.<br><span class="dur">45 хв</span></p></div>
+      </article>
+      <article class="card grp rv" id="akne">
+        <div class="grp-h"><svg viewBox="0 0 46 46" aria-hidden="true"><ellipse cx="23" cy="25" rx="18" ry="14" fill="url(#g-putty)"/><circle cx="17" cy="21" r="3" fill="url(#g-mauve)"/><circle cx="28" cy="27" r="2.4" fill="url(#g-mauve)"/></svg><h3>Лікування акне</h3></div>
+        <p>Комплексна програма — від діагностики до догляду за шкірою після лікування.</p>
+        <div class="svc"><h4>Програма лікування акне</h4><span class="price">за планом</span><p>Консультація, призначення лікування, контроль щомісяця.<br><span class="dur">3–6 місяців</span></p></div>
+        <div class="svc"><h4>Процедура проти запалень</h4><span class="price">від 1100 грн</span><p>Чистка та протизапальний пілінг під час лікування.<br><span class="dur">60 хв</span></p></div>
+      </article>
+    </div>
+    <div class="notice rv"><svg aria-hidden="true"><use href="#i-warn"/></svg><p><b>Є протипоказання.</b> Ін’єкційні методики, пілінги та лікування акне — лише після консультації лікаря.</p></div>
+  </div>
+</section>
+
+<!-- PROBLEMS -->
+<section id="problems">
+  <div class="wrap">
+    <div class="sec-head split">
+      <div><span class="eyebrow">Проблеми шкіри</span><h2 class="h2">З чим до мене <em>звертаються</em></h2></div>
+      <p class="lead">Причину визначає лікар на огляді — від цього залежить лікування. Нижче коротко про найчастіші запити.</p>
+    </div>
+    <div class="prob-grid">
+      <article class="card prob rv">
+        <div class="prob-art"><svg viewBox="0 0 200 140" aria-hidden="true"><ellipse cx="100" cy="128" rx="70" ry="8" fill="#8E7E6E" opacity=".3" filter="url(#f-soft-s)"/><ellipse cx="100" cy="80" rx="76" ry="48" fill="url(#g-plaster)"/><circle cx="74" cy="66" r="8" fill="url(#g-mauve)"/><circle cx="112" cy="90" r="6" fill="url(#g-mauve)"/><circle cx="132" cy="62" r="4.5" fill="url(#g-mauve)"/><circle cx="90" cy="98" r="3.5" fill="#8E7E6E" opacity=".5"/></svg></div>
+        <div class="prob-b">
+          <h3>Акне</h3>
+          <p class="sum">Висипання, запалення, чорні цятки та постакне.</p>
+          <dl><div><dt>Причини</dt><dd>Гормональні зміни, генетика, неправильний догляд, стрес, деякі ліки. Причину визначає лікар на огляді — від цього залежить лікування.</dd></div>
+          <div><dt>Лікування</dt><dd>Медикаментозне лікування за призначенням лікаря, чистки та пілінги, підбір домашнього догляду, контроль результату щомісяця.</dd></div></dl>
+          <a class="link" href="#akne">Ціни на лікування акне</a>
+        </div>
+      </article>
+      <article class="card prob rv">
+        <div class="prob-art"><svg viewBox="0 0 200 140" aria-hidden="true"><defs><radialGradient id="p-red" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#C98F97" stop-opacity=".75"/><stop offset="1" stop-color="#C98F97" stop-opacity="0"/></radialGradient></defs><ellipse cx="100" cy="128" rx="60" ry="8" fill="#8E7E6E" opacity=".3" filter="url(#f-soft-s)"/><circle cx="100" cy="72" r="56" fill="url(#g-plaster)"/><ellipse cx="78" cy="82" rx="26" ry="18" fill="url(#p-red)"/><ellipse cx="124" cy="80" rx="24" ry="16" fill="url(#p-red)"/><path d="M66 80c6-4 10 2 16-2s8 4 14 0M112 78c6-4 10 2 16-2" fill="none" stroke="#A86F79" stroke-width="1.4" stroke-linecap="round" opacity=".7"/></svg></div>
+        <div class="prob-b">
+          <h3>Розацеа та купероз</h3>
+          <p class="sum">Почервоніння, судинна сіточка, чутлива шкіра.</p>
+          <dl><div><dt>Причини</dt><dd>Підвищена чутливість судин, тригери — сонце, тепло, алкоголь, гостра їжа, неправильні засоби догляду.</dd></div>
+          <div><dt>Лікування</dt><dd>Медикаментозна терапія, щадний догляд, захист від сонця, процедури для зміцнення судин.</dd></div></dl>
+          <a class="link" href="#konsultatsiia">Почати з консультації</a>
+        </div>
+      </article>
+      <article class="card prob rv">
+        <div class="prob-art"><svg viewBox="0 0 200 140" aria-hidden="true"><ellipse cx="100" cy="128" rx="74" ry="8" fill="#8E7E6E" opacity=".3" filter="url(#f-soft-s)"/><path d="M30 118c0-50 30-86 70-86s70 36 70 86z" fill="url(#g-plaster)"/><ellipse cx="80" cy="76" rx="12" ry="8" fill="#A48A74" opacity=".5"/><ellipse cx="118" cy="66" rx="8" ry="6" fill="#A48A74" opacity=".45"/><ellipse cx="128" cy="94" rx="14" ry="9" fill="#A48A74" opacity=".35"/><ellipse cx="92" cy="100" rx="6" ry="4" fill="#A48A74" opacity=".45"/></svg></div>
+        <div class="prob-b">
+          <h3>Пігментація</h3>
+          <p class="sum">Пігментні плями, мелазма, постзапальна гіперпігментація.</p>
+          <dl><div><dt>Причини</dt><dd>Сонце, гормональні зміни, наслідки запалень та травм шкіри. Перед лікуванням лікар обов’язково оглядає утворення.</dd></div>
+          <div><dt>Лікування</dt><dd>Пілінги, засоби для вирівнювання тону, щоденний сонцезахист, поступовий план з контролем результату.</dd></div></dl>
+          <a class="link" href="#pilingy">Ціни на пілінги</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head split">
+      <div><span class="eyebrow">Як проходить лікування</span><h2 class="h2">Чотири кроки <em>до здорової шкіри</em></h2></div>
+      <p class="lead">Без поспіху та без нав’язування зайвих послуг. Кожен крок я пояснюю й узгоджую з вами.</p>
+    </div>
+    <ol class="steps" style="list-style:none;padding:0;margin:0">
+      <li class="card step rv"><div class="num">1</div><h3>Консультація та огляд</h3><p>Огляд шкіри, дерматоскопія за потреби, з’ясування причини проблеми.</p></li>
+      <li class="card step rv"><div class="num">2</div><h3>Індивідуальний план</h3><p>Лікування, процедури та домашній догляд — підібрані саме для вашої шкіри.</p></li>
+      <li class="card step rv"><div class="num">3</div><h3>Процедури</h3><p>Сертифіковані препарати, стерильні інструменти та увага до вашого комфорту.</p></li>
+      <li class="card step rv"><div class="num">4</div><h3>Догляд і контроль</h3><p>Пам’ятка після процедури та контрольний візит для оцінки результату.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section id="results" class="services">
+  <div class="wrap">
+    <div class="sec-head split">
+      <div><span class="eyebrow">Результати</span><h2 class="h2">До <em>і</em> після</h2></div>
+      <p class="lead">Результат індивідуальний і залежить від стану шкіри. Нижче — схематичні ілюстрації; справжні фото будуть додані лише з письмової згоди пацієнтів.</p>
+    </div>
+    <div class="ba-grid">
+      <article class="card ba rv">
+        <div class="ba-pair">
+          <figure><svg viewBox="0 0 240 240" role="img" aria-label="До: шкіра із запаленнями"><defs><radialGradient id="b1" cx="40%" cy="30%" r="85%"><stop offset="0" stop-color="#F3E6DE"/><stop offset="1" stop-color="#D7C2B5"/></radialGradient><radialGradient id="b-sp" cx="40%" cy="35%" r="60%"><stop offset="0" stop-color="#E4AAA8"/><stop offset="1" stop-color="#B9757B"/></radialGradient></defs><rect width="240" height="240" fill="url(#b1)"/><path d="M0 170c50-20 110 10 240-20v90H0z" fill="#CDB6A8" opacity=".5"/><g fill="url(#b-sp)"><circle cx="62" cy="80" r="9"/><circle cx="120" cy="112" r="7"/><circle cx="168" cy="70" r="10"/><circle cx="90" cy="150" r="6"/><circle cx="182" cy="140" r="8"/><circle cx="140" cy="182" r="5"/><circle cx="44" cy="130" r="5"/></g><g fill="#C99393" opacity=".35"><circle cx="62" cy="80" r="16"/><circle cx="168" cy="70" r="18"/><circle cx="182" cy="140" r="14"/></g></svg><figcaption>До</figcaption></figure>
+          <figure><svg viewBox="0 0 240 240" role="img" aria-label="Після: рівна чиста шкіра"><defs><radialGradient id="a1" cx="40%" cy="30%" r="85%"><stop offset="0" stop-color="#F8EFE9"/><stop offset="1" stop-color="#DCCABE"/></radialGradient></defs><rect width="240" height="240" fill="url(#a1)"/><path d="M0 170c50-20 110 10 240-20v90H0z" fill="#D6C2B6" opacity=".5"/><ellipse cx="90" cy="80" rx="60" ry="30" fill="#fff" opacity=".4" filter="url(#f-soft)"/><g fill="#D2B7AE" opacity=".5"><circle cx="120" cy="112" r="2.5"/><circle cx="168" cy="72" r="2"/></g></svg><figcaption>Після</figcaption></figure>
+        </div>
+        <p class="ba-cap">Лікування акне, 4 місяці</p>
+      </article>
+      <article class="card ba rv">
+        <div class="ba-pair">
+          <figure><svg viewBox="0 0 240 240" role="img" aria-label="До: пігментні плями"><defs><radialGradient id="b2" cx="40%" cy="30%" r="85%"><stop offset="0" stop-color="#F1E3D7"/><stop offset="1" stop-color="#D3BCA9"/></radialGradient></defs><rect width="240" height="240" fill="url(#b2)"/><path d="M0 60c60 30 140-10 240 20" fill="none" stroke="#C7AF9C" stroke-width="2" opacity=".6"/><g fill="#9F7C62"><ellipse cx="80" cy="96" rx="26" ry="16" opacity=".4"/><ellipse cx="150" cy="120" rx="20" ry="13" opacity=".35"/><ellipse cx="118" cy="168" rx="30" ry="14" opacity=".3"/><ellipse cx="180" cy="70" rx="10" ry="7" opacity=".45"/><circle cx="60" cy="160" r="6" opacity=".45"/></g></svg><figcaption>До</figcaption></figure>
+          <figure><svg viewBox="0 0 240 240" role="img" aria-label="Після: рівний тон шкіри"><defs><radialGradient id="a2" cx="40%" cy="30%" r="85%"><stop offset="0" stop-color="#F7EEE6"/><stop offset="1" stop-color="#DAC7B7"/></radialGradient></defs><rect width="240" height="240" fill="url(#a2)"/><path d="M0 60c60 30 140-10 240 20" fill="none" stroke="#CDB8A6" stroke-width="2" opacity=".5"/><ellipse cx="100" cy="90" rx="70" ry="34" fill="#fff" opacity=".4" filter="url(#f-soft)"/><g fill="#A88A72"><ellipse cx="80" cy="96" rx="14" ry="8" opacity=".12"/><ellipse cx="118" cy="168" rx="16" ry="8" opacity=".1"/></g></svg><figcaption>Після</figcaption></figure>
+        </div>
+        <p class="ba-cap">Курс пілінгів від пігментації, 5 процедур</p>
+      </article>
+    </div>
+    <p class="consent">Фото «до/після» публікуються лише з письмової згоди пацієнтів. Ілюстрації вище — заглушки, справжні фото буде додано пізніше.</p>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="sec-head split">
+      <div><span class="eyebrow">Відгуки</span><h2 class="h2">Що кажуть <em>пацієнти</em></h2></div>
+      <p class="lead">Відгуки публікуються лише з дозволу пацієнтів.</p>
+    </div>
+    <div class="rev-grid">
+      <blockquote class="card rev rv"><svg viewBox="0 0 34 26" aria-hidden="true"><circle cx="9" cy="9" r="8" fill="url(#g-mauve-l)"/><circle cx="25" cy="9" r="8" fill="url(#g-mauve-l)"/><path d="M3 12c0 6 2 10 6 13M19 12c0 6 2 10 6 13" fill="none" stroke="#C2A3AD" stroke-width="3" stroke-linecap="round"/></svg><p>Нарешті лікар, який пояснив, звідки в мене висипання, а не просто продав процедуру. За три місяці шкіра стала чистою.</p><div class="who"><span class="ava">А</span><span>Анна<small>Instagram</small></span></div></blockquote>
+      <blockquote class="card rev rv"><svg viewBox="0 0 34 26" aria-hidden="true"><circle cx="9" cy="9" r="8" fill="url(#g-mauve-l)"/><circle cx="25" cy="9" r="8" fill="url(#g-mauve-l)"/><path d="M3 12c0 6 2 10 6 13M19 12c0 6 2 10 6 13" fill="none" stroke="#C2A3AD" stroke-width="3" stroke-linecap="round"/></svg><p>Дуже уважний підхід, усе стерильно й акуратно. Після пілінгу отримала докладну пам’ятку з догляду.</p><div class="who"><span class="ava">І</span><span>Ірина<small>Google</small></span></div></blockquote>
+      <blockquote class="card rev rv"><svg viewBox="0 0 34 26" aria-hidden="true"><circle cx="9" cy="9" r="8" fill="url(#g-mauve-l)"/><circle cx="25" cy="9" r="8" fill="url(#g-mauve-l)"/><path d="M3 12c0 6 2 10 6 13M19 12c0 6 2 10 6 13" fill="none" stroke="#C2A3AD" stroke-width="3" stroke-linecap="round"/></svg><p>Ходжу на біоревіталізацію вже рік. Результат природний, ніхто не здогадується, просто «гарно виглядаєш».</p><div class="who"><span class="ava">М</span><span>Марія<small>Instagram</small></span></div></blockquote>
+      <blockquote class="card rev rv"><svg viewBox="0 0 34 26" aria-hidden="true"><circle cx="9" cy="9" r="8" fill="url(#g-mauve-l)"/><circle cx="25" cy="9" r="8" fill="url(#g-mauve-l)"/><path d="M3 12c0 6 2 10 6 13M19 12c0 6 2 10 6 13" fill="none" stroke="#C2A3AD" stroke-width="3" stroke-linecap="round"/></svg><p>Записалася з пігментацією, яку роками не могла прибрати. Лікар чесно сказала, чого чекати, і результат перевершив очікування.</p><div class="who"><span class="ava">О</span><span>Олена<small>Google</small></span></div></blockquote>
+      <blockquote class="card rev rv"><svg viewBox="0 0 34 26" aria-hidden="true"><circle cx="9" cy="9" r="8" fill="url(#g-mauve-l)"/><circle cx="25" cy="9" r="8" fill="url(#g-mauve-l)"/><path d="M3 12c0 6 2 10 6 13M19 12c0 6 2 10 6 13" fill="none" stroke="#C2A3AD" stroke-width="3" stroke-linecap="round"/></svg><p>Затишний кабінет, приємна атмосфера, жодного нав’язування зайвих послуг.</p><div class="who"><span class="ava">К</span><span>Катерина<small>Instagram</small></span></div></blockquote>
+    </div>
+    <p class="insta-more">Більше відгуків і робіт — в Instagram <a href="https://instagram.com/dr_kononenko" target="_blank" rel="noopener">@dr_kononenko</a></p>
+  </div>
+</section>
+
+<!-- AFTERCARE -->
+<section id="aftercare" class="services">
+  <div class="wrap">
+    <div class="sec-head split">
+      <div><span class="eyebrow">Пам’ятки</span><h2 class="h2">Догляд <em>після процедур</em></h2></div>
+      <p class="lead">Після кожної процедури ви отримуєте посилання на пам’ятку — щоб усе важливе було під рукою.</p>
+    </div>
+    <div class="care-grid">
+      <article class="card care rv">
+        <h3><i></i>Після пілінгу</h3>
+        <ul>
+          <li>Не торкайтеся обличчя руками перший день.</li>
+          <li>Не використовуйте скраби, кислоти та ретиноїди 7 днів.</li>
+          <li>Щодня наносьте сонцезахисний крем SPF 50, навіть у похмуру погоду.</li>
+          <li>Не відвідуйте сауну, басейн і солярій 7 днів.</li>
+          <li>Лущення — нормальна реакція. Не здирайте лусочки.</li>
+        </ul>
+        <p class="warn"><svg aria-hidden="true"><use href="#i-warn"/></svg>Якщо з’явилися сильне печіння, набряк або пухирі — одразу напишіть лікарю.</p>
+      </article>
+      <article class="card care rv">
+        <h3><i></i>Після чистки обличчя</h3>
+        <ul>
+          <li>Не наносьте декоративну косметику 12 годин.</li>
+          <li>Умивайтеся м’яким засобом, без скрабів 3 дні.</li>
+          <li>Не засмагайте 3–5 днів.</li>
+        </ul>
+        <p class="warn"><svg aria-hidden="true"><use href="#i-warn"/></svg>Почервоніння проходить протягом доби. Якщо ні — напишіть лікарю.</p>
+      </article>
+      <article class="card care rv">
+        <h3><i></i>Після ін’єкційних процедур</h3>
+        <ul>
+          <li>Не торкайтеся місць ін’єкцій і не робіть масаж обличчя 2 доби.</li>
+          <li>Не наносьте косметику 12 годин.</li>
+          <li>Уникайте сауни, спорту та алкоголю 2 доби.</li>
+          <li>Невеликі папули та синці проходять за 2–5 днів.</li>
+        </ul>
+        <p class="warn"><svg aria-hidden="true"><use href="#i-warn"/></svg>Якщо набряк посилюється, з’явився біль або зміна кольору шкіри — негайно зв’яжіться з лікарем.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq">
+  <div class="wrap faq-grid">
+    <div class="faq-aside">
+      <span class="eyebrow">Питання</span>
+      <h2 class="h2">Часті <em>запитання</em></h2>
+      <p class="lead">Не знайшли відповідь? Напишіть у <a href="https://t.me/dr_kononenko" target="_blank" rel="noopener" style="color:var(--mauve-d)">Telegram</a> — відповім особисто.</p>
+      <svg class="art" viewBox="0 0 320 200" aria-hidden="true"><ellipse cx="160" cy="188" rx="140" ry="10" fill="#8E7E6E" opacity=".28" filter="url(#f-soft)"/><ellipse cx="110" cy="160" rx="80" ry="30" fill="url(#g-putty)"/><ellipse cx="118" cy="118" rx="56" ry="24" fill="url(#g-stone)"/><ellipse cx="112" cy="84" rx="36" ry="16" fill="url(#g-plaster)"/><circle cx="240" cy="140" r="44" fill="url(#g-mauve)"/><circle cx="270" cy="70" r="16" fill="url(#g-plaster)"/></svg>
+    </div>
+    <div class="faq-list">
+      <details class="rv" open><summary>Чи боляче?<i aria-hidden="true"></i></summary><p class="ans">Більшість процедур безболісні або викликають легкий дискомфорт. Для ін’єкційних методик використовується знеболювальний крем.</p></details>
+      <details class="rv"><summary>Скільки процедур потрібно?<i aria-hidden="true"></i></summary><p class="ans">Залежить від стану шкіри та мети. Точну кількість лікар визначає на консультації — зазвичай це курс із 3–6 процедур.</p></details>
+      <details class="rv"><summary>Які протипоказання?<i aria-hidden="true"></i></summary><p class="ans">Вагітність і годування груддю (для частини процедур), гострі запалення, герпес у період загострення, деякі хронічні захворювання. Повний перелік обговорюється на консультації.</p></details>
+      <details class="rv"><summary>Як підготуватися до процедури?<i aria-hidden="true"></i></summary><p class="ans">За 1–2 тижні до пілінгів уникайте засмаги та агресивних засобів. Детальні рекомендації ви отримаєте під час запису.</p></details>
+      <details class="rv"><summary>Чи можна одразу прийти на процедуру без консультації?<i aria-hidden="true"></i></summary><p class="ans">На доглядові процедури — так. На пілінги, ін’єкційні методики та лікування акне — лише після консультації лікаря.</p></details>
+      <details class="rv"><summary>Як записатися?<i aria-hidden="true"></i></summary><p class="ans">Напишіть у Telegram, Viber або Instagram чи зателефонуйте. Прийом лише за попереднім записом.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap ct-grid">
+    <div>
+      <span class="eyebrow">Контакти та запис</span>
+      <h2 class="h2">Запишіться <em>на консультацію</em></h2>
+      <p class="lead">Напишіть у зручний месенджер або зателефонуйте — я підберу для вас час. Прийом лише за попереднім записом.</p>
+      <div class="msg">
+        <a href="https://t.me/dr_kononenko" target="_blank" rel="noopener"><span class="ic"><svg aria-hidden="true"><use href="#i-tg"/></svg></span><span><b>Telegram</b><small>@dr_kononenko</small></span></a>
+        <a href="viber://chat?number=%2B380670000000"><span class="ic"><svg aria-hidden="true"><use href="#i-viber"/></svg></span><span><b>Viber</b><small>+38 (067) 000-00-00</small></span></a>
+        <a href="tel:+380670000000"><span class="ic"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><span><b>Зателефонувати</b><small>+38 (067) 000-00-00</small></span></a>
+        <a href="https://instagram.com/dr_kononenko" target="_blank" rel="noopener"><span class="ic"><svg aria-hidden="true"><use href="#i-insta"/></svg></span><span><b>Instagram</b><small>@dr_kononenko</small></span></a>
+      </div>
+      <dl class="info" style="margin:0">
+        <div class="info-row"><dt>Адреса</dt><dd>м. Дніпро, вул. Прикладна, 1, офіс 10<small>Біля станції метро «Вокзальна», 2-й поверх, вхід з двору</small></dd></div>
+        <div class="info-row"><dt>Графік</dt><dd><span class="hours"><span>Пн–Пт</span><span>10:00–19:00</span><span>Сб</span><span>10:00–15:00</span><span>Нд</span><span>вихідний</span></span></dd></div>
+        <div class="info-row"><dt>Запис</dt><dd>Прийом лише за попереднім записом.</dd></div>
+      </dl>
+    </div>
+    <div class="card map rv">
+      <svg viewBox="0 0 560 620" role="img" aria-label="Схема розташування: вул. Прикладна, 1, біля метро «Вокзальна»">
+        <defs>
+          <linearGradient id="m-bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EFE9E2"/><stop offset="1" stop-color="#DDD4CA"/></linearGradient>
+          <filter id="m-emb" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="3" dy="4" stdDeviation="4" flood-color="#8E7E6E" flood-opacity=".3"/></filter>
+        </defs>
+        <rect width="560" height="620" fill="url(#m-bg)"/>
+        <!-- river -->
+        <path d="M-10 520c90-40 160 10 260-20s170-80 320-60v200H-10z" fill="#D5CDD0"/>
+        <path d="M-10 530c90-40 160 10 260-20s170-80 320-60" fill="none" stroke="#fff" stroke-width="3" opacity=".6"/>
+        <!-- blocks -->
+        <g fill="#E8E1D9" filter="url(#m-emb)">
+          <rect x="40" y="40" width="150" height="110" rx="18"/><rect x="230" y="40" width="130" height="110" rx="18"/><rect x="400" y="40" width="130" height="150" rx="18"/>
+          <rect x="40" y="190" width="150" height="130" rx="18"/><rect x="400" y="230" width="130" height="110" rx="18"/>
+          <rect x="40" y="360" width="150" height="100" rx="18"/><rect x="230" y="360" width="130" height="90" rx="18"/><rect x="400" y="380" width="130" height="60" rx="18"/>
+        </g>
+        <rect x="230" y="190" width="130" height="130" rx="18" fill="#E2D2D7" filter="url(#m-emb)"/>
+        <!-- streets labels -->
+        <text x="210" y="300" transform="rotate(-90 210 300)" font-family="Inter,system-ui,sans-serif" font-size="13" fill="#857A70" letter-spacing="1.5">вул. Прикладна</text>
+        <text x="530" y="215" text-anchor="end" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#857A70">2-й поверх, вхід з двору</text>
+        <!-- metro -->
+        <g transform="translate(450 470)"><circle r="22" fill="url(#g-plaster)" filter="url(#m-emb)"/><text y="6" text-anchor="middle" font-family="Unbounded,system-ui,sans-serif" font-size="17" fill="#76545F">М</text></g>
+        <text x="450" y="514" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="13" fill="#5E554E">«Вокзальна»</text>
+        <path d="M428 460c-40-30-80-70-120-150" fill="none" stroke="#94707E" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round"/>
+        <!-- pin -->
+        <ellipse cx="296" cy="300" rx="26" ry="7" fill="#6C4C57" opacity=".35" filter="url(#f-soft-s)"/>
+        <path d="M296 296c-26-34-38-52-38-70a38 38 0 0176 0c0 18-12 36-38 70z" fill="url(#g-mauve)"/>
+        <circle cx="296" cy="226" r="14" fill="url(#g-plaster)"/>
+        <g transform="translate(296 150)"><rect x="-104" y="-26" width="208" height="44" rx="22" fill="#F8F5F1" filter="url(#m-emb)"/><text y="2" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="500" fill="#2C2724">вул. Прикладна, 1, оф. 10</text></g>
+      </svg>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div><div class="f-brand">Лікар Кононенко</div><p>Лікар-дерматолог, косметолог у Дніпрі.</p><p style="margin-top:8px;color:#B5AAA0">м. Дніпро, вул. Прикладна, 1, офіс 10</p></div>
+      <div><h4>Розділи</h4><ul><li><a href="#about">Про лікаря</a></li><li><a href="#services">Послуги та ціни</a></li><li><a href="#problems">Проблеми шкіри</a></li><li><a href="#aftercare">Пам’ятки</a></li><li><a href="#contact">Контакти</a></li></ul></div>
+      <div><h4>Контакти</h4><ul><li><a href="tel:+380670000000">+38 (067) 000-00-00</a></li><li><a href="https://t.me/dr_kononenko" target="_blank" rel="noopener">Telegram</a> · <a href="https://instagram.com/dr_kononenko" target="_blank" rel="noopener">Instagram</a></li></ul></div>
+      <div><h4>Графік</h4><ul><li>Пн–Пт: 10:00–19:00</li><li>Сб: 10:00–15:00</li><li>Нд: вихідний</li></ul></div>
+    </div>
+    <div class="f-bot">
+      <p>Ліцензія МОЗ України на медичну практику, наказ № 000 від 01.01.2025, ФОП Кононенко О. — ЗАМІНИТИ</p>
+      <p>Є протипоказання, необхідна консультація лікаря. Фото «до/після» та відгуки публікуються лише з письмової згоди пацієнтів. · © 2026 Лікар Кононенко</p>
+    </div>
+  </div>
+</footer>
+
+<div class="badge">Дизайн 15 · Скульптура</div>
+
+<script>
+(function(){
+  var d=document,h=d.documentElement;h.classList.add('js');
+  var b=d.querySelector('.burger'),m=d.getElementById('menu');
+  function close(){d.body.classList.remove('nav-open');b.setAttribute('aria-expanded','false')}
+  b.addEventListener('click',function(){var o=d.body.classList.toggle('nav-open');b.setAttribute('aria-expanded',o)});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close)});
+  var ds=d.querySelectorAll('.faq details');
+  ds.forEach(function(x){x.addEventListener('toggle',function(){if(x.open)ds.forEach(function(o){if(o!==x)o.open=false})})});
+  if('IntersectionObserver' in window&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+    d.querySelectorAll('.rv').forEach(function(el){if(el.getBoundingClientRect().top>innerHeight){el.classList.add('pre');io.observe(el)}});
+  }
+})();
+</script>
+</body>
+</html>

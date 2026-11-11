@@ -1,8 +1,10 @@
 ---
+import { icon } from '../lib/icons';
+
 interface Service {
   name: string;
-  description: string;
-  duration: string;
+  description?: string | null;
+  duration?: string | null;
   price: string;
 }
 
@@ -11,35 +13,63 @@ interface Props {
 }
 
 const { group } = Astro.props;
+
+// «від 900 грн» → дрібне курсивне «від» + сума, як у макеті
+function splitPrice(price: string) {
+  const m = String(price).match(/^(від)\s+(.*)$/i);
+  return m ? { prefix: m[1], amount: m[2] } : { prefix: '', amount: String(price) };
+}
 ---
-<section class="price-group" id={group.id}>
-  <h2>{group.group}</h2>
-  <p class="price-group__desc">{group.description}</p>
-  <ul class="price-list">
-    {group.services.map((s) => (
-      <li>
-        <div>
-          <div class="price-list__name">{s.name}</div>
-          <div class="price-list__desc">{s.description}</div>
-        </div>
-        <div class="price-list__meta">
-          <div class="price-list__price">{s.price}</div>
-          <div class="price-list__duration">{s.duration}</div>
-        </div>
-      </li>
-    ))}
-  </ul>
+<section class="menu reveal" id={group.id}>
+  <div class="menu__title">
+    <span class="menu__icon"><svg viewBox="0 0 24 24" aria-hidden="true" set:html={icon(group.id)} /></span>
+    <h2>{group.group}</h2>
+    {group.description && <p>{group.description}</p>}
+    <svg class="menu__flourish" viewBox="0 0 120 16" aria-hidden="true"><path d="M2 8H46M74 8H118" stroke="currentColor" stroke-width="1" /><path d="M60 14V3M60 8c-4 0-6-2-6-5 4 0 6 2 6 5zM60 8c4 0 6-2 6-5-4 0-6 2-6 5z" fill="none" stroke="currentColor" stroke-width="1" /></svg>
+  </div>
+  {group.services.map((s) => {
+    const p = splitPrice(s.price);
+    return (
+      <div class="price-row">
+        <span class="price-row__name">
+          {s.name}
+          {s.description && <small>{s.description}</small>}
+        </span>
+        <span class="price-row__dots"></span>
+        <span class="price-row__meta">
+          <span class="price-row__amt">{p.prefix && <small>{p.prefix}</small>}{p.amount}</span>
+          {s.duration && <span class="price-row__dur">{s.duration}</span>}
+        </span>
+      </div>
+    );
+  })}
 </section>
 
 <style>
-  .price-group { margin-bottom: 56px; scroll-margin-top: 96px; }
-  .price-group__desc { color: var(--c-muted); }
-  .price-list { list-style: none; padding: 0; margin: 0; background: var(--c-surface); border: 1px solid var(--c-border); border-radius: var(--radius); }
-  .price-list li { display: flex; justify-content: space-between; gap: 24px; padding: 20px 24px; border-bottom: 1px solid var(--c-border); }
-  .price-list li:last-child { border-bottom: 0; }
-  .price-list__name { font-weight: 600; }
-  .price-list__desc { color: var(--c-muted); font-size: .95rem; }
-  .price-list__meta { text-align: right; white-space: nowrap; }
-  .price-list__price { font-weight: 700; color: var(--c-primary); font-size: 1.1rem; }
-  .price-list__duration { color: var(--c-muted); font-size: .85rem; }
+  .menu {
+    background: var(--paper); border-radius: var(--r-lg); padding: clamp(26px, 4.5vw, 52px);
+    box-shadow: var(--sh-2); outline: 1px solid var(--line); outline-offset: -12px;
+    margin-bottom: 40px; scroll-margin-top: 100px;
+  }
+  .menu__title { text-align: center; margin-bottom: 18px; }
+  .menu__icon { width: 54px; height: 54px; margin: 0 auto 14px; border-radius: 46% 54% 50% 50% / 55% 45% 55% 45%; background: var(--sage-50); display: grid; place-items: center; }
+  .menu__icon svg { width: 26px; height: 26px; color: var(--sage-800); fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .menu__title h2 { font-size: clamp(26px, 2.8vw, 34px); margin-bottom: 8px; }
+  .menu__title p { font-family: var(--f-serif); font-style: italic; color: var(--olive); max-width: 60ch; margin: 0 auto; }
+  .menu__flourish { width: 120px; margin: 14px auto 0; color: var(--sage-600); }
+
+  .price-row { display: flex; align-items: baseline; gap: 14px; padding: 18px 0; border-bottom: 1px dashed rgba(63, 86, 64, .22); }
+  .price-row:last-child { border-bottom: 0; padding-bottom: 0; }
+  .price-row__name { font-weight: 700; color: var(--forest); font-size: 16.5px; line-height: 1.45; }
+  .price-row__name small { display: block; font-weight: 400; color: var(--muted); font-size: 14px; margin-top: 4px; }
+  .price-row__dots { flex: 1; border-bottom: 1.5px dotted rgba(63, 86, 64, .35); transform: translateY(-5px); min-width: 20px; }
+  .price-row__meta { text-align: right; white-space: nowrap; }
+  .price-row__amt { display: block; font-family: var(--f-display); font-size: 22px; color: var(--forest); line-height: 1.2; }
+  .price-row__amt small { font-family: var(--f-serif); font-style: italic; font-size: 14px; color: var(--olive); margin-right: 5px; }
+  .price-row__dur { font-size: 13px; color: var(--muted); }
+  @media (max-width: 600px) {
+    .price-row { flex-wrap: wrap; }
+    .price-row__dots { display: none; }
+    .price-row__meta { margin-left: auto; }
+  }
 </style>

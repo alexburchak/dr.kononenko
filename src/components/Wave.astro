@@ -1,0 +1,18 @@
+---
+// Хвиляста межа між секціями (з макета Botanical).
+interface Props {
+  fill: 'oat' | 'forest' | 'sage';
+  flip?: boolean;
+  variant?: 1 | 2 | 3;
+}
+
+const { fill, flip = false, variant = 1 } = Astro.props;
+const paths = {
+  1: 'M0 54C160 20 320 14 520 40S900 92 1100 62 1360 18 1440 30V90H0Z',
+  2: 'M0 60C180 26 380 10 600 34S980 90 1180 70 1380 30 1440 34V90H0Z',
+  3: 'M0 40C200 10 380 20 600 46S1000 86 1200 60 1400 30 1440 36V90H0Z',
+};
+---
+<svg class:list={['wave', { flip }]} viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+  <path class={`fill-${fill}`} d={paths[variant]} />
+</svg>
